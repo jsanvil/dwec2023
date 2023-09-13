@@ -1,0 +1,70 @@
+site_name: Desarrollo Web en Entorno Cliente
+
+nav:
+  - Inicio:
+    - 'index.md'
+    - 'entorno.md'
+  - Javavascript:
+    - 'Introducción': '01-js/index.md'
+    - '01-js/01-sintaxis.md'
+
+theme:
+  name: material # readthedocs # material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: es
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Cambiar a modo oscuro
+      primary: teal
+      accent: purple
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Cambiar a modo claro
+      primary: teal
+      accent: lime
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/jsanvil/apuntes
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.mark
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+# copyright: |
+#   &copy; 2023 <a href="https://github.com/jsanvil" target="_blank" rel="noopener">Jacinto Sanchez</a>
+
+plugins:
+  - tags
