@@ -31,37 +31,37 @@ En este primer bloque vamos a conocer el lenguaje Javascript. El bloque se divid
     - [La consola del navegador](#la-consola-del-navegador)
     - [Editores](#editores)
     - [Editores on-line](#editores-on-line)
-    - [npm](#npm)
-    - [git](#git)
   - [Incluir javascript en una página web](#incluir-javascript-en-una-página-web)
   - [Mostrar información](#mostrar-información)
+    - [git](#git)
+    - [npm](#npm)
 - [Bibliografía](#bibliografía)
 
 
 ## Introducción
 
-En las páginas web el elemento fundamental es el fichero HTML con la información a mostrar en el navegador. Posteriormente surgió la posibilidad de "decorar" esa información para mejorar su apariencia, lo que dio lugar al CSS. Y también se pensó en dar dinamismo a las páginas y apareció el lenguaje Javascript.
+En las páginas web el elemento fundamental es el fichero **HTML** con la información a mostrar en el navegador. Posteriormente surgió la posibilidad de "decorar" esa información para mejorar su apariencia, lo que dio lugar al **CSS**. Y también se pensó en dar dinamismo a las páginas y apareció el lenguaje **Javascript**.
 
 En un primer momento las 3 cosas estaban mezcladas en el fichero HTML pero eso complicaba bastante el poder leer esa página a la hora de mantenerla por lo que se pensó en separar los 3 elementos básicos:
 
-- HTML: se encarga de estructurar la página y proporciona su información, pero es una información estática
-- CSS: es lo que da forma a dicha información, permite mejorar su apariencia, permite que se adapte a distintos dispositivos, ...
-- Javascript: es el que da vida a un sitio web y le permite reaccionar a las acciones del usuario
+- **HTML**: se encarga de estructurar la página y proporciona su información, pero es una información estática.
+- **CSS**: es lo que da forma a dicha información, permite mejorar su apariencia, permite que se adapte a distintos dispositivos, etc.
+- **Javascript**: es el que da vida a un sitio web y le permite reaccionar a las acciones del usuario.
 
 Por tanto nuestras aplicaciones tendrán estos 3 elementos y lo recomendable es que estén separados en distintos ficheros:
 
-- El HTML lo tendremos habitualmente en un fichero index.html, normalmente en una carpeta llamada _public_
-- El CSS lo tendremos en uno o más ficheros con extensión _.css_ dentro de una carpeta llamada _styles_
-- EL JS estará en ficheros con extensión _.js_ en un directorio llamado _scripts_
+- El **HTML** lo tendremos habitualmente en un fichero `index.html`, normalmente en una carpeta llamada _`public`_
+- El **CSS** lo tendremos en uno o más ficheros con extensión _`.css`_ dentro de una carpeta llamada _`styles`_
+- EL **JS** estará en ficheros con extensión _`.js`_ en un directorio llamado _`scripts`_
 
-Las características principales de Javascript son:
+Las **características** principales de Javascript son:
 
-- es un lenguaje interpretado, no compilado
-- se ejecuta en el lado cliente (en un navegador web), aunque hay implementaciones como NodeJS para el lado servidor
-- es un lenguaje orientado a objetos (podemos crear e isntanciar objetos y usar objetos predefinidos del lenguaje) pero basado en prototipos (por debajo un objeto es un prototipo y nosotros podemos crear objetos sin instanciarlos, haciendo copias del prototipo)
-- se trata de un lenguaje débilmente tipado, con tipificación dinámica (no se indica el tipo de datos de una variable al declararla e incluso puede cambiarse)
+- es un **lenguaje interpretado**, no compilado
+- **se ejecuta en el lado cliente** (en un navegador web), aunque hay implementaciones como NodeJS para el lado servidor
+- es un lenguaje **orientado a objetos** (podemos crear e isntanciar objetos y usar objetos predefinidos del lenguaje) pero basado en prototipos (por debajo un objeto es un prototipo y nosotros podemos crear objetos sin instanciarlos, haciendo copias del prototipo)
+- se trata de un lenguaje **débilmente tipado**, con tipificación dinámica (no se indica el tipo de datos de una variable al declararla e incluso puede cambiarse)
 
-Lo usaremos para:
+Ejemplos de uso:
 
 * Cambiar el contenido de la página
 * Cambiar los atributos de un elemento
@@ -85,15 +85,15 @@ Las principales mejoras que introdujo ES2015 son: clases de objetos, let, for..o
 
 ### Soporte en los navegadores
 
-Los navegadores 4no se adaptan inmediatamente a las nuevas versiones de Javascript por lo que puede ser un problema usar una versión muy moderna ya que puede haber partes de los programas que no funcionen en los navegadores de muchos usuarios. En la página de [_Kangax_](https://kangax.github.io/compat-table/es6/) podemos ver la compatibilidad de los diferentes navegadores con las distintas versiones de Javascript. También podemos usar [_CanIUse_](https://caniuse.com/) para buscar la compatibilidad de un elemento concreto de Javascript así como de HTML5 o CSS3. 
+Los navegadores no se adaptan inmediatamente a las nuevas versiones de Javascript por lo que puede ser un problema usar una versión muy moderna ya que puede haber partes de los programas que no funcionen en los navegadores de muchos usuarios. En la página de [_Kangax_](https://kangax.github.io/compat-table/es6/) podemos ver la compatibilidad de los diferentes navegadores con las distintas versiones de Javascript. También podemos usar [_CanIUse_](https://caniuse.com/) para buscar la compatibilidad de un elemento concreto de Javascript así como de HTML5 o CSS3. 
 
-Si queremos asegurar la máxima compatibilidad debemos usar la versión ES5 (pero nos perdemos muchas mejoras del lenguaje) o mejor, usar la ES6 (o posterior) y después _transpilar_ nuestro código a la version ES5. De esto se ocupan los _transpiladores_ (**Babel** es el más conocido) por lo que no suponen un esfuerzo extra para el programador.
+Si queremos asegurar la máxima compatibilidad debemos usar la versión ES5 (pero nos perdemos muchas mejoras del lenguaje) o mejor, usar la ES6 (o posterior) y después _transpilar_ nuestro código a la version ES5. De esto se ocupan los _transpiladores_ (**Babeljs** es el más conocido) por lo que no suponen un esfuerzo extra para el programador.
 
 ## Herramientas
 
 ### La consola del navegador
 
-Es la herramienta que más nos va a ayudar a la hora de depurar nuestro código. Abrimos las herramientas para el desarrollador (en Chrome y Firefox pulsando la tecla _F12_) y vamos a la pestaña _Consola_:
+Es la herramienta que más nos va a ayudar a la hora de depurar nuestro código. Abrimos las herramientas para el desarrollador (en Chrome y Firefox pulsando la tecla _**`F12`**_) y vamos a la pestaña _`Consola`_:
 
 ![Consola](./img/Consola.png)
 
@@ -112,14 +112,14 @@ Es fundamental dedicar tiempo a saber utilizar la consola porque nos facilitará
 
 ### Editores
 
-Podemos usar el que más nos guste, desde editores tan simples como NotePad++ hasta complejos IDEs. La mayoría soportan las últimas versiones de la sintaxis de Javascript (Netbeans, Eclipse, Visual Studio, Sublime, Atom, Kate, Notepad++, ...). Yo voy a utilizar [**Visual Studio Code**](https://code.visualstudio.com/) o [**Sublime text**](https://www.sublimetext.com/) por su sencillez y por los plugins que incorpora para hacer más cómodo mi trabajo. En _Visual Studio Code_ instalaré algún _plugin_ como:
+Podemos usar el que más nos guste, desde editores tan simples como NotePad++ hasta complejos IDEs. La mayoría soportan las últimas versiones de la sintaxis de Javascript (Netbeans, Eclipse, Visual Studio, Sublime, Atom, Kate, Notepad++, ...). Nosotros vamos a utilizar [**Visual Studio Code**](https://code.visualstudio.com/) por su sencillez y por los plugins que incorpora para hacer más cómodo mi trabajo. En _Visual Studio Code_ se instalará algún _plugin_ como:
 
 - SonarLint: es más que un _linter_ y me informa de todo tipo de errores pero también del código que no cumple las recomendaciones (incluye gran número de reglas). Marca el código mientras lo escribimos y además podemos ver todas las advertencias en el panel de Problemas (Ctrl+Shift+M)
 - Live Server: para abrir la web en un navegador y ver los cambios en vivo.
 
 ### Editores on-line
 
-Son muy útiles porque permiten ver el código y el resultado a la vez. Normalmente tienen varias pestañas o secciones de la página donde poner el código HTML, CSS yJavascript y ver su resultado. 
+Son muy útiles porque permiten ver el código y el resultado a la vez. Normalmente tienen varias pestañas o secciones de la página donde poner el código HTML, CSS y Javascript y ver su resultado. 
 
 Algunos de los más conocidos son [Codesandbox](https://codesandbox.io/), [Fiddle](https://jsfiddle.net), [Plunker](https://plnkr.co), [CodePen](https://codepen.io/pen/), etc. aunque hay muchos más.
 
@@ -135,34 +135,6 @@ Algunos de los más conocidos son [Codesandbox](https://codesandbox.io/), [Fiddl
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-
-### npm
-
-**npm** es el gestor de paquetes del framework Javascript **Node.js** y suele utilizarse en programación *frontend* como gestor de dependencias de la aplicación. Esto significa que será la herramienta que se encargará de descargar y poner a disposición de nuestra aplicación todas las librerías Javascript que vayamos a utilizar, por ejemplo para hacer los tests de nuestros programas (en algunas prácticas haremos o pasaremos tests unitarios ya hechos para comprobar que nuestros programas funcionan correctamente y, sobre todo, que continúan haciéndolo tras realizar alguna modificación en ellos).
-
-Para instalar _npm_ tenemos que instalar _NodeJS_. Podemos instalarlo desde los repositorios como cualquier otro programa (`apt install nodejs`), pero posiblemente nos instalará una versión poco actualizada por lo que es mejor instalarlo desde [NodeSource](https://nodejs.org/es/download/package-manager/#distribuciones-de-linux-basadas-en-debian-y-ubuntu) siguiendo las instrucciones que allí se indican, que básicamente son ejecutar:
-
-```bash
-$ curl -sL https://deb.nodesource.com/setup_X.y | sudo -E bash -
-$ sudo apt-get install -y nodejs
-```
-
-(cambiaremos X.y por la versión que queramos, normalmente la última versión estable).
-
-También podemos descargarlo directamente desde [NodeJS.org](https://nodejs.org/es/download/), descomprimir el paquete e instalarlo (`dpkg -i _nombre_del_paquete_`).
-
-Con eso ya tendremos _npm_ en nuestro equipo. Podemos comprovar la versión que tenemos con:
-
-```bash
-$ npm -v
-```
-
-### git
-
-Usaremos repositorios *git* para la entrega de las prácticas y servirá también para poder realizar el control de versiones. Para instalarlo simplemente habrá que instalar el paquete *git* (`apt install git`).
-
-Podemos gestionar git desde la consola o quien quiera puede instalar una extensión para utilizarlo desde el entorno de programación. En el caso de *Visual Studio Code* lo encontramos en 
-[https://code.visualstudio.com/docs/editor/versioncontrol](https://code.visualstudio.com/docs/editor/versioncontrol).
 
 ## Incluir javascript en una página web
 
@@ -187,6 +159,34 @@ Javascript permite mostrar al usuario ventanas modales para pedirle o mostrarle 
 También se pueden escribir las funciones sin _window._ (es decir `alert('Hola')` en vez de `window.alert('Hola')`) ya que en Javascript todos los métodos y propiedades de los que no se indica de qué objeto son se ejecutan en el objeto _window_.
 
 Si queremos mostrar una información para depurar nuestro código no utilizaremos _alert(mensaje)_ sino `console.log(mensaje)` o `console.error(mensaje)`. Estas funciones muestran la información pero en la consola del navegador. La diferencia es que _console.error_ la muestra como si fuera un error de *Javascript*.
+
+### git
+
+Usaremos repositorios *git* para la entrega de las prácticas y servirá también para poder realizar el control de versiones. Para instalarlo simplemente habrá que instalar el paquete *git* (`apt install git`).
+
+Podemos gestionar git desde la consola o quien quiera puede instalar una extensión para utilizarlo desde el entorno de programación. En el caso de *Visual Studio Code* lo encontramos en 
+[https://code.visualstudio.com/docs/editor/versioncontrol](https://code.visualstudio.com/docs/editor/versioncontrol).
+
+### npm
+
+**npm** es el gestor de paquetes del framework Javascript **Node.js** y suele utilizarse en programación *frontend* como gestor de dependencias de la aplicación. Esto significa que será la herramienta que se encargará de descargar y poner a disposición de nuestra aplicación todas las librerías Javascript que vayamos a utilizar, por ejemplo para hacer los tests de nuestros programas (en algunas prácticas haremos o pasaremos tests unitarios ya hechos para comprobar que nuestros programas funcionan correctamente y, sobre todo, que continúan haciéndolo tras realizar alguna modificación en ellos).
+
+Para instalar _npm_ tenemos que instalar _NodeJS_. Podemos instalarlo desde los repositorios como cualquier otro programa (`apt install nodejs`), pero posiblemente nos instalará una versión poco actualizada por lo que es mejor instalarlo desde [NodeSource](https://nodejs.org/es/download/package-manager/#distribuciones-de-linux-basadas-en-debian-y-ubuntu) siguiendo las instrucciones que allí se indican, que básicamente son ejecutar:
+
+```bash
+$ curl -sL https://deb.nodesource.com/setup_X.y | sudo -E bash -
+$ sudo apt-get install -y nodejs
+```
+
+(cambiaremos X.y por la versión que queramos, normalmente la última versión estable).
+
+También podemos descargarlo directamente desde [NodeJS.org](https://nodejs.org/es/download/), descomprimir el paquete e instalarlo (`dpkg -i _nombre_del_paquete_`).
+
+Con eso ya tendremos _npm_ en nuestro equipo. Podemos comprovar la versión que tenemos con:
+
+```bash
+$ npm -v
+```
 
 # Bibliografía
 
