@@ -1,0 +1,698 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.6">
+    
+    
+      
+        <title>Browser Object Model (BOM) - Desarrollo Web en Entorno Cliente</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0e669242.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#browser-object-model-bom" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Desarrollo Web en Entorno Cliente" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Cliente" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Cliente
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Browser Object Model (BOM)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  Inicio
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Javavascript
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Cliente" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Cliente" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Desarrollo Web en Entorno Cliente
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Inicio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Desarrollo Web en Entorno Cliente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../entorno/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entorno de trabajo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Javavascript
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Javavascript
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-sintaxis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Sintaxis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    Introducción
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timers" class="md-nav__link">
+    Timers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetos-del-bom" class="md-nav__link">
+    Objetos del BOM
+  </a>
+  
+    <nav class="md-nav" aria-label="Objetos del BOM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objeto-window" class="md-nav__link">
+    Objeto window
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objeto-location" class="md-nav__link">
+    Objeto location
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objeto-history" class="md-nav__link">
+    Objeto history
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-objetos" class="md-nav__link">
+    Otros objetos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="browser-object-model-bom">Browser Object Model (BOM)<a class="headerlink" href="#browser-object-model-bom" title="Permanent link">&para;</a></h1>
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<p><strong>Table of Contents</strong>  <em>generated with <a href="https://github.com/thlorenz/doctoc">DocToc</a></em></p>
+<ul>
+<li><a href="#browser-object-model-bom">Browser Object Model (BOM)</a></li>
+<li><a href="#introducción">Introducción</a></li>
+<li><a href="#timers">Timers</a></li>
+<li><a href="#objetos-del-bom">Objetos del BOM</a><ul>
+<li><a href="#objeto-window">Objeto window</a></li>
+<li><a href="#diálogos">Diálogos</a></li>
+<li><a href="#objeto-location">Objeto location</a></li>
+<li><a href="#objeto-history">Objeto history</a></li>
+<li><a href="#otros-objetos">Otros objetos</a></li>
+</ul>
+</li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+<h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
+<p>Si en el tema anterior vimos cómo interactuar con la página (DOM) en este veremos cómo acceder a objetos que nos permitan interactuar con el navegador ( y Browser Object Model, BOM).</p>
+<p>Usando los objetos BOM podemos:
+* Abrir, cambiar y cerrar ventanas
+* Ejecutar código en cierto tiempo (<em>timers</em>)
+* Obtener información del navegador
+* Ver y modificar propiedades de la pantalla
+* Gestionar cookies, ...</p>
+<h2 id="timers">Timers<a class="headerlink" href="#timers" title="Permanent link">&para;</a></h2>
+<p>Permiten ejecutar código en el futuro (cuando transcurran los milisegundos indicados). Hay 2 tipos:
+* <code>setTimeout(función, milisegundos)</code>: ejecuta la función indicada una sóla vez, cuando transcurran los milisegundos
+* <code>setInterval(función, milisegundos)</code>: ejecuta la función indicada cada vez que transcurran los milisegundos, hasta que sea cancelado el <em>timer</em>. A ambas se le pueden pasar más parámetros tras los milisegundos y serán los parámetros que recibirá la función a ejecutar.</p>
+<p>Ambas funciones devuelven un identificador que nos permitirá cancelar la ejecución del código, con:
+* <code>clearTiemout(identificador)</code>
+* <code>clearInterval(identificador)</code></p>
+<p>Ejemplo:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">idTimeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Timeout que se ejecuta al cabo de 1 seg.&#39;</span><span class="p">),</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">idInterval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Interval cada 3 seg. Ejecución nº: &#39;</span><span class="o">+</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">);</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nx">clearInterval</span><span class="p">(</span><span class="nx">idInterval</span><span class="p">);</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Fin de la ejecución del Interval&#39;</span><span class="p">);</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">},</span><span class="w"> </span><span class="mf">3000</span><span class="p">);</span>
+</code></pre></div></p>
+<blockquote>
+<p>EJERCICIO: Ejecuta en la consola cada una de esas funciones</p>
+</blockquote>
+<p>En lugar de definir la función a ejecutar podemos llamar a una función que ya exista:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">showMessage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Timeout que se ejecuta al cabo de 1 seg.&#39;</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">}</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">idTimeout</span><span class="o">=</span><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">showMessage</span><span class="p">,</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+</code></pre></div></p>
+<p>Pero en ese caso hay que poner sólo el nombre de la función, sin <code>()</code> ya que si los ponemos se ejecutaría la función en ese momento y no transcurrido el tiempo indicado.</p>
+<p>Si necesitamos pasarle algún parámetro a la función lo añadiremos como parámetros de <code>setTimeout</code> o <code>setInterval</code> después del intervalo:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">showMessage</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">idTimeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">showMessage</span><span class="p">,</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Timeout que se ejecuta al cabo de 1 seg.&#39;</span><span class="p">);</span>
+</code></pre></div></p>
+<h2 id="objetos-del-bom">Objetos del BOM<a class="headerlink" href="#objetos-del-bom" title="Permanent link">&para;</a></h2>
+<p>Al contrario que para el DOM, no existe un estándar de BOM pero es bastante parecido en los diferentes navegadores. </p>
+<h3 id="objeto-window">Objeto <a href="http://www.w3schools.com/jsref/obj_window.asp">window</a><a class="headerlink" href="#objeto-window" title="Permanent link">&para;</a></h3>
+<p>Representa la ventana del navegador y es el objeto principal. De hecho puede omitirse al llamar a sus propiedades y métodos, por ejemplo, el método <code>setTimeout()</code> es en realidad <code>window.setTimeout()</code>.</p>
+<p>Sus principales propiedades y métodos son:
+* <code>.name</code>: nombre de la ventana actual
+* <code>.status</code>: valor de la barra de estado
+* <code>.screenX</code>/<code>.screenY</code>: distancia de la ventana a la esquina izquierda/superior de la pantalla
+* <code>.outerWidth</code>/<code>.outerHeight</code>: ancho/alto total de la ventana, incluyendo la toolbar y la scrollbar
+* <code>.innerWidth</code>/<code>.innerHeight</code>: ancho/alto útil del documento, sin la toolbar y la scrollbar
+* <code>.open(url, nombre, opciones)</code>: abre una nueva ventana. Devuelve el nuevo objeto ventana. Las principales opciones son:
+    * <code>.toolbar</code>: si tendrá barra de herramientas
+    * <code>.location</code>: si tendrá barra de dirección
+    * <code>.directories</code>: si tendrá botones Adelante/Atrás
+    * <code>.status</code>: si tendrá barra de estado
+    * <code>.menubar</code>: si tendrá barra de menú
+    * <code>.scrollbar</code>: si tendrá barras de desplazamiento
+    * <code>.resizable</code>: si se puede cambiar su tamaño 
+    * <code>.width=px</code>/<code>.height=px</code>: ancho/alto
+    * <code>.left=px</code>/<code>.top=px</code>: posición izq/sup de la ventana
+* <code>.opener</code>: referencia a la ventana desde la que se abrió esta ventana (para ventanas abiertas con <em>open</em>)
+* <code>.close()</code>: la cierra (pide confirmación, a menos que la hayamos abierto con open)
+* <code>.moveTo(x,y)</code>: la mueve a las coord indicadas
+* <code>.moveBy(x,y)</code>: la desplaza los px indicados
+* <code>.resizeTo(x,y)</code>: la da el ancho y alto indicados
+* <code>.resizeBy(x,y)</code>: le añade ese ancho/alto
+* <code>.pageXoffset / pageYoffset</code>: scroll actual de la ventana horizontal / vertical
+* Otros métodos: <code>.back()</code>, <code>.forward()</code>, <code>.home()</code>, <code>.stop()</code>, <code>.focus()</code>, <code>.blur()</code>, <code>.find()</code>, <code>.print()</code>, …
+NOTA: por seguridad no se puede mover una ventana fuera de la pantalla ni darle un tamaño menor de 100x100 px ni tampoco se puede mover una ventana no abierta con .open() o si tiene varias pestañas</p>
+<blockquote>
+<p>EJERCICIO: Ejecuta desde la consola:
+- abre una nueva ventana de dimensiones 500x200px en la posición (100,200)
+- escribe en ella (con document.write) un título h1 que diga 'Hola'
+- muévela 300 px hacia abajo y 100 a la izquierda
+- ciérrala</p>
+</blockquote>
+<p>Puedes ver un ejemplo de cómo abrir ventanas en <a href="https://www.youtube.com/watch?v=jkTt6bs2tPo&amp;list=PLI7nHlOIIPOJtTDs1HVJABswW-xJcA7_o&amp;index=40">este vídeo</a>.</p>
+<blockquote>
+<p>EJERCICIO: Haz que a los 2 segundos de abrir la página se abra un <em>popup</em> con un mensaje de bienvenida. Esta ventana tendrá en su interior un botón Cerrar que permitirá que el usuario la cierre haciendo clic en él. Tendrá el tamaño justo para visualizar el mensaje y no tendrá barras de scroll, ni de herramientas, ni de dirección... únicamente el mensaje.</p>
+</blockquote>
+<h4 id="dialogos">Diálogos<a class="headerlink" href="#dialogos" title="Permanent link">&para;</a></h4>
+<p>Hay 3 métodos del objeto <em>window</em> que ya conocemos y que nos permiten abrir ventanas de diálogo con el usuario:
+* <code>window.alert(mensaje)</code>: muestra un diálogo con el mensaje indicado y un botón de 'Aceptar'
+* <code>window.confirm(mensaje)</code>: muestra un diálogo con el mensaje indicado y botones de 'Aceptar' y 'Cancelar'. Devuelve <em>true</em> si se ha pulsado el botón de aceptar del diálogo y <em>false</em> si no.
+* <code>window.prompt(mensaje [, valor predeterminado])</code>: muestra un diálogo con el mensaje indicado, un cuadro de texto (vacío o co el valor predeterminado indicado) y botones de 'Aceptar' y 'Cancelar'. Si se pulsa 'Aceptar' devolverá un <em>string</em> con el valor que haya en el cuadro de texto y si se pulsa 'Cancelar' o se cierra devolverá <em>null</em>.</p>
+<h3 id="objeto-location">Objeto <a href="http://www.w3schools.com/jsref/obj_location.asp">location</a><a class="headerlink" href="#objeto-location" title="Permanent link">&para;</a></h3>
+<p>Contiene información sobre la URL actual del navegador y podemos modificarla. Sus principales propiedades y métodos son:
+* <code>.href</code>: devuelve la URL actual completa
+* <code>.protocol</code>, <code>.host</code>, <code>.port</code>: devuelve el protocolo, host y puerto respectivamente de la URL actual
+* <code>.pathname</code>: devuelve la ruta al recurso actual
+* <code>.reload()</code>: recarga la página actual
+* <code>.assign(url)</code>: carga la página pasada como parámetro
+* <code>.replace(url)</code>: ídem pero sin guardar la actual en el historial</p>
+<blockquote>
+<p>EJERCICIO: Ejecuta en la consola
+- muestra la ruta completa de la página actual
+- muestra el servidor de esta página
+- carga la página de Google usando el objeto <em>location</em></p>
+</blockquote>
+<h3 id="objeto-history">Objeto <a href="http://www.w3schools.com/jsref/obj_history.asp">history</a><a class="headerlink" href="#objeto-history" title="Permanent link">&para;</a></h3>
+<p>Permite acceder al historial de páginas visitadas y navegar por él:
+* <code>.length</code>: muestra el número de páginas almacenadas en el historial
+* <code>.back()</code>: vuelve a la página anterior
+* <code>.forward()</code>: va a la siguiente página
+* <code>.go(num)</code>: se mueve <em>num</em> páginas hacia adelante o hacia atrás (si <em>num</em> es negativo) en el historial</p>
+<blockquote>
+<p>EJERCICIO: desde la consola vuelve a la página anterior</p>
+</blockquote>
+<h3 id="otros-objetos">Otros objetos<a class="headerlink" href="#otros-objetos" title="Permanent link">&para;</a></h3>
+<p>Los otros objetos que incluye BOM son:
+* <a href="http://www.w3schools.com/jsref/dom_obj_document.asp">document</a>: el objeto <em>document</em> que hemos visto en el DOM
+* <a href="http://www.w3schools.com/jsref/obj_navigator.asp">navigator</a>: nos informa sobre el navegador y el sistema en que se ejecuta
+    * <code>.userAgent</code>: muestra información sobre el navegador que usamos
+    * <code>.plataform</code>: muestra información sobre la plataforma sobre la que se ejecuta
+    * ...
+* <a href="http://www.w3schools.com/jsref/obj_screen.asp">screen</a>: nos da información sobre la pantalla
+    * <code>.width</code>/<code>.height</code>: ancho/alto total de la pantalla (resolución)
+    * <code>.availWidth</code>/<code>.availHeight</code>: igual pero excluyendo la barra del S.O.
+    * ...</p>
+<blockquote>
+<p>EJERCICIO: obtén desde la consola todas las propiedades width/height y availWidth/availHeight del objeto <em>scrren</em>. Compáralas con las propiedades innerWidth/innerHeight y outerWidth/outerHeight de <em>window</em>.</p>
+</blockquote>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Volver al principio
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/jsanvil/apuntes" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.78eede0e.min.js"></script>
+      
+    
+  </body>
+</html>

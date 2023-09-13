@@ -1,0 +1,1687 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.6">
+    
+    
+      
+        <title>1. Sintaxis - Desarrollo Web en Entorno Cliente</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0e669242.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-sintaxis" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Desarrollo Web en Entorno Cliente" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Cliente" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Cliente
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. Sintaxis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  Inicio
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Javavascript
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Cliente" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Cliente" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Desarrollo Web en Entorno Cliente
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Inicio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Desarrollo Web en Entorno Cliente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../entorno/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entorno de trabajo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Javavascript
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Javavascript
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    1. Sintaxis
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    1. Sintaxis
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-datos-basicos" class="md-nav__link">
+    Tipos de datos básicos
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de datos básicos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#casting-de-variables" class="md-nav__link">
+    Casting de variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#number" class="md-nav__link">
+    Number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    String
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boolean" class="md-nav__link">
+    Boolean
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funciones" class="md-nav__link">
+    Funciones
+  </a>
+  
+    <nav class="md-nav" aria-label="Funciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametros" class="md-nav__link">
+    Parámetros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funciones-anonimas" class="md-nav__link">
+    Funciones anónimas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrow-functions-funciones-lambda" class="md-nav__link">
+    Arrow functions (funciones lambda)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructuras-y-bucles" class="md-nav__link">
+    Estructuras y bucles
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructuras y bucles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura-condicional-if" class="md-nav__link">
+    Estructura condicional: if
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estructura-condicional-switch" class="md-nav__link">
+    Estructura condicional: switch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bucle-while" class="md-nav__link">
+    Bucle while
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bucle-for" class="md-nav__link">
+    Bucle: for
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bucle-for-con-contador" class="md-nav__link">
+    Bucle: for con contador
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manejo-de-errores" class="md-nav__link">
+    Manejo de errores
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buenas-practicas" class="md-nav__link">
+    Buenas prácticas
+  </a>
+  
+    <nav class="md-nav" aria-label="Buenas prácticas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-strict" class="md-nav__link">
+    'use strict'
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables_1" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errores" class="md-nav__link">
+    Errores
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otras" class="md-nav__link">
+    Otras
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clean-code" class="md-nav__link">
+    Clean Code
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-datos-basicos" class="md-nav__link">
+    Tipos de datos básicos
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de datos básicos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#casting-de-variables" class="md-nav__link">
+    Casting de variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#number" class="md-nav__link">
+    Number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    String
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boolean" class="md-nav__link">
+    Boolean
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funciones" class="md-nav__link">
+    Funciones
+  </a>
+  
+    <nav class="md-nav" aria-label="Funciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametros" class="md-nav__link">
+    Parámetros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funciones-anonimas" class="md-nav__link">
+    Funciones anónimas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrow-functions-funciones-lambda" class="md-nav__link">
+    Arrow functions (funciones lambda)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructuras-y-bucles" class="md-nav__link">
+    Estructuras y bucles
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructuras y bucles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura-condicional-if" class="md-nav__link">
+    Estructura condicional: if
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estructura-condicional-switch" class="md-nav__link">
+    Estructura condicional: switch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bucle-while" class="md-nav__link">
+    Bucle while
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bucle-for" class="md-nav__link">
+    Bucle: for
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bucle-for-con-contador" class="md-nav__link">
+    Bucle: for con contador
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manejo-de-errores" class="md-nav__link">
+    Manejo de errores
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buenas-practicas" class="md-nav__link">
+    Buenas prácticas
+  </a>
+  
+    <nav class="md-nav" aria-label="Buenas prácticas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-strict" class="md-nav__link">
+    'use strict'
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables_1" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errores" class="md-nav__link">
+    Errores
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otras" class="md-nav__link">
+    Otras
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clean-code" class="md-nav__link">
+    Clean Code
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="1-sintaxis">1. Sintaxis<a class="headerlink" href="#1-sintaxis" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="#1-sintaxis">1. Sintaxis</a></li>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#tipos-de-datos-básicos">Tipos de datos básicos</a><ul>
+<li><a href="#casting-de-variables"><em>Casting</em> de variables</a></li>
+<li><a href="#number">Number</a></li>
+<li><a href="#string">String</a></li>
+<li><a href="#template-literals">Template literals</a></li>
+<li><a href="#boolean">Boolean</a></li>
+</ul>
+</li>
+<li><a href="#funciones">Funciones</a><ul>
+<li><a href="#parámetros">Parámetros</a></li>
+<li><a href="#funciones-anónimas">Funciones anónimas</a></li>
+<li><a href="#arrow-functions-funciones-lambda">Arrow functions (funciones <em>lambda</em>)</a></li>
+</ul>
+</li>
+<li><a href="#estructuras-y-bucles">Estructuras y bucles</a><ul>
+<li><a href="#estructura-condicional-if">Estructura condicional: if</a></li>
+<li><a href="#estructura-condicional-switch">Estructura condicional: switch</a></li>
+<li><a href="#bucle-while">Bucle <em>while</em></a></li>
+<li><a href="#bucle-for">Bucle: for</a></li>
+<li><a href="#bucle-for-con-contador">Bucle: for con contador</a></li>
+<li><a href="#bucle-forin">Bucle: for...in</a></li>
+<li><a href="#bucle-forof">Bucle: for...of</a></li>
+</ul>
+</li>
+<li><a href="#manejo-de-errores">Manejo de errores</a></li>
+<li><a href="#buenas-prácticas">Buenas prácticas</a><ul>
+<li><a href="#use-strict">'use strict'</a></li>
+<li><a href="#variables-1">Variables</a></li>
+<li><a href="#errores">Errores</a></li>
+<li><a href="#otras">Otras</a></li>
+</ul>
+</li>
+<li><a href="#clean-code">Clean Code</a></li>
+</ul>
+<h2 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h2>
+<p>Javascript es un lenguaje <strong>débilmente tipado</strong>. Esto significa que no se indica de qué tipo es una variable al declararla e incluso puede cambiar su tipo a lo largo de la ejecución del programa. </p>
+<p>Ejemplo:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">miVariable</span><span class="p">;</span><span class="w">          </span><span class="c1">// declaro miVariable y como no se asigno un valor valdrá undefined</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nx">miVariable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hola&#39;</span><span class="p">;</span><span class="w">     </span><span class="c1">// ahora su valor es &#39;Hola&#39;, por tanto contiene una cadena de texto</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nx">miVariable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">34</span><span class="p">;</span><span class="w">         </span><span class="c1">// pero ahora contiene un número</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nx">miVariable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">45</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">];</span><span class="w"> </span><span class="c1">// y ahora un array</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nx">miVariable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span><span class="w">  </span><span class="c1">// para volver a valer el valor especial undefined</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">EJERCICIO:</p>
+<p>Ejecuta en la consola del navegador las instrucciones anteriores y comprueba el valor de <code>miVariable</code> tras cada instrucción (para ver el valor de una variable simplemente ponemos en la consola su nombre: <code>miVariable</code>)</p>
+</div>
+<p>Ni siquiera estamos obligados a declarar una variable antes de usarla, aunque es recomendable para evitar errores que nos costará depurar. Podemos hacer que se produzca un error si no declaramos una variable incluyendo al principio de nuestro código la instrucción</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="s1">&#39;use strict&#39;</span>
+</code></pre></div>
+<p>Las variables de declaran con <strong><code>let</code></strong> (lo recomendado desde ES2015), aunque también pueden declararse con <strong><code>var</code></strong>. La diferencia es que con <em><code>let</code></em> la variable sólo existe en el bloque en que se declara mientras que con <em><code>var</code></em> la variable existe en toda la función en que se declara:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span>
+<span class="normal"><a href="#__codelineno-2-8">8</a></span>
+<span class="normal"><a href="#__codelineno-2-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">edad</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">18</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">textoLet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Eres mayor de edad&#39;</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">textoVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Eres mayor de edad&#39;</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">textoLet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Eres menor de edad&#39;</span><span class="p">;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">textoVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Eres menor de edad&#39;</span><span class="p">;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="p">}</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">textoLet</span><span class="p">);</span><span class="w">  </span><span class="c1">// mostrará undefined porque fuera del if no existe la variable</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">textoVar</span><span class="p">);</span><span class="w">  </span><span class="c1">// mostrará la cadena</span>
+</code></pre></div></td></tr></table></div>
+<p>Cualquier variable que no se declara dentro de una función (o si se usa sin declarar) es <em>global</em>. Debemos siempre intentar NO usar variables globales.</p>
+<p>Se recomienda que los nombres de las variables sigan la sintaxis <em>camelCase</em> (ej.: <em>miPrimeraVariable</em>).</p>
+<p>Desde ES2015 también podemos declarar constantes con <strong><code>const</code></strong>. Se les debe dar un valor al declararlas y si intentamos modificarlo posteriorment se produce un error.</p>
+<div class="admonition info">
+<p class="admonition-title">NOTA:</p>
+<p>en la página de <a href="https://babeljs.io/">Babel</a> podemos teclear código en ES2015 y ver cómo quedaría una vez transpilado a ES5.</p>
+</div>
+<h2 id="tipos-de-datos-basicos">Tipos de datos básicos<a class="headerlink" href="#tipos-de-datos-basicos" title="Permanent link">&para;</a></h2>
+<p>Para saber de qué tipo es el valor de una variable tenemos el operador <strong>typeof</strong>. Ej.:</p>
+<ul>
+<li><code>typeof 3</code> devuelve <em>number</em></li>
+<li><code>typeof 'Hola'</code> devuelve <em>string</em></li>
+</ul>
+<p>En Javascript hay 2 valores especiales:</p>
+<ul>
+<li><strong>undefined</strong>: es lo que vale una variable a la que no se ha asignado ningún valor</li>
+<li><strong>null</strong>: es un tipo de valor especial que podemos asignar a una variable. Es como un objeto vacío (<code>typeof null</code> devuelve <em>object</em>)</li>
+</ul>
+<p>También hay otros valores especiales relacionados con operaciones con números:</p>
+<ul>
+<li><strong>NaN</strong> (<em>Not a Number</em>): indica que el resultado de la operación no puede ser convertido a un número (ej. <code>'Hola'*2</code>, aunque <code>'2'*2</code> daría 4 ya que se convierte la cadena '2' al número 2)</li>
+<li><strong>Infinity</strong> y <strong>-Infinity</strong>: indica que el resultado es demasiado grande o demasiado pequeño (ej. <code>1/0</code> o <code>-1/0</code>)</li>
+</ul>
+<h3 id="casting-de-variables"><em>Casting</em> de variables<a class="headerlink" href="#casting-de-variables" title="Permanent link">&para;</a></h3>
+<p>Como hemos dicho las variables pueden contener cualquier tipo de valor y, en las operaciones, Javascript realiza <strong>automáticamente</strong> las conversiones necesarias para, si es posible, realizar la operación. Por ejemplo:</p>
+<ul>
+<li><code>'4' / 2</code> devuelve 2 (convierte '4' en 4 y realiza la operación)</li>
+<li><code>'23' - null</code> devuelve 0 (hace 23 - 0)</li>
+<li><code>'23' - undefined</code> devuelve <em>NaN</em> (no puede convertir undefined a nada así que no puede hacer la operación)</li>
+<li><code>'23' * true</code> devuelve 23 (23 * 1)</li>
+<li><code>'23' * 'Hello'</code> devuelve <em>NaN</em> (no puede convertir 'Hello')</li>
+<li><code>23 + 'Hello'</code> devuelve '23Hello' (+ es el operador de concatenación así que convierte 23 a '23' y los concatena)</li>
+<li><code>23 + '23'</code> devuelve 2323 (OJO, convierte 23 a '23', no al revés)</li>
+</ul>
+<p>Además comentar que en Javascript todo son ojetos por lo que todo tiene métodos y propiedades. Veamos brevemente los tipos de datos básicos.</p>
+<div class="admonition note">
+<p class="admonition-title">EJERCICIO:</p>
+<p>Prueba en la consola las operaciones anteriores y alguna más con la que tengas dudas de qué devolverá</p>
+</div>
+<h3 id="number">Number<a class="headerlink" href="#number" title="Permanent link">&para;</a></h3>
+<p>Sólo hay 1 tipo de números, no existen enteros y decimales. El tipo de dato para cualquier número es <strong>number</strong>. El carácter para la coma decimal es el <strong>.</strong> (como en inglés, así que 23,12 debemos escribirlo como 23.12).</p>
+<p>Tenemos los operadores aritméticos <strong>+</strong>, <strong>-</strong>, <strong>*</strong>, <strong>/</strong> y <strong>%</strong> y los unarios <strong>++</strong> y <strong>--</strong> y existen los valores especiales <strong>Infinity</strong> y <strong>-Infinity</strong> (<code>23 / 0</code> no produce un error sino que devuelve <em>Infinity</em>).</p>
+<p>Podemos usar los operadores artméticos junto al operador de asignación <strong>=</strong> (+=, -=, *=, /= y %=).</p>
+<p>Algunos métodos útiles de los números son:</p>
+<ul>
+<li><strong>.toFixed(num)</strong>: redondea el número a los decimales indicados. Ej. <code>23.2376.toFixed(2)</code> devuelve 23.24</li>
+<li><strong>.toLocaleString()</strong>: devuelve el número convertido al formato local. Ej. <code>23.76.toLocaleString()</code> devuelve '23,76' (convierte el punto decimal en coma)</li>
+</ul>
+<p>Podemos forzar la conversión a número con la función <strong>Number(valor)</strong>. Ejemplo <code>Number('23.12')</code>devuelve 23.12</p>
+<p>Otras funciones útiles son:</p>
+<ul>
+<li><strong>isNaN(valor)</strong>: nos dice si el valor pasado es un número (false) o no (true)</li>
+<li><strong>isFinite(valor)</strong>: devuelve <em>true</em> si el valor es finito (no es <em>Infinity</em> ni <em>-Infinity</em>). </li>
+<li>
+<p><strong>parseInt(valor)</strong>: convierte el valor pasado a un número entero. Siempre que compience por un número la conversión se podrá hacer. Ej.:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">parseInt</span><span class="p">(</span><span class="mf">3.65</span><span class="p">)</span><span class="w">      </span><span class="c1">// Devuelve 3</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">parseInt</span><span class="p">(</span><span class="s1">&#39;3.65&#39;</span><span class="p">)</span><span class="w">    </span><span class="c1">// Devuelve 3</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">parseInt</span><span class="p">(</span><span class="s1">&#39;3 manzanas&#39;</span><span class="p">)</span><span class="w">    </span><span class="c1">// Devuelve 3, Number devolvería NaN</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>parseFloat(valor)</strong>: como la anterior pero conserva los decimales</p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">OJO:</p>
+<p>al sumar floats podemos tener problemas:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">0.1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.2</span><span class="p">)</span><span class="w">    </span><span class="c1">// imprime 0.30000000000000004</span>
+</code></pre></div>
+</div>
+<p>Para evitarlo redondead los resultados (o <code>(0.1*10 + 0.2*10) / 10</code>).</p>
+<div class="admonition note">
+<p class="admonition-title">EJERCICIO:</p>
+<p>Modifica la funciónque quieras de calcular la nota media para que devuelva la media con 1 decimal</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">EJERCICIO:</p>
+<p>Modifica la función que devuelve el cubo de un número para que compruebe si el parámetro pasado es un número entero. Si no es un entero o no es un número mostrará un alert indicando cuál es el problema yndevolverá false.</p>
+</div>
+<h3 id="string">String<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
+<p>Las cadenas de texto van entre comillas simples o dobles, es indiferente. Podemos escapar un caràcter con <code>\</code> (ej. <code>'Hola \'Mundo\''</code> devuelve <em>Hola 'Mundo'</em>).</p>
+<p>Para forzar la conversión a cadena se usa la función <strong><code>String(value)</code></strong> (ej. <code>String(23)</code> devuelve '23')</p>
+<p>El operador de concatenación de cadenas es <strong><code>+</code></strong>. Ojo porque si pedimos un dato con <em>prompt</em> siempre devuelve una cadena así que si le pedimos la edad al usuario (por ejemplo 20) y se sumamos 10 tendremos 2010 ('20'+10).</p>
+<p>Algunos métodos y propiedades de las cadenas son:</p>
+<ul>
+<li><strong><code>.length</code></strong>: devuelve la longitud de una cadena. Ej.: <code>'Hola mundo'.length</code> devuelve 10</li>
+<li><strong><code>.charAt(position)</code></strong>: <code>'Hola mundo'.charAt(0)</code> devuelve 'H'</li>
+<li><strong><code>.indexOf(character)</code></strong>: <code>'Hola mundo'.indexOf('o')</code> devuelve 1. Si no se encuentra devuelve -1</li>
+<li><strong><code>.lastIndexOf(character)</code></strong>: <code>'Hola mundo'.lastIndexOf('o')</code> devuelve 9</li>
+<li><strong><code>.substring(from, to)</code></strong>: <code>'Hola mundo'.substring(2,4)</code> devuelve 'la'</li>
+<li><strong><code>.substr(from, num chars)</code></strong>: <code>'Hola mundo'.substr(2,4)</code> devuelve 'la m'</li>
+<li><strong><code>.replace(search, replace)</code></strong>: <code>'Hola mundo'.replace('Hola', 'Adiós')</code> devuelve 'Adiós mundo'</li>
+<li><strong><code>.toLocaleLowerCase()</code></strong>: <code>'Hola mundo'.toLocaleLowerCase()</code> devuelve 'hola mundo'</li>
+<li><strong><code>.toLocaleUpperCase()</code></strong>: <code>'Hola mundo'.toLocaleUpperCase()</code> devuelve 'HOLA MUNDO'</li>
+<li><strong><code>.localeCompare(string)</code></strong>: devuelve -1 si la cadena a que se aplica el método es anterior alfabéticamente a 'cadena', 1 si es posterior y 0 si ambas son iguales. Tiene en cuenta caracteres locales como acentos ñ, ç, etc</li>
+<li><strong><code>.trim(string)</code></strong>: <code>'   Hola mundo   '.trim()</code> devuelve 'Hola mundo'</li>
+<li><strong><code>.startsWith(string)</code></strong>: <code>'Hola mundo'.startsWith('Hol')</code> devuelve <em>true</em></li>
+<li><strong><code>.endsWith(string)</code></strong>: <code>'Hola mundo'.endsWith('Hol')</code> devuelve <em>false</em></li>
+<li><strong><code>.includes(string)</code></strong>: <code>'Hola mundo'.includes('mun')</code> devuelve <em>true</em></li>
+<li><strong><code>.repeat(times)</code></strong>: <code>'Hola mundo'.repeat(3)</code> devuelve 'Hola mundoHola mundoHola mundo'</li>
+<li><strong><code>.split(separator)</code></strong>: <code>'Hola mundo'.split(' ')</code> devuelve el array ['Hola', 'mundo']. <code>'Hola mundo'.split('')</code> devuelve el array ['H', 'o', 'l', 'a', ' ', 'm', 'u', 'n', 'd', 'o']</li>
+</ul>
+<p>Podemos probar los diferentes métodos en la página de <a href="https://www.w3schools.com/jsref/jsref_obj_string.asp">w3schools</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">EJERCICIO:</p>
+<p>Haz una función a la que se le pasa un DNI (ej. 12345678w o 87654321T) y devolverá si es correcto o no. La letra que debe corresponder a un DNI correcto se obtiene dividiendo la parte numérica entre 23 y cogiendo de la cadena 'TRWAGMYFPDXBNJZSQVHLCKE' la letra correspondiente al resto de la divisón. Por ejemplo, si el resto es 0 la letra será la T y si es 4 será la G. Prueba la función en la consola con tu DNI</p>
+</div>
+<h4 id="template-literals">Template literals<a class="headerlink" href="#template-literals" title="Permanent link">&para;</a></h4>
+<p>Desde ES2015 también podemos poner una cadena entre <strong>`</strong> (acento grave) y en ese caso podemos poner dentro variables y expresiones que serán evaluadas al ponerlas dentro de <strong>${}</strong>. También se respetan los saltos de línea, tabuladores, etc que haya dentro. Ejemplo:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">edad</span><span class="o">=</span><span class="mf">25</span><span class="p">;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">\</span><span class="sb">`El usuario tiene:</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="si">${</span><span class="nx">edad</span><span class="si">}</span><span class="sb"> años\`) </span>
+</code></pre></div></td></tr></table></div>
+Mostrará en la consola:</p>
+<blockquote>
+<p>El usuario tiene:</p>
+<p>25 años</p>
+</blockquote>
+<h3 id="boolean">Boolean<a class="headerlink" href="#boolean" title="Permanent link">&para;</a></h3>
+<p>Los valores booleanos son <strong>true</strong> y <strong>false</strong>. Para convertir algo a booleano se usar <strong>Boolean(valor)</strong> aunque también puede hacerse con la doble negación (<strong>!!</strong>). Cualquier valor se evaluará a <em>true</em> excepto 0, NaN, null, undefined o una cadena vacía ('') que se evaluarán a <em>false</em>.</p>
+<p>Los operadores lógicos son ! (negación), &amp;&amp; (and), || (or).</p>
+<p>Para comparar valores tenemos <strong><mark><strong> y </strong>=</mark></strong>. La triple igualdad devuelve <em>true</em> si son igual valor y del mismo tipo. Como Javascript hace conversiones de tipos automáticas conviene usar la <strong>===</strong> para evitar cosas como:</p>
+<ul>
+<li><code>'3' == 3</code> true</li>
+<li><code>3 == 3.0</code> true</li>
+<li><code>0 == false</code> true</li>
+<li><code>'' == false</code> true</li>
+<li><code>' ' == false</code> true</li>
+<li><code>[] == false</code> true</li>
+<li><code>null == false</code> false</li>
+<li><code>undefined == false</code> false</li>
+<li><code>undefined == null</code> true</li>
+</ul>
+<p>También tenemos 2 operadores de <em>diferente</em>: <strong>!=</strong> y <strong>!==</strong> que se comportan como hemos dicho antes.</p>
+<p>Los operadores relacionales son &gt;, &gt;=, &lt;, &lt;=. Cuando se compara un número y una cadena ésta se convierte a número y no al revés (<code>23 &gt; '5'</code> devuelve <em>true</em>, aunque <code>'23' &gt; '5'</code> devuelve <em>false</em>) </p>
+<h2 id="funciones">Funciones<a class="headerlink" href="#funciones" title="Permanent link">&para;</a></h2>
+<p>Se declaran con <strong>function</strong> y se les pasan los parámetros entre paréntesis. La función puede devolver un valor usando <strong>return</strong> (si no tiene <em>return</em> es como si devolviera <em>undefined</em>). </p>
+<p>Puede usarse una función antes de haberla declarado por el comportamiento de Javascript llamado <em>hoisting</em>: el navegador primero carga todas las funciones y mueve las declaraciones de las variables al principio y luego ejecuta el código.</p>
+<div class="admonition note">
+<p class="admonition-title">EJERCICIO:</p>
+<p>Haz una función que te pida que escribas algo y muestre un alert diciendo 'Has escrito...' y el valor introducido. Pruébala en la consola (pegas allí la función y luego la llamas desde la consola)</p>
+</div>
+<h3 id="parametros">Parámetros<a class="headerlink" href="#parametros" title="Permanent link">&para;</a></h3>
+<p>Si se llama una función con menos parámetros de los declarados el valor de los parámetros no pasados será <em>undefined</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">potencia</span><span class="p">(</span><span class="nx">base</span><span class="p">,</span><span class="w"> </span><span class="nx">exponente</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">base</span><span class="p">);</span><span class="w">            </span><span class="c1">// muestra 4</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">exponente</span><span class="p">);</span><span class="w">       </span><span class="c1">// muestra undefined</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">valor</span><span class="o">=</span><span class="mf">1</span><span class="p">;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="o">=</span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">&lt;=</span><span class="nx">exponente</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">      </span><span class="nx">valor</span><span class="o">=</span><span class="nx">valor</span><span class="o">*</span><span class="nx">base</span><span class="p">;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">valor</span><span class="p">;</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="p">}</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="nx">potencia</span><span class="p">(</span><span class="mf">4</span><span class="p">);</span><span class="w">    </span><span class="c1">// devolverá 1 ya que no se ejecuta el for</span>
+</code></pre></div></td></tr></table></div>
+<p>Podemos dar un <strong>valor por defecto</strong> a los parámetros por si no los pasan asignándoles el valor al definirlos:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">potencia</span><span class="p">(</span><span class="nx">base</span><span class="p">,</span><span class="w"> </span><span class="nx">exponente</span><span class="o">=</span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">base</span><span class="p">);</span><span class="w">            </span><span class="c1">// muestra 4</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">exponente</span><span class="p">);</span><span class="w">       </span><span class="c1">// muestra 2 la primera vez y 5 la segunda</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">valor</span><span class="o">=</span><span class="mf">1</span><span class="p">;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="o">=</span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">&lt;=</span><span class="nx">exponente</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">      </span><span class="nx">valor</span><span class="o">=</span><span class="nx">valor</span><span class="o">*</span><span class="nx">base</span><span class="p">;</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">valor</span><span class="p">;</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="p">}</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">potencia</span><span class="p">(</span><span class="mf">4</span><span class="p">));</span><span class="w">         </span><span class="c1">// mostrará 16 (4^2)</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">potencia</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">));</span><span class="w">       </span><span class="c1">// mostrará 1024 (4^5)</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition info">
+<p class="admonition-title">NOTA:</p>
+<p>En ES5 para dar un valor por defecto a una variable se hacía
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">potencia</span><span class="p">(</span><span class="nx">base</span><span class="p">,</span><span class="w"> </span><span class="nx">exponente</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nx">exponente</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">exponente</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w">       </span><span class="c1">// si exponente vale undefined se la asigna el valor 2</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="p">...</span>
+</code></pre></div></p>
+</div>
+<p>También es posible acceder a los parámetros desde el array <strong>arguments[]</strong> si no sabemos cuántos recibiremos:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span>
+<span class="normal"><a href="#__codelineno-9-7">7</a></span>
+<span class="normal"><a href="#__codelineno-9-8">8</a></span>
+<span class="normal"><a href="#__codelineno-9-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">suma</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">        </span><span class="nx">result</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">result</span><span class="p">;</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="p">}</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">suma</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">));</span><span class="w">                    </span><span class="c1">// mostrará 6</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">suma</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">));</span><span class="w">     </span><span class="c1">// mostrará 20</span>
+</code></pre></div></td></tr></table></div>
+<p>En Javascript las funciones son un tipo de datos más por lo que podemos hacer cosas como pasarlas por argumento o asignarlas a una variable:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span>
+<span class="normal"><a href="#__codelineno-10-7">7</a></span>
+<span class="normal"><a href="#__codelineno-10-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">cuadrado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">value</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="p">}</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="kd">function</span><span class="w"> </span><span class="nx">aplica_fn</span><span class="p">(</span><span class="nx">dato</span><span class="p">,</span><span class="w"> </span><span class="nx">funcion_a_aplicar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">funcion_a_aplicar</span><span class="p">(</span><span class="nx">dato</span><span class="p">);</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="p">}</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="nx">aplica_fn</span><span class="p">(</span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="nx">cuadrado</span><span class="p">);</span><span class="w">     </span><span class="c1">// devolverá 9 (3^2)</span>
+</code></pre></div></td></tr></table></div>
+<p>A este tipo de funciones se llama <em>funciones de primera clase</em> y son típicas de lenguajes funcionales.</p>
+<h3 id="funciones-anonimas">Funciones anónimas<a class="headerlink" href="#funciones-anonimas" title="Permanent link">&para;</a></h3>
+<p>Como acabamos de ver podemos definir una función sin darle un nombre. Dicha función puede asignarse a una variable, autoejecutarse o asignarse a un manejador de eventos. Ejemplo:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span>
+<span class="normal"><a href="#__codelineno-11-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">holaMundo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Hola mundo!&#39;</span><span class="p">);</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="p">}</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="nx">holaMundo</span><span class="p">();</span><span class="w">        </span><span class="c1">// se ejecuta la función</span>
+</code></pre></div></td></tr></table></div>
+<p>Como vemos asignamos una función a una variable de forma que podamos "ejecutar" dicha variable.</p>
+<h3 id="arrow-functions-funciones-lambda">Arrow functions (funciones <em>lambda</em>)<a class="headerlink" href="#arrow-functions-funciones-lambda" title="Permanent link">&para;</a></h3>
+<p>ES2015 permite declarar una función anónima de forma más corta. Ejemplo sin <em>arrow function</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span>
+<span class="normal"><a href="#__codelineno-12-4">4</a></span>
+<span class="normal"><a href="#__codelineno-12-5">5</a></span>
+<span class="normal"><a href="#__codelineno-12-6">6</a></span>
+<span class="normal"><a href="#__codelineno-12-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">potencia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">base</span><span class="p">,</span><span class="w"> </span><span class="nx">exponente</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">valor</span><span class="o">=</span><span class="mf">1</span><span class="p">;</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="o">=</span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">&lt;=</span><span class="nx">exponente</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="w">      </span><span class="nx">valor</span><span class="o">=</span><span class="nx">valor</span><span class="o">*</span><span class="nx">base</span><span class="p">;</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">valor</span><span class="p">;</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Al escribirla con la sintaxis de una <em>arrow function</em> lo que hacemos es:</p>
+<ul>
+<li>Eliminamos la palabra <em><code>function</code></em></li>
+<li>Si sólo tiene 1 parámetro podemos eliminar los paréntesis de los parámetros</li>
+<li>Ponemos el símbolo <em><code>=&gt;</code></em></li>
+<li>Si la función sólo tiene 1 línea podemos eliminar las <code>{ }</code> y la palabra <em><code>return</code></em></li>
+</ul>
+<p>El ejemplo con <em>arrow function</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span>
+<span class="normal"><a href="#__codelineno-13-4">4</a></span>
+<span class="normal"><a href="#__codelineno-13-5">5</a></span>
+<span class="normal"><a href="#__codelineno-13-6">6</a></span>
+<span class="normal"><a href="#__codelineno-13-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">potencia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">base</span><span class="p">,</span><span class="w"> </span><span class="nx">exponente</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">valor</span><span class="o">=</span><span class="mf">1</span><span class="p">;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="o">=</span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">&lt;=</span><span class="nx">exponente</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">      </span><span class="nx">valor</span><span class="o">=</span><span class="nx">valor</span><span class="o">*</span><span class="nx">base</span><span class="p">;</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">valor</span><span class="p">;</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Otro ejemplo, sin <em>arrow function</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span>
+<span class="normal"><a href="#__codelineno-14-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">cuadrado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">base</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">base</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">base</span><span class="p">;</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>con <em>arrow function</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">cuadrado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">base</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">base</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">base</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">EJERCICIO:</p>
+<p>Haz una <em>arrow function</em> que devuelva el cubo del número pasado como parámetro y pruébala desde la consola. Escríbela primero en la forma habitual y luego la "traduces" a <em>arrow function</em>.</p>
+</div>
+<h2 id="estructuras-y-bucles">Estructuras y bucles<a class="headerlink" href="#estructuras-y-bucles" title="Permanent link">&para;</a></h2>
+<h3 id="estructura-condicional-if">Estructura condicional: if<a class="headerlink" href="#estructura-condicional-if" title="Permanent link">&para;</a></h3>
+<p>El <strong>if</strong> es como en la mayoría de lenguajes. Puede tener asociado un <strong>else</strong> y pueden anidarse varios con <strong>else if</strong>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">condicion</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">condicion2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">condicion3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="p">}</span>
+</code></pre></div>
+<p>Ejemplo:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span>
+<span class="normal"><a href="#__codelineno-17-4">4</a></span>
+<span class="normal"><a href="#__codelineno-17-5">5</a></span>
+<span class="normal"><a href="#__codelineno-17-6">6</a></span>
+<span class="normal"><a href="#__codelineno-17-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">edad</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">18</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Es menor de edad&#39;</span><span class="p">);</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">edad</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">65</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Está jubilado&#39;</span><span class="p">);</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Edad correcta&#39;</span><span class="p">);</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Se puede usar el operador <strong>? :</strong> que es como un <em>if</em> que devuelve un valor:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">esMayorDeEdad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">edad</span><span class="o">&gt;</span><span class="mf">18</span><span class="p">)</span><span class="o">?</span><span class="kc">true</span><span class="o">:</span><span class="kc">false</span><span class="p">;</span>
+</code></pre></div></p>
+<h3 id="estructura-condicional-switch">Estructura condicional: switch<a class="headerlink" href="#estructura-condicional-switch" title="Permanent link">&para;</a></h3>
+<p>El <strong>switch</strong> también es como en la mayoría de lenguajes. Hay que poner <em>break</em> al final de cada bloque para que no continúe evaluando:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-19-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-19-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-19-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-19-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-19-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-19-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-19-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-19-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-19-10">10</a></span>
+<span class="normal"><a href="#__codelineno-19-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="k">switch</span><span class="p">(</span><span class="nx">color</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s1">&#39;blanco&#39;</span><span class="o">:</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s1">&#39;amarillo&#39;</span><span class="o">:</span><span class="w">    </span><span class="c1">// Ambos colores entran aquí</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="w">        </span><span class="nx">colorFondo</span><span class="o">=</span><span class="s1">&#39;azul&#39;</span><span class="p">;</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s1">&#39;azul&#39;</span><span class="o">:</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7"></a><span class="w">        </span><span class="nx">colorFondo</span><span class="o">=</span><span class="s1">&#39;amarillo&#39;</span><span class="p">;</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8"></a><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9"></a><span class="w">    </span><span class="k">default</span><span class="o">:</span><span class="w">            </span><span class="c1">// Para cualquier otro valor</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10"></a><span class="w">        </span><span class="nx">colorFondo</span><span class="o">=</span><span class="s1">&#39;negro&#39;</span><span class="p">;</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Javascript permite que el <em>switch</em> en vez de evaluar valores pueda evaluar expresiones. En este caso se pone como condición <em>true</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-20-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-20-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-20-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-20-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-20-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-20-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-20-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-20-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-20-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="k">switch</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">18</span><span class="o">:</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Eres muy joven para entrar&#39;</span><span class="p">);</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">65</span><span class="o">:</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Puedes entrar&#39;</span><span class="p">);</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7"></a><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8"></a><span class="w">    </span><span class="k">default</span><span class="o">:</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Eres muy mayor para entrar&#39;</span><span class="p">);</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="bucle-while">Bucle <em>while</em><a class="headerlink" href="#bucle-while" title="Permanent link">&para;</a></h3>
+<p>Podemos usar el bucle <em>while...do</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">condicion</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">    </span><span class="c1">// sentencias</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="p">}</span>
+</code></pre></div>
+<p>que se ejecutará 0 o más veces. Ejemplo:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<span class="normal"><a href="#__codelineno-22-2">2</a></span>
+<span class="normal"><a href="#__codelineno-22-3">3</a></span>
+<span class="normal"><a href="#__codelineno-22-4">4</a></span>
+<span class="normal"><a href="#__codelineno-22-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">nota</span><span class="o">=</span><span class="nx">prompt</span><span class="p">(</span><span class="s1">&#39;Introduce una nota (o cancela para finalizar)&#39;</span><span class="p">);</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">nota</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;La nota introducida es: &#39;</span><span class="o">+</span><span class="nx">nota</span><span class="p">);</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="w">    </span><span class="nx">nota</span><span class="o">=</span><span class="nx">prompt</span><span class="p">(</span><span class="s1">&#39;Introduce una nota (o cancela para finalizar)&#39;</span><span class="p">);</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>O el bucle <em>do...while</em>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span><span class="c1">// sentencias</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">condicion</span><span class="p">)</span>
+</code></pre></div>
+<p>que al menos se ejecutará 1 vez. Ejemplo:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
+<span class="normal"><a href="#__codelineno-24-2">2</a></span>
+<span class="normal"><a href="#__codelineno-24-3">3</a></span>
+<span class="normal"><a href="#__codelineno-24-4">4</a></span>
+<span class="normal"><a href="#__codelineno-24-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">nota</span><span class="p">;</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="w">    </span><span class="nx">nota</span><span class="o">=</span><span class="nx">prompt</span><span class="p">(</span><span class="s1">&#39;Introduce una nota (o cancela para finalizar)&#39;</span><span class="p">);</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;La nota introducida es: &#39;</span><span class="o">+</span><span class="nx">nota</span><span class="p">);</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">nota</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">EJERCICIO:</p>
+<p>Haz un programa para que el usuario juegue a adivinar un número. Obtén un número al azar (busca por internet cómo se hace o simplemente guarda el número que quieras en una variable) y ve pidiendo al usuario que introduzca un número. Si es el que busca le dices que lo ha encontrado y si no le mostrarás si el número que busca el mayor o menor que el introducido. El juego acaba cuando el usuario encuentra el número o cuando pulsa en 'Cancelar' (en ese caso le mostraremos un mensaje de que ha cancelado el juego).</p>
+</div>
+<h3 id="bucle-for">Bucle: for<a class="headerlink" href="#bucle-for" title="Permanent link">&para;</a></h3>
+<p>Tenemos muchos <em>for</em> que podemos usar.</p>
+<h3 id="bucle-for-con-contador">Bucle: for con contador<a class="headerlink" href="#bucle-for-con-contador" title="Permanent link">&para;</a></h3>
+<p>Creamos una variable contador que controla las veces que se ejecuta el for:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
+<span class="normal"><a href="#__codelineno-25-2">2</a></span>
+<span class="normal"><a href="#__codelineno-25-3">3</a></span>
+<span class="normal"><a href="#__codelineno-25-4">4</a></span>
+<span class="normal"><a href="#__codelineno-25-5">5</a></span>
+<span class="normal"><a href="#__codelineno-25-6">6</a></span>
+<span class="normal"><a href="#__codelineno-25-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">datos</span><span class="o">=</span><span class="p">[</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">23</span><span class="p">,</span><span class="w"> </span><span class="mf">12</span><span class="p">,</span><span class="w"> </span><span class="mf">85</span><span class="p">]</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">sumaDatos</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3"></a>
+<a id="__codelineno-25-4" name="__codelineno-25-4"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">datos</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5"></a><span class="w">    </span><span class="nx">sumaDatos</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">datos</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6"></a><span class="p">}</span><span class="w">  </span>
+<a id="__codelineno-25-7" name="__codelineno-25-7"></a><span class="c1">// El valor de sumaDatos será 125</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">EJERCICIO:</p>
+<p>El factorial de un número entero n es una operación matemática que consiste en multiplicar ese número por todos los enteros menores que él: <strong>n x (n-1) x (n-2) x ... x 1</strong>. Así, el factorial de 5 (se escribe 5!) vale <strong>5! = 5 x 4 x 3 x 2 x 1 = 120</strong>. Haz un script que calcule el factorial de un número entero.</p>
+</div>
+<h4 id="bucle-forin">Bucle: for...in<a class="headerlink" href="#bucle-forin" title="Permanent link">&para;</a></h4>
+<p>El bucle se ejecuta una vez para cada elemento del array (o propiedad del objeto) y se crea una variable contador que toma como valores la posición del elemento en el array:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
+<span class="normal"><a href="#__codelineno-26-2">2</a></span>
+<span class="normal"><a href="#__codelineno-26-3">3</a></span>
+<span class="normal"><a href="#__codelineno-26-4">4</a></span>
+<span class="normal"><a href="#__codelineno-26-5">5</a></span>
+<span class="normal"><a href="#__codelineno-26-6">6</a></span>
+<span class="normal"><a href="#__codelineno-26-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">datos</span><span class="o">=</span><span class="p">[</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">23</span><span class="p">,</span><span class="w"> </span><span class="mf">12</span><span class="p">,</span><span class="w"> </span><span class="mf">85</span><span class="p">]</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">sumaDatos</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3"></a>
+<a id="__codelineno-26-4" name="__codelineno-26-4"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">indice</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">datos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="w">    </span><span class="nx">sumaDatos</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">datos</span><span class="p">[</span><span class="nx">indice</span><span class="p">];</span><span class="w">     </span><span class="c1">// los valores que toma indice son 0, 1, 2, 3</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6"></a><span class="p">}</span><span class="w">  </span>
+<a id="__codelineno-26-7" name="__codelineno-26-7"></a><span class="c1">// El valor de sumaDatos será 125</span>
+</code></pre></div></td></tr></table></div>
+<p>También sirve para recorrer las propiedades de un objeto:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-27-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-27-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-27-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-27-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-27-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-27-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-27-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-27-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-27-10">10</a></span>
+<span class="normal"><a href="#__codelineno-27-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">profe</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2"></a><span class="w">    </span><span class="nx">nom</span><span class="o">:</span><span class="s1">&#39;Juan&#39;</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-27-3" name="__codelineno-27-3"></a><span class="w">    </span><span class="nx">ape1</span><span class="o">=</span><span class="s1">&#39;Pla&#39;</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-27-4" name="__codelineno-27-4"></a><span class="w">    </span><span class="nx">ape2</span><span class="o">=</span><span class="s1">&#39;Pla&#39;</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5"></a><span class="p">}</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6"></a><span class="kd">let</span><span class="w"> </span><span class="nx">nombre</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7"></a>
+<a id="__codelineno-27-8" name="__codelineno-27-8"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">campo</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">profe</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-27-9" name="__codelineno-27-9"></a><span class="w">   </span><span class="nx">nombre</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">profe</span><span class="p">.</span><span class="nx">campo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// o profe[campo];</span>
+<a id="__codelineno-27-10" name="__codelineno-27-10"></a><span class="p">}</span><span class="w">  </span>
+<a id="__codelineno-27-11" name="__codelineno-27-11"></a><span class="c1">// El valor de nombre será &#39;Juan Pla Pla &#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="bucle-forof">Bucle: for...of<a class="headerlink" href="#bucle-forof" title="Permanent link">&para;</a></h4>
+<p>Es similar al <em>for...in</em> pero la variable contador en vez de tomar como valor cada índice toma cada elemento. Es nuevo en ES2015:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span>
+<span class="normal"><a href="#__codelineno-28-2">2</a></span>
+<span class="normal"><a href="#__codelineno-28-3">3</a></span>
+<span class="normal"><a href="#__codelineno-28-4">4</a></span>
+<span class="normal"><a href="#__codelineno-28-5">5</a></span>
+<span class="normal"><a href="#__codelineno-28-6">6</a></span>
+<span class="normal"><a href="#__codelineno-28-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">datos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">23</span><span class="p">,</span><span class="w"> </span><span class="mf">12</span><span class="p">,</span><span class="w"> </span><span class="mf">85</span><span class="p">]</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">sumaDatos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3"></a>
+<a id="__codelineno-28-4" name="__codelineno-28-4"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">valor</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">datos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5"></a><span class="w">    </span><span class="nx">sumaDatos</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">valor</span><span class="p">;</span><span class="w">       </span><span class="c1">// los valores que toma valor son 5, 23, 12, 85</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6"></a><span class="p">}</span><span class="w">  </span>
+<a id="__codelineno-28-7" name="__codelineno-28-7"></a><span class="c1">// El valor de sumaDatos será 125</span>
+</code></pre></div></td></tr></table></div>
+<p>También sirve para recorrer los caracteres de una cadena de texto:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span>
+<span class="normal"><a href="#__codelineno-29-2">2</a></span>
+<span class="normal"><a href="#__codelineno-29-3">3</a></span>
+<span class="normal"><a href="#__codelineno-29-4">4</a></span>
+<span class="normal"><a href="#__codelineno-29-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">cadena</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hola&#39;</span><span class="p">;</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2"></a>
+<a id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">letra</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">cadena</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">letra</span><span class="p">);</span><span class="w">     </span><span class="c1">// los valores de letra son &#39;H&#39;, &#39;o&#39;, &#39;l&#39;, &#39;a&#39;</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5"></a><span class="p">}</span><span class="w">  </span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">EJERCICIO:</p>
+<p>Haz 3 funciones a las que se le pasa como parámetro un array de notas y devuelve la nota media. Cada una usará un for de una de las 3 formas vistas. Pruébalas en la consola</p>
+</div>
+<h2 id="manejo-de-errores">Manejo de errores<a class="headerlink" href="#manejo-de-errores" title="Permanent link">&para;</a></h2>
+<p>Si sucede un error en nuestro código el programa dejará de ejecutarse por lo que el usuario tendrá la sensación de que no hace nada (el error sólo se muestra en la consola y el usuario no suele abrirla nunca). Para evitarlo debemos intentar capturar los posibles errores de nuestro código antes de que se produzcan.</p>
+<p>En javascript (como en muchos otros lenguajes) el manejo de errores se realiza con sentencias</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="p">}</span><span class="w"> </span>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="k">catch</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="p">}</span>
+</code></pre></div>
+<p>Dentro del bloque <em>try</em> ponemos el código que queremos proteger y cualquier error producido en él será pasado al bloque <em>catch</em> donde es tratado. Opcionalmente podemos tener al final un bloque <em>finally</em> que se ejecuta tanto si se produce un error como si no. El parámetro que recibe <em>catch</em> es un objeto con las propiedades <em>name</em>, que indica el tipo de error (<em>SyntaxError</em>, <em>RangeError</em>, ... o el genérico <em>Error</em>), y <em>message</em>, que indica el texto del error producido.</p>
+<p>En ocasiones podemos querer que nuestro código genere un error. Esto evita que tengamos que comprobar si el valor devuelto por una función es el adecuado o es un código de error. Por ejemplo tenemos una función para retirar dinero de una cuenta que recibe el saldo de la misma y la cantidad de dinero a retirar y devuelve el nuevo saldo, pero si no hay suficiente saldo no debería restar nada sino mostrar un mensaje al usuario. Sin gestión de errores haríamos:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-31-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-31-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-31-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-31-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-31-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-31-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-31-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-31-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-31-10">10</a></span>
+<span class="normal"><a href="#__codelineno-31-11">11</a></span>
+<span class="normal"><a href="#__codelineno-31-12">12</a></span>
+<span class="normal"><a href="#__codelineno-31-13">13</a></span>
+<span class="normal"><a href="#__codelineno-31-14">14</a></span>
+<span class="normal"><a href="#__codelineno-31-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">retirar</span><span class="p">(</span><span class="nx">saldo</span><span class="p">,</span><span class="w"> </span><span class="nx">cantidad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">saldo</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">cantidad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">saldo</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">cantidad</span>
+<a id="__codelineno-31-6" name="__codelineno-31-6"></a><span class="p">}</span><span class="w"> </span>
+<a id="__codelineno-31-7" name="__codelineno-31-7"></a>
+<a id="__codelineno-31-8" name="__codelineno-31-8"></a><span class="c1">// Y donde se llama a la función_</span>
+<a id="__codelineno-31-9" name="__codelineno-31-9"></a><span class="p">...</span>
+<a id="__codelineno-31-10" name="__codelineno-31-10"></a><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">retirar</span><span class="p">(</span><span class="nx">saldo</span><span class="p">,</span><span class="w"> </span><span class="nx">importe</span><span class="p">)</span>
+<a id="__codelineno-31-11" name="__codelineno-31-11"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">resultado</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-31-12" name="__codelineno-31-12"></a><span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Saldo insuficiente&#39;</span><span class="p">)</span>
+<a id="__codelineno-31-13" name="__codelineno-31-13"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-31-14" name="__codelineno-31-14"></a><span class="w">  </span><span class="nx">saldo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">resultado</span>
+<a id="__codelineno-31-15" name="__codelineno-31-15"></a><span class="p">...</span>
+</code></pre></div></td></tr></table></div>
+<p>Se trata de un código poco claro que podemos mejorar lanzando un error en la función. Para ello se utiliza la instrucción <code>throw</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-1">1</a></span>
+<span class="normal"><a href="#__codelineno-32-2">2</a></span>
+<span class="normal"><a href="#__codelineno-32-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">saldo</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">cantidad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2"></a><span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="s1">&#39;Saldo insuficiente&#39;</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3"></a><span class="w">  </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Por defecto al lanzar un error este será de clase <em>Error</em> pero (el código anterior es equivalente a <code>throw new Error('Valor no válido')</code>) aunque podemos lanzarlo de cualquier otra clase (<code>throw new RangeError('Saldo insuficiente')</code>) o personalizarlo.</p>
+<p>Siempre que vayamos a ejecutar código que pueda generar un error debemos ponerlo dentro de un bloque <em>try</em> por lo que la llamada a la función que contiene el código anterior debería estar dentro de un <em>try</em>. El código del ejemplo anterior quedaría:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-33-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-33-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-33-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-33-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-33-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-33-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-33-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-33-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-33-10">10</a></span>
+<span class="normal"><a href="#__codelineno-33-11">11</a></span>
+<span class="normal"><a href="#__codelineno-33-12">12</a></span>
+<span class="normal"><a href="#__codelineno-33-13">13</a></span>
+<span class="normal"><a href="#__codelineno-33-14">14</a></span>
+<span class="normal"><a href="#__codelineno-33-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">retirar</span><span class="p">(</span><span class="nx">saldo</span><span class="p">,</span><span class="w"> </span><span class="nx">cantidad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">saldo</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">cantidad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-33-3" name="__codelineno-33-3"></a><span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="s2">&quot;Saldo insuficiente&quot;</span>
+<a id="__codelineno-33-4" name="__codelineno-33-4"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-33-5" name="__codelineno-33-5"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">saldo</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">cantidad</span>
+<a id="__codelineno-33-6" name="__codelineno-33-6"></a><span class="p">}</span><span class="w"> </span>
+<a id="__codelineno-33-7" name="__codelineno-33-7"></a>
+<a id="__codelineno-33-8" name="__codelineno-33-8"></a><span class="c1">// Siempre debemos llamar a esa función desde un bloque _try_</span>
+<a id="__codelineno-33-9" name="__codelineno-33-9"></a><span class="p">...</span>
+<a id="__codelineno-33-10" name="__codelineno-33-10"></a><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-33-11" name="__codelineno-33-11"></a><span class="w">  </span><span class="nx">saldo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">retirar</span><span class="p">(</span><span class="nx">saldo</span><span class="p">,</span><span class="w"> </span><span class="nx">importe</span><span class="p">)</span>
+<a id="__codelineno-33-12" name="__codelineno-33-12"></a><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-33-13" name="__codelineno-33-13"></a><span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-33-14" name="__codelineno-33-14"></a><span class="p">}</span>
+<a id="__codelineno-33-15" name="__codelineno-33-15"></a><span class="p">...</span>
+</code></pre></div></td></tr></table></div>
+<p>Podemos ver en detalle cómo funcionan en la página de <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/try...catch">MDN web docs</a> de Mozilla.</p>
+<h2 id="buenas-practicas">Buenas prácticas<a class="headerlink" href="#buenas-practicas" title="Permanent link">&para;</a></h2>
+<p>Javascript nos permite hacer muchas cosas que otros lenguajes no nos dejan por lo que debemos ser cuidadosos para no cometer errores de los que no se nos va a avisar.</p>
+<h3 id="use-strict">'use strict'<a class="headerlink" href="#use-strict" title="Permanent link">&para;</a></h3>
+<p>Si ponemos siempre esta sentencia al principio de nuestro código el intérprete nos avisará si usamos una variale sin declarar (muchas vecees por equivocarnos al escrbir su nombre). En concreto fuerza al navegador a no permitir:
+* Usar una variable sin declarar
+* Definir más de 1 vez una propiedad de un objeto
+* Duplicar un parámetro en una función
+* Usar números en octal
+* Modificar una propiedad de sólo lectura</p>
+<h3 id="variables_1">Variables<a class="headerlink" href="#variables_1" title="Permanent link">&para;</a></h3>
+<p>Algunas de las prácticas que deberíamos seguir respecto a las variables son:</p>
+<ul>
+<li>Elegir un buen nombre es fundamental. Evitar abreviaturas o nombres sin significado (a, b, c, ...)</li>
+<li>Evitar en lo posible variables globales</li>
+<li>Usar <em>let</em> para declararlas</li>
+<li>Usar <em>const</em> siempre que una variable no deba cambiar su valor</li>
+<li>Declarar todas las variables al principio</li>
+<li>Inicializar las variables al declararlas</li>
+<li>Evitar conversiones de tipo automáticas</li>
+<li>Usar para nombrarlas la notación <em>camelCase</em></li>
+<li>Utilizar nombres en inglés siempre que sea posible</li>
+</ul>
+<p>También es conveniente, por motivos de eficiencia no usar objetos Number, String o Boolean sino los tipos primitivos (no usar <code>let numero = new Number(5)</code> sino <code>let numero = 5</code>) y lo mismo al crear arrays, objetos o expresiones regulares (no usar <code>let miArray = new Array()</code> sino <code>let miArray = []</code>).</p>
+<h3 id="errores">Errores<a class="headerlink" href="#errores" title="Permanent link">&para;</a></h3>
+<p>No se debería estar comprobando lo devuelto por una función para ver si se ha ejecutado correctamente o ha devuelto algún código de error. Si algo es erróneo no debemos devolver un código sino lanzar un error y quien ha llamado a esa función debería hacerlo dentro de un <code>try...catch</code> para capturar dicho error. Por ejemplo:
+- Mal</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-34-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-34-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-34-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-34-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-34-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-34-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-34-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-34-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-34-10">10</a></span>
+<span class="normal"><a href="#__codelineno-34-11">11</a></span>
+<span class="normal"><a href="#__codelineno-34-12">12</a></span>
+<span class="normal"><a href="#__codelineno-34-13">13</a></span>
+<span class="normal"><a href="#__codelineno-34-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">muestraDatos</span><span class="p">(</span><span class="nx">datos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2"></a><span class="w">   </span><span class="p">...</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3"></a><span class="w">   </span><span class="kd">const</span><span class="w"> </span><span class="nx">nombreMes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getNombreMes</span><span class="p">(</span><span class="nx">datos</span><span class="p">.</span><span class="nx">mes</span><span class="p">);</span>
+<a id="__codelineno-34-4" name="__codelineno-34-4"></a><span class="hll"><span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">nombreMes</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-34-5" name="__codelineno-34-5"></a><span class="hll"><span class="w">       </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;El mes &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">datos</span><span class="p">.</span><span class="nx">mes</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; es erróneo&#39;</span><span class="p">);</span>
+</span><a id="__codelineno-34-6" name="__codelineno-34-6"></a><span class="hll"><span class="w">   </span><span class="p">}</span>
+</span><a id="__codelineno-34-7" name="__codelineno-34-7"></a><span class="w">   </span><span class="p">...</span>
+<a id="__codelineno-34-8" name="__codelineno-34-8"></a><span class="p">}</span>
+<a id="__codelineno-34-9" name="__codelineno-34-9"></a>
+<a id="__codelineno-34-10" name="__codelineno-34-10"></a><span class="kd">function</span><span class="w"> </span><span class="nx">getNombreMes</span><span class="p">(</span><span class="nx">mes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-34-11" name="__codelineno-34-11"></a><span class="w">   </span><span class="nx">mes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">mes</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Ajustar el número de mes al índice del array (1 = Ene, 12 = Dic)</span>
+<a id="__codelineno-34-12" name="__codelineno-34-12"></a><span class="w">   </span><span class="kd">var</span><span class="w"> </span><span class="nx">meses</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Array</span><span class="p">(</span><span class="s2">&quot;Ene&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Feb&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Mar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Abr&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;May&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jun&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jul&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Ago&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Sep&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Oct&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Nov&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Dic&quot;</span><span class="p">);</span>
+<a id="__codelineno-34-13" name="__codelineno-34-13"></a><span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="nx">meses</span><span class="p">[</span><span class="nx">mes</span><span class="p">];</span>
+<a id="__codelineno-34-14" name="__codelineno-34-14"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Bien</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-35-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-35-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-35-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-35-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-35-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-35-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-35-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-35-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-35-10">10</a></span>
+<span class="normal"><a href="#__codelineno-35-11">11</a></span>
+<span class="normal"><a href="#__codelineno-35-12">12</a></span>
+<span class="normal"><a href="#__codelineno-35-13">13</a></span>
+<span class="normal"><a href="#__codelineno-35-14">14</a></span>
+<span class="normal"><a href="#__codelineno-35-15">15</a></span>
+<span class="normal"><a href="#__codelineno-35-16">16</a></span>
+<span class="normal"><a href="#__codelineno-35-17">17</a></span>
+<span class="normal"><a href="#__codelineno-35-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">muestraDatos</span><span class="p">(</span><span class="nx">datos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2"></a><span class="w">   </span><span class="p">...</span>
+<a id="__codelineno-35-3" name="__codelineno-35-3"></a><span class="hll"><span class="w">   </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-35-4" name="__codelineno-35-4"></a><span class="hll"><span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">nombreMes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getNombreMes</span><span class="p">(</span><span class="nx">datos</span><span class="p">.</span><span class="nx">mes</span><span class="p">);</span>
+</span><a id="__codelineno-35-5" name="__codelineno-35-5"></a><span class="hll"><span class="w">   </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-35-6" name="__codelineno-35-6"></a><span class="hll"><span class="w">      </span><span class="nx">alert</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span><a id="__codelineno-35-7" name="__codelineno-35-7"></a><span class="hll"><span class="w">   </span><span class="p">}</span>
+</span><a id="__codelineno-35-8" name="__codelineno-35-8"></a><span class="w">   </span><span class="p">...</span>
+<a id="__codelineno-35-9" name="__codelineno-35-9"></a><span class="p">}</span>
+<a id="__codelineno-35-10" name="__codelineno-35-10"></a>
+<a id="__codelineno-35-11" name="__codelineno-35-11"></a><span class="kd">function</span><span class="w"> </span><span class="nx">getNombreMes</span><span class="p">(</span><span class="nx">mes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-35-12" name="__codelineno-35-12"></a><span class="w">   </span><span class="nx">mes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">mes</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Ajustar el número de mes al índice del array (1 = Ene, 12 = Dic)</span>
+<a id="__codelineno-35-13" name="__codelineno-35-13"></a><span class="w">   </span><span class="kd">var</span><span class="w"> </span><span class="nx">meses</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Array</span><span class="p">(</span><span class="s2">&quot;Ene&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Feb&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Mar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Abr&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;May&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jun&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jul&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Ago&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Sep&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Oct&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Nov&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Dic&quot;</span><span class="p">);</span>
+<a id="__codelineno-35-14" name="__codelineno-35-14"></a><span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">meses</span><span class="p">[</span><span class="nx">mes</span><span class="p">]</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-35-15" name="__codelineno-35-15"></a><span class="w">       </span><span class="k">throw</span><span class="w"> </span><span class="s1">&#39;El mes &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">mes</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; es erróneo&#39;</span><span class="p">;</span>
+<a id="__codelineno-35-16" name="__codelineno-35-16"></a><span class="w">   </span><span class="p">}</span>
+<a id="__codelineno-35-17" name="__codelineno-35-17"></a><span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="nx">meses</span><span class="p">[</span><span class="nx">mes</span><span class="p">];</span>
+<a id="__codelineno-35-18" name="__codelineno-35-18"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="otras">Otras<a class="headerlink" href="#otras" title="Permanent link">&para;</a></h3>
+<p>Algunas reglas más que deberíamos seguir son:</p>
+<ul>
+<li>Debemos ser coherentes a la hora de escribir código: por ejemplo podemos poner (recomendado) o no espacios antes y después del <code>=</code> en una asignación pero debemos hacerlo siempre igual. Existen muchas guías de estilo y muy buenas: <a href="https://github.com/airbnb/javascript">Airbnb</a>, <a href="https://google.github.io/styleguide/javascriptguide.xml">Google</a>, <a href="https://github.com/rwaldron/idiomatic.js">Idiomatic</a>, etc. Para obligarnos a seguir las reglas podemos usar alguna herramienta <a href="https://www.codereadability.com/what-are-javascript-linters/"><em>linter</em></a>.</li>
+<li>También es conveniente para mejorar la legibilidad de nuestro código separar las líneas de más de 80 caracteres.</li>
+<li>Usar <code>===</code> en las comparaciones</li>
+<li>Si un parámetro puede faltar al llamar a una función darle un valor por defecto</li>
+<li>Y para acabar <strong>comentar el código</strong> cuando sea necesario, pero mejor que sea lo suficientemente claro como para no necesitar comentarios</li>
+</ul>
+<h2 id="clean-code">Clean Code<a class="headerlink" href="#clean-code" title="Permanent link">&para;</a></h2>
+<p>Estas y otras muchas recomendaciones se recogen el el libro <a href="https://books.google.es/books?id=hjEFCAAAQBAJ&amp;dq=isbn:9780132350884&amp;hl=es&amp;sa=X&amp;ved=0ahUKEwik8cfJwdLpAhURkhQKHcWBAxgQ6AEIJjAA">Clean Code</a> de <em>Robert C. Martin</em> y en muchos otros libros y articulos. Aquí tenéis un pequeño resumen traducido al castellano:
+- <a href="https://github.com/devictoribero/clean-code-javascript">https://github.com/devictoribero/clean-code-javascript</a></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Volver al principio
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/jsanvil/apuntes" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.78eede0e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1115 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.6">
+    
+    
+      
+        <title>2.2. Arrays - Desarrollo Web en Entorno Cliente</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0e669242.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#22-arrays" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Desarrollo Web en Entorno Cliente" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Cliente" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Cliente
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2.2. Arrays
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  Inicio
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Javavascript
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Cliente" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Cliente" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Desarrollo Web en Entorno Cliente
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Inicio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Desarrollo Web en Entorno Cliente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../entorno/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entorno de trabajo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Javavascript
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Javavascript
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-sintaxis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Sintaxis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    Introducción
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducción">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arrays-de-objetos" class="md-nav__link">
+    Arrays de objetos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operaciones-con-arrays" class="md-nav__link">
+    Operaciones con Arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="Operaciones con Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#length" class="md-nav__link">
+    length
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadir-elementos" class="md-nav__link">
+    Añadir elementos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-elementos" class="md-nav__link">
+    Eliminar elementos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splice" class="md-nav__link">
+    splice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slice" class="md-nav__link">
+    slice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays-y-strings" class="md-nav__link">
+    Arrays y Strings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sort" class="md-nav__link">
+    sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-metodos-comunes" class="md-nav__link">
+    Otros métodos comunes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functional-programming" class="md-nav__link">
+    Functional Programming
+  </a>
+  
+    <nav class="md-nav" aria-label="Functional Programming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filter" class="md-nav__link">
+    filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    find
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#findindex" class="md-nav__link">
+    findIndex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#every-some" class="md-nav__link">
+    every / some
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduce" class="md-nav__link">
+    reduce
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#foreach" class="md-nav__link">
+    forEach
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#includes" class="md-nav__link">
+    includes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrayfrom" class="md-nav__link">
+    Array.from
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-vs-copia" class="md-nav__link">
+    Referencia vs Copia
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rest-y-spread" class="md-nav__link">
+    Rest y Spread
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desestructuracion-de-arrays" class="md-nav__link">
+    Desestructuración de arrays
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map_1" class="md-nav__link">
+    Map
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    Set
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="22-arrays">2.2. Arrays<a class="headerlink" href="#22-arrays" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="#22-arrays">2.2. Arrays</a></li>
+<li><a href="#introducción">Introducción</a><ul>
+<li><a href="#arrays-de-objetos">Arrays de objetos</a></li>
+</ul>
+</li>
+<li><a href="#operaciones-con-arrays">Operaciones con Arrays</a><ul>
+<li><a href="#length">length</a></li>
+<li><a href="#añadir-elementos">Añadir elementos</a></li>
+<li><a href="#eliminar-elementos">Eliminar elementos</a></li>
+<li><a href="#splice">splice</a></li>
+<li><a href="#slice">slice</a></li>
+<li><a href="#arrays-y-strings">Arrays y Strings</a></li>
+<li><a href="#sort">sort</a></li>
+<li><a href="#otros-métodos-comunes">Otros métodos comunes</a></li>
+</ul>
+</li>
+<li><a href="#functional-programming">Functional Programming</a><ul>
+<li><a href="#filter">filter</a></li>
+<li><a href="#find">find</a></li>
+<li><a href="#findindex">findIndex</a></li>
+<li><a href="#every--some">every / some</a></li>
+<li><a href="#map">map</a></li>
+<li><a href="#reduce">reduce</a></li>
+<li><a href="#foreach">forEach</a></li>
+<li><a href="#includes">includes</a></li>
+<li><a href="#arrayfrom">Array.from</a></li>
+</ul>
+</li>
+<li><a href="#referencia-vs-copia">Referencia vs Copia</a></li>
+<li><a href="#rest-y-spread">Rest y Spread</a></li>
+<li><a href="#desestructuración-de-arrays">Desestructuración de arrays</a></li>
+<li><a href="#map-1">Map</a></li>
+<li><a href="#set">Set</a></li>
+</ul>
+<h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
+<p>Son un tipo de objeto y no tienen tamaño fijo sino que podemos añadirle elementos en cualquier momento. </p>
+<p>Se recomienda crearlos usando notación JSON:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">2</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">6</span><span class="p">]</span>
+</code></pre></div></p>
+<p>aunque también podemos crearlos como instancias del objeto Array (NO recomendado):
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Array</span><span class="p">()</span><span class="w">        </span><span class="c1">// a = []</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Array</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">6</span><span class="p">)</span><span class="w">   </span><span class="c1">// b = [2, 4, 6]</span>
+</code></pre></div></p>
+<p>Sus elementos pueden ser de cualquier tipo, incluso podemos tener elementos de tipos distintos en un mismo array. Si no está definido un elemento su valor será <em>undefined</em>. Ej.:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Lunes&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Martes&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">]</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span><span class="w">  </span><span class="c1">// imprime &#39;Lunes&#39;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">4</span><span class="p">])</span><span class="w">  </span><span class="c1">// imprime 6</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nx">a</span><span class="p">[</span><span class="mf">7</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Juan&#39;</span><span class="w">        </span><span class="c1">// ahora a = [&#39;Lunes&#39;, &#39;Martes&#39;, 2, 4, 6, , , &#39;Juan&#39;]</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">7</span><span class="p">])</span><span class="w">  </span><span class="c1">// imprime &#39;Juan&#39;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">6</span><span class="p">])</span><span class="w">  </span><span class="c1">// imprime undefined</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">10</span><span class="p">])</span><span class="w">  </span><span class="c1">// imprime undefined</span>
+</code></pre></div></p>
+<p>Acceder a un elemento de un array que no existe no provoca un error (devuelve <em>undefined</em>) pero sí lo provoca acceder a un elemento de algo que no es un array. Con ES2020 (ES11) se ha incluido el operador <strong>?.</strong> para evitar tener que comprobar nosotros que sea un array:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">alumnos</span><span class="o">?</span><span class="p">.[</span><span class="mf">0</span><span class="p">])</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">// si alumnos es un array muestra el valor de su primer</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">// elemento y si no muestra undefined</span>
+</code></pre></div></p>
+<h3 id="arrays-de-objetos">Arrays de objetos<a class="headerlink" href="#arrays-de-objetos" title="Permanent link">&para;</a></h3>
+<p>Es habitual almacenar datos en arrays en forma de objetos, por ejemplo:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">alumnos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Marc Peris&#39;</span><span class="p">,</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nx">course</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;2nDAW&#39;</span><span class="p">,</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">21</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Júlia Tortosa&#39;</span><span class="p">,</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="nx">course</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;2nDAW&#39;</span><span class="p">,</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">23</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="p">]</span>
+</code></pre></div></p>
+<h2 id="operaciones-con-arrays">Operaciones con Arrays<a class="headerlink" href="#operaciones-con-arrays" title="Permanent link">&para;</a></h2>
+<p>Vamos a ver los principales métodos y propiedades de los arrays.</p>
+<h3 id="length">length<a class="headerlink" href="#length" title="Permanent link">&para;</a></h3>
+<p>Esta propiedad devuelve la longitud de un array: 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Lunes&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Martes&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">]</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span><span class="w">  </span><span class="c1">// imprime 5</span>
+</code></pre></div>
+Podemos reducir el tamaño de un array cambiando esta propiedad:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="w">  </span><span class="c1">// ahora a = [&#39;Lunes&#39;, &#39;Martes&#39;, 2]</span>
+</code></pre></div></p>
+<h3 id="anadir-elementos">Añadir elementos<a class="headerlink" href="#anadir-elementos" title="Permanent link">&para;</a></h3>
+<p>Podemos añadir elementos al final de un array con <code>push</code> o al principio con <code>unshift</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Lunes&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Martes&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">]</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nx">a</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">&#39;Juan&#39;</span><span class="p">)</span><span class="w">   </span><span class="c1">// ahora a = [&#39;Lunes&#39;, &#39;Martes&#39;, 2, 4, 6, &#39;Juan&#39;]</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nx">a</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="mf">7</span><span class="p">)</span><span class="w">     </span><span class="c1">// ahora a = [7, &#39;Lunes&#39;, &#39;Martes&#39;, 2, 4, 6, &#39;Juan&#39;]</span>
+</code></pre></div></p>
+<h3 id="eliminar-elementos">Eliminar elementos<a class="headerlink" href="#eliminar-elementos" title="Permanent link">&para;</a></h3>
+<p>Podemos borrar el elemento del final de un array con <code>pop</code> o el del principio con <code>shift</code>. Ambos métodos devuelven el elemento que hemos borrado:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Lunes&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Martes&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">]</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">ultimo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">pop</span><span class="p">()</span><span class="w">         </span><span class="c1">// ahora a = [&#39;Lunes&#39;, &#39;Martes&#39;, 2, 4] y ultimo = 6</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">primero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">shift</span><span class="p">()</span><span class="w">      </span><span class="c1">// ahora a = [&#39;Martes&#39;, 2, 4] y primero = &#39;Lunes&#39;</span>
+</code></pre></div></p>
+<h3 id="splice"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/splice">splice</a><a class="headerlink" href="#splice" title="Permanent link">&para;</a></h3>
+<p>Permite eliminar elementos de cualquier posición del array y/o insertar otros en su lugar. Devuelve un array con los elementos eliminados. Sintaxis:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">Array</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">posicion</span><span class="p">,</span><span class="w"> </span><span class="nx">num</span><span class="p">.</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">elementos</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">eliminar</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="nx">º</span><span class="w"> </span><span class="nx">elemento</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">insertar</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="nx">º</span><span class="w"> </span><span class="nx">elemento</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">insertar</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="nx">º</span><span class="p">...)</span>
+</code></pre></div>
+Ejemplo:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Lunes&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Martes&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">]</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">borrado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">)</span><span class="w">       </span><span class="c1">// ahora a = [&#39;Lunes&#39;, 6] y borrado = [&#39;Martes&#39;, 2, 4]</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Lunes&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Martes&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">]</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nx">borrado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">45</span><span class="p">,</span><span class="w"> </span><span class="mf">56</span><span class="p">)</span><span class="w">   </span><span class="c1">// ahora a = [&#39;Lunes&#39;, 45, 56, &#39;Martes&#39;, 2, 4, 6] y borrado = []</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Lunes&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Martes&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">]</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nx">borrado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">45</span><span class="p">,</span><span class="w"> </span><span class="mf">56</span><span class="p">)</span><span class="w">   </span><span class="c1">// ahora a = [&#39;Lunes&#39;, 45, 56, 6] y borrado = [&#39;Martes&#39;, 2, 4]</span>
+</code></pre></div></p>
+<blockquote>
+<p>EJERCICIO: Guarda en un array la lista de la compra con Peras, Manzanas, Kiwis, Plátanos y Mandarinas. Haz los siguiente con splice:
+- Elimina las manzanas (debe quedar Peras, Kiwis, Plátanos y Mandarinas)
+- Añade detrás de los Plátanos Naranjas y Sandía (debe quedar Peras, Kiwis, Plátanos, Naranjas, Sandía y Mandarinas)
+- Quita los Kiwis y pon en su lugar Cerezas y Nísperos (debe quedar Peras, Cerezas, Nísperos, Plátanos, Naranjas, Sandía y Mandarinas)</p>
+</blockquote>
+<h3 id="slice">slice<a class="headerlink" href="#slice" title="Permanent link">&para;</a></h3>
+<p>Devuelve un subarray con los elementos indicados pero sin modificar el array original (sería como hacer un <code>substr</code> pero de un array en vez de una cadena). Sintaxis:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">Array</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">posicion</span><span class="p">,</span><span class="w"> </span><span class="nx">num</span><span class="p">.</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">elementos</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">devolver</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Ejemplo:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Lunes&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Martes&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">]</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">subArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">)</span><span class="w">       </span><span class="c1">// ahora a = [&#39;Lunes&#39;, &#39;Martes&#39;, 2, 4, 6] y subArray = [&#39;Martes&#39;, 2, 4]</span>
+</code></pre></div></p>
+<p>Es muy útil para hacer una copia de un array:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">]</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">copiaDeA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">slice</span><span class="p">()</span><span class="w">       </span><span class="c1">// ahora ambos arrays contienen lo mismo pero son diferentes arrays</span>
+</code></pre></div></p>
+<h3 id="arrays-y-strings">Arrays y Strings<a class="headerlink" href="#arrays-y-strings" title="Permanent link">&para;</a></h3>
+<p>Cada objeto (y los arrays son un tipo de objeto) tienen definido el método <code>.toString()</code> que lo convierte en una cadena. Este método es llamado automáticamente cuando, por ejemplo, queremos mostrar un array por la consola. En realidad <code>console.log(a)</code> ejecuta <code>console.log(a.toString())</code>. En el caso de los arrays esta función devuelve una cadena con los elementos del array dentro de corchetes y separados por coma.</p>
+<p>Además podemos convertir los elementos de un array a una cadena con <code>.join()</code> especificando el carácter separador de los elementos. Ej.:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Lunes&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Martes&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">]</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">cadena</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span><span class="w">       </span><span class="c1">// cadena = &#39;Lunes-Martes-2-4-6&#39;</span>
+</code></pre></div></p>
+<p>Este método es el contrario del m <code>.split()</code> que convierte una cadena en un array. Ej.:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">notas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;5-3.9-6-9.75-7.5-3&#39;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">notas</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span><span class="w">        </span><span class="c1">// arrayNotas = [5, 3.9, 6, 9.75, 7.5, 3]</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">cadena</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Que tal estás&#39;</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayPalabras</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cadena</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="w">    </span><span class="c1">// arrayPalabras = [&#39;Que`, &#39;tal&#39;, &#39;estás&#39;]</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayLetras</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cadena</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="w">       </span><span class="c1">// arrayLetras = [&#39;Q&#39;,&#39;u&#39;,&#39;e`,&#39; &#39;,&#39;t&#39;,a&#39;,l&#39;,&#39; &#39;,&#39;e&#39;,s&#39;,t&#39;,á&#39;,s&#39;]</span>
+</code></pre></div></p>
+<h3 id="sort">sort<a class="headerlink" href="#sort" title="Permanent link">&para;</a></h3>
+<p>Ordena <strong>alfabéticamente</strong> los elementos del array
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;hola&#39;</span><span class="p">,</span><span class="s1">&#39;adios&#39;</span><span class="p">,</span><span class="s1">&#39;Bien&#39;</span><span class="p">,</span><span class="s1">&#39;Mal&#39;</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="mf">13</span><span class="p">,</span><span class="mf">45</span><span class="p">]</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">sort</span><span class="p">()</span><span class="w">       </span><span class="c1">// b = [13, 2, 45, 5, &quot;Bien&quot;, &quot;Mal&quot;, &quot;adios&quot;, &quot;hola&quot;]</span>
+</code></pre></div>
+También podemos pasarle una función que le indique cómo ordenar que devolverá un valor negativo si el primer elemento es mayor, positivo si es mayor el segundo o 0 si son iguales. Ejemplo: ordenar un array de cadenas sin tener en cuenta si son mayúsculas o minúsculas:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;hola&#39;</span><span class="p">,</span><span class="s1">&#39;adios&#39;</span><span class="p">,</span><span class="s1">&#39;Bien&#39;</span><span class="p">,</span><span class="s1">&#39;Mal&#39;</span><span class="p">]</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">elem1</span><span class="p">,</span><span class="w"> </span><span class="nx">elem2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">elem1</span><span class="p">.</span><span class="nx">toLocaleLowerCase</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">elem2</span><span class="p">.</span><span class="nx">toLocaleLowerCase</span><span class="p">)</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">elem1</span><span class="p">.</span><span class="nx">toLocaleLowerCase</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">elem2</span><span class="p">.</span><span class="nx">toLocaleLowerCase</span><span class="p">)</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mf">1</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mf">0</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="p">})</span><span class="w">       </span><span class="c1">// b = [&quot;adios&quot;, &quot;Bien&quot;, &quot;hola&quot;, &quot;Mal&quot;]</span>
+</code></pre></div></p>
+<p>Como más se utiliza esta función es para ordenar arrays de objetos. Por ejemplo si tenemos un objeto <em>alumno</em> con los campos <em>name</em> y <em>age</em>, para ordenar un array de objetos <em>alumno</em> por su edad haremos:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">alumnosOrdenado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">alumnos</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">alumno1</span><span class="p">,</span><span class="w"> </span><span class="nx">alumno2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">alumno1</span><span class="p">.</span><span class="nx">age</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">alumno2</span><span class="p">.</span><span class="nx">age</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="p">})</span>
+</code></pre></div></p>
+<p>Usando <em>arrow functions</em> quedaría más sencillo:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">alumnosOrdenado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">alumnos</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">alumno1</span><span class="p">,</span><span class="w"> </span><span class="nx">alumno2</span><span class="p">)</span><span class="w">  </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">alumno1</span><span class="p">.</span><span class="nx">age</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">alumno2</span><span class="p">.</span><span class="nx">age</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Si lo que queremos es ordenar por un campo de texto debemos usar la función <em>toLocaleCompare</em>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">alumnosOrdenado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">alumnos</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">alumno1</span><span class="p">,</span><span class="w"> </span><span class="nx">alumno2</span><span class="p">)</span><span class="w">  </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">alumno1</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nx">localeCompare</span><span class="p">(</span><span class="nx">alumno2</span><span class="p">.</span><span class="nx">name</span><span class="p">))</span>
+</code></pre></div></p>
+<blockquote>
+<p>EJERCICIO: Haz una función que ordene las notas de un array pasado como parámetro. Si le pasamos [4,8,3,10,5] debe devolver [3,4,5,8,10]. Pruébalo en la consola</p>
+</blockquote>
+<h3 id="otros-metodos-comunes">Otros métodos comunes<a class="headerlink" href="#otros-metodos-comunes" title="Permanent link">&para;</a></h3>
+<p>Otros métodos que se usan a menudo con arrays son:
+* <code>.concat()</code>: concatena arrays
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">]</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span><span class="w">       </span><span class="c1">// c = [2, 4, 6, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</span>
+</code></pre></div>
+* <code>.reverse()</code>: invierte el orden de los elementos del array
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">]</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">reverse</span><span class="p">()</span><span class="w">       </span><span class="c1">// b = [6, 4, 2]</span>
+</code></pre></div>
+* <code>.indexOf()</code>: devuelve la primera posición del elemento pasado como parámetro o -1 si no se encuentra en el array
+* <code>.lastIndexOf()</code>: devuelve la última posición del elemento pasado como parámetro o -1 si no se encuentra en el array</p>
+<h2 id="functional-programming">Functional Programming<a class="headerlink" href="#functional-programming" title="Permanent link">&para;</a></h2>
+<p>Se trata de un paradigma de programación (una forma de programar) donde se intenta que el código se centre más en qué debe hacer una función que en cómo debe hacerlo. El ejemplo más claro es que intenta evitar los bucles <em>for</em> y <em>while</em> sobre arrays o  listas de elementos. Normalmente cuando hacemos un bucle es para recorrer la lista y realizar alguna acción con cada uno de sus elementos. Lo que hace <em>functional programing</em> es que a la función que debe hacer eso se le pasa como parámetro la función que debe aplicarse a cada elemento de la lista.</p>
+<p>Desde la versión 5.1 javascript incorpora métodos de <em>functional programing</em> en el lenguaje, especialmente para trabajar con arrays:</p>
+<h3 id="filter">filter<a class="headerlink" href="#filter" title="Permanent link">&para;</a></h3>
+<p>Devuelve un nuevo array con los elementos que cumplen determinada condición del array al que se aplica. Su parámetro es una función, habitualmente anónima, que va interactuando con los elementos del array. Esta función recibe como primer parámetro el elemento actual del array (sobre el que debe actuar). Opcionalmente puede tener como segundo parámetro su índice y como tercer parámetro el array completo. La función debe devolver <strong>true</strong> para los elementos que se incluirán en el array a devolver como resultado y <strong>false</strong> para el resto.</p>
+<p>Ejemplo: dado un array con notas devolver un array con las notas de los aprobados. Esto usando programación <em>imperativa</em> (la que se centra en <em>cómo se deben hacer las cosas</em>) sería algo como:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.9</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">9.75</span><span class="p">,</span><span class="w"> </span><span class="mf">7.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">]</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">aprobados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">nota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">nota</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">    </span><span class="nx">aprobados</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">nota</span><span class="p">)</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="p">}</span><span class="w">       </span><span class="c1">// aprobados = [5.2, 6, 9.75, 7.5]</span>
+</code></pre></div></p>
+<p>Usando <em>functional programming</em> (la que se centra en <em>qué resultado queremos obtener</em>) sería:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.9</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">9.75</span><span class="p">,</span><span class="w"> </span><span class="mf">7.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">]</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">aprobados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">nota</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">nota</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="p">})</span><span class="w">       </span><span class="c1">// aprobados = [5.2, 6, 9.75, 7.5]</span>
+</code></pre></div></p>
+<p>Podemos refactorizar esta función para que sea más compacta:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.9</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">9.75</span><span class="p">,</span><span class="w"> </span><span class="mf">7.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">]</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">aprobados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">nota</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">nota</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mf">5</span><span class="w">     </span><span class="c1">// nota &gt; =  5 se evalúa a &#39;true&#39; si es cierto o &#39;false&#39; si no lo es</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="p">})</span>
+</code></pre></div></p>
+<p>Y usando funciones lambda la sintaxis queda mucho más simple:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.9</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">9.75</span><span class="p">,</span><span class="w"> </span><span class="mf">7.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">]</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">aprobados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">nota</span><span class="w">  </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">nota</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mf">5</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Las 7 líneas del código usando programación <em>imperativa</em> quedan reducidas a sólo una.</p>
+<blockquote>
+<p>EJERCICIO: Dado un array con los días de la semana obtén todos los días que empiezan por 'M'</p>
+</blockquote>
+<h3 id="find">find<a class="headerlink" href="#find" title="Permanent link">&para;</a></h3>
+<p>Como <em>filter</em> pero NO devuelve un <strong>array</strong> sino el primer <strong>elemento</strong> que cumpla la condición (o <em>undefined</em> si no la cumple nadie). Ejemplo:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.9</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">9.75</span><span class="p">,</span><span class="w"> </span><span class="mf">7.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">]</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">primerAprobado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">nota</span><span class="w">  </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">nota</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mf">5</span><span class="p">)</span><span class="w">    </span><span class="c1">// primerAprobado = 5.2</span>
+</code></pre></div></p>
+<p>Este método tiene más sentido con objetos. Por ejemplo, si queremos encontrar la persona con DNI '21345678Z' dentro de un array llamado personas cuyos elementos son objetos con un campo 'dni' haremos:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">personaBuscada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">personas</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">persona</span><span class="w">  </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">persona</span><span class="p">.</span><span class="nx">dni</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;21345678Z&#39;</span><span class="p">)</span><span class="w">    </span><span class="c1">// devolverá el objeto completo</span>
+</code></pre></div></p>
+<blockquote>
+<p>EJERCICIO: Dado un array con los días de la semana obtén el primer día que empieza por 'M'</p>
+</blockquote>
+<h3 id="findindex">findIndex<a class="headerlink" href="#findindex" title="Permanent link">&para;</a></h3>
+<p>Como <em>find</em> pero en vez de devolver el elemento devuelve su posición (o -1 si nadie cumple la condición). En el ejemplo anterior el valor devuelto sería 0 (ya que el primer elemento cumple la condición). Al igual que el anterior tiene más sentido con arrays de objetos.</p>
+<blockquote>
+<p>EJERCICIO: Dado un array con los días de la semana obtén la posición en el array del primer día que empieza por 'M'</p>
+</blockquote>
+<h3 id="every-some">every / some<a class="headerlink" href="#every-some" title="Permanent link">&para;</a></h3>
+<p>La primera devuelve <strong>true</strong> si <strong>TODOS</strong> los elementos del array cumplen la condición y <strong>false</strong> en caso contrario. La segunda devuelve <strong>true</strong> si <strong>ALGÚN</strong> elemento del array cumple la condición. Ejemplo:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.9</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">9.75</span><span class="p">,</span><span class="w"> </span><span class="mf">7.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">]</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">todosAprobados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">nota</span><span class="w">  </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">nota</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mf">5</span><span class="p">)</span><span class="w">   </span><span class="c1">// false</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">algunAprobado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">nota</span><span class="w">  </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">nota</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mf">5</span><span class="p">)</span><span class="w">     </span><span class="c1">// true</span>
+</code></pre></div></p>
+<blockquote>
+<p>EJERCICIO: Dado un array con los días de la semana indica si algún día empieza por 'S'. Dado un array con los días de la semana indica si todos los días acaban por 's'</p>
+</blockquote>
+<h3 id="map">map<a class="headerlink" href="#map" title="Permanent link">&para;</a></h3>
+<p>Permite modificar cada elemento de un array y devuelve un nuevo array con los elementos del original modificados. Ejemplo: queremos subir un 10% cada nota:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.9</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">9.75</span><span class="p">,</span><span class="w"> </span><span class="mf">7.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">]</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayNotasSubidas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">nota</span><span class="w">  </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">nota</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">nota</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">10</span><span class="o">%</span><span class="p">)</span>
+</code></pre></div></p>
+<blockquote>
+<p>EJERCICIO: Dado un array con los días de la semana devuelve otro array con los días en mayúsculas</p>
+</blockquote>
+<h3 id="reduce">reduce<a class="headerlink" href="#reduce" title="Permanent link">&para;</a></h3>
+<p>Devuelve un valor calculado a partir de los elementos del array. En este caso la función recibe como primer parámetro el valor calculado hasta ahora y el método tiene como 1º parámetro la función y como 2º parámetro al valor calculado inicial (si no se indica será el primer elemento del array).</p>
+<p>Ejemplo: queremos obtener la suma de las notas:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.9</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">9.75</span><span class="p">,</span><span class="w"> </span><span class="mf">7.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">]</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">sumaNotas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">total</span><span class="p">,</span><span class="nx">nota</span><span class="p">)</span><span class="w">  </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nx">nota</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w">    </span><span class="c1">// total = 35.35</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="c1">// podríamos haber omitido el valor inicial 0 para total</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">sumaNotas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">total</span><span class="p">,</span><span class="nx">nota</span><span class="p">)</span><span class="w">  </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nx">nota</span><span class="p">)</span><span class="w">    </span><span class="c1">// total = 35.35</span>
+</code></pre></div></p>
+<p>Ejemplo: queremos obtener la nota más alta:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.9</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">9.75</span><span class="p">,</span><span class="w"> </span><span class="mf">7.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">]</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">maxNota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">max</span><span class="p">,</span><span class="nx">nota</span><span class="p">)</span><span class="w">  </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">nota</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">max</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">nota</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">max</span><span class="p">)</span><span class="w">    </span><span class="c1">// max = 9.75</span>
+</code></pre></div></p>
+<p>En el siguiente ejemplo gráfico tenemos un "array" de verduras al que le aplicamos una función <em>map</em> para que las corte y al resultado le aplicamos un <em>reduce</em> para que obtenga un valor (el sandwich) con todas ellas:</p>
+<p><img alt="Functional Programming Sandwich" src="https://miro.medium.com/max/1268/1*re1sGlEEm1C95_Luq3cJbw.png" /></p>
+<blockquote>
+<p>EJERCICIO: Dado el array de notas anterior devuelve la nota media</p>
+</blockquote>
+<h3 id="foreach">forEach<a class="headerlink" href="#foreach" title="Permanent link">&para;</a></h3>
+<p>Es el método más general de los que hemos visto. No devuelve nada sino que permite realizar algo con cada elemento del array.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.9</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">9.75</span><span class="p">,</span><span class="w"> </span><span class="mf">7.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">]</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="nx">arrayNotas</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">nota</span><span class="p">,</span><span class="w"> </span><span class="nx">indice</span><span class="p">)</span><span class="w">  </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;El elemento de la posición &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">indice</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; es: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">nota</span><span class="p">)</span>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="p">})</span>
+</code></pre></div></p>
+<h3 id="includes">includes<a class="headerlink" href="#includes" title="Permanent link">&para;</a></h3>
+<p>Devuelve <strong>true</strong> si el array incluye el elemento pasado como parámetro. Ejemplo:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.9</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">9.75</span><span class="p">,</span><span class="w"> </span><span class="mf">7.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">]</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="nx">arrayNotas</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="mf">7.5</span><span class="p">)</span><span class="w">     </span><span class="c1">// true</span>
+</code></pre></div></p>
+<blockquote>
+<p>EJERCICIO: Dado un array con los días de la semana indica si algún día es el 'Martes'</p>
+</blockquote>
+<h3 id="arrayfrom">Array.from<a class="headerlink" href="#arrayfrom" title="Permanent link">&para;</a></h3>
+<p>Devuelve un array a partir de otro al que se puede aplicar una función de transformación (es similar a <em>map</em>). Ejemplo: queremos subir un 10% cada nota:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.9</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">9.75</span><span class="p">,</span><span class="w"> </span><span class="mf">7.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">]</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayNotasSubidas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">arrayNotas</span><span class="p">,</span><span class="w"> </span><span class="nx">nota</span><span class="w">  </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">nota</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">nota</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">10</span><span class="o">%</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Puede usarse para hacer una copia de un array, igual que <em>slice</em>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.9</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">9.75</span><span class="p">,</span><span class="w"> </span><span class="mf">7.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">]</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">arrayA</span><span class="p">)</span>
+</code></pre></div></p>
+<p>También se utiliza mucho para convertir colecciones en arrays y así poder usar los métodos de arrays que hemos visto. Por ejemplo si queremos mostrar por consola cada párrafo de la página que comience por la palabra 'If' en primer lugar obtenemos todos los párrafos con:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">parrafos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Esto nos devuelve una colección con todos los párrafos de la página (lo veremos más adelante al ver DOM). Podríamos hacer un <strong>for</strong> para recorrer la colección y mirar los que empiecen por lo indicado pero no podemos aplicarle los métodos vistos aquí porque son sólo para arrays así que hacemos:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayParrafos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">parrafos</span><span class="p">)</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="c1">// y ya podemos usar los métodos que queramos:</span>
+<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="nx">arrayParrafos</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">parrafo</span><span class="w">  </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">parrafo</span><span class="p">.</span><span class="nx">textContent</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s1">&#39;If&#39;</span><span class="p">))</span>
+<a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">parrafo</span><span class="w">  </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">alert</span><span class="p">(</span><span class="nx">parrafo</span><span class="p">.</span><span class="nx">textContent</span><span class="p">))</span>
+</code></pre></div></p>
+<blockquote>
+<p><strong>IMPORTANTE</strong>: desde este momento se han acabado los bucles <em>for</em> en nuestro código para trabajar con arrays. Usaremos siempre estas funciones!!!</p>
+</blockquote>
+<h2 id="referencia-vs-copia">Referencia vs Copia<a class="headerlink" href="#referencia-vs-copia" title="Permanent link">&para;</a></h2>
+<p>Cuando copiamos una variable de tipo <em>boolean</em>, <em>string</em> o <em>number</em> o se pasa como parámetro a una función se hace una copia de la misma y si se modifica la variable original no es modificada. Ej.:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">54</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="w">      </span><span class="c1">// a = 54 b = 54</span>
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">86</span><span class="w">         </span><span class="c1">// a = 54 b = 86</span>
+</code></pre></div>
+Sin embargo al copiar objetos (y los arrays son un tipo de objeto) la nueva variable apunta a la misma posición de memoria que la antigua por lo que los datos de ambas son los mismos:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">54</span><span class="p">,</span><span class="w"> </span><span class="mf">23</span><span class="p">,</span><span class="w"> </span><span class="mf">12</span><span class="p">]</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="w">      </span><span class="c1">// a = [54, 23, 12] b = [54, 23, 12]</span>
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="nx">b</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="w">       </span><span class="c1">// a = [3, 23, 12] b = [3, 23, 12]</span>
+<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">fecha1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s1">&#39;2018-09-23&#39;</span><span class="p">)</span>
+<a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="kd">let</span><span class="w"> </span><span class="nx">fecha2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fecha1</span><span class="w">          </span><span class="c1">// fecha1 = &#39;2018-09-23&#39;   fecha2 = &#39;2018-09-23&#39;</span>
+<a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a><span class="nx">fecha2</span><span class="p">.</span><span class="nx">setFullYear</span><span class="p">(</span><span class="mf">1999</span><span class="p">)</span><span class="w">   </span><span class="c1">// fecha1 = &#39;1999-09-23&#39;   fecha2 = &#39;1999-09-23&#39;</span>
+</code></pre></div></p>
+<p>Si queremos obtener una copia de un array que sea independiente del original podemos obtenerla con <code>slice</code> o con <code>Array.from</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">]</span>
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">copiaDeA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">slice</span><span class="p">()</span><span class="w">       </span><span class="c1">// ahora ambos arrays contienen lo mismo pero son diferentes</span>
+<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">otraCopiaDeA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Array</span><span class="p">.</span><span class="nx">fom</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+</code></pre></div></p>
+<p>En el caso de objetos es algo más complejo. ES6 incluye <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign"><code>Object.assign</code></a> que hace una copia de un objeto:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;object 2&#39;</span><span class="p">}</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">copiaDeA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span><span class="w"> </span><span class="nx">a</span><span class="p">)</span><span class="w">       </span><span class="c1">// ahora ambos objetos contienen lo mismo pero son diferentes</span>
+</code></pre></div></p>
+<p>Sin embargo si el objeto tiene como propiedades otros objetos estos se continúan pasando por referencia. Es ese caso lo más sencillo sería hacer:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;object 2&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">street</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;C/ Ajo&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">num</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">copiaDeA</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">a</span><span class="p">))</span><span class="w">       </span><span class="c1">// ahora ambos objetos contienen lo mismo pero son diferentes</span>
+</code></pre></div></p>
+<blockquote>
+<p>EJERCICIO: Dado el array arr1 con los días de la semana haz un array arr2 que sea igual al arr1. Elimina de arr2 el último día y comprueba quá ha pasado con arr1. Repita la operación con un array llamado arr3 pero que crearás haciendo una copia de arr1.</p>
+</blockquote>
+<p>También podemos copiar objetos usando <em>rest</em> y <em>spread</em>.</p>
+<h2 id="rest-y-spread">Rest y Spread<a class="headerlink" href="#rest-y-spread" title="Permanent link">&para;</a></h2>
+<p>Permiten extraer a parámetros los elementos de un array o string (<em>spread</em>) o convertir en un array un grupo de parámetros (<em>rest</em>). El operador de ambos es <strong>...</strong> (3 puntos).</p>
+<p>Para usar <em>rest</em> como parámetro de una función debe ser siempre el último parámetro. </p>
+<p>Ejemplo: queremos hacer una función que calcule la media de las notas que se le pasen como parámetro y que no sabemos cuántas són. Para llamar a la función haremos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">notaMedia</span><span class="p">(</span><span class="mf">3.6</span><span class="p">,</span><span class="w"> </span><span class="mf">6.8</span><span class="p">))</span><span class="w"> </span>
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">notaMedia</span><span class="p">(</span><span class="mf">5.2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.9</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">9.75</span><span class="p">,</span><span class="w"> </span><span class="mf">7.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">))</span><span class="w"> </span>
+</code></pre></div>
+<p>La función convertirá los parámetros recibidos en un array usando <em>rest</em>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">notaMedia</span><span class="p">(...</span><span class="nx">notas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">notas</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">total</span><span class="p">,</span><span class="nx">nota</span><span class="p">)</span><span class="w">  </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nx">nota</span><span class="p">)</span>
+<a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">total</span><span class="o">/</span><span class="nx">notas</span><span class="p">.</span><span class="nx">length</span>
+<a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a><span class="p">}</span>
+</code></pre></div></p>
+<p>Si lo que queremos es convertir un array en un grupo de elementos haremos <em>spread</em>. Por ejemplo el objeto <em>Math</em> proporciona métodos para trabajar con números como <em>.max</em> que devuelve el máximo de los números pasados como parámetro. Para saber la nota máxima en vez de <em>.reduce</em> como hicimos en el ejemplo anterior podemos hacer:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.9</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">9.75</span><span class="p">,</span><span class="w"> </span><span class="mf">7.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">]</span>
+<a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>
+<a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">maxNota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="nx">arrayNotas</span><span class="p">)</span><span class="w">    </span><span class="c1">// maxNota = 9.75</span>
+<a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a><span class="c1">// si hacemos Math.max(arrayNotas) devuelve NaN porque arrayNotas es un array y no un número</span>
+</code></pre></div></p>
+<p>Estas funcionalidades nos ofrecen otra manera de copiar objetos (pero sólo a partir de ES-2018):
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;object 2&#39;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">copiaDeA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">a</span><span class="w"> </span><span class="p">}</span><span class="w">       </span><span class="c1">// ahora ambos objetos contienen lo mismo pero son diferentes</span>
+<a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>
+<a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">]</span>
+<a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a><span class="kd">let</span><span class="w"> </span><span class="nx">copiaDeB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">...</span><span class="nx">b</span><span class="w"> </span><span class="p">]</span><span class="w">       </span><span class="c1">// ahora ambos objetos contienen lo mismo pero son diferentes</span>
+</code></pre></div></p>
+<h2 id="desestructuracion-de-arrays">Desestructuración de arrays<a class="headerlink" href="#desestructuracion-de-arrays" title="Permanent link">&para;</a></h2>
+<p>Similar a <em>rest</em> y <em>spread</em>, permiten extraer los elementos del array directamente a variables y viceversa. Ejemplo:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.9</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">9.75</span><span class="p">,</span><span class="w"> </span><span class="mf">7.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">]</span>
+<a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a><span class="kd">let</span><span class="w"> </span><span class="p">[</span><span class="nx">primera</span><span class="p">,</span><span class="w"> </span><span class="nx">segunda</span><span class="p">,</span><span class="w"> </span><span class="nx">tercera</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="w">   </span><span class="c1">// primera = 5.2, segunda = 3.9, tercera = 6</span>
+<a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a><span class="kd">let</span><span class="w"> </span><span class="p">[</span><span class="nx">primera</span><span class="p">,</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nx">cuarta</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="w">         </span><span class="c1">// primera = 5.2, cuarta = 9.75</span>
+<a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a><span class="kd">let</span><span class="w"> </span><span class="p">[</span><span class="nx">primera</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">resto</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arrayNotas</span><span class="w">           </span><span class="c1">// primera = 5.2, resto = [3.9, 6, 9.75, 3]</span>
+</code></pre></div></p>
+<p>También se pueden asignar valores por defecto:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">preferencias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Javascript&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;NodeJS&#39;</span><span class="p">]</span>
+<a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a><span class="kd">let</span><span class="w"> </span><span class="p">[</span><span class="nx">lenguaje</span><span class="p">,</span><span class="w"> </span><span class="nx">backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Laravel&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">frontend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;VueJS&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">preferencias</span><span class="w">  </span><span class="c1">// lenguaje = &#39;Javascript&#39;, backend = &#39;NodeJS&#39;, frontend = &#39;VueJS&#39;</span>
+</code></pre></div></p>
+<p>La desestructuración también funciona con objetos. Es normal pasar un objeto como parámetro para una función pero si sólo nos interesan algunas propiedades del mismo podemos desestructurarlo:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">miProducto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a><span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span>
+<a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TV Samsung&#39;</span><span class="p">,</span>
+<a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a><span class="w">    </span><span class="nx">units</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span>
+<a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a><span class="w">    </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="mf">395.95</span>
+<a id="__codelineno-50-6" name="__codelineno-50-6" href="#__codelineno-50-6"></a><span class="p">}</span>
+<a id="__codelineno-50-7" name="__codelineno-50-7" href="#__codelineno-50-7"></a>
+<a id="__codelineno-50-8" name="__codelineno-50-8" href="#__codelineno-50-8"></a><span class="nx">muestraNombre</span><span class="p">(</span><span class="nx">miProducto</span><span class="p">)</span>
+<a id="__codelineno-50-9" name="__codelineno-50-9" href="#__codelineno-50-9"></a>
+<a id="__codelineno-50-10" name="__codelineno-50-10" href="#__codelineno-50-10"></a><span class="kd">function</span><span class="w"> </span><span class="nx">miProducto</span><span class="p">({</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">units</span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-50-11" name="__codelineno-50-11" href="#__codelineno-50-11"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Del producto &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; hay &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">units</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; unidades&#39;</span><span class="p">)</span>
+<a id="__codelineno-50-12" name="__codelineno-50-12" href="#__codelineno-50-12"></a><span class="p">}</span>
+</code></pre></div></p>
+<p>También podemos asignar valores por defecto:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">miProducto</span><span class="p">({</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Del producto &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; hay &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">units</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; unidades&#39;</span><span class="p">)</span>
+<a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="p">}</span>
+<a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a>
+<a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a><span class="nx">muestraNombre</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;USB Kingston&#39;</span><span class="p">)</span>
+<a id="__codelineno-51-6" name="__codelineno-51-6" href="#__codelineno-51-6"></a><span class="c1">// mostraría: Del producto USB Kingston hay 0 unidades</span>
+</code></pre></div></p>
+<h2 id="map_1">Map<a class="headerlink" href="#map_1" title="Permanent link">&para;</a></h2>
+<p>Es una colección de parejas de [clave,valor]. Un objeto en Javascript es un tipo particular de <em>Map</em> en que las claves sólo pueden ser texto o números. Se puede acceder a una propiedad con <strong>.</strong> o <strong>[propiedad]</strong>. Ejemplo:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">persona</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a><span class="w">  </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;John&#39;</span><span class="p">,</span>
+<a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a><span class="w">  </span><span class="nx">apellido</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Doe&#39;</span><span class="p">,</span>
+<a id="__codelineno-52-4" name="__codelineno-52-4" href="#__codelineno-52-4"></a><span class="w">  </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="mf">39</span>
+<a id="__codelineno-52-5" name="__codelineno-52-5" href="#__codelineno-52-5"></a><span class="p">}</span>
+<a id="__codelineno-52-6" name="__codelineno-52-6" href="#__codelineno-52-6"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">persona</span><span class="p">.</span><span class="nx">nombre</span><span class="p">)</span><span class="w">      </span><span class="c1">// John</span>
+<a id="__codelineno-52-7" name="__codelineno-52-7" href="#__codelineno-52-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">persona</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">])</span><span class="w">   </span><span class="c1">// John</span>
+</code></pre></div></p>
+<p>Un <em>Map</em> permite que la clave sea cualquier cosa (array, objeto, ...). No vamos a ver en profundidad estos objetos pero podéis saber más en <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">MDN</a> o cualquier otra página. </p>
+<h2 id="set">Set<a class="headerlink" href="#set" title="Permanent link">&para;</a></h2>
+<p>Es como un <em>Map</em> pero que no almacena los valores sino sólo la clave. Podemos verlo como una colección que no permite duplicados. Tiene la propiedad <strong>size</strong> que devuelve su tamaño y los métodos <strong>.add</strong> (añade un elemento), <strong>.delete</strong> (lo elimina) o <strong>.has</strong> (indica si el elemento pasado se encuentra o no en la colección) y también podemos recorrerlo con <strong>.forEach</strong>.</p>
+<p>Una forma sencilla de eliminar los duplicados de un array es crear con él un <em>Set</em>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">ganadores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Márquez&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Rossi&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Márquez&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Lorenzo&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Rossi&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Márquez&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Márquez&#39;</span><span class="p">]</span>
+<a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">ganadoresNoDuplicados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">(</span><span class="nx">ganadores</span><span class="p">)</span><span class="w">    </span><span class="c1">// {&#39;Márquez, &#39;Rossi&#39;, &#39;Lorenzo&#39;}</span>
+<a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a><span class="c1">// o si lo queremos en un array:</span>
+<a id="__codelineno-53-4" name="__codelineno-53-4" href="#__codelineno-53-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">ganadoresNoDuplicados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">(</span><span class="nx">ganadores</span><span class="p">))</span><span class="w">    </span><span class="c1">// [&#39;Márquez, &#39;Rossi&#39;, &#39;Lorenzo&#39;]</span>
+</code></pre></div></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Volver al principio
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/jsanvil/apuntes" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.78eede0e.min.js"></script>
+      
+    
+  </body>
+</html>
