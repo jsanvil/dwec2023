@@ -52,6 +52,7 @@ const idInterval = setInterval(() => {
 > EJERCICIO: Ejecuta en la consola cada una de esas funciones
 
 En lugar de definir la función a ejecutar podemos llamar a una función que ya exista:
+
 ```javascript
 function showMessage() {
   alert('Timeout que se ejecuta al cabo de 1 seg.')
