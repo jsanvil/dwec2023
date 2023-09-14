@@ -1,6 +1,6 @@
 # Desarrollo Web en Entorno Cliente
 
-Apuntes del módulo de "Desarrollo Web en Entorno Cliente" del 2º curso del CFGS "Desarrollo de Aplicaciones Web".
+Apuntes del módulo de "Desarrollo Web en Entorno Cliente" del 2º curso del CFGS "Desarrollo de Aplicaciones Web". IES Serpis
 
 [https://jsanvil.github.io/dwec2023/](https://jsanvil.github.io/dwec2023/)
 

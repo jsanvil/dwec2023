@@ -37,7 +37,6 @@ En este primer bloque vamos a conocer el lenguaje Javascript. El bloque se divid
     - [npm](#npm)
 - [Bibliografía](#bibliografía)
 
-
 ## Introducción
 
 En las páginas web el elemento fundamental es el fichero **HTML** con la información a mostrar en el navegador. Posteriormente surgió la posibilidad de "decorar" esa información para mejorar su apariencia, lo que dio lugar al **CSS**. Y también se pensó en dar dinamismo a las páginas y apareció el lenguaje **Javascript**.
