@@ -43,22 +43,22 @@ En las páginas web el elemento fundamental es el fichero **HTML** con la inform
 
 En un primer momento las 3 cosas estaban mezcladas en el fichero HTML pero eso complicaba bastante el poder leer esa página a la hora de mantenerla por lo que se pensó en separar los 3 elementos básicos:
 
-- **HTML**: se encarga de estructurar la página y proporciona su información, pero es una información estática.
-- **CSS**: es lo que da forma a dicha información, permite mejorar su apariencia, permite que se adapte a distintos dispositivos, etc.
-- **Javascript**: es el que da vida a un sitio web y le permite reaccionar a las acciones del usuario.
+- :fontawesome-brands-html5: **HTML**: se encarga de estructurar la página y proporciona su información, pero es una información estática.
+- :fontawesome-brands-css3-alt:**CSS**: es lo que da forma a dicha información, permite mejorar su apariencia, permite que se adapte a distintos dispositivos, etc.
+- :fontawesome-brands-js: **Javascript**: es el que da vida a un sitio web y le permite reaccionar a las acciones del usuario.
 
 Por tanto nuestras aplicaciones tendrán estos 3 elementos y lo recomendable es que estén separados en distintos ficheros:
 
-- El **HTML** lo tendremos habitualmente en un fichero `index.html`, normalmente en una carpeta llamada _`public`_
-- El **CSS** lo tendremos en uno o más ficheros con extensión _`.css`_ dentro de una carpeta llamada _`styles`_
-- EL **JS** estará en ficheros con extensión _`.js`_ en un directorio llamado _`scripts`_
+- El **HTML** lo tendremos habitualmente en un fichero `index.html`, normalmente en una carpeta llamada :fontawesome-solid-folder: _`public`_
+- El **CSS** lo tendremos en uno o más ficheros con extensión _`.css`_ dentro de una carpeta llamada :fontawesome-solid-folder: _`styles`_
+- EL **JS** estará en ficheros con extensión _`.js`_ en un directorio llamado :fontawesome-solid-folder: _`scripts`_
 
 Las **características** principales de Javascript son:
 
-- es un **lenguaje interpretado**, no compilado
-- **se ejecuta en el lado cliente** (en un navegador web), aunque hay implementaciones como NodeJS para el lado servidor
-- es un lenguaje **orientado a objetos** (podemos crear e isntanciar objetos y usar objetos predefinidos del lenguaje) pero basado en prototipos (por debajo un objeto es un prototipo y nosotros podemos crear objetos sin instanciarlos, haciendo copias del prototipo)
-- se trata de un lenguaje **débilmente tipado**, con tipificación dinámica (no se indica el tipo de datos de una variable al declararla e incluso puede cambiarse)
+- Es un **lenguaje interpretado**, no compilado
+- **Se ejecuta en el lado cliente** (en un navegador web), aunque hay implementaciones como NodeJS para el lado servidor
+- Es un lenguaje **orientado a objetos** (podemos crear e isntanciar objetos y usar objetos predefinidos del lenguaje) pero basado en prototipos (por debajo un objeto es un prototipo y nosotros podemos crear objetos sin instanciarlos, haciendo copias del prototipo)
+- Se trata de un lenguaje **débilmente tipado**, con tipificación dinámica (no se indica el tipo de datos de una variable al declararla e incluso puede cambiarse)
 
 Ejemplos de uso:
 
@@ -68,7 +68,7 @@ Ejemplos de uso:
 * Validar datos de formularios
 * ...
 
-Sin embargo, por razones de seguridad, Javascript no nos permite hacer cosas como:
+Sin embargo, por **seguridad**, Javascript **no permite** hacer cosas como:
 
 * Acceder al sistema de ficheros del cliente
 * Capturar datos de un servidor (puede pedirlo y el servidor se los servirá, o no)
