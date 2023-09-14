@@ -1,6 +1,6 @@
 # El lenguaje Javascript
 
-En este primer bloque vamos a conocer el lenguaje Javascript. El bloque se divide en:
+En este primer bloque vamos a conocer el lenguaje Javascript. El bloque está dividido en:
 
 * [Introducción a Javascript](#introducci%C3%B3n-a-javascript)
 * [1-Sintaxis](./01-sintaxis.md): Variables. Funciones. Estructuras y bucles. Tipos de datos. Buenas prácticas
