@@ -1,33 +1,5 @@
 # 1. Sintaxis
 
-- [1. Sintaxis](#1-sintaxis)
-  - [Variables](#variables)
-  - [Tipos de datos básicos](#tipos-de-datos-básicos)
-    - [_Casting_ de variables](#casting-de-variables)
-    - [Number](#number)
-    - [String](#string)
-      - [Template literals](#template-literals)
-    - [Boolean](#boolean)
-  - [Funciones](#funciones)
-    - [Parámetros](#parámetros)
-    - [Funciones anónimas](#funciones-anónimas)
-    - [Arrow functions (funciones _lambda_)](#arrow-functions-funciones-lambda)
-  - [Estructuras y bucles](#estructuras-y-bucles)
-    - [Estructura condicional: if](#estructura-condicional-if)
-    - [Estructura condicional: switch](#estructura-condicional-switch)
-    - [Bucle _while_](#bucle-while)
-    - [Bucle: for](#bucle-for)
-    - [Bucle: for con contador](#bucle-for-con-contador)
-      - [Bucle: for...in](#bucle-forin)
-      - [Bucle: for...of](#bucle-forof)
-  - [Manejo de errores](#manejo-de-errores)
-  - [Buenas prácticas](#buenas-prácticas)
-    - ['use strict'](#use-strict)
-    - [Variables](#variables-1)
-    - [Errores](#errores)
-    - [Otras](#otras)
-  - [Clean Code](#clean-code)
-
 ## Variables
 
 Javascript es un lenguaje **débilmente tipado**. Esto significa que no se indica de qué tipo es una variable al declararla e incluso puede cambiar su tipo a lo largo de la ejecución del programa. 
@@ -42,7 +14,7 @@ miVariable = [3, 45, 2]; // y ahora un array
 miVariable = undefined;  // para volver a valer el valor especial undefined
 ```
 
-!!! note "EJERCICIO:"
+!!! question "EJERCICIO:"
     Ejecuta en la consola del navegador las instrucciones anteriores y comprueba el valor de `miVariable` tras cada instrucción (para ver el valor de una variable simplemente ponemos en la consola su nombre: `miVariable`)
 
 Ni siquiera estamos obligados a declarar una variable antes de usarla, aunque es recomendable para evitar errores que nos costará depurar. Podemos hacer que se produzca un error si no declaramos una variable incluyendo al principio de nuestro código la instrucción
@@ -105,39 +77,40 @@ Como hemos dicho las variables pueden contener cualquier tipo de valor y, en las
 
 Además comentar que en Javascript todo son ojetos por lo que todo tiene métodos y propiedades. Veamos brevemente los tipos de datos básicos.
 
-!!! note "EJERCICIO:"
+!!! question "EJERCICIO:"
     Prueba en la consola las operaciones anteriores y alguna más con la que tengas dudas de qué devolverá
 
 ### Number
 
 Sólo hay 1 tipo de números, no existen enteros y decimales. El tipo de dato para cualquier número es **number**. El carácter para la coma decimal es el **.** (como en inglés, así que 23,12 debemos escribirlo como 23.12).
 
-Tenemos los operadores aritméticos **+**, **-**, **\***, **/** y **%** y los unarios **++** y **--** y existen los valores especiales **Infinity** y **-Infinity** (`23 / 0` no produce un error sino que devuelve _Infinity_).
+Tenemos los operadores aritméticos **`+`**, **`-`**, **`*`**, **`/`** y **`%`** y los unarios **`++`** y **`--`** y existen los valores especiales **`Infinity`** y **`-Infinity`** (`23 / 0` no produce un error sino que devuelve _Infinity_).
 
-Podemos usar los operadores artméticos junto al operador de asignación **=** (+=, -=, *=, /= y %=).
+Podemos usar los operadores artméticos junto al operador de asignación **`=`** (`+=`, `-=`, `*=`, `/=` y `%=`).
 
 Algunos métodos útiles de los números son:
 
-- **.toFixed(num)**: redondea el número a los decimales indicados. Ej. `23.2376.toFixed(2)` devuelve 23.24
-- **.toLocaleString()**: devuelve el número convertido al formato local. Ej. `23.76.toLocaleString()` devuelve '23,76' (convierte el punto decimal en coma)
+- **.toFixed(num)**: redondea el número a los decimales indicados. Ej. `23.2376.toFixed(2)` devuelve `23.24`
+- **.toLocaleString()**: devuelve el número convertido al formato local. Ej. `23.76.toLocaleString()` devuelve `"23,76"` (convierte el punto decimal en coma)
 
-Podemos forzar la conversión a número con la función **Number(valor)**. Ejemplo `Number('23.12')`devuelve 23.12
+Podemos forzar la conversión de una cade de texto a número con la función **Number(valor)**. Ejemplo `Number("23.12")` devuelve `23.12`
 
 Otras funciones útiles son:
 
 - **isNaN(valor)**: nos dice si el valor pasado es un número (false) o no (true)
 - **isFinite(valor)**: devuelve _true_ si el valor es finito (no es _Infinity_ ni _-Infinity_). 
 - **parseInt(valor)**: convierte el valor pasado a un número entero. Siempre que compience por un número la conversión se podrá hacer. Ej.:
-```javascript
-parseInt(3.65)      // Devuelve 3
-parseInt('3.65')    // Devuelve 3
-parseInt('3 manzanas')    // Devuelve 3, Number devolvería NaN
-```
+    ```javascript
+    parseInt(3.65)      // Devuelve 3
+    parseInt('3.65')    // Devuelve 3
+    parseInt('3 manzanas')    // Devuelve 3
+    parseInt('tres')        // Devuelve NaN
+    ```
 
 - **parseFloat(valor)**: como la anterior pero conserva los decimales
 
 !!! warning "OJO:"
-    al sumar floats podemos tener problemas:
+    al sumar *floats* podemos tener problemas:
 
     ```javascript
     console.log(0.1 + 0.2)    // imprime 0.30000000000000004
@@ -145,11 +118,33 @@ parseInt('3 manzanas')    // Devuelve 3, Number devolvería NaN
 
 Para evitarlo redondead los resultados (o `(0.1*10 + 0.2*10) / 10`).
 
-!!! note "EJERCICIO:"
-    Modifica la funciónque quieras de calcular la nota media para que devuelva la media con 1 decimal
+!!! question "EJERCICIO 1:"
+    Modifica la función que calcula nota media para que devuelva la media con 1 decimal
 
-!!! note "EJERCICIO:"
-    Modifica la función que devuelve el cubo de un número para que compruebe si el parámetro pasado es un número entero. Si no es un entero o no es un número mostrará un alert indicando cuál es el problema yndevolverá false.
+    ```js
+    function notaMedia(arrayNotas) {
+        let suma = 0;
+        let totalNotas = 0;
+        for (nota of arrayNotas) {
+            suma += nota;
+            totalNotas++;
+        }
+        return suma / totalNotas;
+    }
+    ```
+
+!!! question "EJERCICIO 2:"
+    Modifica la función que devuelve el cubo de un número para que compruebe si el parámetro pasado es un número entero. Si no es un entero o no es un número mostrará un `alert` indicando cuál es el problema y devolverá `false`.
+
+    ```js
+    function cubo(numero) {
+        let resultado = numero;
+        for (let i=0; i<numero; i++) {
+            resultado *= numero;
+        }
+        return resultado;
+    }
+    ```
 
 ### String
 
@@ -180,8 +175,8 @@ Algunos métodos y propiedades de las cadenas son:
 
 Podemos probar los diferentes métodos en la página de [w3schools](https://www.w3schools.com/jsref/jsref_obj_string.asp).
 
-!!! note "EJERCICIO:"
-    Haz una función a la que se le pasa un DNI (ej. 12345678w o 87654321T) y devolverá si es correcto o no. La letra que debe corresponder a un DNI correcto se obtiene dividiendo la parte numérica entre 23 y cogiendo de la cadena 'TRWAGMYFPDXBNJZSQVHLCKE' la letra correspondiente al resto de la divisón. Por ejemplo, si el resto es 0 la letra será la T y si es 4 será la G. Prueba la función en la consola con tu DNI
+!!! question "1. EJERCICIO 3:"
+    Haz una función a la que se le pasa un DNI (ej. 12345678w o 87654321T) y devolverá si es correcto o no. La letra que debe corresponder a un DNI correcto se obtiene dividiendo la parte numérica entre 23 y cogiendo de la cadena '`TRWAGMYFPDXBNJZSQVHLCKE`' la letra correspondiente al resto de la divisón. Por ejemplo, si el resto es 0 la letra será la T y si es 4 será la G. Prueba la función en la consola con tu DNI
 
 #### Template literals
 
@@ -193,6 +188,7 @@ let edad=25;
 console.log(\`El usuario tiene:
 ${edad} años\`) 
 ```
+
 Mostrará en la consola:
 > El usuario tiene:
 
@@ -226,7 +222,7 @@ Se declaran con **function** y se les pasan los parámetros entre paréntesis. L
 
 Puede usarse una función antes de haberla declarado por el comportamiento de Javascript llamado _hoisting_: el navegador primero carga todas las funciones y mueve las declaraciones de las variables al principio y luego ejecuta el código.
 
-!!! note "EJERCICIO:"
+!!! question "EJERCICIO 4:"
     Haz una función que te pida que escribas algo y muestre un alert diciendo 'Has escrito...' y el valor introducido. Pruébala en la consola (pegas allí la función y luego la llamas desde la consola)
 
 ### Parámetros
@@ -362,7 +358,7 @@ con _arrow function_:
 let cuadrado = base => base * base;
 ```
 
-!!! note "EJERCICIO:"
+!!! question "EJERCICIO 5:"
     Haz una _arrow function_ que devuelva el cubo del número pasado como parámetro y pruébala desde la consola. Escríbela primero en la forma habitual y luego la "traduces" a _arrow function_.
 
 ## Estructuras y bucles
@@ -471,7 +467,7 @@ do {
 } while (nota)
 ```
 
-!!! note "EJERCICIO:"
+!!! question "EJERCICIO 6:"
     Haz un programa para que el usuario juegue a adivinar un número. Obtén un número al azar (busca por internet cómo se hace o simplemente guarda el número que quieras en una variable) y ve pidiendo al usuario que introduzca un número. Si es el que busca le dices que lo ha encontrado y si no le mostrarás si el número que busca el mayor o menor que el introducido. El juego acaba cuando el usuario encuentra el número o cuando pulsa en 'Cancelar' (en ese caso le mostraremos un mensaje de que ha cancelado el juego).
 
 ### Bucle: for
@@ -492,8 +488,8 @@ for (let i=0; i<datos.length; i++) {
 // El valor de sumaDatos será 125
 ```
 
-!!! note "EJERCICIO:"
-    El factorial de un número entero n es una operación matemática que consiste en multiplicar ese número por todos los enteros menores que él: **n x (n-1) x (n-2) x ... x 1**. Así, el factorial de 5 (se escribe 5!) vale **5! = 5 x 4 x 3 x 2 x 1 = 120**. Haz un script que calcule el factorial de un número entero.
+!!! question "EJERCICIO 7:"
+    El factorial de un número entero `n` es una operación matemática que consiste en multiplicar ese número por todos los enteros menores que él: **n x (n-1) x (n-2) x ... x 1**. Así, el factorial de 5 (se escribe `5!`) vale **5! = 5 x 4 x 3 x 2 x 1 = 120**. Haz un script que calcule el factorial de un número entero.
 
 #### Bucle: for...in
 
@@ -549,7 +545,7 @@ for (let letra of cadena) {
 }  
 ```
 
-!!! note "EJERCICIO:"
+!!! question "EJERCICIO 8:"
     Haz 3 funciones a las que se le pasa como parámetro un array de notas y devuelve la nota media. Cada una usará un for de una de las 3 formas vistas. Pruébalas en la consola
 
 ## Manejo de errores
