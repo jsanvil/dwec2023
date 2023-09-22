@@ -8,8 +8,8 @@ nav:
     - 'Introducción': '01-js/index.md'
     - 'Sintaxis':
       - '01-js/01-sintaxis.md'
-      # - '01-js/01.1-objetos.md'
-      # - '01-js/01.2-arrays.md'
+      - '01-js/01.1-objetos.md'
+      - '01-js/01.2-arrays.md'
       # - '01-js/01.3-programacion-funcional.md'
 
 theme:

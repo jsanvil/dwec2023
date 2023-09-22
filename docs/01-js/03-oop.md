@@ -11,7 +11,9 @@
   - [Bibliografía](#bibliografía)
 
 ## Introducción
+
 Desde ES2015 la POO en Javascript es similar a como se hace en otros lenguajes, con clases, herencia, ...:
+
 ```javascript
 class Alumno {
     constructor(nombre, apellidos, edad) {

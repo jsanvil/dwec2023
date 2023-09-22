@@ -1,9 +1,11 @@
 # El lenguaje Javascript
 
 * [Introducción a Javascript](./00-introduccion.md)
-* [1-Sintaxis](./01-sintaxis.md): Variables. Funciones. Estructuras y bucles. Tipos de datos. Buenas prácticas
-    * [1.2-Objetos](./01.1-objetos.md): Introducción a los objetos en Javascript
-    * [1.1-Arrays](./01.2-arrays.md): Métodos. _Functional Programming_. Referencia vs copia. Rest y Spread. Desestructuración de arrays. Map. Set
+* [1 Sintaxis](./01-sintaxis.md): Variables. Funciones. Estructuras y bucles. Tipos de datos. Buenas prácticas
+    * [1.1 Objetos](./01.1-objetos.md): Introducción a los objetos en Javascript
+    * [1.2 Arrays](./01.2-arrays.md): Definición, uso y métodos.
+<!-- 
+    * [1.3 _Functional Programming_](./01.3-programacion-funcional.md). Introducción a la programación funcional.
 * [3-Programación Orientada a Objetos](./03-oop.md): Introducción. Clases. POO en JS5
     * [3.1-vite](./03.1-vite.md): Cómo usar vite
     * [3.1-webpack](./03.1-webpack.md): Cómo usar webpack
@@ -17,3 +19,4 @@
 * [10-APIs HTML5](./10-apis.md): Drag and drop. API Storage. Geolocalización. API de Google Maps
 * [11-Más cosas a aprender...](./11-mas.md): WebComponents. WebSockets. WebWorkers. Typescript.
 * [12-Tests](./12-tests.md): Testear JS con Jest
+-->

@@ -48,6 +48,19 @@ Desde ES2015 también podemos declarar constantes con **`const`**. Se les debe d
 
 ## Tipos de datos básicos
 
+En Javascript ES2015 existen 9 tipos de datos:
+
+- Primitivos:
+    - Number
+    - String
+    - Boolean
+    - BigInt
+    - Symbol
+    - Undefined
+    - Null
+- No primitivos:
+    - Object
+
 Para saber de qué tipo es el valor de una variable tenemos el operador **typeof**. Ej.:
 
 * `typeof 3` devuelve _number_
@@ -118,7 +131,7 @@ Otras funciones útiles son:
 
 Para evitarlo redondead los resultados (o `(0.1*10 + 0.2*10) / 10`).
 
-!!! question "EJERCICIO 1:"
+!!! question "ACTIVIDAD 1: `📂 UD1/act1/act1.html`"
     Modifica la función que calcula nota media para que devuelva la media con 1 decimal
 
     ```js
@@ -133,7 +146,7 @@ Para evitarlo redondead los resultados (o `(0.1*10 + 0.2*10) / 10`).
     }
     ```
 
-!!! question "EJERCICIO 2:"
+!!! question "ACTIVIDAD 2: `📂 UD1/act2/act2.html`"
     Modifica la función que devuelve el cubo de un número para que compruebe si el parámetro pasado es un número entero. Si no es un entero o no es un número mostrará un `alert` indicando cuál es el problema y devolverá `false`.
 
     ```js
@@ -175,18 +188,20 @@ Algunos métodos y propiedades de las cadenas son:
 
 Podemos probar los diferentes métodos en la página de [w3schools](https://www.w3schools.com/jsref/jsref_obj_string.asp).
 
-!!! question "EJERCICIO 3:"
+!!! question "ACTIVIDAD 3: `📂 UD1/act3/act3.html`"
     Haz una función a la que se le pasa un DNI (ej. 12345678w o 87654321T) y devolverá si es correcto o no. La letra que debe corresponder a un DNI correcto se obtiene dividiendo la parte numérica entre 23 y cogiendo de la cadena '`TRWAGMYFPDXBNJZSQVHLCKE`' la letra correspondiente al resto de la divisón. Por ejemplo, si el resto es 0 la letra será la T y si es 4 será la G. Prueba la función en la consola con tu DNI
 
 #### Template literals
 
-Desde ES2015 también podemos poner una cadena entre **`** (acento grave) y en ese caso podemos poner dentro variables y expresiones que serán evaluadas al ponerlas dentro de **${}**. También se respetan los saltos de línea, tabuladores, etc que haya dentro. Ejemplo:
+Desde ES2015 también podemos poner una cadena entre **`` ` ``** (acento grave) y en ese caso podemos poner dentro **variables** y **expresiones** que serán evaluadas al ponerlas dentro de **`${}`**. También se respetan los **saltos de línea**, tabuladores, etc que haya dentro. Ejemplo:
 
 ```js linenums="1"
 let edad=25;
 
-console.log(\`El usuario tiene:
-${edad} años\`) 
+console.log(
+`El usuario tiene:
+
+${edad} años`)
 ```
 
 Mostrará en la consola:
@@ -222,8 +237,8 @@ Se declaran con **function** y se les pasan los parámetros entre paréntesis. L
 
 Puede usarse una función antes de haberla declarado por el comportamiento de Javascript llamado _hoisting_: el navegador primero carga todas las funciones y mueve las declaraciones de las variables al principio y luego ejecuta el código.
 
-!!! question "EJERCICIO 4:"
-    Haz una función que te pida que escribas algo y muestre un alert diciendo 'Has escrito...' y el valor introducido. Pruébala en la consola (pegas allí la función y luego la llamas desde la consola)
+!!! question "ACTIVIDAD 4:"
+    Haz una función que te pida que escribas algo con `prompt` y muestre un `alert` diciendo 'Has escrito...' y el valor introducido. Pruébala en la consola (pegas allí la función y luego la llamas desde la consola)
 
 ### Parámetros
 
@@ -233,27 +248,20 @@ Si se llama una función con menos parámetros de los declarados el valor de los
 function potencia(base, exponente) {
     console.log(base);            // muestra 4
     console.log(exponente);       // muestra undefined
-    let valor=1;
-    for (let i=1; i<=exponente; i++) {
-      valor=valor*base;
-    }
+    let valor = base ** exponente;
     return valor;
 }
 
-potencia(4);    // devolverá 1 ya que no se ejecuta el for
+potencia(4);    // devolverá 4
 ```
 
 Podemos dar un **valor por defecto** a los parámetros por si no los pasan asignándoles el valor al definirlos:
 
 ```js linenums="1"
 function potencia(base, exponente=2) {
-    console.log(base);            // muestra 4
-    console.log(exponente);       // muestra 2 la primera vez y 5 la segunda
-    let valor=1;
-    for (let i=1; i<=exponente; i++) {
-      valor=valor*base;
-    }
-    return valor;
+    console.log(`Base: ${base}`);            // muestra 4
+    console.log(`Exp.: ${exponente}`);       // muestra 2 la primera vez y 5 la segunda
+    return base ** exponente;
 }
 
 console.log(potencia(4));         // mostrará 16 (4^2)
@@ -268,7 +276,7 @@ console.log(potencia(4,5));       // mostrará 1024 (4^5)
     ...
     ```
 
-También es posible acceder a los parámetros desde el array **arguments[]** si no sabemos cuántos recibiremos:
+También es posible acceder a los parámetros desde el array **`arguments[]`** si no sabemos cuántos recibiremos:
 
 ```js linenums="1"
 function suma () {
@@ -317,11 +325,8 @@ ES2015 permite declarar una función anónima de forma más corta. Ejemplo sin _
 
 ```js linenums="1"
 let potencia = function(base, exponente) {
-    let valor=1;
-    for (let i=1; i<=exponente; i++) {
-      valor=valor*base;
-    }
-    return valor;
+    let resultado = base ** exponente;
+    return resultado;
 }
 ```
 
@@ -335,12 +340,9 @@ Al escribirla con la sintaxis de una _arrow function_ lo que hacemos es:
 El ejemplo con _arrow function_:
 
 ```js linenums="1"
-let potencia = (base, exponente) => {
-    let valor=1;
-    for (let i=1; i<=exponente; i++) {
-      valor=valor*base;
-    }
-    return valor;
+let potencia = (base) => {
+    let resultado = base ** 2;
+    return resultado;
 }
 ```
 
@@ -348,17 +350,17 @@ Otro ejemplo, sin _arrow function_:
 
 ```js linenums="1"
 let cuadrado = function(base) {
-    return base * base;
+    return base ** 2;
 }
 ```
 
 con _arrow function_:
 
 ```js linenums="1"
-let cuadrado = base => base * base;
+let cuadrado = (base) => base * 2;
 ```
 
-!!! question "EJERCICIO 5:"
+!!! question "ACTIVIDAD 5: `📂 UD1/act5/act5.html`"
     Haz una _arrow function_ que devuelva el cubo del número pasado como parámetro y pruébala desde la consola. Escríbela primero en la forma habitual y luego la "traduces" a _arrow function_.
 
 ## Estructuras y bucles
@@ -392,6 +394,7 @@ if (edad < 18) {
 ```
 
 Se puede usar el operador **? :** que es como un _if_ que devuelve un valor:
+
 ```javascript
 let esMayorDeEdad = (edad>18)?true:false;
 ```
@@ -467,8 +470,14 @@ do {
 } while (nota)
 ```
 
-!!! question "EJERCICIO 6:"
-    Haz un programa para que el usuario juegue a adivinar un número. Obtén un número al azar (busca por internet cómo se hace o simplemente guarda el número que quieras en una variable) y ve pidiendo al usuario que introduzca un número. Si es el que busca le dices que lo ha encontrado y si no le mostrarás si el número que busca el mayor o menor que el introducido. El juego acaba cuando el usuario encuentra el número o cuando pulsa en 'Cancelar' (en ese caso le mostraremos un mensaje de que ha cancelado el juego).
+!!! question "ACTIVIDAD 6: `📂 UD1/act6/act6.html`"
+    Haz un programa para que el usuario juegue a adivinar un número.
+    
+    Obtén un número al azar (busca por internet cómo se hace o simplemente guarda el número que quieras en una variable) y ve pidiendo al usuario que introduzca un número.
+    
+    Si es el que busca le dices que lo ha encontrado y si no le mostrarás si el número que busca el mayor o menor que el introducido.
+    
+    El juego acaba cuando el usuario encuentra el número o cuando pulsa en `Cancelar` (en ese caso le mostraremos un mensaje de que ha cancelado el juego).
 
 ### Bucle: for
 
@@ -488,8 +497,12 @@ for (let i=0; i<datos.length; i++) {
 // El valor de sumaDatos será 125
 ```
 
-!!! question "EJERCICIO 7:"
-    El factorial de un número entero `n` es una operación matemática que consiste en multiplicar ese número por todos los enteros menores que él: **n x (n-1) x (n-2) x ... x 1**. Así, el factorial de 5 (se escribe `5!`) vale **5! = 5 x 4 x 3 x 2 x 1 = 120**. Haz un script que calcule el factorial de un número entero.
+!!! question "ACTIVIDAD 7: `📂 UD1/act7/act7.html`"
+    El factorial de un número entero `n` es una operación matemática que consiste en multiplicar ese número por todos los enteros menores que él: **`n x (n-1) x (n-2) x ... x 1`**.
+    
+    Así, el factorial de 5 (se escribe *`5!`*) vale: **`5! = 5 x 4 x 3 x 2 x 1 = 120`**.
+    
+    Haz un script que calcule el factorial de un número entero.
 
 #### Bucle: for...in
 
@@ -545,7 +558,7 @@ for (let letra of cadena) {
 }  
 ```
 
-!!! question "EJERCICIO 8:"
+!!! question "ACTIVIDAD 8: `📂 UD1/act8/act8.html`"
     Haz 3 funciones a las que se le pasa como parámetro un array de notas y devuelve la nota media. Cada una usará un for de una de las 3 formas vistas. Pruébalas en la consola
 
 ## Manejo de errores
@@ -563,7 +576,7 @@ catch(error) {
 }
 ```
 
-Dentro del bloque _try_ ponemos el código que queremos proteger y cualquier error producido en él será pasado al bloque _catch_ donde es tratado. Opcionalmente podemos tener al final un bloque _finally_ que se ejecuta tanto si se produce un error como si no. El parámetro que recibe _catch_ es un objeto con las propiedades _name_, que indica el tipo de error (_SyntaxError_, _RangeError_, ... o el genérico _Error_), y _message_, que indica el texto del error producido.
+Dentro del bloque _`try`_ ponemos el código que queremos proteger y cualquier error producido en él será pasado al bloque `_catch_` donde es tratado. Opcionalmente podemos tener al final un bloque _`finally`_ que se ejecuta tanto si se produce un error como si no. El parámetro que recibe _`catch`_ es un objeto con las propiedades _`name`_, que indica el tipo de error (_`SyntaxError`_, _`RangeError`_, ... o el genérico _`Error`_), y _`message`_, que indica el texto del error producido.
 
 En ocasiones podemos querer que nuestro código genere un error. Esto evita que tengamos que comprobar si el valor devuelto por una función es el adecuado o es un código de error. Por ejemplo tenemos una función para retirar dinero de una cuenta que recibe el saldo de la misma y la cantidad de dinero a retirar y devuelve el nuevo saldo, pero si no hay suficiente saldo no debería restar nada sino mostrar un mensaje al usuario. Sin gestión de errores haríamos:
 
@@ -578,10 +591,11 @@ function retirar(saldo, cantidad) {
 // Y donde se llama a la función_
 ...
 resultado = retirar(saldo, importe)
-if (resultado === false
+if (resultado === false) {
   alert('Saldo insuficiente')
 } else {
   saldo = resultado
+}
 ...
 ```
 
@@ -595,7 +609,7 @@ Se trata de un código poco claro que podemos mejorar lanzando un error en la fu
 
 Por defecto al lanzar un error este será de clase _Error_ pero (el código anterior es equivalente a `throw new Error('Valor no válido')`) aunque podemos lanzarlo de cualquier otra clase (`throw new RangeError('Saldo insuficiente')`) o personalizarlo.
 
-Siempre que vayamos a ejecutar código que pueda generar un error debemos ponerlo dentro de un bloque _try_ por lo que la llamada a la función que contiene el código anterior debería estar dentro de un _try_. El código del ejemplo anterior quedaría:
+Siempre que vayamos a ejecutar código que pueda generar un error debemos ponerlo dentro de un bloque _`try`_ por lo que la llamada a la función que contiene el código anterior debería estar dentro de un _`try`_. El código del ejemplo anterior quedaría:
 
 ```js linenums="1"
 function retirar(saldo, cantidad) {
@@ -617,13 +631,17 @@ try {
 
 Podemos ver en detalle cómo funcionan en la página de [MDN web docs](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/try...catch) de Mozilla.
 
+!!! question "ACTIVIDAD 9: `📂 UD1/act9/act9.html`"
+    Toma una función de la actividad anterior para que emita un error si detecta una nota que no esté entre 0 y 10 y prueba que funciona capturando los errores.
+
 ## Buenas prácticas
 
-Javascript nos permite hacer muchas cosas que otros lenguajes no nos dejan por lo que debemos ser cuidadosos para no cometer errores de los que no se nos va a avisar.
+Javascript nos permite hacer muchas cosas que otros lenguajes no nos dejan por lo que debemos tener mucho cuidado para no cometer errores de los que suele avisar.
 
 ### 'use strict'
 
-Si ponemos siempre esta sentencia al principio de nuestro código el intérprete nos avisará si usamos una variale sin declarar (muchas vecees por equivocarnos al escrbir su nombre). En concreto fuerza al navegador a no permitir:
+Si ponemos siempre esta sentencia al principio de nuestro código el intérprete nos avisará si usamos una variable sin declarar (muchas veces por equivocarnos al escribir su nombre). En concreto fuerza al navegador a no permitir:
+
 * Usar una variable sin declarar
 * Definir más de 1 vez una propiedad de un objeto
 * Duplicar un parámetro en una función
@@ -649,9 +667,16 @@ También es conveniente, por motivos de eficiencia no usar objetos Number, Strin
 ### Errores
 
 No se debería estar comprobando lo devuelto por una función para ver si se ha ejecutado correctamente o ha devuelto algún código de error. Si algo es erróneo no debemos devolver un código sino lanzar un error y quien ha llamado a esa función debería hacerlo dentro de un `try...catch` para capturar dicho error. Por ejemplo:
+
 - Mal
 
 ```js linenums="1" hl_lines="4-6"
+function getNombreMes(mes) {
+   mes = mes - 1; // Ajustar el número de mes al índice del array (1 = Ene, 12 = Dic)
+   var meses = new Array("Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic");
+   return meses[mes];
+}
+
 function muestraDatos(datos) {
    ...
    const nombreMes = getNombreMes(datos.mes);
@@ -660,17 +685,20 @@ function muestraDatos(datos) {
    }
    ...
 }
-
-function getNombreMes(mes) {
-   mes = mes - 1; // Ajustar el número de mes al índice del array (1 = Ene, 12 = Dic)
-   var meses = new Array("Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic");
-   return meses[mes];
-}
 ```
 
 - Bien
 
 ```js linenums="1" hl_lines="3-7"
+function getNombreMes(mes) {
+   mes = mes - 1; // Ajustar el número de mes al índice del array (1 = Ene, 12 = Dic)
+   var meses = new Array("Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic");
+   if (meses[mes] === null) {
+       throw 'El mes ' + mes + ' es erróneo';
+   }
+   return meses[mes];
+}
+
 function muestraDatos(datos) {
    ...
    try {
@@ -679,15 +707,6 @@ function muestraDatos(datos) {
       alert(err)
    }
    ...
-}
-
-function getNombreMes(mes) {
-   mes = mes - 1; // Ajustar el número de mes al índice del array (1 = Ene, 12 = Dic)
-   var meses = new Array("Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic");
-   if (meses[mes] === null) {
-       throw 'El mes ' + mes + ' es erróneo';
-   }
-   return meses[mes];
 }
 ```
 
