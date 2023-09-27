@@ -1,19 +1,16 @@
 # Introducción a Javascript
 
-- [Introducción a Javascript](#introducción-a-javascript)
-  - [Introducción](#introducción)
-    - [Un poco de historia](#un-poco-de-historia)
-    - [Soporte en los navegadores](#soporte-en-los-navegadores)
-  - [Herramientas](#herramientas)
-    - [La consola del navegador](#la-consola-del-navegador)
-    - [Editores](#editores)
-    - [Editores on-line](#editores-on-line)
-  - [Incluir javascript en una página web](#incluir-javascript-en-una-página-web)
-  - [Mostrar información](#mostrar-información)
-  - [git](#git)
-  - [npm](#npm)
-- [Bibliografía](#bibliografía)
-
+- [Introducción](#introducción)
+  - [Un poco de historia](#un-poco-de-historia)
+  - [Soporte en los navegadores](#soporte-en-los-navegadores)
+- [Herramientas](#herramientas)
+  - [La consola del navegador](#la-consola-del-navegador)
+  - [Editores](#editores)
+  - [Editores on-line](#editores-on-line)
+- [Incluir javascript en una página web](#incluir-javascript-en-una-página-web)
+- [Mostrar información](#mostrar-información)
+- [git](#git)
+- [npm](#npm)
 
 ## Introducción
 
