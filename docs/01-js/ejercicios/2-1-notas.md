@@ -4,7 +4,7 @@
 
 Vamos a hacer un programa que va pidiendo al usuario que introduzca las notas de un examen y las va guardando en un array. El usuario cada vez puede introducir:
 
-- una sóla nota
+- una sola nota
 - varias separadas por coma (ej. 4.5, 6, 8.75)
 
 Se le continuará pidiendo notas hasta que pulse ‘Cancelar’.

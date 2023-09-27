@@ -1,5 +1,20 @@
 # Introducción a Javascript
 
+- [Introducción a Javascript](#introducción-a-javascript)
+  - [Introducción](#introducción)
+    - [Un poco de historia](#un-poco-de-historia)
+    - [Soporte en los navegadores](#soporte-en-los-navegadores)
+  - [Herramientas](#herramientas)
+    - [La consola del navegador](#la-consola-del-navegador)
+    - [Editores](#editores)
+    - [Editores on-line](#editores-on-line)
+  - [Incluir javascript en una página web](#incluir-javascript-en-una-página-web)
+  - [Mostrar información](#mostrar-información)
+  - [git](#git)
+  - [npm](#npm)
+- [Bibliografía](#bibliografía)
+
+
 ## Introducción
 
 En las páginas web el elemento fundamental es el fichero **HTML** con la información a mostrar en el navegador. Posteriormente surgió la posibilidad de "decorar" esa información para mejorar su apariencia, lo que dio lugar al **CSS**. Y también se pensó en dar dinamismo a las páginas y apareció el lenguaje **Javascript**.
@@ -122,14 +137,14 @@ También se pueden escribir las funciones sin _window._ (es decir `alert('Hola')
 
 Si queremos mostrar una información para depurar nuestro código no utilizaremos _alert(mensaje)_ sino `console.log(mensaje)` o `console.error(mensaje)`. Estas funciones muestran la información pero en la consola del navegador. La diferencia es que _console.error_ la muestra como si fuera un error de *Javascript*.
 
-### git
+## git
 
 Usaremos repositorios *git* para la entrega de las prácticas y servirá también para poder realizar el control de versiones. Para instalarlo simplemente habrá que instalar el paquete *git* (`apt install git`).
 
 Podemos gestionar git desde la consola o quien quiera puede instalar una extensión para utilizarlo desde el entorno de programación. En el caso de *Visual Studio Code* lo encontramos en 
 [https://code.visualstudio.com/docs/editor/versioncontrol](https://code.visualstudio.com/docs/editor/versioncontrol).
 
-### npm
+## npm
 
 **npm** es el gestor de paquetes del framework Javascript **Node.js** y suele utilizarse en programación *frontend* como gestor de dependencias de la aplicación. Esto significa que será la herramienta que se encargará de descargar y poner a disposición de nuestra aplicación todas las librerías Javascript que vayamos a utilizar, por ejemplo para hacer los tests de nuestros programas (en algunas prácticas haremos o pasaremos tests unitarios ya hechos para comprobar que nuestros programas funcionan correctamente y, sobre todo, que continúan haciéndolo tras realizar alguna modificación en ellos).
 

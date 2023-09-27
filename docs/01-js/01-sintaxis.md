@@ -1,5 +1,34 @@
 # 1. Sintaxis
 
+- [1. Sintaxis](#1-sintaxis)
+  - [Variables](#variables)
+  - [Tipos de datos básicos](#tipos-de-datos-básicos)
+    - [_Casting_ de variables](#casting-de-variables)
+    - [Number](#number)
+    - [String](#string)
+      - [Template literals](#template-literals)
+    - [Boolean](#boolean)
+  - [Funciones](#funciones)
+    - [Parámetros](#parámetros)
+    - [Funciones anónimas](#funciones-anónimas)
+    - [Arrow functions (funciones _lambda_)](#arrow-functions-funciones-lambda)
+  - [Estructuras y bucles](#estructuras-y-bucles)
+    - [Estructura condicional: if](#estructura-condicional-if)
+    - [Estructura condicional: switch](#estructura-condicional-switch)
+    - [Bucle _while_](#bucle-while)
+    - [Bucle: for](#bucle-for)
+    - [Bucle: for con contador](#bucle-for-con-contador)
+      - [Bucle: for...in](#bucle-forin)
+      - [Bucle: for...of](#bucle-forof)
+  - [Manejo de errores](#manejo-de-errores)
+  - [Buenas prácticas](#buenas-prácticas)
+    - ['use strict'](#use-strict)
+    - [Variables](#variables-1)
+    - [Errores](#errores)
+    - [Otras](#otras)
+  - [Clean Code](#clean-code)
+
+
 ## Variables
 
 Javascript es un lenguaje **débilmente tipado**. Esto significa que no se indica de qué tipo es una variable al declararla e incluso puede cambiar su tipo a lo largo de la ejecución del programa. 

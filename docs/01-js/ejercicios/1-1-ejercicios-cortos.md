@@ -40,6 +40,7 @@ Debes controlar:
 - en la consola las horas y los minutos se deben mostrar siempre con 2 números (09:03 y no 9:3)
 
 ### Ejercicio 1.1.d: contraseña
+
 Crea un programa que pida al usuario que introduzca una contraseña y compruebe si es o no segura. Para ello comprobará:
 
 - que su longitud sea mayor o igual de 8 caracteres
