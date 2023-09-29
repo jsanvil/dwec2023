@@ -1,42 +1,61 @@
-all: ud1_0 ud1_1 ud1_1_1 ud1_1_2 ud1_1_3
+all: ud1_1 ud1_2 ud1_2_1 ud1_2_2 ud1_2_3 ud2_1 ud2_2 ud2_3
 
 LOCAL_URL=http://127.0.0.1:8000/
 
 OUTPUT_DIR=./pdf/
 
-UD1_DIR=01-js/
-
-UD1_0_MD=00-introduccion
+UD1_DIR=ud1/
+UD2_DIR=ud2/
 
 gettitle=$(shell grep -m 1 '# ' $1 | sed -r 's/^# //')
 
-ud1_0: docs/$(UD1_DIR)$(UD1_0_MD).md
-	$(eval title := $(call gettitle, $<) )
-	node exportpdf.js $(LOCAL_URL)$(UD1_DIR)$(UD1_0_MD) $(OUTPUT_DIR)$(UD1_0_MD).pdf "$(title)"
-
-UD1_1_MD=01-sintaxis
+UD1_1_MD=ud1-1-tecnologias
 
 ud1_1: docs/$(UD1_DIR)$(UD1_1_MD).md
 	$(eval title := $(call gettitle, $<) )
 	node exportpdf.js $(LOCAL_URL)$(UD1_DIR)$(UD1_1_MD) $(OUTPUT_DIR)$(UD1_1_MD).pdf "$(title)"
 
-UD1_1_1_MD=01.1-objetos
+UD1_2_MD=ud1-2-sintaxis
 
-ud1_1_1: docs/$(UD1_DIR)$(UD1_1_1_MD).md
+ud1_2: docs/$(UD1_DIR)$(UD1_2_MD).md
 	$(eval title := $(call gettitle, $<) )
-	node exportpdf.js $(LOCAL_URL)$(UD1_DIR)$(UD1_1_1_MD) $(OUTPUT_DIR)$(UD1_1_1_MD).pdf "$(title)"
+	node exportpdf.js $(LOCAL_URL)$(UD1_DIR)$(UD1_2_MD) $(OUTPUT_DIR)$(UD1_2_MD).pdf "$(title)"
 
-UD1_1_2_MD=01.2-arrays
+UD1_2_1_MD=ud1-2-1-objetos
 
-ud1_1_2: docs/$(UD1_DIR)$(UD1_1_2_MD).md
+ud1_2_1: docs/$(UD1_DIR)$(UD1_2_1_MD).md
 	$(eval title := $(call gettitle, $<) )
-	node exportpdf.js $(LOCAL_URL)$(UD1_DIR)$(UD1_1_2_MD) $(OUTPUT_DIR)$(UD1_1_2_MD).pdf "$(title)"
+	node exportpdf.js $(LOCAL_URL)$(UD1_DIR)$(UD1_2_1_MD) $(OUTPUT_DIR)$(UD1_2_1_MD).pdf "$(title)"
 
-UD1_1_3_MD=01.3-programacion-funcional
+UD1_2_2_MD=ud1-2-2-arrays
 
-ud1_1_3: docs/$(UD1_DIR)$(UD1_1_3_MD).md
+ud1_2_2: docs/$(UD1_DIR)$(UD1_2_2_MD).md
 	$(eval title := $(call gettitle, $<) )
-	node exportpdf.js $(LOCAL_URL)$(UD1_DIR)$(UD1_1_3_MD) $(OUTPUT_DIR)$(UD1_1_3_MD).pdf "$(title)"
+	node exportpdf.js $(LOCAL_URL)$(UD1_DIR)$(UD1_2_2_MD) $(OUTPUT_DIR)$(UD1_2_2_MD).pdf "$(title)"
+
+UD1_2_3_MD=ud1-2-3-programacion-funcional
+
+ud1_2_3: docs/$(UD1_DIR)$(UD1_2_3_MD).md
+	$(eval title := $(call gettitle, $<) )
+	node exportpdf.js $(LOCAL_URL)$(UD1_DIR)$(UD1_2_3_MD) $(OUTPUT_DIR)$(UD1_2_3_MD).pdf "$(title)"
+
+UD2_1_MD=ud2-1-DOM
+
+ud2_1: docs/$(UD2_DIR)$(UD2_1_MD).md
+	$(eval title := $(call gettitle, $<) )
+	node exportpdf.js $(LOCAL_URL)$(UD2_DIR)$(UD2_1_MD) $(OUTPUT_DIR)$(UD2_1_MD).pdf "$(title)"
+
+UD2_2_MD=ud2-2-MVC
+
+ud2_2: docs/$(UD2_DIR)$(UD2_1_MD).md
+	$(eval title := $(call gettitle, $<) )
+	node exportpdf.js $(LOCAL_URL)$(UD2_DIR)$(UD2_2_MD) $(OUTPUT_DIR)$(UD2_2_MD).pdf "$(title)"
+
+UD2_3_MD=ud2-3-BOM
+
+ud2_3: docs/$(UD2_DIR)$(UD2_3_MD).md
+	$(eval title := $(call gettitle, $<) )
+	node exportpdf.js $(LOCAL_URL)$(UD2_DIR)$(UD2_3_MD) $(OUTPUT_DIR)$(UD2_3_MD).pdf "$(title)"
 
 clean:
 	rm $(OUTPUT_DIR)*

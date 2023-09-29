@@ -1,4 +1,4 @@
-# UD1 - 0. Introducción a Javascript
+# UD1 - 1. Arquitecturas y tecnologías de programación 
 
 - [Introducción](#introducción)
   - [Un poco de historia](#un-poco-de-historia)

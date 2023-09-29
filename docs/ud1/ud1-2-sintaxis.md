@@ -1,4 +1,4 @@
-# UD1 - 1. Sintaxis
+# UD1 - 2. Manejo de la sintaxis del lenguaje 
 
 - [Variables](#variables)
 - [Tipos de datos básicos](#tipos-de-datos-básicos)

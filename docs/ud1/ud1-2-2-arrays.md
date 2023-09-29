@@ -1,4 +1,4 @@
-# UD1 - 1.2. Arrays
+# UD1 - 2.2. Arrays
 
 - [Introducción](#introducción)
   - [Arrays de objetos](#arrays-de-objetos)

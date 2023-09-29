@@ -4,13 +4,16 @@ nav:
   - Inicio:
     - 'index.md'
     - 'entorno.md'
-  - Javavascript:
-    - 'Introducción': '01-js/index.md'
-    - 'Sintaxis':
-      - '01-js/01-sintaxis.md'
-      - '01-js/01.1-objetos.md'
-      - '01-js/01.2-arrays.md'
-      - '01-js/01.3-programacion-funcional.md'
+  - UD1 Sintaxis:
+    - 'ud1/ud1-1-tecnologias.md'
+    - 'ud1/ud1-2-sintaxis.md'
+    - 'ud1/ud1-2-1-objetos.md'
+    - 'ud1/ud1-2-2-arrays.md'
+    - 'ud1/ud1-2-3-programacion-funcional.md'
+  - UD2 DOM:
+    - 'ud2/ud2-1-DOM.md'
+    # - 'ud2/ud2-2-MVC.md'
+    # - 'ud2/ud2-3-BOM.md'
 
 theme:
   name: material # readthedocs # material

@@ -1,4 +1,4 @@
-# UD1 - 1.3. Programación funcional
+# UD1 - 2.3. Programación funcional
 
 - [filter](#filter)
 - [find](#find)

@@ -1,40 +1,53 @@
-# El patrón Modelo-Vista-Controlador
+# UD2 - 2. El patrón Modelo-Vista-Controlador (MVC)
+
+- [Introducción](#introducción)
+- [Una aplicación sin MVC](#una-aplicación-sin-mvc)
+- [Nuestro patrón MVC](#nuestro-patrón-mvc)
+
+## Introducción
+
 **Modelo-vista-controlador (MVC)** es el patrón de arquitectura de software más utilizado en la actualidad en desarrollo web (y también en muchas aplicaciones de escritorio). Este patrón propone separar la aplicación en tres **componentes** distintos: el **modelo**, la **vista** y el **controlador**:
-- El **modelo** es el conjunto de todos los datos o información con la que trabaja la aplicación. Normalmente serán variables extraidas de una base de datos y el modelo gestiona los accesos a dicha información, tanto consultas como actualizaciones, implementando también los privilegios de acceso que se hayan descrito en las especificaciones de la aplicación (lógica de negocio). Normalmente el modelo no tiene conocimiento de las otras partes de la aplicación.
-- La **vista** muestra al usuario el modelo (información y lógica de negocio) en un formato adecuado para interactuar (usualmente la interfaz de usuario). Es la intermediaria entre la aplicación y el usuario
+
+- El **modelo** es el conjunto de todos los datos o información con la que trabaja la aplicación. Normalmente serán variables extraídas de una **base de datos** y el modelo gestiona los **accesos** a dicha información, tanto **consultas** como actualizaciones, implementando también los **privilegios** de acceso que se hayan descrito en las especificaciones de la aplicación (lógica de negocio). Normalmente el modelo no tiene conocimiento de las otras partes de la aplicación.
+- La **vista** muestra al usuario el modelo (información y lógica de negocio) en un formato adecuado para interactuar, usualmente la **interfaz de usuario**. Es la intermediaria entre la aplicación y el usuario.
 - El **controlador** es el encargado de coordinar el funcionamiento de la aplicación. Responde a los eventos del usuario para lo que hace peticiones al modelo (para obtener o cambiar la información) y a la vista (para que muestre al usuario dicha información).
 
 Este patrón de arquitectura de software se basa en las ideas de reutilización de código y la separación de conceptos, características que buscan facilitar la tarea de desarrollo de aplicaciones y su posterior mantenimiento.
 
 ## Una aplicación sin MVC
-Si una aplicación no utiliza este modelo cuando una función modifica los datos debe además reflejar dicha modificación en la página para que la vea el usuario. Por ejemplo vamos a hacer una aplicación para gestionar un almacén. Entre otras muchas cosas tendrá una función (podemos llamarle _addProduct_) que se encargue de añadir un nuevo producto al almacén y dicha función deberá realizar:
-- añadir el nuevo producto al almacén (por ejemplo añadiéndolo a un array de productos)
-- pintar en la página ese nuevo producto (por ejemplo añadiendo una nueva línea a una tabla donde se muestran los productos)
 
-Es posible que en algún momento decidamos cambiar la forma en que se muestra la información al usuario para lo que deberemos modificar la función _addProduct_ y si cometemos algún error podría hacer que no se añadan correctamente los productos al almacén. Además va a ser una función muy grande y va a ser difícil mantener ese código.
+Si una aplicación no utiliza este modelo cuando una función modifica los datos debe además reflejar dicha modificación en la página para que la vea el usuario.
+
+_Por ejemplo_, vamos a considerar una aplicación para gestionar un almacén. Entre otras muchas cosas tendrá una función _`addProduct`_ que se encargue de añadir un nuevo producto al almacén y dicha función deberá realizar:
+
+- añadir el nuevo producto al almacén (por ejemplo añadiéndolo a un array de productos)
+- mostrar en la página ese nuevo producto (por ejemplo añadiendo una nueva línea a una tabla donde se muestran los productos)
+
+Es posible que en algún momento decidamos cambiar la forma en que se muestra la información al usuario para lo que deberemos modificar la función _`addProduct`_ y si cometemos algún error podría hacer que no se añadan correctamente los productos al almacén. Además va a ser una función muy grande y va a ser difícil mantener ese código.
 
 ## Nuestro patrón MVC
+
 En una aplicación muy sencilla podemos no seguir este modelo pero en cuanto la misma se complica un poco es imprescindible programar siguiendo buenas prácticas ya que si no lo hacemos nuestro código se volverá rápidamente muy difícil de mantener.
 
-Hay muchas formas de implementar este modelo. Si estamos haciendo un proyecto con POO podemos seguir el patrón MVC usando clases. Crearemos dentro de la carpeta _src_ 3 subcarpetas:
-- _model_: aquí incluiremos las clases que constituyen el modelo de nuestra aplicación
-- _view_: aquí crearemos un fichero JS que será el encargado de la UI de nuestra aplicación
-- _controller_: aquí crearemos el fichero JS que contendrá el controlador de la aplicación
+Hay muchas formas de implementar este modelo. Si estamos haciendo un proyecto con POO podemos seguir el patrón MVC usando clases. Crearemos dentro de la carpeta _`src\`_ 3 subcarpetas:
 
-De este forma, si quiero cambiar la forma en que se muestra algo no hace falta tocar nada del modelo sino que voy directamente a la vista y modifico la función que se ocupa de ello.
+- _`model\`_: aquí incluiremos las clases que constituyen el modelo de nuestra aplicación
+- _`view\`_: aquí crearemos un fichero JS que será el encargado de la UI de nuestra aplicación
+- _`controller\`_: aquí crearemos el fichero JS que contendrá el controlador de la aplicación
+
+De este forma, si queremos cambiar la forma en que se muestra algo no hace falta tocar nada del modelo sino que vamos directamente a la vista y modificamos la función que se ocupa de ello.
 
 La vista será una clase sin propiedades (no tendrá un constructor), sólo contendrá métodos para renderizar los distintos elementos de la vista.
 
-El controlador será una clase cuyas propedades serán el modelo y la vista, de forma que pueda acceder a ambos elementos. Tendrá métodos para las distintas acciones que pueda hacer el usuario (que se ejecutarán como respuesta a las acciones del usuario sobre nuestra página, lo veremos en el tema de _eventos_). Cada uno de esos métodos llamará a métodos del modelo (para obtener o cambiar la información necesaria) y posteriormente de la vista (para reflejar esos cambios en lo que ve el usuario).
+El controlador será una clase cuyas propedades serán el modelo y la vista, de forma que pueda acceder a ambos elementos. Tendrá métodos para las distintas acciones que pueda hacer el usuario (que se ejecutarán como respuesta a las acciones del usuario sobre nuestra página, lo veremos cuando estudiemos los _eventos_). Cada uno de esos métodos llamará a métodos del modelo (para obtener o cambiar la información necesaria) y posteriormente de la vista (para reflejar esos cambios en lo que ve el usuario).
 
 El fichero principal de la aplicación instanciará un controlador y lo inicializará.
 
-Por ejemplo, siguiendo con la aplicación para gestionar un almacén. El modelo constará de la clase _Store_ que es nuestro almacén de productos (con métodos para añadir o eliminar productos, etc) y la clase _Product_ que gestiona cada producto del almacén (con métodos para crear un nuevo producto, cambiar sus características, etc).
+Por ejemplo, siguiendo con la aplicación para gestionar un almacén. El modelo constará de la clase _`Store`_ que es nuestro almacén de productos (con métodos para añadir o eliminar productos, etc) y la clase _`Product`_ que gestiona cada producto del almacén (con métodos para crear un nuevo producto, cambiar sus características, etc).
 
 El fichero principal sería algo como:
-- main.js
 
-```javascript
+```js title="main.js" linenums="1"
 const storeApp = new StoreController();		// crea el controlador
 storeApp.init();				// lo inicializa, si es necesario
 
@@ -45,8 +58,7 @@ storeApp.changeProduct({ id: 1, price: 515.95 });
 storeApp.deleteProduct(1);
 ```
 
-- controller/index.js
-```javascript
+```js linenums="1" title="controller/index.js"
 class StoreController {
     constructor() {
         this.productStore = new Store(1);		// crea el modelo, un Store con id 1
@@ -71,8 +83,7 @@ class StoreController {
 }
 ```
 
-- view/index.js
-```javascript
+```js linenums="1" title="view/index.js"
 class StoreView{
     init() {
         ...			// inicializa la vista, si es necesario
@@ -89,8 +100,7 @@ class StoreView{
 }
 ```
 
-- model/store.class.js
-```javascript
+```js linenums="1" title="model/store.class.js"
 class Store {
     constructor (id) {
         this.id=Number(id);
@@ -112,8 +122,7 @@ class Store {
 }
 ```
 
-- model/product.class.js
-```javascript
+```js linenums="1" title="model/product.class.js"
 class Product {
     constructor (id, name, price, units) {
         this.id = id;
@@ -125,4 +134,4 @@ class Product {
 }
 ```
 
-Podéis obtener más información y ver un ejemplo más completo en [https://www.natapuntes.es/patron-mvc-en-vanilla-javascript/](https://www.natapuntes.es/patron-mvc-en-vanilla-javascript/)
+Podéis obtener más información y ver un ejemplo más completo en: [https://www.natapuntes.es/patron-mvc-en-vanilla-javascript/](https://www.natapuntes.es/patron-mvc-en-vanilla-javascript/)

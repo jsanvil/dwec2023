@@ -1,4 +1,4 @@
-# UD1 - 1.1. Objetos en Javascript
+# UD1 - 2.1. Objetos en Javascript
 
 - [Introducción](#introducción)
 - [Propiedades de un objeto](#propiedades-de-un-objeto)
