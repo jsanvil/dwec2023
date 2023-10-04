@@ -3,11 +3,11 @@
 - [Introducción](#introducción)
 - [Acceso a los nodos](#acceso-a-los-nodos)
 - [Acceso a nodos a partir de otros](#acceso-a-nodos-a-partir-de-otros)
-  - [Propiedades de un nodo](#propiedades-de-un-nodo)
+    - [Propiedades de un nodo](#propiedades-de-un-nodo)
 - [Manipular el árbol DOM](#manipular-el-árbol-dom)
 - [Atributos de los nodos](#atributos-de-los-nodos)
-  - [Estilos de los nodos](#estilos-de-los-nodos)
-  - [Atributos de clase](#atributos-de-clase)
+    - [Estilos de los nodos](#estilos-de-los-nodos)
+    - [Atributos de clase](#atributos-de-clase)
 
 ## Introducción
 
@@ -23,11 +23,11 @@ Por ejemplo, la página HTML:
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Página simple</title>
+    <meta charset="utf-8">
+    <title>Página simple</title>
 </head>
 <body>
-  <p>Esta página es <strong>muy simple</strong></p>
+    <p>Esta página es <strong>muy simple</strong></p>
 </body>
 </html>
 ```
@@ -49,13 +49,13 @@ El ejemplo anterior está simplificado porque sólo aparecen los nodos de tipo _
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Document</title>
+    <title>My Document</title>
 </head>
 <body>
-  <h1>Header</h1>
-  <p>
-    Paragraph
-  </p>
+    <h1>Header</h1>
+    <p>
+        Paragraph
+    </p>
 </body>
 </html>
 ```
@@ -221,7 +221,7 @@ En muchas ocasiones queremos acceder a cierto nodo a partir de uno dado. Para el
 
     ```js title="js"
     let element = documento.getElementById('elemento');
-    let parent = element.parentElement('');
+    let parent = element.parentElement;
     // parent es el nodo <div>
     ```
 
@@ -523,7 +523,7 @@ Podemos ver más ejemplos de creación y eliminación de nodos en [W3Schools](ht
 !!! question "ACTIVIDAD 3: `📂 UD2/act04/`"
     Siguiendo con la [página de ejemplo](./ejercicios/ejemploDOM.html) y la estructura de la actividad anterior, añade el código necesario para añadir a la página:
 
-    - Un nuevo párrafo al final del DIV _'lipsum'_ con el texto "Nuevo párrafo **añadido** por javascript" (fíjate que una palabra estça en negrita)
+    - Un nuevo párrafo al final del DIV _'lipsum'_ con el texto "Nuevo párrafo **añadido** por javascript" (fíjate que una palabra esta en negrita)
     - Un nuevo elemento al formulario tras el _'Dato 1'_ con la etiqueta _'Dato 1 bis'_ y el INPUT con id _'input1bis'_ que al cargar la página tendrá escrito "Hola" 
 
 ## Atributos de los nodos
@@ -610,3 +610,32 @@ if (clases.indexOf('rojo') == -1) {
   elemento.className += ' ' + 'rojo';
 }
 ```
+
+!!! question "ACTIVIDAD 4: `📂 UD2/act04/`"
+    En esta actividad tendrás que crear una página que permita generar una tabla de tamaño variable, seleccionar una celda al azar y borrar la tabla.
+
+    - Crea los archivos **`index.html`** y **`main.js`** en el directorio de la actividad.
+    - Dale una estructura básica a la página `index.html` y añade un el script `main.js`.
+    - Crea los siguientes elementos en la página:
+        - Un `<input type="text">` con `id` _`'table_x'`_
+        - Un `<input type="text">` con `id` _`'table_y'`_
+        - Un botón `<button>` con `id` _`'generar'`_ y texto _`'Generar'`_, añade el atributo `onclick` con el valor _`'generarTabla()'`_
+        - Añade un `<button>` con `id` _`'borrar'`_ y texto _`'Borrar'`_, añade el atributo `onclick` con el valor _`'borrarTabla()'`_
+        - Un `<div>` con `id` _`'tabla'`_
+        - Un `<ol>` con `id` _`'seleccion'`_
+    - En `main.js` crea una función **_`generarTabla()`_** que:
+        - Lea los valores de los `<input>` de _`'table_x'`_ y _`'table_y'`_
+        - Cree una tabla de _`table_x`_ filas y _`table_y`_ columnas dentro del `<div>` _`'tabla'`_
+        - Cada celda de la tabla tendrá un un `id` _`'celda_x_y'`_ donde _`x`_ es el número de fila y _`y`_ el número de columna. El texto del `<span>` será _`'x,y'`_.
+    - Función **_`borrar()`_** que:
+        - Limpie el contenido del `<div>` _`'tabla'`_, los valores del formulario y el contenido del `<ol>` _`'seleccion'`_.
+    - Función **_`seleccionaCelda()`_** que:
+        - Seleccione una celda al azar de la tabla y cambie su color de fondo, por ejemplo a rojo.
+        - Añada un nuevo elemento `<li>` al `<ol>` _`'seleccion'`_ con el texto de la celda seleccionada (_`'x,y'`_).
+        - Modifica `index.html` para aparezca un botón _`'Seleccionar'`_ y en el atributo `onclick` valor _`'seleccionaCelda()'`_.
+        - Si existen celdas seleccionadas con anterioridad, se debe cambiar el color de fondo a otro distinto de la seleccionada actualmente, por ejemplo a gris.
+
+    - _Opcional:_
+        - _¿Qué ocurre si se pulsa el botón _`'Generar'`_ sin haber borrado la tabla anterior? Implementa una solución._
+
+    _**Nota**: Cuando veamos eventos podremos utilizar tablas para realizar algún juego como el buscaminas, el tres en raya, etc._

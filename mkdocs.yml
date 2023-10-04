@@ -12,8 +12,8 @@ nav:
     - 'ud1/ud1-2-3-programacion-funcional.md'
   - UD2 DOM:
     - 'ud2/ud2-1-DOM.md'
-    # - 'ud2/ud2-2-MVC.md'
-    # - 'ud2/ud2-3-BOM.md'
+    - 'ud2/ud2-2-MVC.md'
+    - 'ud2/ud2-3-BOM.md'
 
 theme:
   name: material # readthedocs # material
@@ -47,7 +47,8 @@ extra:
       link: https://github.com/jsanvil/dwec2023
 
 extra_css:
-  - stylesheets/extra.css
+  - stylesheets/bs5_layout.css
+  - stylesheets/custom.css
 
 markdown_extensions:
   - toc:
