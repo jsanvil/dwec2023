@@ -572,11 +572,13 @@ Además dispone de los métodos:
 
 * **`.add(clase)`**: añade al elemento la clase pasada (si ya la tiene no hace nada). Ej.:
 ```javascript
-elemento.classList.add('primero');   // ahora elemento será <p class="destacado direccion primero">...
+elemento.classList.add('primero');
+// ahora elemento será <p class="destacado direccion primero">...
 ```
 * **`.remove(clase)`**: elimina del elemento la clase pasada (si no la tiene no hace nada). Ej.:
 ```javascript
-elemento.classList.remove('direccion');   // ahora elemento será <p class="destacado primero">...
+elemento.classList.remove('direccion');
+// ahora elemento será <p class="destacado primero">...
 ```
 * **`.toogle(clase)`**: añade la clase pasada si no la tiene o la elimina si la tiene ya. Ej.:
 
@@ -634,6 +636,7 @@ if (clases.indexOf('rojo') == -1) {
         - Añada un nuevo elemento `<li>` al `<ol>` _`'seleccion'`_ con el texto de la celda seleccionada (_`'x,y'`_).
         - Modifica `index.html` para aparezca un botón _`'Seleccionar'`_ y en el atributo `onclick` valor _`'seleccionaCelda()'`_.
         - Si existen celdas seleccionadas con anterioridad, se debe cambiar el color de fondo a otro distinto de la seleccionada actualmente, por ejemplo a gris.
+        - _**Consejo**: resultará más fácil si modificas las clases de las celdas en lugar de los estilos directamente._
 
     - _Opcional:_
         - _¿Qué ocurre si se pulsa el botón _`'Generar'`_ sin haber borrado la tabla anterior? Implementa una solución._
