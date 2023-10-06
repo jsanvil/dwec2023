@@ -1,4 +1,4 @@
-all: ud1_1 ud1_2 ud1_2_1 ud1_2_2 ud1_2_3 ud2_1 ud2_2 ud2_3
+all: ud1_1 ud1_2 ud1_2_1 ud1_2_2 ud1_2_3 ud2_1 ud2_2
 
 LOCAL_URL=http://127.0.0.1:8000/
 
@@ -45,17 +45,11 @@ ud2_1: docs/$(UD2_DIR)$(UD2_1_MD).md
 	$(eval title := $(call gettitle, $<) )
 	node exportpdf.js $(LOCAL_URL)$(UD2_DIR)$(UD2_1_MD) $(OUTPUT_DIR)$(UD2_1_MD).pdf "$(title)"
 
-UD2_2_MD=ud2-2-MVC
+UD2_2_MD=ud2-2-BOM
 
 ud2_2: docs/$(UD2_DIR)$(UD2_1_MD).md
 	$(eval title := $(call gettitle, $<) )
 	node exportpdf.js $(LOCAL_URL)$(UD2_DIR)$(UD2_2_MD) $(OUTPUT_DIR)$(UD2_2_MD).pdf "$(title)"
-
-UD2_3_MD=ud2-3-BOM
-
-ud2_3: docs/$(UD2_DIR)$(UD2_3_MD).md
-	$(eval title := $(call gettitle, $<) )
-	node exportpdf.js $(LOCAL_URL)$(UD2_DIR)$(UD2_3_MD) $(OUTPUT_DIR)$(UD2_3_MD).pdf "$(title)"
 
 clean:
 	rm $(OUTPUT_DIR)*

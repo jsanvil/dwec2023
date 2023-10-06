@@ -1,13 +1,13 @@
-# UD2 - 3. Browser Object Model (BOM)
+# UD2 - 2. Browser Object Model (BOM)
 
 - [Introducción](#introducción)
 - [Timers](#timers)
 - [Objetos del BOM](#objetos-del-bom)
-  - [Objeto window](#objeto-window)
-    - [Diálogos](#diálogos)
-  - [Objeto location](#objeto-location)
-  - [Objeto history](#objeto-history)
-  - [Otros objetos](#otros-objetos)
+    - [Objeto window](#objeto-window)
+        - [Diálogos](#diálogos)
+    - [Objeto location](#objeto-location)
+    - [Objeto history](#objeto-history)
+    - [Otros objetos](#otros-objetos)
 
 ## Introducción
 
@@ -49,8 +49,6 @@ const idInterval = setInterval(() => {
 }, 3000);
 ```
 
-> EJERCICIO: Ejecuta en la consola cada una de esas funciones
-
 En lugar de definir la función a ejecutar podemos llamar a una función que ya exista:
 
 ```javascript
@@ -64,6 +62,7 @@ const idTimeout=setTimeout(showMessage, 1000);
 Pero en ese caso hay que poner sólo el nombre de la función, sin `()` ya que si los ponemos se ejecutaría la función en ese momento y no transcurrido el tiempo indicado.
 
 Si necesitamos pasarle algún parámetro a la función lo añadiremos como parámetros de `setTimeout` o `setInterval` después del intervalo:
+
 ```javascript
 function showMessage(msg) {
   alert(msg)
@@ -71,6 +70,14 @@ function showMessage(msg) {
 
 const idTimeout = setTimeout(showMessage, 1000, 'Timeout que se ejecuta al cabo de 1 seg.');
 ```
+
+!!! question "ACTIVIDAD 6: `📂 UD2/act06/`"
+    Crea una página que tenga las siguientes funcionalidades:
+
+    - Se abra un dialogo de bienvenida (`alert`) al cabo de 2 segundos con el mensaje "Hola 👋".
+    - Añade un botón en el `html` con el texto 'Pulsa aquí' añade el atributo `onclick` para llamar a la función `boton()`.
+        - La función `boton()` actualiza, al cabo de 3 segundos, el texto del botón con el mensaje `Pulsado ${n} veces` donde `n` es el número de veces que se ha pulsado el botón.
+        - Guarda el identificador para poder cancelar la ejecución del código si se vuelve a pulsar el botón.
 
 ## Objetos del BOM
 
@@ -87,16 +94,23 @@ Sus principales propiedades y métodos son:
 * `.screenX`/`.screenY`: distancia de la ventana a la esquina izquierda/superior de la pantalla
 * `.outerWidth`/`.outerHeight`: ancho/alto total de la ventana, incluyendo la toolbar y la scrollbar
 * `.innerWidth`/`.innerHeight`: ancho/alto útil del documento, sin la toolbar y la scrollbar
-* `.open(url, nombre, opciones)`: abre una nueva ventana. Devuelve el nuevo objeto ventana. Las principales opciones son:
-    * `.toolbar`: si tendrá barra de herramientas
-    * `.location`: si tendrá barra de dirección
-    * `.directories`: si tendrá botones Adelante/Atrás
-    * `.status`: si tendrá barra de estado
-    * `.menubar`: si tendrá barra de menú
-    * `.scrollbar`: si tendrá barras de desplazamiento
-    * `.resizable`: si se puede cambiar su tamaño 
-    * `.width=px`/`.height=px`: ancho/alto
-    * `.left=px`/`.top=px`: posición izq/sup de la ventana
+* `.open(url, nombre, opciones)`: abre una nueva ventana. Devuelve el nuevo objeto ventana. Dependen del navegador. Las principales opciones son:
+    * `popup`: si es una ventana emergente. Si no se indica se abre en una nueva pestaña. (Las ventanas emergentes deben estar habilitadas en el navegador).
+    * `fullscreen=yes|no|1|0`: si se abre a pantalla completa
+    * `width=px`/`height=px`: ancho/alto de la ventana en pixels.
+    * `left=px` o `screenX=px`: posición en pixels desde la izquierda.
+    * `top=px` o `screenY=px`: posición en pixels desde arriba.
+    * `menubar=yes|no|1|0`: si tendrá barra de herramientas.
+    * `status=yes|no|1|0`: si tendrá barra de estado.
+    * `titlebar=yes|no|1|0`: si tendrá barra de título.
+    
+    !!! note "EJEMPLOS:"
+        ```javascript
+        window.open('http://www.google.es', 'google', 'width=500,height=300');
+        window.open('http://www.google.es', 'google', 'width=500,height=300,menubar=no,status=no,titlebar=no');
+        window.open('http://www.google.es', 'google', 'width=500,height=300,fullscreen=yes');
+        ```
+
 * `.opener`: referencia a la ventana desde la que se abrió esta ventana (para ventanas abiertas con _open_)
 * `.close()`: la cierra (pide confirmación, a menos que la hayamos abierto con open)
 * `.moveTo(x,y)`: la mueve a las coord indicadas
@@ -104,18 +118,18 @@ Sus principales propiedades y métodos son:
 * `.resizeTo(x,y)`: la da el ancho y alto indicados
 * `.resizeBy(x,y)`: le añade ese ancho/alto
 * `.pageXoffset / pageYoffset`: scroll actual de la ventana horizontal / vertical
-* Otros métodos: `.back()`, `.forward()`, `.home()`, `.stop()`, `.focus()`, `.blur()`, `.find()`, `.print()`, …
-NOTA: por seguridad no se puede mover una ventana fuera de la pantalla ni darle un tamaño menor de 100x100 px ni tampoco se puede mover una ventana no abierta con .open() o si tiene varias pestañas
+* Otros métodos: `.back()`, `.forward()`, `.home()`, `.stop()`, `.focus()`, `.blur()`, `.find()`, `.print()`, etc.
 
-> EJERCICIO: Ejecuta desde la consola:
-> - abre una nueva ventana de dimensiones 500x200px en la posición (100,200)
-> - escribe en ella (con document.write) un título h1 que diga 'Hola'
-> - muévela 300 px hacia abajo y 100 a la izquierda
-> - ciérrala
+    !!! note "NOTA"
+        Por seguridad no se puede mover una ventana fuera de la pantalla ni darle un tamaño menor de 100x100 px ni tampoco se puede mover una ventana no abierta con .open() o si tiene varias pestañas
+
+!!! question "ACTIVIDAD 7: `📂 UD2/act07/`"
+    - Abre una nueva ventana de dimensiones 500x200px en la posición (100,200)
+    - Escribe en ella (con `document.write()`) un título `h1` que diga _'Hola'_
+    - Muévela 300 px hacia abajo y 100 a la izquierda.
+    - Cambia su tamaño para que sea de 300x300 px.
 
 Puedes ver un ejemplo de cómo abrir ventanas en [este vídeo](https://www.youtube.com/watch?v=jkTt6bs2tPo&list=PLI7nHlOIIPOJtTDs1HVJABswW-xJcA7_o&index=40).
-
-> EJERCICIO: Haz que a los 2 segundos de abrir la página se abra un _popup_ con un mensaje de bienvenida. Esta ventana tendrá en su interior un botón Cerrar que permitirá que el usuario la cierre haciendo clic en él. Tendrá el tamaño justo para visualizar el mensaje y no tendrá barras de scroll, ni de herramientas, ni de dirección... únicamente el mensaje.
 
 #### Diálogos
 
@@ -136,10 +150,10 @@ Contiene información sobre la URL actual del navegador y podemos modificarla. S
 * `.assign(url)`: carga la página pasada como parámetro
 * `.replace(url)`: ídem pero sin guardar la actual en el historial
 
-> EJERCICIO: Ejecuta en la consola
+<!-- > EJERCICIO: Ejecuta en la consola
 > - muestra la ruta completa de la página actual
 > - muestra el servidor de esta página
-> - carga la página de Google usando el objeto _location_
+> - carga la página de Google usando el objeto _location_ -->
 
 ### Objeto [history](http://www.w3schools.com/jsref/obj_history.asp)
 
@@ -149,7 +163,7 @@ Permite acceder al historial de páginas visitadas y navegar por él:
 * `.forward()`: va a la siguiente página
 * `.go(num)`: se mueve _num_ páginas hacia adelante o hacia atrás (si _num_ es negativo) en el historial
 
-> EJERCICIO: desde la consola vuelve a la página anterior
+<!-- > EJERCICIO: desde la consola vuelve a la página anterior -->
 
 ### Otros objetos
 
@@ -165,4 +179,4 @@ Los otros objetos que incluye BOM son:
     * `.availWidth`/`.availHeight`: igual pero excluyendo la barra del S.O.
     * ...
 
-> EJERCICIO: obtén desde la consola todas las propiedades width/height y availWidth/availHeight del objeto _scrren_. Compáralas con las propiedades innerWidth/innerHeight y outerWidth/outerHeight de _window_.
+<!-- > EJERCICIO: obtén desde la consola todas las propiedades width/height y availWidth/availHeight del objeto _scrren_. Compáralas con las propiedades innerWidth/innerHeight y outerWidth/outerHeight de _window_. -->

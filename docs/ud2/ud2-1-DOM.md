@@ -520,7 +520,7 @@ Si utilizamos la propiedad **innerHTML** el código a usar es mucho más simple:
 
 Podemos ver más ejemplos de creación y eliminación de nodos en [W3Schools](http://www.w3schools.com/js/js_htmldom_nodes.asp).
 
-!!! question "ACTIVIDAD 3: `📂 UD2/act04/`"
+!!! question "ACTIVIDAD 4: `📂 UD2/act04/`"
     Siguiendo con la [página de ejemplo](./ejercicios/ejemploDOM.html) y la estructura de la actividad anterior, añade el código necesario para añadir a la página:
 
     - Un nuevo párrafo al final del DIV _'lipsum'_ con el texto "Nuevo párrafo **añadido** por javascript" (fíjate que una palabra esta en negrita)
@@ -613,7 +613,7 @@ if (clases.indexOf('rojo') == -1) {
 }
 ```
 
-!!! question "ACTIVIDAD 4: `📂 UD2/act04/`"
+!!! question "ACTIVIDAD 5: `📂 UD2/act05/`"
     En esta actividad tendrás que crear una página que permita generar una tabla de tamaño variable, seleccionar una celda al azar y borrar la tabla.
 
     - Crea los archivos **`index.html`** y **`main.js`** en el directorio de la actividad.

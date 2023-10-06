@@ -1,0 +1,9 @@
+{
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "[markdown]": {
+        "editor.tabSize": 4
+    },
+    "markdown.extension.list.indentationSize": "inherit",
+    "editor.detectIndentation": false,
+}
