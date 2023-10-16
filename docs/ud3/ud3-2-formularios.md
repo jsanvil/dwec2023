@@ -1,12 +1,11 @@
-# Validación de formularios
-Índice:
-- [Validación de formularios](#validación-de-formularios)
-  - [Introducción](#introducción)
+# UD3 2. Validación de formularios
+
+- [Introducción](#introducción)
     - [Validación del navegador incorporada en HTML5](#validación-del-navegador-incorporada-en-html5)
     - [Validación mediante la API de validación de formularios](#validación-mediante-la-api-de-validación-de-formularios)
-      - [Ejemplo](#ejemplo)
+        - [Ejemplo](#ejemplo)
     - [yup](#yup)
-  - [Expresiones regulares](#expresiones-regulares)
+- [Expresiones regulares](#expresiones-regulares)
     - [Patrones](#patrones)
     - [Métodos](#métodos)
 

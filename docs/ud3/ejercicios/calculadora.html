@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc</title>
+    <style>
+        .calc {
+            border-radius: 10px;
+            /* box-shadow: 0px 3px 6px 0px #00000026, 0px 2px 4px 0px #0000001f; */
+            box-shadow:
+                1px 1px 0 #444,
+                2px 2px 0 #444,
+                3px 3px 0 #444,
+                4px 4px 0 #444,
+                5px 5px 0 #444,
+                6px 6px 0 #444,
+                7px 7px 0 #444,
+                8px 8px 0 #444;
+            margin-inline-start: auto;
+            margin-inline-end: auto;
+            max-width: 20rem;
+            overflow: hidden;
+            color: #333;
+            background-color: #333;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #calc_display {
+            margin: 0.7rem;
+            margin-top: 1em;
+            font-size: 3rem;
+            padding: 0 0.5rem;
+            text-align: end;
+            background-color: #b0d09f;
+            border-radius: 5px;
+            box-shadow: 2px 2px 1px 0 #0003 inset, -2px -2px 1px 0 #fff5 inset;
+            overflow: hidden;
+            min-height: 1em;
+        }
+
+        #calc_display span {
+            text-shadow: 2px 2px 1px #0005;
+        }
+
+        .calc_teclado {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 1px;
+            background: #555;
+            padding: 0.5rem;
+        }
+
+        .calc_tecla {
+            background: #eff2f5;
+            border: none;
+            padding: 1rem;
+            font-size: 1.5rem;
+            margin: 0.25rem;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px 2px #fff2 inset, -2px -2px 2px 2px #0002 inset;
+        }
+
+        .calc_tecla:active {
+            box-shadow: 2px 2px 2px 2px #0002 inset, -2px -2px 2px 2px #fff2 inset;
+            outline: none;
+        }
+
+        .calc_tecla:hover {
+            background: #e4e9ef;
+        }
+
+        .calc_tecla:active span {
+            position: relative;
+            top: 1px;
+        }
+
+        .calc_tecla-operador {
+            background: #b7cddf;
+        }
+
+        .calc_tecla-operador:active {
+            background: #b9cad8;
+        }
+
+        #btn-calcular {
+            grid-column: 4 / 5;
+            grid-row: 4 / span 2;
+            background: #badfb7;
+            height: auto;
+        }
+        #btn-calcular:hover {
+            background: #c3ddc2;
+        }
+
+        #btn-limpiar {
+            background: #ffa3a7;
+        }
+
+        #btn-limpiar:hover {
+            background: #ffacaf;
+        }
+
+        #btn-sumar {
+            grid-column: 4 / 5;
+            grid-row: 2 / span 2;
+        }
+
+        #btn-0 {
+            grid-column: 1 / span 2;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>calc</h1>
+    <div class="calc">
+        <div id="calc_display"><span>0</span></div>
+        <div class="calc_teclado">
+            <button id="btn-limpiar" class="calc_tecla calc_tecla-funcion"><span>C</span></button>
+            <button id="btn-restar" class="calc_tecla calc_tecla-operador"><span>-</span></button>
+            <button id="btn-multiplicar" class="calc_tecla calc_tecla-operador"><span>*</span></button>
+            <button id="btn-dividir" class="calc_tecla calc_tecla-operador"><span>/</span></button>
+            <button id="btn-sumar" class="calc_tecla calc_tecla-operador"><span>+</span></button>
+            <button id="btn-7" class="calc_tecla"><span>7</span></button>
+            <button id="btn-8" class="calc_tecla"><span>8</span></button>
+            <button id="btn-9" class="calc_tecla"><span>9</span></button>
+            <button id="btn-4" class="calc_tecla"><span>4</span></button>
+            <button id="btn-5" class="calc_tecla"><span>5</span></button>
+            <button id="btn-6" class="calc_tecla"><span>6</span></button>
+            <button id="btn-1" class="calc_tecla"><span>1</span></button>
+            <button id="btn-2" class="calc_tecla"><span>2</span></button>
+            <button id="btn-3" class="calc_tecla"><span>3</span></button>
+            <button id="btn-0" class="calc_tecla"><span>0</span></button>
+            <button id="btn-coma" class="calc_tecla"><span>,</span></button>
+            <button id="btn-calcular" class="calc_tecla"><span>=</span></button>
+        </div>
+    </div>
+</body>
+
+</html>
