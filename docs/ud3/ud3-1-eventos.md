@@ -12,7 +12,7 @@
 - [Los objetos _this_ y _event_](#los-objetos-this-y-event)
     - [_Bindeo_ del objeto _this_](#bindeo-del-objeto-this)
 - [Propagación de eventos (bubbling)](#propagación-de-eventos-bubbling)
-- [innerHTML y escuchadores de eventos](#innerhtml-y-escuchadores-de-eventos)
+- [innerHTML y _listeners_ de eventos](#innerhtml-y-listeners-de-eventos)
 - [Eventos personalizados](#eventos-personalizados)
 
 
@@ -92,7 +92,7 @@ document.getElementById('boton1').addEventListener('click', function() {
 
 <script async src="//jsfiddle.net/juansegura/L5pkg93w/1/embed/js,html,result/"></script>
 
-Si queremos pasarle algún parámetro a la función escuchadora (cosa bastante poco usual) debemos usar funciones anónimas como escuchadores de eventos:
+Si queremos pasarle algún parámetro a la función _listener_ (cosa bastante poco usual) debemos usar funciones anónimas:
 
 !!!note "NOTA:"
     Igual que antes debemos asegurarnos que se ha creado el árbol DOM antes de poner un _listener_ por lo que se recomienda ponerlos siempre dentro de la función asociada al evento `window.onload` (o mejor `window.addEventListener('load', ...)` como en el ejemplo anterior).
@@ -153,10 +153,6 @@ Los produce el usuario al usar el teclado:
 
 * **`keydown`**: se produce al presionar una tecla y se repite continuamente si la tecla se mantiene pulsada
 * **`keyup`**: cuando se deja de presionar la tecla
-* **`keypress`**: acción de pulsar y soltar (sólo se produce en las teclas alfanuméricas)
-
-!!!note "NOTA:"
-    El orden de secuencia de los eventos es: _`keyDown`_ -> _`keyPress`_ -> _`keyUp`_
 
 ### Eventos de toque
 
@@ -174,26 +170,26 @@ Se producen en los formularios:
 * **`focus`** / **`blur`**: al obtener/perder el foco el elemento
 * **`change`**: al perder el foco un `<input>` o `<textarea>` si ha cambiado su contenido o al cambiar de valor un `<select>` o un `<checkbox>`
 * **`input`**: al cambiar el valor de un `<imput>` o `<textarea>` (se produce cada vez que escribimos una letra es estos elementos)
-* **`select`**: al cambiar el valor de un `<select>` o al seleccionar texto de un `<imput>` o `<textarea>`
+* **`select`**: al cambiar el valor de un `<select>` o al seleccionar texto de un `<input>` o `<textarea>`
 * **`submit`** / **`reset`**: al enviar/recargar un formulario
 
 ## Los objetos _this_ y _event_
 
-Al producirse un evento se generan automáticamente en su función manejadora 2 objetos:
+Al producirse un evento se generan automáticamente el _listener_ **2 objetos**:
 
 * **`this`**: hace referencia al elemento que contiene el código en donde se encuentra la variable _`this`_. En el caso de una función _listener_ será el elemento que tiene el _listener_ que ha recibido el evento.
 * **`event`**: es un objeto y la función _listener_ lo recibe como parámetro. Tiene propiedades y métodos que nos dan información sobre el evento, como:
     * **`.type`**: qué evento se ha producido (`click`, `submit`, `keyDown`, etc.).
     * **`.target`**: el elemento donde se produjo el evento (puede ser _`this`_ o un descendiente de _`this`_, como en el ejemplo siguiente). 
-    * **`.currentTarget`**: el elemento que contiene el escuchador del evento lanzado (normalmente el mismo que _`this`_).
+    * **`.currentTarget`**: el elemento que contiene el _listener_ del evento lanzado (normalmente el mismo que _`this`_).
     
         !!! note "Ejemplo"
-            Si tenemos un _`<p>`_ al que le ponemos un escuchador de '`click`' que dentro tiene un elemento _`<span>`_, si hacemos _`click`_ sobre el _`<span>`_ **`event.target`** será el _`<span>`_ que es donde hemos hecho click (está dentro de _`<p>`_) pero tanto _`this`_ como _`event.currentTarget`_ será _`<p>`_ (que es quien tiene el escuchador que se está ejecutando).
+            Si tenemos un _`<p>`_ al que le ponemos un _listener_ de '`click`' que dentro tiene un elemento _`<span>`_, si hacemos _`click`_ sobre el _`<span>`_ **`event.target`** será el _`<span>`_ que es donde hemos hecho click (está dentro de _`<p>`_) pero tanto _`this`_ como _`event.currentTarget`_ será _`<p>`_ (que es quien tiene el _listener_ que se está ejecutando).
 
     * **`.relatedTarget`**: en un evento '`mouseover`' **`event.target`** es el elemento donde ha entrado el puntero del ratón y **`event.relatedTarget`** el elemento del que ha salido. En un evento '`mouseout`' sería al revés.
     * **`cancelable`**: si el evento puede cancelarse. En caso afirmativo se puede llamar a **`event.preventDefault()`** para cancelarlo
     * **`.preventDefault()`**: si un evento tiene un _listener_ asociado, se ejecuta el código de dicho _listener_ y después el navegador realiza la acción que correspondería por defecto al evento si no tuviera _listener_ (por ejemplo un _listener_ del evento _`click`_ sobre un hiperenlace hará que se ejecute su código y después saltará a la página indicada en el _`href`_ del hiperenlace). Este método cancela la acción por defecto del navegador para el evento. Por ejemplo si el evento era el _`submit`_ de un formulario éste no se enviará o si era un _`click`_ sobre un hiperenlace no se irá a la página indicada en él.
-    * **`.stopPropagation`**: un evento se produce sobre un elemento y todos su padres. Por ejemplo si hacemos click en un `<span>` que está en un `<p>` que está en un `<div>` que está en el BODY el evento se va propagando por todos estos elementos y saltarían los escuchadores asociados a todos ellos (si los hubiera). Si alguno llama a este método el evento no se propagará a los demás elementos padre.
+    * **`.stopPropagation`**: un evento se produce sobre un elemento y todos su padres. Por ejemplo si hacemos click en un `<span>` que está en un `<p>` que está en un `<div>` que está en el BODY el evento se va propagando por todos estos elementos y saltarían los _listeners_ asociados a todos ellos (si los hubiera). Si alguno llama a este método el evento no se propagará a los demás elementos padre.
     * **Eventos de ratón:**
         * **`.button`**: qué botón del ratón se ha pulsado (`0`: izquierdo, `1`: central (rueda); `2`: derecho).
         * **`.screenX`** / **`.screenY`**: las coordenadas del ratón respecto a la pantalla.
@@ -213,7 +209,7 @@ Al producirse un evento se generan automáticamente en su función manejadora 2 
     * para saber qué carácter se ha pulsado lo mejor usar la propiedad _`key`_ o _`charCode`_ de _`keyPress`_, pero varía entre navegadores.
     * para saber la tecla especial pulsada mejor usar el _`key`_ o el _`keyCode`_ de _`keyUp`_
     * captura sólo lo que sea necesario, se producen muchos eventos de teclado.
-    * para obtener el carácter a partir del código: `String fromCharCode(codigo);`
+    * para obtener el carácter a partir del código: `String fromCharCode(código);`
       
 Lo mejor para familiarizarse con los diferentes eventos es consultar los [ejemplos de w3schools](https://www.w3schools.com/js/js_events_examples.asp).
 
@@ -244,7 +240,7 @@ document.getElementById('acepto').removeEventListener('click', aceptado.bind(thi
 
 por lo que el valor de _`this`_ dentro de la función _`aceptado`_ será el mismo que tenía fuera, es decir, el objeto.
 
-Podemos _bindear_, es decir, pasarle a la función escuchadora más variables declarándolas como parámetros de _`bind`_. El primer parámetro será el valor de _this_ y los demás serán parámetros que recibirá la función antes de recibir el parámetro _`event`_ que será el último. Por ejemplo:
+Podemos _bindear_, es decir, pasarle al _listener_ más variables declarándolas como parámetros de _`bind`_. El primer parámetro será el valor de _this_ y los demás serán parámetros que recibirá la función antes de recibir el parámetro _`event`_ que será el último. Por ejemplo:
 
 ```javascript
 document.getElementById('acepto').removeEventListener('click', aceptado.bind(var1, var2, var3));
@@ -260,9 +256,9 @@ function aceptado(param1, param2, event) {
 
 ## Propagación de eventos (bubbling)
 
-Normalmente en una página web los elementos HTML se solapan unos con otros, por ejemplo, un `<span>` está en un `<p>` que está en un `<div>` que está en el `<body>`. Si ponemos un escuchador del evento _click_ a todos ellos se ejecutarán todos ellos, pero ¿en qué orden?.
+Normalmente en una página web los elementos HTML se solapan unos con otros, por ejemplo, un `<span>` está en un `<p>` que está en un `<div>` que está en el `<body>`. Si ponemos un _listener_ del evento _click_ a todos ellos se ejecutarán todos ellos, pero ¿en qué orden?.
 
-Pues el W3C establecíó un modelo en el que primero se disparan los eventos de fuera hacia dentro (primero el `<body>`) y al llegar al más interno (el `<span>`) se vuelven a disparar de nuevo pero de dentro hacia afuera. La primera fase se conoce como **fase de captura** y la segunda como **fase de burbujeo**. Cuando ponemos un escuchador con `addEventListener` el tercer parámetro indica en qué fase debe dispararse:
+Pues el W3C establecíó un modelo en el que primero se disparan los eventos de fuera hacia dentro (primero el `<body>`) y al llegar al más interno (el `<span>`) se vuelven a disparar de nuevo pero de dentro hacia afuera. La primera fase se conoce como **fase de captura** y la segunda como **fase de burbujeo**. Cuando ponemos un _listener_ con `addEventListener` el tercer parámetro indica en qué fase debe dispararse:
 
 - **`true`**: en fase de captura
 - **`false`** (valor por defecto): en fase de burbujeo
@@ -277,25 +273,26 @@ En cualquier momento podemos evitar que se siga propagando el evento ejecutando 
 
 Podéis ver las distintas fases de un evento en la página [domevents.dev](https://domevents.dev/).
 
-## innerHTML y escuchadores de eventos
+## innerHTML y _listeners_ de eventos
 
 Si cambiamos la propiedad _`innerHTML`_ de un elemento del árbol DOM todos sus `listeners` de eventos desaparecen ya que es como si se volviera a crear ese elemento.
 
 Por ejemplo, tenemos una tabla de datos y queremos que al hacer doble click en cada fila se muestre su id. La función que añade una nueva fila podría ser:
 
-```javascript
+```js title="js" hl_lines="4-5" linenums="1"
 function renderNewRow(data) {
   let miTabla = document.getElementById('tabla-datos');
   let nuevaFila = `<tr id="${data.id}"><td>${data.dato1}</td><td>${data.dato2}...</td></tr>`;
   miTabla.innerHTML += nuevaFila;
   document.getElementById(data.id).addEventListener('dblclick', event => alert('Id: '+ event.target.id));
+}
 ```
 
 Sin embargo esto sólo funcionaría para la última fila añadida ya que la línea `miTabla.innerHTML += nuevaFila` equivale a `miTabla.innerHTML = miTabla.innerHTML + nuevaFila`. Por tanto estamos asignando a _miTabla_ un código HTML que ya no contiene `listeners`, excepto el de _nuevaFila_ que lo ponemos después de hacer la asignación.
 
 La forma correcta de hacerlo sería:
 
-```javascript
+```js title="js" linenums="1" hl_lines="4-6"
 function renderNewRow(data) {
   let miTabla = document.getElementById('tabla-datos');
   let nuevaFila = document.createElement('tr');
@@ -303,6 +300,7 @@ function renderNewRow(data) {
   nuevaFila.innerHTML = `<td>${data.dato1}</td><td>${data.dato2}...</td>`;
   nuevaFila.addEventListener('dblclick', event => alert('Id: ' + event.target.id) );
   miTabla.appendChild(nuevaFila);
+}
 ```
 
 De esta forma además mejoramos el rendimiento ya que el navegador sólo tiene que renderizar el nodo correspondiente a la nuevaFila. Si lo hacemos como estaba al principio se deben volver a crear y a renderizar todas las filas de la tabla (todo lo que hay dentro de miTabla).
@@ -311,14 +309,32 @@ De esta forma además mejoramos el rendimiento ya que el navegador sólo tiene q
 
 También podemos mediante código lanzar manualmente cualquier evento sobre un elemento con el método `dispatchEvent()` e incluso crear eventos personalizados, por ejemplo:
 
-```javascript
+```js title="js" linenums="1"
+// crear el evento
 const event = new Event('build');
 
-// Listen for the event.
-elem.addEventListener('build', (e) => { /* ... */ }, false);
+// escuchar el evento
+elem.addEventListener( 'build', (e) => { /* ... */ }, false );
 
-// Dispatch the event.
+// enviar el evento
 elem.dispatchEvent(event);
 ```
 
-Incluso podemos añadir datos al objeto _event_ si creamos el evento con `new CustomEvent()`. Podéis obtener más información en la [página de MDN](https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events).
+Incluso podemos añadir datos al objeto _`event`_ si creamos el evento con `new CustomEvent()`. Podéis obtener más información en la [página de MDN](https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events).
+
+```js title="js" linenums="1" hl_lines="2 6"
+// crear el evento personalizado
+const customEvent = new CustomEvent('log', { detail: { message: 'Prueba de evento personalizado' } });
+
+// escuchar el evento
+elem.addEventListener( 'log', (e) => {
+    console.log(e.detail.message);
+}, false );
+
+// enviar el evento
+elem.dispatchEvent(customEvent);
+```
+
+!!! abstract "PROYECTO: `🖥️ Clave secreta`"
+    
+
