@@ -17,6 +17,7 @@ nav:
   - UD3 Eventos y formularios:
     - 'ud3/ud3-1-eventos.md'
     # - 'ud3/ud3-2-formularios.md'
+    - 'ud3/ud3-proyecto-clave-secreta.md'
 
 theme:
   name: material # readthedocs # material

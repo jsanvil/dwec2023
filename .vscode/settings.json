@@ -6,4 +6,7 @@
     },
     "markdown.extension.list.indentationSize": "inherit",
     "editor.detectIndentation": false,
+    "cSpell.words": [
+        "prepresentación"
+    ],
 }

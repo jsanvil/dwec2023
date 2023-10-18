@@ -1,18 +1,20 @@
 # UD3 - Proyecto clave secreta
 
-El objetivo de este proyecto es crear un programa que permita a dos usuarios jugar a un juego donde deben descubrir una clave secreta. Similar al popular juego _wordle_, pero utilizando números en lugar de letras.
+El objetivo de este proyecto es crear un programa que permita a dos usuarios jugar a un juego donde deben descubrir una clave secreta. Similar al popular juego _wordle_, simplificado utilizando números en lugar de letras.
 
-El juego consiste en que la aplicación genera un número de 5 cifras y el jugador tiene que adivinarlo.
+El juego consiste en que la aplicación genera un número de 5 dígitos, sin números repetidos, y el jugador tiene que adivinarlo.
 
-Para ello, cada vez que el jugador propone un número, la aplicación le indica cuántas cifras de ese número son correctas y están en la posición correcta (son aciertos) y cuántas cifras son correctas pero están en la posición incorrecta (son coincidencias).
+Para ello, cada vez que el jugador propone un número, la aplicación le indica cuántas cifras de ese número son correctas y están en la posición correcta (son aciertos) y cuántas cifras son correctas pero están en la posición incorrecta (son coincidencias) y cuantas cifras son incorrectas (son errores).
 
 _Por ejemplo:_
 
 - Si el número secreto es `1` `0` `3` `4` `5`
-- El jugador propone el número **`1`** `2` **`3`** _`5`_ `7`
-- La aplicación indicará que los número en la 1ª y 2ª posición **aciertos**, por ejemplo cambiando el color de los números a **verde**.
-- La aplicación indicará que el número en la 5ª posición son **coincidencias**, por ejemplo cambiando el color de los números a **amarillo**.
-- La aplicación indicará que el número en la 1ª y 4ª posición es un **error**, por ejemplo cambiando el color de los números a **rojo**.
+- El jugador propone el número `1` `2` `3` `5` `7`
+- La aplicación indicará que los números en la 1ª y 3ª posición son **aciertos**, por ejemplo cambiando el color a **verde**.
+- La aplicación indicará que el número en la 4ª posición es una **coincidencia**, por ejemplo cambiando el color a **amarillo**.
+- La aplicación indicará que el número en la 2ª y 5ª posición son **errores**, por ejemplo cambiando el color a **rojo**.
+
+    - **<span style="background:#8f8;color:#000;padding: 0 2px;">1</span>**<span style="background:#f88;color:#000;padding: 0 1px;">2</span>**<span style="background:#8f8;color:#000;padding: 0 1px;">3</span>**_<span style="background:#ff8;color:#000;padding: 0 1px;">5</span>_<span style="background:#f88;color:#000;padding: 0 1px;">7</span>
 
 **Condición de victoria**: El juego termina cuando el jugador acierta el número secreto.
 **Condición de derrota**: El juego termina cuando el jugador ha realizado 6 intentos sin haber acertado el número secreto.
@@ -32,7 +34,7 @@ _Por ejemplo:_
 
 ## Opcional
 
-- Permitir al jugador elegir el número de intentos.
-- Permitir al jugador elegir el número de cifras del número secreto.
 - Añadir eventos para que también funcione mediante teclado.
 - Crea eventos personalizados para las condiciones de victoria y derrota.
+- Permitir al jugador elegir el número de intentos.
+- Permitir al jugador elegir el número de cifras del número secreto.
