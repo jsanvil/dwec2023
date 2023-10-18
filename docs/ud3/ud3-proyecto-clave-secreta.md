@@ -14,7 +14,7 @@ _Por ejemplo:_
 - La aplicación indicará que el número en la 4ª posición es una **coincidencia**, por ejemplo cambiando el color a **amarillo**.
 - La aplicación indicará que el número en la 2ª y 5ª posición son **errores**, por ejemplo cambiando el color a **rojo**.
 
-    - **<span style="background:#8f8;color:#000;padding: 0 2px;">1</span>**<span style="background:#f88;color:#000;padding: 0 1px;">2</span>**<span style="background:#8f8;color:#000;padding: 0 1px;">3</span>**_<span style="background:#ff8;color:#000;padding: 0 1px;">5</span>_<span style="background:#f88;color:#000;padding: 0 1px;">7</span>
+    - <span class="badge bg-success">1</span><span class="badge bg-danger">2</span><span class="badge bg-success">3</span></span><span class="badge bg-warning text-dark">5</span></span><span class="badge bg-danger">7</span>
 
 **Condición de victoria**: El juego termina cuando el jugador acierta el número secreto.
 **Condición de derrota**: El juego termina cuando el jugador ha realizado 6 intentos sin haber acertado el número secreto.
