@@ -46,7 +46,7 @@ ud2_1: docs/$(UD2_DIR)$(UD2_1_MD).md
 	$(eval title := $(call gettitle, $<) )
 	node exportpdf.js $(LOCAL_URL)$(UD2_DIR)$(UD2_1_MD) $(OUTPUT_DIR)$(UD2_1_MD).pdf "$(title)"
 
-UD2_2_MD=ud2-2-BOM
+UD2_2_MD=ud2-2-BOMactividad
 
 ud2_2: docs/$(UD2_DIR)$(UD2_1_MD).md
 	$(eval title := $(call gettitle, $<) )
@@ -57,6 +57,12 @@ UD3_1_MD=ud3-1-eventos
 ud3_1: docs/$(UD3_DIR)$(UD3_1_MD).md
 	$(eval title := $(call gettitle, $<) )
 	node exportpdf.js $(LOCAL_URL)$(UD3_DIR)$(UD3_1_MD) $(OUTPUT_DIR)$(UD3_1_MD).pdf "$(title)"
+
+UD3_2_MD=ud3-2-formularios
+
+ud3_2: docs/$(UD3_DIR)$(UD3_2_MD).md
+	$(eval title := $(call gettitle, $<) )
+	node exportpdf.js $(LOCAL_URL)$(UD3_DIR)$(UD3_2_MD) $(OUTPUT_DIR)$(UD3_2_MD).pdf "$(title)"
 
 UD3_PR1_MD=ud3-proyecto-clave-secreta
 
