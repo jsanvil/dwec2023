@@ -90,7 +90,10 @@ document.getElementById('boton1').addEventListener('click', function() {
 });
 ```
 
-<script async src="//jsfiddle.net/juansegura/L5pkg93w/1/embed/js,html,result/"></script>
+<!-- <script async src="//jsfiddle.net/juansegura/L5pkg93w/1/embed/js,html,result/"></script> -->
+
+<iframe width="100%" height="300" src="//jsfiddle.net/juansegura/L5pkg93w/1/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
 
 Si queremos pasarle algún parámetro a la función _listener_ (cosa bastante poco usual) debemos usar funciones anónimas:
 
@@ -335,6 +338,8 @@ elem.addEventListener( 'log', (e) => {
 elem.dispatchEvent(customEvent);
 ```
 
-!!! abstract "PROYECTO: `🖥️ Clave secreta`"
+!!! abstract "PROYECTO:"
+    Para comprobar tus conocimientos hasta el momento, puedes realizar el proyecto [**Clave secreta**](./ud3-proyecto-clave-secreta.md).
+    
     
 
