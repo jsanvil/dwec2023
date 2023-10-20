@@ -232,13 +232,13 @@ En ocasiones no queremos que _`this`_ sea el elemento sobre quien se produce el 
 El método _`.bind()`_ nos permite pasarle a una función el valor que queremos darle a la variable _`this`_ dentro de dicha función. Por defecto a un `listener` de eventos se le _bindea_ le valor de **event.currentTarget**. Si queremos que tenga otro valor se lo indicamos con **.bind()**: 
 
 ```javascript
-document.getElementById('acepto').removeEventListener('click', aceptado.bind(variable));
+document.getElementById('acepto').addEventListener('click', aceptado.bind(variable));
 ```
 
 En este ejemplo el valor de _`this`_ dentro de la función _`aceptado`_ será _`variable`_. En el ejemplo que habíamos comentado de un _listener_ dentro de una clase, para mantener el valor de _`this`_ y que haga referencia al objeto sobre el que estamos actuando haríamos:
 
 ```javascript
-document.getElementById('acepto').removeEventListener('click', aceptado.bind(this));
+document.getElementById('acepto').addEventListener('click', aceptado.bind(this));
 ```
 
 por lo que el valor de _`this`_ dentro de la función _`aceptado`_ será el mismo que tenía fuera, es decir, el objeto.
@@ -246,7 +246,7 @@ por lo que el valor de _`this`_ dentro de la función _`aceptado`_ será el mism
 Podemos _bindear_, es decir, pasarle al _listener_ más variables declarándolas como parámetros de _`bind`_. El primer parámetro será el valor de _this_ y los demás serán parámetros que recibirá la función antes de recibir el parámetro _`event`_ que será el último. Por ejemplo:
 
 ```javascript
-document.getElementById('acepto').removeEventListener('click', aceptado.bind(var1, var2, var3));
+document.getElementById('acepto').addEventListener('click', aceptado.bind(var1, var2, var3));
 ...
 function aceptado(param1, param2, event) {
   // Aquí dentro tendremos los valores
