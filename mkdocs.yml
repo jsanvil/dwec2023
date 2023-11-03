@@ -4,6 +4,9 @@ nav:
   - Inicio:
     - 'index.md'
     - 'entorno.md'
+  - Proyectos:
+    - 'proyectos/pr1-clave-secreta.md'
+    - 'proyectos/pr2-todo-list.md'
   - UD1 Sintaxis:
     - 'ud1/ud1-1-tecnologias.md'
     - 'ud1/ud1-2-sintaxis.md'
@@ -17,7 +20,6 @@ nav:
   - UD3 Eventos y formularios:
     - 'ud3/ud3-1-eventos.md'
     - 'ud3/ud3-2-formularios.md'
-    - 'ud3/ud3-proyecto-clave-secreta.md'
 
 theme:
   name: material # readthedocs # material

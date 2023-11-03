@@ -64,11 +64,19 @@ ud3_2: docs/$(UD3_DIR)$(UD3_2_MD).md
 	$(eval title := $(call gettitle, $<) )
 	node exportpdf.js $(LOCAL_URL)$(UD3_DIR)$(UD3_2_MD) $(OUTPUT_DIR)$(UD3_2_MD).pdf "$(title)"
 
-UD3_PR1_MD=ud3-proyecto-clave-secreta
+PR_DIR=proyectos/
 
-ud3_pr1: docs/$(UD3_DIR)$(UD3_PR1_MD).md
+PR1_MD=pr1-clave-secreta
+
+pr1: docs/$(PR_DIR)$(PR1_MD).md
 	$(eval title := $(call gettitle, $<) )
-	node exportpdf.js $(LOCAL_URL)$(UD3_DIR)$(UD3_PR1_MD) $(OUTPUT_DIR)$(UD3_PR1_MD).pdf "$(title)"
+	node exportpdf.js $(LOCAL_URL)$(PR_DIR)$(PR1_MD) $(OUTPUT_DIR)$(PR1_MD).pdf "$(title)"
+
+PR2_MD=pr2-todo-list
+
+pr2: docs/$(PR_DIR)$(PR2_MD).md
+	$(eval title := $(call gettitle, $<) )
+	node exportpdf.js $(LOCAL_URL)$(PR_DIR)$(PR2_MD) $(OUTPUT_DIR)$(PR2_MD).pdf "$(title)"
 
 clean:
 	rm $(OUTPUT_DIR)*

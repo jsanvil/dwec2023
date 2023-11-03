@@ -1,4 +1,4 @@
-# UD3 - Proyecto clave secreta
+# Proyecto 1 - Clave Secreta
 
 El objetivo de este proyecto es crear un programa que permita jugar a un juego donde deben descubrir una clave secreta. Similar al popular juego _wordle_, simplificado utilizando números en lugar de letras.
 
