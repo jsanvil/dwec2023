@@ -20,6 +20,12 @@ nav:
   - UD3 Eventos y formularios:
     - 'ud3/ud3-1-eventos.md'
     - 'ud3/ud3-2-formularios.md'
+<<<<<<< HEAD
+=======
+    - 'ud3/ud3-proyecto-clave-secreta.md'
+  - UD4 POO:
+    - 'ud4/ud4-1-oop.md'
+>>>>>>> 5ef925386a681d132f3505a78ea2b80c54d013aa
 
 theme:
   name: material # readthedocs # material

@@ -1,4 +1,4 @@
-# 3. Programación orientada a Objetos en Javascript
+# 4. 1 Programación orientada a Objetos en Javascript
 
 - [Introducción](#introducción)
     - [Ojo con _this_](#ojo-con-this)
