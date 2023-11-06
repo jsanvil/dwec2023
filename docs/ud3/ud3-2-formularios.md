@@ -1,4 +1,4 @@
-# UD3 2. Validación de formularios
+# UD3 - 2. Validación de formularios
 
 - [Introducción](#introducción)
     - [Validación del navegador incorporada en HTML5](#validación-del-navegador-incorporada-en-html5)

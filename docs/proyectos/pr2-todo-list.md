@@ -8,7 +8,10 @@ El objetivo de este proyecto es crear una aplicación en _JavaScript_ que permit
 
 ## Requisitos
 
-- **Estructura del proyecto**. El proyecto debe estar bien estructurado en archivos HTML, CSS y JS.
+- **Estructura del proyecto**.
+    - El proyecto debe estar bien estructurado en archivos HTML, CSS y JS.
+    - Separar el código en módulos bien definidos mediante **import** y **export**.
+    - Utilizar el empaquetador **Vite**
 - **Código estructurado**. Las clases y funciones están bien comentadas. Los nombres de las clases, funciones y variables son descriptivos.
 - **Utilizar clases** para representar las tareas y la lista de tareas.
 - Las **tareas** tendrán los siguientes **atributos**:

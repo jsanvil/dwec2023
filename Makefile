@@ -6,7 +6,6 @@ OUTPUT_DIR=./pdf/
 
 UD1_DIR=ud1/
 UD2_DIR=ud2/
-UD3_DIR=ud3/
 
 gettitle=$(shell grep -m 1 '# ' $1 | sed -r 's/^# //')
 
@@ -52,6 +51,8 @@ ud2_2: docs/$(UD2_DIR)$(UD2_1_MD).md
 	$(eval title := $(call gettitle, $<) )
 	node exportpdf.js $(LOCAL_URL)$(UD2_DIR)$(UD2_2_MD) $(OUTPUT_DIR)$(UD2_2_MD).pdf "$(title)"
 
+UD3_DIR=ud3/
+
 UD3_1_MD=ud3-1-eventos
 
 ud3_1: docs/$(UD3_DIR)$(UD3_1_MD).md
@@ -63,6 +64,26 @@ UD3_2_MD=ud3-2-formularios
 ud3_2: docs/$(UD3_DIR)$(UD3_2_MD).md
 	$(eval title := $(call gettitle, $<) )
 	node exportpdf.js $(LOCAL_URL)$(UD3_DIR)$(UD3_2_MD) $(OUTPUT_DIR)$(UD3_2_MD).pdf "$(title)"
+
+UD4_DIR=ud4/
+
+UD4_1_MD=ud4-1-oop
+
+ud4_1: docs/$(UD4_DIR)$(UD4_1_MD).md
+	$(eval title := $(call gettitle, $<) )
+	node exportpdf.js $(LOCAL_URL)$(UD4_DIR)$(UD4_1_MD) $(OUTPUT_DIR)$(UD4_1_MD).pdf "$(title)"
+
+UD4_2_MD=ud4-2-estructura
+
+ud4_2: docs/$(UD4_DIR)$(UD4_2_MD).md
+	$(eval title := $(call gettitle, $<) )
+	node exportpdf.js $(LOCAL_URL)$(UD4_DIR)$(UD4_2_MD) $(OUTPUT_DIR)$(UD4_2_MD).pdf "$(title)"
+
+UD4_3_MD=ud4-3-mvc
+
+ud4_3: docs/$(UD4_DIR)$(UD4_3_MD).md
+	$(eval title := $(call gettitle, $<) )
+	node exportpdf.js $(LOCAL_URL)$(UD4_DIR)$(UD4_3_MD) $(OUTPUT_DIR)$(UD4_3_MD).pdf "$(title)"
 
 PR_DIR=proyectos/
 

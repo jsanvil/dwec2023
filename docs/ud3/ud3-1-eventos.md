@@ -1,4 +1,4 @@
-# UD3 1. Eventos
+# UD3 - 1. Eventos
 
 - [Introducción](#introducción)
 - [Cómo escuchar un evento](#cómo-escuchar-un-evento)

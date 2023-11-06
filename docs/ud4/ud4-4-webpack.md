@@ -1,4 +1,5 @@
-# Webpack
+# UD4 - 4. Webpack
+
 Cuando trabajamos con clases la mejor forma de organizar el código es poniendo cada clase un su propio fichero javascript. Esto reduce el acoplamiento de nuestro código y nos permite reutilizar una clase en cualquier proyecto en que la necesitemos.
 
 Sin embargo tener muchos ficheros hace que tengamos que importarlos todos, y en el orden adecuado, en nuestro _index.html_ (mediante etiquetas `<script src="...">`) lo que empieza a ser engorroso.
@@ -6,6 +7,7 @@ Sin embargo tener muchos ficheros hace que tengamos que importarlos todos, y en 
 Para evitar este problema se utilizan los _module bundlers_ o empaquetadores de código que unen todo el código de los distintos ficheros javascript en un único fichero que es el que se importa en el _index.html_.
 
 Además proporciona otras ventajas:
+
 - **transpila** el código, de forma que podemos usar sentencias javascript que aún no soportan muchos navegadores ya que se convertirán a sentencias que hacen lo mismo pero con código _legacy_
 - **minimiza** y **optimiza** el código para que ocupe menos y su carga sea más rápida
 - **ofusca** el código al minimizarlo lo que dificulta que el usuario pueda ver en la consola lo que hace el programa y manipularlo

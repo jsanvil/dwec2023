@@ -1,4 +1,4 @@
-# UD2 - 2. El patrón Modelo-Vista-Controlador (MVC)
+# UD3 - 3. El patrón Modelo-Vista-Controlador (MVC)
 
 - [Introducción](#introducción)
 - [Una aplicación sin MVC](#una-aplicación-sin-mvc)
