@@ -85,6 +85,18 @@ ud4_3: docs/$(UD4_DIR)$(UD4_3_MD).md
 	$(eval title := $(call gettitle, $<) )
 	node exportpdf.js $(LOCAL_URL)$(UD4_DIR)$(UD4_3_MD) $(OUTPUT_DIR)$(UD4_3_MD).pdf "$(title)"
 
+# UD5 ------------------
+
+UD5_DIR=ud5/
+
+UD5_1_MD=ud5-1-native-libraries
+
+ud5_1: docs/$(UD5_DIR)$(UD5_1_MD).md
+	$(eval title := $(call gettitle, $<) )
+	node exportpdf.js $(LOCAL_URL)$(UD5_DIR)$(UD5_1_MD) $(OUTPUT_DIR)$(UD5_1_MD).pdf "$(title)"
+
+# PROYECTOS ------------------
+
 PR_DIR=proyectos/
 
 PR1_MD=pr1-clave-secreta
