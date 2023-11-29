@@ -25,8 +25,9 @@ nav:
     - 'ud4/ud4-1-oop.md'
     - 'ud4/ud4-2-estructura.md'
     - 'ud4/ud4-3-mvc.md'
-  - UD5 Librerías nativas:
+  - UD5 Librerías:
     - 'ud5/ud5-1-native-libraries.md'
+    - 'ud5/ud5-2-components.md'
 
 theme:
   name: material # readthedocs # material
