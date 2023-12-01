@@ -95,6 +95,14 @@ ud5_1: docs/$(UD5_DIR)$(UD5_1_MD).md
 	$(eval title := $(call gettitle, $<) )
 	node exportpdf.js $(LOCAL_URL)$(UD5_DIR)$(UD5_1_MD) $(OUTPUT_DIR)$(UD5_1_MD).pdf "$(title)"
 
+UD5_DIR=ud5/
+
+UD5_2_MD=ud5-2-components
+
+ud5_2: docs/$(UD5_DIR)$(UD5_2_MD).md
+	$(eval title := $(call gettitle, $<) )
+	node exportpdf.js $(LOCAL_URL)$(UD5_DIR)$(UD5_2_MD) $(OUTPUT_DIR)$(UD5_2_MD).pdf "$(title)"
+
 # PROYECTOS ------------------
 
 PR_DIR=proyectos/
