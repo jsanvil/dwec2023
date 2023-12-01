@@ -364,7 +364,7 @@ class HelloWorld extends HTMLElement {
           <slot name="content"></slot>
       `;
 
-      this.querySelector('h1').addEventListener('click', () => this.evento());
+      this.shadowRoot.querySelector('h1').addEventListener('click', () => this.evento());
   }
 
   evento = () => {
@@ -424,4 +424,4 @@ customElements.define('hello-world', HelloWorld);
         <mi-loader2 color="#000" speed="0.5s"></mi-loader2>
         ```
 
-    En una archivo _html_ y añade los creados componentes con diferentes configuraciones, uno de ellos debe incluir `<mi-counter>` y un _loader_ dentro de `<mi-card>`.
+    En un archivo _html_, añade los componentes creados con diferentes configuraciones, uno de ellos debe incluir `<mi-counter>` y un _loader_ dentro de `<mi-card>`.
