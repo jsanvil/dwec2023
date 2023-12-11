@@ -28,6 +28,7 @@ nav:
   - UD5 Librerías:
     - 'ud5/ud5-1-native-libraries.md'
     - 'ud5/ud5-2-components.md'
+    - 'ud5/ud5-3-async.md'
 
 theme:
   name: material # readthedocs # material
