@@ -27,7 +27,7 @@ Las promesas en _Javascript_ se representan a través de un objeto, y cada prome
 La forma general de consumir una promesa es utilizando el `.then()` con un sólo parámetro, puesto que muchas veces lo único que nos interesa es realizar una acción cuando la promesa se cumpla:
 
 ```js
-fetch("/robots.txt").then(function(response) {
+fetch("/datos.json").then(function(response) {
   /* Código a realizar cuando se cumpla la promesa */
 });
 ```
@@ -75,12 +75,15 @@ Se añade el método .finally() para añadir una función _callback_ que se ejec
 
 Algo muy importante, pero que quizás hemos pasado por alto es que el código que ejecutamos en el interior de un `.then()` es código asíncrono no bloqueante:
 
-- Asíncrono: Porque no se ejecuterá de inmediato, sino que tardará en ejecutarse.
-- No bloqueante: Porque mientras espera ser ejecutado, no bloquea el resto del programa.
+- **Asíncrono**: Porque no se ejecuterá de inmediato, sino que tardará en ejecutarse.
+- **No bloqueante**: Porque mientras espera ser ejecutado, no bloquea el resto del programa.
 
 Cuando llegamos a un `.then()`, el sistema no se bloquea, sino que deja la función «pendiente» hasta que se cumpla la promesa, pero mientras, continua procesando el resto del programa.
 
-Observa el siguiente ejemplo:activ
+Observa el siguiente ejemplo:
+
+```js
+fetch("/datos.json")
   .then(response => response.text())
   .then(data => {
     console.log("Código asíncrono");
