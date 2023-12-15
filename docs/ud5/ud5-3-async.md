@@ -1090,6 +1090,20 @@ function getUsers() {
         7. Se debe **mostrar un _loader_** mientras se realizan las peticiones y **ocultarlo** cuando se han terminado, tanto si se han realizado correctamente como si no.
         8. Se debe **ocultar** el `div` de **resultados** al realizar cualquier petición.
 
+    **Estructura de carpetas:**
+    ```
+    📂 UD5/
+    └── 📂 act05/
+        ├── 📂 client/
+        │   ├── 📄 index.html
+        │   ├── 📄 main.js
+        │   ├── 📄 ProductInfoComponent.js
+        │   └── 📄 RequestLoaderComponent.js
+        └── 📂 server/
+            ├── 📄 datos.json
+            └── 📄 package.json
+    ```
+
 ## Single Page Application
 
 Ajax es la base para construir SPAs que permiten al usuario interactuar con una aplicación web como si se tratara de una aplicación de escritorio (sin "esperas" que dejen la página en blanco o no funcional mientras se recarga desde el servidor).
