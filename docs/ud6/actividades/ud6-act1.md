@@ -1,6 +1,6 @@
 # UD 6 - Actividad 1
 
-Vamos a ir implementando poco a poco un proyecto de gestión de eventos (deportivos, conciertos, etc.). Para esta semana crea un proyecto llamado **`angular-eventos`**.
+Vamos a ir implementando poco a poco un proyecto de gestión de eventos (deportivos, conciertos, etc.). Para esta actividad crea un proyecto llamado **`angular-eventos`**.
 
 **Crea un componente** llamado **`eventos-show`**. Contendrá casi todo el HTML que necesitaremos en el ejercicio. Crea también una interfaz llamada **`Evento`** (`evento.ts`) que representará los datos de un evento (título, imagen, fecha, descripción y precio).
 
@@ -41,7 +41,7 @@ No olvides instalar _**Bootstrap**_ e incluir el CSS correspondiente en el proye
 
 En el componente **`EventosShowComponent`**, crea un **array** de objetos **`Evento`** (el tipo será `Evento[]`). Crea al menos 2 eventos con todos sus datos. La imagen la puedes dejar como cadena vacía por ahora, más adelante veremos como mostrarla. La fecha debe ser una cadena en formato ‘`YYYY-MM-DD`’.
 
-Esta es una estructura HTML de ejemplo de un evento (dentro del elemento `<div class="mb-4 mt-4 ...">`, repetir con `*ngFor`):
+Esta es una estructura HTML de ejemplo de un evento (dentro del elemento `<div class="mb-4 mt-4 ...">`, repetir con la directiva `@for`):
 
 ```html
 <div class="col">
@@ -58,7 +58,7 @@ Esta es una estructura HTML de ejemplo de un evento (dentro del elemento `<div c
 </div>
 ```
 
-Si el array de eventos está vacío (*ngIf), muestra el mensaje “No hay eventos disponibles” dentro de un `<h3>`, por ejemplo.
+Si el array de eventos está vacío, con las directivas `@if` y `@else`, muestra el mensaje "_`No hay eventos disponibles`_" dentro de un `<h3>`, por ejemplo.
 
 El resultado será algo parecido a esto:
 
