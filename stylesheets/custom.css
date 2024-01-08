@@ -1,0 +1,12 @@
+@media print {
+    .print-button {
+        display: none;
+    }
+    
+    .content div {
+        break-after: always;
+    }
+    .myDiv {
+       break-inside: avoid;
+    }
+  }
