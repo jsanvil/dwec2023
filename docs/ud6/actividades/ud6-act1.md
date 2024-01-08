@@ -6,11 +6,12 @@ Vamos a ir implementando poco a poco un proyecto de gestión de eventos (deporti
 
 ```typescript
 export interface Evento {
- title: string;
- image: string;
- date: string;
- description: string;
- price: number;
+  id: string;
+  title: string;
+  image: string;
+  date: string;
+  description: string;
+  price: number;
 }
 ```
 
