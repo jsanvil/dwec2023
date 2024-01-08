@@ -29,7 +29,8 @@ nav:
     - 'ud5/ud5-1-native-libraries.md'
     - 'ud5/ud5-2-components.md'
     - 'ud5/ud5-3-async.md'
-
+  - UD6 Angular:
+    - 'ud6/ud6-1-angular-intro.md'
 theme:
   name: material # readthedocs # material
   features:
