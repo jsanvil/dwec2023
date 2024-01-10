@@ -1,4 +1,4 @@
-# UD6 - 2. Data binding. Pipes. Estilo y ciclo de vida de los componentes.
+# UD6 - 2. Data binding. Pipes.
 
 ## Vincular atributos (Property binding)
 
