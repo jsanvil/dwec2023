@@ -189,15 +189,17 @@ Se va a añadir un botón para ocultar y mostrar las imágenes de la tabla:
 </div>
 ```
 
-```typescript title="products-list.component.ts" linenums="1" hl_lines="1 8 15 17-19"
+Necesitaremos importar el módulo `CommonModule` para poder usar la directiva `ngClass`:
+
+```typescript title="products-list.component.ts" linenums="1" hl_lines="2 8 15 17-19"
 import { Component } from '@angular/core';
-import { NgClass } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Product } from '../interfaces/product';
 
 @Component({
   selector: 'app-products-list',
   standalone: true,
-  imports: [NgClass],
+  imports: [CommonModule],
   templateUrl: './products-list.component.html',
   styleUrl: './products-list.component.css'
 })
@@ -254,7 +256,7 @@ import { FormsModule } from '@angular/forms';
 ...
 @Component({
   ...
-  imports: [NgClass, FormsModule],
+  imports: [CommonModule, FormsModule],
   ...
 })
 export class ProductsListComponent {
@@ -302,25 +304,9 @@ A continuación se crea un formulario, antes de la tabla de productos con un cam
 
 Los filtros o _pipes_ son funciones que se aplican a los datos antes de mostrarlos en la plantilla, transforman la información antes de mostrarla. Angular dispone de varios filtros predefinidos, pero también se pueden crear filtros personalizados. Los filtros se aplican después de la propiedad o expresión que se quiere mostrar, separados por el carácter `|`.
 
-Primero se debe importar el filtro, por ejemplo, `UpperCasePipe` desde el módulo `@angular/common` en el componente donde se va a usar.
+Los filtros predefinidos se encuentran en el módulo `CommonModule`, que ya hemos importado para usar la directiva `ngClass`. 
 
-```typescript title="products-list.component.ts" linenums="1" hl_lines="3 9"
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { NgClass, UpperCasePipe } from '@angular/common';
-import { Product } from '../interfaces/product';
-
-@Component({
-  selector: 'app-products-list',
-  standalone: true,
-  imports: [NgClass, FormsModule, UpperCasePipe],
-  templateUrl: './products-list.component.html',
-  styleUrl: './products-list.component.css'
-})
-export class ProductsListComponent {
-    ...
-```
-
+```typescript title="products-list.component.ts" hl_lines="2 6"
 De esta forma, se podrá aplicar en la plantilla del componente:
 
 ```html title="products-list.component.html" hl_lines="2"
@@ -343,35 +329,6 @@ El filtro `date` admite como parámetro el formato de la fecha. Para indicar el 
     <td>{{product.price | currency:'EUR':'symbol'}}</td>
     <td>{{product.available | date:'dd/MM/y'}}</td>
     ...
-```
-
-Previamente se han importado los filtros predefinidos:
-
-```typescript title="products-list.component.ts" linenums="1" hl_lines="5-6 17-18"
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { NgClass,
-         UpperCasePipe,
-         CurrencyPipe,
-         DatePipe
-        } from '@angular/common';
-import { Product } from '../interfaces/product';
-
-@Component({
-  selector: 'app-products-list',
-  standalone: true,
-  imports: [
-    NgClass,
-    FormsModule,
-    UpperCasePipe,
-    CurrencyPipe,
-    DatePipe
-  ],
-  templateUrl: './products-list.component.html',
-  styleUrl: './products-list.component.css'
-})
-export class ProductsListComponent {
-  ...
 ```
 
 ![Tabla de productos con filtros currency y date](./img/ud6_2_6.png)
