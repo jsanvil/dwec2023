@@ -92,6 +92,7 @@ En lugar de que cada campo de texto haga referencia a una variable o atributo de
 ```typescript
 export class EventosShowComponent {
     newEvento: Evento = {
+        id: '',
         title: '',
         description: '',
         image: '',
@@ -144,7 +145,7 @@ Como se puede observar, se utiliza el evento `ngSubmit` para llamar a un método
 
 En el método `addEvento()`, debemos añadir el evento (`newEvento`) al array de eventos y reiniciar los campos del formulario otra vez. Es decir, volver a asignar a `newEvento` un nuevo objeto con los campos vacíos. No vale con vaciar los campos del objeto, ya que en array se guarda la referencia al objeto y las modificaciones se reflejarían en ambos lados (otra opción es generar una copia del objeto, que guardaremos en el array, y entonces, vaciar los campos de `newEvento`).
 
-Para mejorar la visualización de la imagen en el formulario, cuando la imagen del evento asociado al formulario esté vacía (no se haya seleccionado ninguna) ponle la clase "`d-none`" (equivale a `display:none`) para que no se vea un icono de imagen rota o un círculo vacío que ocupa espacio. Utiliza `ngClass` para ello.
+Para mejorar la visualización de la imagen en el formulario, cuando la imagen del evento asociado al formulario esté vacía (no se haya seleccionado ninguna) controla con la directiva `@if` para evitar que se muestre.
 
 No se requiere validar nada del formulario por ahora. Esa parte veremos más adelante como gestionarla con _Angular_.
 
