@@ -16,9 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
 export class MyComponent { }
 ```
 
-Debemos importar el `provideHttpClient()` en `main.ts`:
+Debemos importar el `provideHttpClient()` en `app.config.ts`:
 
-```typescript title="main.ts"
+```typescript title="app.config.ts"
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
