@@ -16,6 +16,21 @@ import { HttpClientModule } from '@angular/common/http';
 export class MyComponent { }
 ```
 
+Debemos importar el `provideHttpClient()` en `main.ts`:
+
+```typescript title="main.ts"
+import { ApplicationConfig } from '@angular/core';
+import { provideRouter } from '@angular/router';
+
+import { routes } from './app.routes';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideHttpClient } from '@angular/common/http';
+
+export const appConfig: ApplicationConfig = {
+  providers: [provideRouter(routes), provideAnimations(), provideHttpClient()]
+};
+```
+
 Se va a modificar el servicio `ProductoService` para que obtenga los datos de un servicio web. Para ello, se va a utilizar el servicio `HttpClient` de Angular. Este servicio se inyecta en el constructor del servicio `ProductoService`:
 
 ```typescript title="src/app/services/product.service.ts" linenums="1" hl_lines="3 9 11 15-17"
