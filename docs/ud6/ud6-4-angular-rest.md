@@ -2,23 +2,11 @@
 
 ## El módulo HttpClient
 
-En las aplicaciones reales se obtienen los datos de un servicio web utilizando peticiones HTTP en segundo plano (asíncronas). Angular proporciona el servicio `HttpClient` para realizar peticiones HTTP. Este servicio se encuentra en el módulo `@angular/common/http`, por lo que debemos importarlo en el módulo principal de la aplicación.
+En las aplicaciones reales se obtienen los datos de un servicio web utilizando peticiones HTTP en segundo plano (asíncronas). Angular proporciona el servicio `HttpClient` para realizar peticiones HTTP. 
 
-```typescript
-import { HttpClientModule } from '@angular/common/http';
+Este servicio se encuentra en el módulo `@angular/common/http`, por lo que debemos importarlo en la configuración principal de la aplicación. Debemos importar el `provideHttpClient()` en `app.config.ts`:
 
-@Component({
-  imports: [
-    HttpClientModule
-  ],
-  ...
-})
-export class MyComponent { }
-```
-
-Debemos importar el `provideHttpClient()` en `app.config.ts`:
-
-```typescript title="app.config.ts"
+```typescript title="app.config.ts" linemums="1" hl_lines="5 9"
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
@@ -27,7 +15,11 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideAnimations(), provideHttpClient()]
+  providers: [
+    provideHttpClient(),
+    provideRouter(routes),
+    provideAnimations()
+  ]
 };
 ```
 
