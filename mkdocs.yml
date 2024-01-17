@@ -34,11 +34,13 @@ nav:
     - 'ud6/ud6-2-angular-databinding.md'
     - 'ud6/ud6-3-angular-services.md'
     - 'ud6/ud6-4-angular-rest.md'
+    - 'ud6/ud6-5-angular-routing.md'
     - Actividades:
       - 'ud6/actividades/ud6-act1.md'
       - 'ud6/actividades/ud6-act2.md'
       - 'ud6/actividades/ud6-act3.md'
       - 'ud6/actividades/ud6-act4.md'
+      - 'ud6/actividades/ud6-act5.md'
 theme:
   name: material # readthedocs # material
   features:

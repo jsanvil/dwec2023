@@ -496,7 +496,6 @@ export class ProductsListComponent implements OnInit {
 }
 ```
 
-
 ## Actividad 3
 
 [Actividad 3](actividades/ud6-act3.md)
