@@ -6,7 +6,7 @@ En las aplicaciones reales se obtienen los datos de un servicio web utilizando p
 
 Este servicio se encuentra en el módulo `@angular/common/http`, por lo que debemos importarlo en la configuración principal de la aplicación. Debemos importar el `provideHttpClient()` en `app.config.ts`:
 
-```typescript title="app.config.ts" linemums="1" hl_lines="5 9"
+```typescript title="app.config.ts" linenums="1" hl_lines="5 9"
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
