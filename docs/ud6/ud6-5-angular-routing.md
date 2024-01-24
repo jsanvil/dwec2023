@@ -109,21 +109,20 @@ Los enlaces para navegar a las diferentes rutas, en lugar de utilizar _`href`_, 
 </div>
 ```
 
-Para que funcione correctamente, hay que importar las directivas de `@angular/route`: `RouterLink` y `RouterOutlet` que ya estarán importadas al crear el proyecto, y **`RouterLinkActive`** que se debe incluir manualmente, en el componente principal de la aplicación, **`AppComponent`** (`app.component.ts`):
+En `app.component.ts` se deben importar `RouterLink` y `RouterLinkActive`:
 
-```typescript title="app.module.ts" linenums="1" hl_lines="5 13"
+```typescript title="app.component.ts" linenums="1"
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  RouterLink, RouterOutlet,
-  RouterLinkActive,
-} from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule, RouterOutlet, RouterLink,
+    CommonModule,
+    RouterOutlet,
+    RouterLink,
     RouterLinkActive
   ],
   templateUrl: './app.component.html',
