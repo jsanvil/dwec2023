@@ -50,7 +50,7 @@ A la página de mostrar eventos le podemos quitar el componente del formulario d
 
 ## Página: Detalle de un evento
 
-Navegaremos a esta página cuando hagamos clic en la foto o el título de un evento. Esta página recibirá el evento a mostrar obtenido gracias a un `Resolve` que se explica más adelante. Para mostrar el evento, reutilizaremos el componente `event-item`. Cuando el evento se borre desde nos limitaremos a volver al listado de eventos y veremos como ya no aparece:
+Navegaremos a esta página cuando hagamos clic en la foto o el título de un evento. Esta página recibirá el evento a mostrar obtenido gracias a un `Resolve` que se explica más adelante. Para mostrar el evento, reutilizaremos el componente `evento-item`. Cuando el evento se borre nos limitaremos a volver al listado de eventos y veremos como ya no aparece:
 
 ```html
 <div class="mt-4">

@@ -109,6 +109,31 @@ Los enlaces para navegar a las diferentes rutas, en lugar de utilizar _`href`_, 
 </div>
 ```
 
+Para que funcione correctamente, hay que importar las directivas de `@angular/route`: `RouterLink` y `RouterOutlet` que ya estarán importadas al crear el proyecto, y **`RouterLinkActive`** que se debe incluir manualmente, en el componente principal de la aplicación, **`AppComponent`** (`app.component.ts`):
+
+```typescript title="app.module.ts" linenums="1" hl_lines="5 13"
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import {
+  RouterLink, RouterOutlet,
+  RouterLinkActive,
+} from '@angular/router';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [
+    CommonModule, RouterOutlet, RouterLink,
+    RouterLinkActive
+  ],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+export class AppComponent {
+  title = 'Angular Products';
+}
+```
+
 La directiva **`routerLinkActive`** se utiliza para **asignar una o varias clases CSS** al enlace **cuando la ruta está activa**. En este caso la clase `active` de _Bootstrap_.
 
 La directiva **`[routerLinkActiveOptions]`** con el objeto **`{exact: true}`** se usa en combinación con `routerLinkActive`. Por defecto un enlace está activo cuando su ruta coincide o es un prefijo de la actual, por ejemplo, en enlace a `/products` está activo cuando se encuentra en `/products/23`, que es otra página, con el detalle del producto. Con esta opción **sólo se considera activo cuando la ruta es exacta**.
