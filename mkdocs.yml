@@ -42,7 +42,7 @@ nav:
       - 'ud6/actividades/ud6-act3.md'
       - 'ud6/actividades/ud6-act4.md'
       - 'ud6/actividades/ud6-act5.md'
-      - 'ud6/actividades/ud6-act6.md'
+      # - 'ud6/actividades/ud6-act6.md'
 theme:
   name: material # readthedocs # material
   features:
