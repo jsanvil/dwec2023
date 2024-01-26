@@ -619,7 +619,7 @@ ng generate guard guards/leave-page
 
 Esta interfaz necesita definir sobre qué componente va a actuar. Para que sea reutilizable se va a crear una interfaz genérica **`ComponentDeactivate`** que se va a implementarán los componentes que necesiten usar el _guard_.
 
-```typescript title="product-edit.guard.ts" linenums="1"
+```typescript title="leave-page.guard.ts" linenums="1"
 import { CanDeactivateFn, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 
