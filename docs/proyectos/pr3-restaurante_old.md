@@ -12,14 +12,17 @@ Aplicación web que permita gestionar los menús de un restaurante, permitiendo 
 - Carta con fotos de los platos y precio.
 - Detalles con descripciones, ingredientes y precios.
 - Comentarios de los usuarios y valoraciones.
+- Realización de pedidos.
 
 ## Descripción de las vistas
 
 - **Inicio**. (`\home`) Página de bienvenida con información sobre el restaurante.
 - **Carta**. (`\menu`) Listado de platos con foto y precio.
-- **Detalles**. (`\menu\:id`) Información detallada de un plato. Listado de comentarios de los usuarios.
+- **Detalles**. (`\dish\:id`) Información detallada de un plato. Listado de comentarios de los usuarios.
+- **Pedidos**. (`\cart`) Listado de platos seleccionados por el usuario. Formulario para realizar el pedido.
 - **Gestión**. (`\admin`) Listado de platos del restaurante. Formulario para crear y editar platos.
 - **Login**. (`\login`)Formulario para iniciar sesión.
+- **Registro**. (`\register`) Formulario para crear una cuenta de usuario.
 - **Perfil**. (`\profile\:user_id`) Información del usuario. Formulario para editar los datos del usuario.
 - **404**. Página de error cuando no se encuentra una ruta.
 
@@ -27,6 +30,7 @@ La vistas presentarán un **menú de navegación** con las siguientes opciones:
 
 - **Logo** del restaurante. Enlaza con la página de inicio.
 - **Carta**. Enlaza con la página de la carta.
+- **Pedidos**. Enlaza con la página de pedidos.
 - **Gestión\***. Enlaza con la página de gestión. *Sólo se muestra para el usuario `chef`.
 - Según el estado de la sesión:
     - Si no se ha iniciado sesión:
@@ -65,19 +69,32 @@ También se mostrarán los comentarios de los usuarios y la valoración media.
 
 Se podrá añadir un comentario y una valoración. Sólo se podrá comentar si se ha iniciado sesión.
 
+### Página de pedidos
+
+- Listado de platos seleccionados por el usuario y la cantidad de cada plato.
+    - Se podrá eliminar un plato del carrito de la compra.
+
+- Precio total del pedido.
+
+- Realizar el pedido:
+    - Si el usuario no está registrado, se le pedirá que inicie sesión o se registre para poder completar el pedido.
+    - Al ser una aplicación de demostración, simplemente se mostrará un mensaje de confirmación y se vaciará el carrito de la compra.
+
 ### Página de gestión
 
-Mostrará un listado de platos, similar al de la vista de usuario, pero incluirá también los deshabilitados.
-
-Se podrán ver detalles, crear, editar y eliminar platos.
+Mostrará un listado de platos del restaurante. Se podrá crear, editar y eliminar platos.
 
 ### Página de login
 
 Formulario para iniciar sesión. Se pedirá el nombre de usuario y la contraseña.
 
+### Página de registro
+
+Formulario para crear una cuenta de usuario. Se pedirá el nombre de usuario, la contraseña y el email.
+
 ### Página de perfil
 
-Mostrará la información del usuario.
+Mostrará la información del usuario. Se podrá editar la información del usuario.
 
 ### Página de error
 
@@ -99,10 +116,10 @@ Mostrará un mensaje de error cuando no se encuentre una ruta.
 - **`name`**. Nombre del plato. **Obligatorio**. Máximo 50 caracteres.
 - **`description`**. Descripción del plato. **Obligatorio**. Máximo 200 caracteres.
 - **`ingredients`**. Ingredientes del plato. **Obligatorio**. Máximo 200 caracteres.
-- **`price`**. Precio del plato. **Obligatorio**. Número decimal positivo.
+- **`price`**. Precio del plato. **Obligatorio**. Número decimal.
 - **`category`**. Categoría del plato. `entrantes`, `platos principales`, `postres`, `bebidas` etc.
 - **`enabled`**. Indica si el plato está disponible. Por defecto, `true`. Si está desactivado, no se mostrará en la carta.
-- **`image`**. Imagen del plato. Opcional, se mostrará un placeholder en caso de no haber imagen.
+- **`image`**. Imagen del plato. **Obligatorio**. URL de la imagen.
 
 ### Comentario
 
@@ -112,6 +129,13 @@ Mostrará un mensaje de error cuando no se encuentre una ruta.
 - **`comment`**. Comentario. **Obligatorio**. Máximo 200 caracteres.
 - **`rating`**. Valoración del plato. **Obligatorio**. Número entero entre 1 y 5.
 - **`created_at`**. Fecha y hora de creación. Calculada automáticamente. No modificable por el usuario.
+
+### Pedido
+
+- **`id`**. Identificador único.
+- **`user_id`**. Identificador del usuario que ha realizado el pedido. **Obligatorio**.
+- **`dish_id`**. Identificador del plato pedido. **Obligatorio**.
+- **`quantity`**. Cantidad del plato pedido. **Obligatorio**. Número entero.
 
 ## API
 
@@ -154,6 +178,14 @@ Se utilizará la API de _JSON Server_ para simular el servidor. Tendrá la sigui
             "comment": "Muy buena",
             "rating": 5,
             "created_at": "2024-01-10T12:00:00"
+        }
+    ],
+    "orders": [
+        {
+            "id": "1",
+            "user_id": "2",
+            "dish_id": "1",
+            "quantity": 2
         }
     ]
 }
