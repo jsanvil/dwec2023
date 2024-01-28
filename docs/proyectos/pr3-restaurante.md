@@ -1,10 +1,10 @@
-# Proyecto 2º EV - Gestión menús de restaurante
+# Proyecto 2º EV - Gestión carta de un restaurante
 
 Se implementará una aplicación de gestión de menús de restaurante utilizando **Angular**.
 
 ## Objetivos
 
-Aplicación web que permita gestionar los menús de un restaurante, permitiendo a los clientes ver los platos, ingredientes y precios. La aplicación debe facilitar la realización de pedidos, indicar preferencias dietéticas y comentarios de los usuarios, con el objetivo de mejorar la experiencia gastronómica y agilizar el proceso de pedido.
+**Aplicación web SPA** (_Single Page Application_), utilizando el framework _**Angular** v17_, que permita **gestionar la carta de un restaurante**, permitiendo a los clientes consultar los platos, ingredientes y precios. Los clientes pueden publicar valoraciones y comentarios, con el fin de mejorar la experiencia y agilizar el servicio.
 
 ## Características
 
@@ -13,7 +13,7 @@ Aplicación web que permita gestionar los menús de un restaurante, permitiendo 
 - Detalles con descripciones, ingredientes y precios.
 - Comentarios de los usuarios y valoraciones.
 
-## Descripción de las vistas
+## Descripción de las vistas y rutas
 
 - **Inicio**. (`\home`) Página de bienvenida con información sobre el restaurante.
 - **Carta**. (`\menu`) Listado de platos con foto y precio.
@@ -37,7 +37,7 @@ La vistas presentarán un **menú de navegación** con las siguientes opciones:
 
 ![Esquema de navegación](./img/pr3_nav.png)
 
-[Excalidraw](https://excalidraw.com/#json=imkM2CXmRjLolNlwXLzkJ,RqXi7yNEoukrL-ogvKhBzw)
+[Excalidraw](https://excalidraw.com/#json=zz7fsZtZnXndD-MoTLudw,eJY5TfI6MOxucFACxkz17Q)
 
 ### Página de inicio
 
@@ -143,7 +143,8 @@ Se utilizará la API de _JSON Server_ para simular el servidor. Tendrá la sigui
             "ingredients": "tomate, aceite de oliva virgen extra, sal, sin gluten, vegano, vegetariano, sin lactosa",
             "price": 5.50,
             "category": "entrantes",
-            "image": "https://picsum.photos/200/300"
+            "image": "https://picsum.photos/200/300",
+            "enabled": true
         }
     ],
     "comments": [
