@@ -45,6 +45,11 @@ nav:
       - 'ud6/actividades/ud6-act4.md'
       - 'ud6/actividades/ud6-act5.md'
       # - 'ud6/actividades/ud6-act6.md'
+    - Proyecto:
+      - 'proyectos/pr3-restaurante.md'
+    - Repositorios de ejemplo:
+      - angular-products: 'https://github.com/jsanvil/angular-products'
+      - angular-products-material: 'https://github.com/jsanvil/angular-products-material'
 theme:
   name: material # readthedocs # material
   features:
