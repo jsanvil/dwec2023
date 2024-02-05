@@ -414,7 +414,7 @@ Para acceder al objeto del formulario (`ngForm`) y comprobar su validación, se 
 ```html title="product-edit.component.html"
 ...
     <form #productForm="ngForm"
-          (ngSubmit)="saveChanges()"
+          (ngSubmit)="saveChanges(productForm)"
           novalidate>
 ...
 ```
@@ -422,11 +422,9 @@ Para acceder al objeto del formulario (`ngForm`) y comprobar su validación, se 
 ```typescript title="product-edit.component.ts" hl_lines="3 7"
 ...
 export class ProductEditComponent implements ComponentDeactivate {
-  @ViewChild('productForm', {static: true}) productForm?: NgModel;
   ...
-
-  saveChanges() {
-    if (this.product && this.productForm!.valid) {
+  saveChanges(productForm: NgForm) {
+    if (this.product && productForm.valid) {
       this.productService.updateProduct(this.product).subscribe({
         next: prod => {
           this.product = prod;
