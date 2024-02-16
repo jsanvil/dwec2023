@@ -1,0 +1,2379 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ud3-1-eventos/">
+      
+      
+        <link rel="next" href="../../ud4/ud4-1-oop/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
+    
+    
+      
+        <title>UD3 - 2. Validación de formularios - Desarrollo Web en Entorno Cliente</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/bs5_layout.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ud3-2-validacion-de-formularios" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Desarrollo Web en Entorno Cliente" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Cliente" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Cliente
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UD3 - 2. Validación de formularios
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  Inicio
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../proyectos/pr1-clave-secreta/" class="md-tabs__link">
+          
+  
+  Proyectos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud1/ud1-1-tecnologias/" class="md-tabs__link">
+          
+  
+  UD1 Sintaxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud2/ud2-1-DOM/" class="md-tabs__link">
+          
+  
+  UD2 DOM
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ud3-1-eventos/" class="md-tabs__link">
+          
+  
+  UD3 Eventos y formularios
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud4/ud4-1-oop/" class="md-tabs__link">
+          
+  
+  UD4 POO
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud5/ud5-1-native-libraries/" class="md-tabs__link">
+          
+  
+  UD5 Librerías
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud6/ud6-1-angular-intro/" class="md-tabs__link">
+          
+  
+  UD6 Angular
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Cliente" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Cliente" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Desarrollo Web en Entorno Cliente
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Inicio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Desarrollo Web en Entorno Cliente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../entorno/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entorno de trabajo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyectos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Proyectos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr1-clave-secreta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proyecto 1 - Clave Secreta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr2-todo-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proyecto 2 - To Do List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr3-restaurante/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD1 Sintaxis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD1 Sintaxis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-1-tecnologias/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 1. Arquitecturas y tecnologías de programación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-sintaxis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2. Manejo de la sintaxis del lenguaje
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-1-objetos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2.1. Objetos en Javascript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-2-arrays/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2.2. Arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-3-programacion-funcional/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2.3. Programación funcional
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../refuerzo/ud1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ejercicios de refuerzo UD1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD2 DOM
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            UD2 DOM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud2/ud2-1-DOM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD2 - 1. Objetos predefinidos del lenguaje (DOM)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud2/ud2-2-BOM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD2 - 2. Browser Object Model (BOM)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    UD3 Eventos y formularios
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            UD3 Eventos y formularios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud3-1-eventos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD3 - 1. Eventos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    UD3 - 2. Validación de formularios
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    UD3 - 2. Validación de formularios
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducción">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validacion-del-navegador-incorporada-en-html5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validación del navegador incorporada en HTML5
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validacion-mediante-la-api-de-validacion-de-formularios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validación mediante la API de validación de formularios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expresiones-regulares" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expresiones regulares
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Expresiones regulares">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#patrones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patrones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métodos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud3-proyecto-clave-secreta.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD4 POO
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            UD4 POO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud4/ud4-1-oop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD4 - 1. Programación orientada a Objetos en Javascript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud4/ud4-2-estructura/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD4 - 2. Estructuración de proyectos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud4/ud4-3-mvc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD3 - 3. El patrón Modelo-Vista-Controlador (MVC)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD5 Librerías
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            UD5 Librerías
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud5/ud5-1-native-libraries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD5 - 1. Objetos predefinidos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud5/ud5-2-components/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD5 - 2. Componentes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud5/ud5-3-async/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD5 - 3. Comunicación asíncrona
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD6 Angular
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            UD6 Angular
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-1-angular-intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 1. Introducción a Angular
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-2-angular-databinding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 2. Data binding. Pipes.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-3-angular-services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 3. Componentes anidados. Servicios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-4-angular-rest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 4. HttpClient
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-5-angular-routing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 5. Routing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-6-angular-template-forms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 6. Formularios de plantilla
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-7-angular-i18n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 7. Internacionalización
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_8" id="__nav_8_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_8">
+            <span class="md-nav__icon md-icon"></span>
+            Actividades
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_9" id="__nav_8_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyecto
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_9">
+            <span class="md-nav__icon md-icon"></span>
+            Proyecto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr3-restaurante/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proyecto 2º EV - Gestión carta de un restaurante
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_10" id="__nav_8_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Repositorios de ejemplo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_10">
+            <span class="md-nav__icon md-icon"></span>
+            Repositorios de ejemplo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/jsanvil/angular-products" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    angular-products
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/jsanvil/angular-products-material" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    angular-products-material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducción">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validacion-del-navegador-incorporada-en-html5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validación del navegador incorporada en HTML5
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validacion-mediante-la-api-de-validacion-de-formularios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validación mediante la API de validación de formularios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expresiones-regulares" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expresiones regulares
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Expresiones regulares">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#patrones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patrones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métodos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="ud3-2-validacion-de-formularios">UD3 - 2. Validación de formularios<a class="headerlink" href="#ud3-2-validacion-de-formularios" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="#introducción">Introducción</a><ul>
+<li><a href="#validación-del-navegador-incorporada-en-html5">Validación del navegador incorporada en HTML5</a></li>
+<li><a href="#validación-mediante-la-api-de-validación-de-formularios">Validación mediante la API de validación de formularios</a><ul>
+<li><a href="#ejemplo">Ejemplo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#expresiones-regulares">Expresiones regulares</a><ul>
+<li><a href="#patrones">Patrones</a></li>
+<li><a href="#métodos">Métodos</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
+<p>Veremos cómo realizar una de las acciones principales de <em>Javascript</em> que es la <strong>validación de formularios en el lado cliente</strong>.</p>
+<p>Se trata de una verificación útil porque evita enviar datos al servidor que sabemos que no son válidos pero <strong>NUNCA puede sustituir a la validación en el lado servidor</strong> ya que en el lado cliente se puede manipular el código desde la consola para que se salte las validaciones que le pongamos.</p>
+<p>Podéis encontrar una guía muy completa de validación de formularios en el lado cliente el la página de <a href="https://developer.mozilla.org/es/docs/Learn/HTML/Forms/Validacion_formulario_datos">MDN web docs</a> que ha servido como base para estos apuntes.</p>
+<p>Básicamente tenemos 2 maneras de validar un formulario en el lado cliente:</p>
+<ul>
+<li><strong><code>HTML5</code></strong>: Usar la <strong>validación incorporada en HTML</strong>5 y dejar que sea el navegador quien se encargue de todo</li>
+<li><strong><code>Javascript</code></strong>: Realizar la <strong>validación mediante <em>Javascript</em></strong></li>
+</ul>
+<p>La ventaja de la primera opción, <code>HTML5</code>, es que no tenemos que escribir código sino simplemente poner unos atributos a los <code>INPUT</code> que indiquen qué se ha de validar. La principal desventaja es que <strong>no tenemos ningún control sobre el proceso</strong>, lo que provocará cosas como:</p>
+<ul>
+<li>El navegador valida campo a campo: cuando encuentra un error en un campo lo muestra y <strong>hasta que no se soluciona no valida el siguiente</strong> lo que hace que el proceso sea molesto para el usuario que no ve todo lo que hay mal de una vez.</li>
+<li>Los <strong>mensajes son los predeterminados</strong> del navegador y en ocasiones pueden no ser muy claros para el usuario.</li>
+<li>Los mensajes se muestran en el <strong>idioma en que está configurado</strong> el navegador, no en el de nuestra página.</li>
+</ul>
+<p>Al final, veremos una pequeña introducción a las expresiones regulares en <em>Javascript</em>.</p>
+<h3 id="validacion-del-navegador-incorporada-en-html5">Validación del navegador incorporada en HTML5<a class="headerlink" href="#validacion-del-navegador-incorporada-en-html5" title="Permanent link">&para;</a></h3>
+<p>Funciona añadiendo atributos a los campos del formulario que queremos validar. Los más usados son:</p>
+<ul>
+<li>
+<p><strong><code>required</code></strong></p>
+<p>Indica que el campo es obligatorio. La validación fallará si no hay nada escrito en el <code>&lt;input&gt;</code>.</p>
+<p>En el caso de un grupo de <em><code>radiobuttons</code></em> se pone sobre cualquiera de ellos (o sobre todos) y obliga a que haya seleccionada una opción cualquiera del grupo.</p>
+</li>
+<li>
+<p><strong><code>pattern</code></strong></p>
+<p>Obliga a que el contenido del campo cumpla la expresión regular indicada. <em>Por ejemplo</em>, para un código postal sería <em><code>pattern="^[0-9]{5}$"</code></em></p>
+</li>
+<li>
+<p><strong><code>minlength</code></strong> / <strong><code>maxlength</code></strong></p>
+<p>Indica la longitud mínima / máxima del contenido del campo.</p>
+</li>
+<li>
+<p><strong><code>min</code></strong> / <strong><code>max</code></strong></p>
+<p>Indica el valor mínimo / máximo del contenido de un campo numérico.</p>
+</li>
+</ul>
+<p>También producen errores de validación si el contenido de un campo no se adapta al <em><strong><code>type</code></strong></em> indicado (<code>email</code>, <code>number</code>, <code>email</code> ...) o si el valor de un campo numérico no cumple con el <em><code>step</code></em> indicado.</p>
+<p>Cuando el contenido de un campo es valido dicho campo obtiene automáticamente la pseudo-clase <strong><code>:valid</code></strong> y si no lo es tendrá la pseudo-clase <strong><code>:invalid</code></strong> lo que nos permite poner reglas en nuestro <code>CSS</code> para destacar dichos campos, por ejemplo:</p>
+<div class="highlight"><span class="filename">style.css</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="hll"><span class="nt">input</span><span class="p">:</span><span class="nd">invalid</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">dashed</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span>
+</code></pre></div>
+<p>La validación se realiza al enviar el formulario y al encontrar un error se muestra, se detiene la validación del resto de campos y no se envía el formulario.</p>
+<h3 id="validacion-mediante-la-api-de-validacion-de-formularios">Validación mediante la API de validación de formularios<a class="headerlink" href="#validacion-mediante-la-api-de-validacion-de-formularios" title="Permanent link">&para;</a></h3>
+<p>Mediante <em>Javascript</em> tenemos acceso a todos los campos del formulario por lo que podemos hacer la validación como queramos, pero es una tarea pesada, repetitiva y que provoca <em>código espagueti</em> difícil de leer y mantener más adelante.</p>
+<p>Para hacerla más simple podemos usar la <a href="https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation">API de validación de formularios</a> de HTML5 que permite que sea el navegador quien se encargue de comprobar la validez de cada campo pero las acciones (<em>mostrar mensajes de error, no enviar el formulario, ...</em>) las realizamos desde <em>Javascript</em>.</p>
+<p><strong>Ventajas</strong>:</p>
+<ul>
+<li>Los <strong>requisitos de validación</strong> de cada campo están como <strong>atributos HTML</strong> de dicho campo por lo que son fáciles de ver.</li>
+<li><strong>Evitamos</strong> la mayor parte del código dedicada a <strong>comprobar si el contenido del campo es válido</strong>. Nosotros mediante la API sólo preguntamos si se cumplen o no y tomamos las medidas adecuadas.</li>
+<li>Aprovechamos las <strong>pseudo-clases</strong> <em><code>:valid</code></em> o <em><code>:invalid</code></em> que el navegador pone automáticamente a los campos por lo que no tenemos que añadirles clases para destacarlos.</li>
+</ul>
+<p>Las <strong>principales propiedades y métodos</strong> que nos proporciona esta API son:</p>
+<ul>
+<li><strong><code>checkValidity()</code></strong>: <strong>Método</strong> que nos dice si el campo al que se aplica es o no válido. También se puede aplicar al formulario para saber si es válido o no.</li>
+<li><strong><code>validationMessage</code></strong>: En caso de que un campo no sea válido esta <strong>propiedad</strong> contiene el texto del error de validación proporcionado por el navegador. Si es válido esta propiedad es una cadena vacía.</li>
+<li><strong><a href="https://developer.mozilla.org/en-US/docs/Web/API/ValidityState"><code>validity</code></a></strong>: es un <strong>objeto</strong> que tiene <strong>propiedades booleanas</strong> para saber qué requisito del campo es el que falla:<ul>
+<li><strong><code>valueMissing</code></strong>: Indica si no se cumple el atributo <strong><em><code>required</code></em></strong> <em>(es decir, valdrá </em><code>true</code><em> si el campo tiene el atributo </em><code>required</code><em> pero no se ha introducido nada en él)</em></li>
+<li><strong><code>typeMismatch</code></strong>: Indica si el contenido del campo no cumple con su atributo <strong><em><code>type</code></em></strong> <em>(ej. <code>type="email"</code>)</em>.</li>
+<li><strong><code>patternMismatch</code></strong>: Indica si no se cumple con el <strong><em><code>pattern</code></em></strong> indicado en su atributo.</li>
+<li><strong><code>tooShort</code></strong> / <strong><code>tooLong</code></strong>: Indican si no se cumple el atributo <strong><em><code>minlength</code></em></strong> o <strong><em><code>maxlength</code></em></strong> respectivamente.</li>
+<li><strong><code>rangeUnderflow</code></strong> / <strong><code>rangeOverflow</code></strong>: Indica si no se cumple el atributo <strong><em><code>min</code></em></strong> / <strong><em><code>max</code></em></strong></li>
+<li><strong><code>stepMismatch</code></strong>: Indica si no se cumple el atributo <strong><em><code>step</code></em></strong> del campo.</li>
+<li><strong><code>customError</code></strong>: Indica al campo se le ha puesto un error personalizado con <strong><em><code>setCustomValidity</code></em></strong></li>
+<li><strong><code>valid</code></strong>: Indica si es campo es válido.</li>
+</ul>
+</li>
+<li><strong><code>setCustomValidity(mensaje)</code></strong>: Añade un error personalizado al campo (que ahora ya NO será válido) con el mensaje pasado como parámetro. Para quitar este error se hace <code>setCustomValidity('')</code></li>
+</ul>
+<p>En la página de <a href="https://www.w3schools.com/js/js_validation_api.asp">W3Schools</a> podéis ver algún ejemplo básico. A continuación tenéis un ejemplo simple del valor de las diferentes propiedades involucradas en la validación de un campo de texto que es obligatorio y cuyo tamaño debe estar entre 5 y 50 caracteres:</p>
+<script async src="//jsfiddle.net/juansegura/vbdrxjsz/embed/"></script>
+
+<p>Para validar un formulario nosotros pero usando esta API debemos añadir al <code>&lt;FORM&gt;</code> el atributo <strong><code>novalidate</code></strong> que hace que no se encargue el navegador de mostrar los mensajes de error ni de decidir si se envía o no el formulario (aunque sí valida los campos) sino que lo haremos nosotros.</p>
+<h4 id="ejemplo">Ejemplo<a class="headerlink" href="#ejemplo" title="Permanent link">&para;</a></h4>
+<p>Un ejemplo sencillo de validación de un formulario podría ser:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">index.html</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">novalidate</span><span class="p">&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span><span class="p">&gt;</span>Por favor, introduzca su nombre (entre 5 y 50 caracteres): <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span> <span class="na">required</span> <span class="na">minlength</span><span class="o">=</span><span class="s">&quot;5&quot;</span> <span class="na">maxlength</span><span class="o">=</span><span class="s">&quot;50&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;error&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>  <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;mail&quot;</span><span class="p">&gt;</span>Por favor, introduzca una dirección de correo electrónico: <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mail&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;mail&quot;</span> <span class="na">required</span> <span class="na">minlength</span><span class="o">=</span><span class="s">&quot;8&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;error&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Enviar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">script.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">form</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">)[</span><span class="mf">0</span><span class="p">];</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;nombre&#39;</span><span class="p">);</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">nombreError</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#nombre + span.error&#39;</span><span class="p">);</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;mail&#39;</span><span class="p">);</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">emailError</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#mail + span.error&#39;</span><span class="p">);</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="nx">form</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;submit&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">form</span><span class="p">.</span><span class="nx">checkValidity</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">    </span><span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">  </span><span class="nx">nombreError</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nombre</span><span class="p">.</span><span class="nx">validationMessage</span><span class="p">;</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">  </span><span class="nx">emailError</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">email</span><span class="p">.</span><span class="nx">validationMessage</span><span class="p">;</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">style.css</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span>
+<span class="normal"><a href="#__codelineno-3-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">.</span><span class="nc">error</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="p">}</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="nt">input</span><span class="p">:</span><span class="nd">invalid</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">dashed</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Se utiliza:</p>
+<ul>
+<li><code>validationMessage</code> para mostrar el posible error de cada campo, o quitar el error cuando el campo sea válido.</li>
+<li><code>checkValidity()</code> para no enviar/procesar el formulario si contiene errores.</li>
+</ul>
+<p>Si no nos gusta el mensaje del navegador y queremos personalizarlo podemos hacer una función que reciba un <code>&lt;input&gt;</code> y usando su propiedad <code>validity</code> devuelva un mensaje en función del error detectado:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">script.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span>
+<span class="normal"><a href="#__codelineno-4-25">25</a></span>
+<span class="normal"><a href="#__codelineno-4-26">26</a></span>
+<span class="normal"><a href="#__codelineno-4-27">27</a></span>
+<span class="normal"><a href="#__codelineno-4-28">28</a></span>
+<span class="normal"><a href="#__codelineno-4-29">29</a></span>
+<span class="normal"><a href="#__codelineno-4-30">30</a></span>
+<span class="normal"><a href="#__codelineno-4-31">31</a></span>
+<span class="normal"><a href="#__codelineno-4-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">form</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">)[</span><span class="mf">0</span><span class="p">];</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;nombre&#39;</span><span class="p">);</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">nombreError</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#nombre + span.error&#39;</span><span class="p">);</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;mail&#39;</span><span class="p">);</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">emailError</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#mail + span.error&#39;</span><span class="p">);</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="nx">form</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;submit&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">form</span><span class="p">.</span><span class="nx">checkValidity</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">    </span><span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="hll"><span class="w">  </span><span class="nx">nombreError</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">customErrorValidationMessage</span><span class="p">(</span><span class="nx">nombre</span><span class="p">);</span>
+</span><a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="hll"><span class="w">  </span><span class="nx">emailError</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">customErrorValidationMessage</span><span class="p">(</span><span class="nx">email</span><span class="p">);</span>
+</span><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="p">});</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">customErrorValidationMessage</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-4-17" name="__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">checkValidity</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;&#39;</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">validity</span><span class="p">.</span><span class="nx">valueMissing</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;Este campo es obligatorio&#39;</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25"></a>
+<a id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">validity</span><span class="p">.</span><span class="nx">tooShort</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`Debe tener al menos </span><span class="si">${</span><span class="nx">input</span><span class="p">.</span><span class="nx">minLength</span><span class="si">}</span><span class="sb"> caracteres`</span><span class="w"> </span>
+<a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29"></a>
+<a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="c1">// Y seguiremos comprobando cada atributo que hayamos usado en el HTML</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;Error en el campo&#39;</span><span class="w">   </span><span class="c1">// por si se nos ha olvidado comprobar algo</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>En lugar de <code>nombreError.textContent = nombre.validationMessage</code> hacemos <code>nombreError.textContent = customErrorValidationMessage(nombre)</code>.</p>
+<p>Si tenemos que validar algo que no puede hacerse mediante atributos HTML (por ejemplo si el nombre de usuario ya está en uso) deberemos hacer la validación "a mano" y en caso de no ser válido ponerle un error con <code>.setCustomValidation()</code>, pero debemos recordar quitar el error si todo es correcto o el formulario siempre será inválido. Modificando el ejemplo:</p>
+<div class="highlight"><span class="filename">script.js</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;nombre&#39;</span><span class="p">);</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">nombreError</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#nombre + span.error&#39;</span><span class="p">);</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">nombreEnUso</span><span class="p">(</span><span class="nx">nombre</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nx">nombre</span><span class="p">.</span><span class="nx">setCustomValidation</span><span class="p">(</span><span class="s1">&#39;Ese nombre de usuario ya está en uso&#39;</span><span class="p">)</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nx">nombre</span><span class="p">.</span><span class="nx">setCustomValidation</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="w">  </span><span class="c1">// Se quita el error personalizado</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">}</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="nx">form</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;submit&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">form</span><span class="p">.</span><span class="nx">checkValidity</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="p">})</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">yup</p>
+<p>Existen múltiples librerías que facilitan enormemente el tedioso trabajo de validar un formulario. Un ejemplo es <a href="https://www.npmjs.com/package/yup">yup</a>.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">ACTIVIDAD 3: <code>📂 UD3/act03/</code></p>
+<p>Construye un formulario de registro con los siguientes campos:</p>
+<ul>
+<li><strong><code>Nombre de usuario</code></strong>: Requerido, entre 5 y 20 caracteres, sólo letras y números.</li>
+<li><strong><code>Contraseña</code></strong>: Requerido, entre 8 y 20 caracteres, al menos una letra mayúscula, una minúscula y un número.</li>
+<li><strong><code>Repetir contraseña</code></strong>: Requerido, debe ser igual a la <code>contraseña</code>.</li>
+<li><strong><code>E-mail</code></strong>: Requerido, debe ser un e-mail válido.</li>
+<li><strong><code>Código postal</code></strong>. Debe ser un código postal válido.</li>
+<li><strong><code>Fecha de nacimiento</code></strong>: Debe ser una fecha válida.</li>
+<li><strong><code>Acepto las condiciones</code></strong>: Requerido, <em>checkbox</em> que debe estar marcado.</li>
+<li><strong><code>Enviar</code></strong>. Botón que envía el formulario si es válido.</li>
+</ul>
+<p>Valida el formulario usando la API de validación de formularios de HTML5 y personaliza los mensajes de error.</p>
+</div>
+<h2 id="expresiones-regulares">Expresiones regulares<a class="headerlink" href="#expresiones-regulares" title="Permanent link">&para;</a></h2>
+<p>Las expresiones regulares permiten buscar un patrón dado en una cadena de texto. Se usan mucho a la hora de validar formularios o para buscar y reemplazar texto. En <em>Javascript</em> se crean poniéndolas entre caracteres <code>/</code> (o instanciándolas de la clase <em><code>RegExp</code></em>, aunque es mejor de la otra forma):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">script.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">cadena</span><span class="o">=</span><span class="s1">&#39;Hola mundo&#39;</span><span class="p">;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">expr</span><span class="o">=</span><span class="sr">/mundo/</span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="nx">expr</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">cadena</span><span class="p">);</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="c1">// devuelve true porque en la cadena se encuentra la expresión &#39;mundo&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="patrones">Patrones<a class="headerlink" href="#patrones" title="Permanent link">&para;</a></h3>
+<p>La potencia de las expresiones regulares es que podemos usar patrones para construir la expresión. Los más comunes son:</p>
+<ul>
+<li><strong><code>[ ]</code></strong> (corchetes): dentro se ponen varios caracteres o un rango y permiten comprobar si el carácter de esa posición de la cadena coincide con alguno de ellos. Ejemplos:<ul>
+<li><code>[abc]</code>: Cualquier carácter de los indicados ('<code>a</code>' o '<code>b</code>' o '<code>c</code>').</li>
+<li><code>[^abc]</code>: Cualquiera excepto los indicados.</li>
+<li><code>[a-z]</code>: Cualquier minúscula (el carácter '<code>-</code>' <strong>indica el rango</strong> entre '<code>a</code>' y '<code>z</code>', incluidas).</li>
+<li><code>[a-zA-Z]</code>: Cualquier letra.</li>
+</ul>
+</li>
+<li><code>( | )</code> (<em>pipe</em>): debe coincidir con una de las opciones indicadas:<ul>
+<li><code>(x|y)</code>: La letra <code>x</code> o la <code>y</code> (sería equivalente a <code>[xy]</code>).</li>
+<li><code>(http|https)</code>: Cualquiera de las 2 palabras.</li>
+</ul>
+</li>
+<li><strong>Metacaracteres</strong>:<ul>
+<li><code>.</code> (punto): Un único carácter, sea el que sea.</li>
+<li><code>\d</code>: Un dígito (<code>\D</code>: lo opuesto, cualquier cosa menos dígito).</li>
+<li><code>\s</code>: Espacio en blanco (<code>\S</code>: lo opuesto).</li>
+<li><code>\w</code>: Una palabra o carácter alfanumérico (<code>\W</code> lo contrario).</li>
+<li><code>\b</code>: Delimitador de palabra (espacio, principio, fin).</li>
+<li><code>\n</code>: Nueva línea.</li>
+</ul>
+</li>
+<li><strong>Cuantificadores</strong>:<ul>
+<li><code>+</code>: Al menos 1 vez (ej. <code>[0-9]+</code> al menos un dígito)</li>
+<li><code>*</code>: 0 o más veces.</li>
+<li><code>?</code>: 0 o 1 vez.</li>
+<li><code>{n}</code>: <em><strong>n</strong></em> caracteres (ej. <code>[0-9]{5}</code> = 5 dígitos).</li>
+<li><code>{n,}</code>: <em><strong>n</strong></em> o más caracteres.</li>
+<li><code>{n,m}</code>: Entre <em><strong>n</strong></em> y <em><strong>m</strong></em> caracteres.</li>
+<li><code>^</code>: Al principio de la cadena (ej.: <code>^[a-zA-Z]</code> = empieza por letra).</li>
+<li><code>$</code>: Al final de la cadena (ej.: <code>[0-9]$</code> = que acabe en dígito).</li>
+</ul>
+</li>
+<li><strong>Modificadores</strong>:<ul>
+<li><code>/i</code>: Que no distinga entre Mayúsculas y minúsculas (Ej. <code>/html/i</code> = buscará <em><code>html</code></em>, <em><code>Html</code></em>, <em><code>HTML</code></em>, ...)</li>
+<li><code>/g</code>: Búsqueda global, busca todas las coincidencias y no sólo la primera.</li>
+<li><code>/m</code>: Busca en más de 1 línea (para cadenas con saltos de línea).</li>
+</ul>
+</li>
+</ul>
+<!-- !!! question "ACTIVIDAD 4: `📂 UD3/act04/`"
+    Construye una expresión regular para lo que se pide a continuación y pruébala con distintas cadenas:
+
+    - Un código postal.
+    - Un NIF formado por 8 números, un guion y una letra mayúscula o minúscula.
+    - Un número de teléfono y aceptamos 2 formatos: XXX XX XX XX o XXX XXX XXX. EL primer número debe ser un 6, un 7, un 8 o un 9. -->
+
+<h3 id="metodos">Métodos<a class="headerlink" href="#metodos" title="Permanent link">&para;</a></h3>
+<p>Los usaremos para saber si la cadena coincide con determinada expresión o para buscar y reemplazar texto:</p>
+<ul>
+<li>
+<p><code>expr.test(cadena)</code>: Devuelve <strong>true</strong> si la cadena coincide con la expresión. Con el modificador <em><code>/g</code></em> hará que cada vez que se llama busque desde la posición de la última coincidencia. Ejemplo:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">test.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span>
+<span class="normal"><a href="#__codelineno-7-15">15</a></span>
+<span class="normal"><a href="#__codelineno-7-16">16</a></span>
+<span class="normal"><a href="#__codelineno-7-17">17</a></span>
+<span class="normal"><a href="#__codelineno-7-18">18</a></span>
+<span class="normal"><a href="#__codelineno-7-19">19</a></span>
+<span class="normal"><a href="#__codelineno-7-20">20</a></span>
+<span class="normal"><a href="#__codelineno-7-21">21</a></span>
+<span class="normal"><a href="#__codelineno-7-22">22</a></span>
+<span class="normal"><a href="#__codelineno-7-23">23</a></span>
+<span class="normal"><a href="#__codelineno-7-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;I am amazed in America&quot;</span><span class="p">;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">reg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/am/g</span><span class="p">;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">reg</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">str</span><span class="p">));</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="c1">// Imprime true</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">reg</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">str</span><span class="p">));</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="c1">// Imprime true</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">reg</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">str</span><span class="p">));</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="c1">// Imprime false, hay solo dos coincidencias</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="kd">let</span><span class="w"> </span><span class="nx">reg2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/am/gi</span><span class="p">;</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="c1">// ahora no distinguirá mayúsculas y minúsculas</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16"></a>
+<a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">reg</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">str</span><span class="p">));</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="c1">// Imprime true</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19"></a>
+<a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">reg</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">str</span><span class="p">));</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21"></a><span class="c1">// Imprime true</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22"></a>
+<a id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">reg</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">str</span><span class="p">));</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24"></a><span class="c1">// Imprime true. Ahora tenemos 3 coincidencias con este nuevo patrón</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><code>expr.exec(cadena)</code>: Igual que <em><code>test</code></em> pero en vez de <em><code>true</code></em> o <em><code>false</code></em> devuelve un objeto con la coincidencia encontrada, su posición y la cadena completa:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">exec.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span>
+<span class="normal"><a href="#__codelineno-8-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;I am amazed in America&quot;</span><span class="p">;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">reg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/am/gi</span><span class="p">;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">reg</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">str</span><span class="p">));</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="c1">// Imprime [&quot;am&quot;, index: 2, input: &quot;I am amazed in America&quot;]</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">reg</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">str</span><span class="p">));</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="c1">// Imprime [&quot;am&quot;, index: 5, input: &quot;I am amazed in America&quot;]</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">reg</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">str</span><span class="p">));</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="c1">// Imprime [&quot;Am&quot;, index: 15, input: &quot;I am amazed in America&quot;]</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">reg</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">str</span><span class="p">));</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="c1">// Imprime null</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><code>cadena.match(expr)</code>: Igual que <em><code>exec</code></em> pero se aplica a la cadena y se le pasa la expresión. Si ésta tiene el modificador <em><code>/g</code></em> devolverá un array con todas las coincidencias:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">match.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;I am amazed in America&quot;</span><span class="p">;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">reg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/am/gi</span><span class="p">;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">reg</span><span class="p">));</span><span class="w"> </span><span class="c1">// Imprime [&quot;am&quot;, &quot;am&quot;, &quot;Am&quot;}</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><code>cadena.search(expr)</code>: Devuelve la posición donde se encuentra la coincidencia buscada o <code>-1</code> si no aparece.</p>
+</li>
+<li>
+<p><code>cadena.replace(expr, cadena2)</code>: Devuelve una nueva cadena con las coincidencias de la cadena reemplazadas por la cadena pasada como segundo parámetro:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">replace.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span>
+<span class="normal"><a href="#__codelineno-10-7">7</a></span>
+<span class="normal"><a href="#__codelineno-10-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;I am amazed in America&quot;</span><span class="p">;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/am/gi</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;xx&quot;</span><span class="p">));</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="c1">// Imprime &quot;I xx xxazed in xxerica&quot;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/am/gi</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">match</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;-&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">match</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;-&quot;</span><span class="p">;</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="p">}));</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="c1">// Imprime &quot;I -AM- -AM-azed in -AM-erica&quot;</span>
+</code></pre></div></td></tr></table></div>
+</li>
+</ul>
+<p>No vamos a profundizar más sobre las expresiones regulares. Es muy fácil encontrar por internet la que necesitemos en cada caso (para validar un e-mail, un NIF, un CP, ...). Podemos aprender más en:</p>
+<ul>
+<li><a href="http://www.w3schools.com/jsref/jsref_obj_regexp.asp">w3schools</a></li>
+<li><a href="http://www.regular-expressions.info/">regular-expressions.info</a></li>
+<li><a href="http://html5pattern.com/">html5pattern</a> atributo</li>
+<li>y muchas otras páginas</li>
+</ul>
+<p>También, hay páginas que nos permiten probar expresiones regulares con cualquier texto, como <a href="http://regexr.com/">regexr</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/jsanvil/dwec2023" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2212 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../ud4/ud4-3-mvc/">
+      
+      
+        <link rel="next" href="../ud5-2-components/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
+    
+    
+      
+        <title>UD5 - 1. Objetos predefinidos - Desarrollo Web en Entorno Cliente</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/bs5_layout.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ud5-1-objetos-predefinidos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Desarrollo Web en Entorno Cliente" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Cliente" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Cliente
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UD5 - 1. Objetos predefinidos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  Inicio
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../proyectos/pr1-clave-secreta/" class="md-tabs__link">
+          
+  
+  Proyectos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud1/ud1-1-tecnologias/" class="md-tabs__link">
+          
+  
+  UD1 Sintaxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud2/ud2-1-DOM/" class="md-tabs__link">
+          
+  
+  UD2 DOM
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud3/ud3-1-eventos/" class="md-tabs__link">
+          
+  
+  UD3 Eventos y formularios
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud4/ud4-1-oop/" class="md-tabs__link">
+          
+  
+  UD4 POO
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  UD5 Librerías
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud6/ud6-1-angular-intro/" class="md-tabs__link">
+          
+  
+  UD6 Angular
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Cliente" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Cliente" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Desarrollo Web en Entorno Cliente
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Inicio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Desarrollo Web en Entorno Cliente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../entorno/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entorno de trabajo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyectos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Proyectos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr1-clave-secreta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proyecto 1 - Clave Secreta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr2-todo-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proyecto 2 - To Do List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr3-restaurante/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD1 Sintaxis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD1 Sintaxis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-1-tecnologias/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 1. Arquitecturas y tecnologías de programación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-sintaxis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2. Manejo de la sintaxis del lenguaje
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-1-objetos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2.1. Objetos en Javascript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-2-arrays/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2.2. Arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-3-programacion-funcional/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2.3. Programación funcional
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../refuerzo/ud1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ejercicios de refuerzo UD1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD2 DOM
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            UD2 DOM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud2/ud2-1-DOM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD2 - 1. Objetos predefinidos del lenguaje (DOM)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud2/ud2-2-BOM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD2 - 2. Browser Object Model (BOM)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD3 Eventos y formularios
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            UD3 Eventos y formularios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud3/ud3-1-eventos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD3 - 1. Eventos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud3/ud3-2-formularios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD3 - 2. Validación de formularios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud3/ud3-proyecto-clave-secreta.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD4 POO
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            UD4 POO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud4/ud4-1-oop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD4 - 1. Programación orientada a Objetos en Javascript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud4/ud4-2-estructura/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD4 - 2. Estructuración de proyectos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud4/ud4-3-mvc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD3 - 3. El patrón Modelo-Vista-Controlador (MVC)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    UD5 Librerías
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            UD5 Librerías
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    UD5 - 1. Objetos predefinidos
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    UD5 - 1. Objetos predefinidos
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funciones-globales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funciones globales
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetos-nativos-del-lenguaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetos nativos del lenguaje
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objetos nativos del lenguaje">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objeto-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto Math
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objeto-date" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto Date
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetos-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetos JSON
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud5-2-components/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD5 - 2. Componentes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud5-3-async/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD5 - 3. Comunicación asíncrona
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD6 Angular
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            UD6 Angular
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-1-angular-intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 1. Introducción a Angular
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-2-angular-databinding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 2. Data binding. Pipes.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-3-angular-services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 3. Componentes anidados. Servicios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-4-angular-rest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 4. HttpClient
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-5-angular-routing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 5. Routing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-6-angular-template-forms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 6. Formularios de plantilla
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-7-angular-i18n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 7. Internacionalización
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_8" id="__nav_8_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_8">
+            <span class="md-nav__icon md-icon"></span>
+            Actividades
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_9" id="__nav_8_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyecto
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_9">
+            <span class="md-nav__icon md-icon"></span>
+            Proyecto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr3-restaurante/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proyecto 2º EV - Gestión carta de un restaurante
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_10" id="__nav_8_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Repositorios de ejemplo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_10">
+            <span class="md-nav__icon md-icon"></span>
+            Repositorios de ejemplo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/jsanvil/angular-products" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    angular-products
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/jsanvil/angular-products-material" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    angular-products-material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funciones-globales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funciones globales
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetos-nativos-del-lenguaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetos nativos del lenguaje
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objetos nativos del lenguaje">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objeto-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto Math
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objeto-date" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto Date
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetos-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetos JSON
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="ud5-1-objetos-predefinidos">UD5 - 1. Objetos predefinidos<a class="headerlink" href="#ud5-1-objetos-predefinidos" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="#introducción">Introducción</a></li>
+<li><a href="#funciones-globales">Funciones globales</a></li>
+<li><a href="#objetos-nativos-del-lenguaje">Objetos nativos del lenguaje</a><ul>
+<li><a href="#objeto-math">Objeto Math</a></li>
+<li><a href="#objeto-date">Objeto Date</a></li>
+<li><a href="#objetos-json">Objetos JSON</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
+<p>En est unidad vamos a ver las funciones globales de Javascript (muchas de las cuales ya hemos visto como <em>Number()</em> o <em>String()</em>) y los objetos nativos que incorpora <em>Javascript</em> y que nos facilitarán el trabajo proporcionándonos métodos y propiedades útiles para no tener que "reinventar la rueda" en nuestras aplicaciones.</p>
+<h2 id="funciones-globales">Funciones globales<a class="headerlink" href="#funciones-globales" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><code>parseInt(valor)</code>: devuelve el valor pasado como parámetro convertido a entero o <em>NaN</em> si no es posible la conversión. Este método es mucho más permisivo que <em>Number</em> y convierte cualquier cosa que comience por un número (si encuentra un carácter no numérico detiene la conversión y devuelve lo convertido hasta el momento). Ejemplos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">parseInt</span><span class="p">(</span><span class="mf">3.84</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">            </span><span class="c1">// imprime 3 (ignora los decimales)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">parseInt</span><span class="p">(</span><span class="s1">&#39;3.84&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">          </span><span class="c1">// imprime 3</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">parseInt</span><span class="p">(</span><span class="s1">&#39;28manzanas&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">    </span><span class="c1">// imprime 28</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">parseInt</span><span class="p">(</span><span class="s1">&#39;manzanas28&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">    </span><span class="c1">// imprime NaN</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>parseFloat(valor)</code>: igual pero devuelve un número decimal. Ejemplos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">parseFloat</span><span class="p">(</span><span class="mf">3.84</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">            </span><span class="c1">// imprime 3.84</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">parseFloat</span><span class="p">(</span><span class="s1">&#39;3.84&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">          </span><span class="c1">// imprime 3.84</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">parseFloat</span><span class="p">(</span><span class="s1">&#39;3,84&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">          </span><span class="c1">// imprime 3 (la coma no es un carácter numérico)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">parseFloat</span><span class="p">(</span><span class="s1">&#39;28manzanas&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">    </span><span class="c1">// imprime 28</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">parseFloat</span><span class="p">(</span><span class="s1">&#39;manzanas28&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">    </span><span class="c1">// imprime NaN</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>Number(valor)</code>: convierte el valor a un número. Es como <em>parseFloat</em> pero más estricto y si no puede convertir todo el valor devuelve <em>NaN</em>. Ejemplos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="mf">3.84</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">            </span><span class="c1">// imprime 3.84</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="s1">&#39;3.84&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">          </span><span class="c1">// imprime 3.84</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="s1">&#39;3,84&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">          </span><span class="c1">// imprime NaN (la coma no es un carácter numérico)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="s1">&#39;28manzanas&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">    </span><span class="c1">// imprime NaN</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="s1">&#39;manzanas28&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">    </span><span class="c1">// imprime NaN</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>String(valor)</code>: convierte el valor pasado a una cadena de texto. Si le pasamos un objeto llama al método <em>.toString()</em> del objeto. Ejemplos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">String</span><span class="p">(</span><span class="mf">3.84</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">                  </span><span class="c1">// imprime &#39;3.84&#39;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">String</span><span class="p">([</span><span class="mf">24</span><span class="p">,</span><span class="w"> </span><span class="mf">3.</span><span class="w"> </span><span class="mf">12</span><span class="p">])</span><span class="w"> </span><span class="p">)</span><span class="w">           </span><span class="c1">// imprime &#39;24,3,12&#39;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="p">{</span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Marta&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="mf">26</span><span class="p">}</span><span class="w"> </span><span class="p">)</span><span class="w">   </span><span class="c1">// imprime &quot;[object Object]&quot;</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>Boolean(valor)</code>: convierte el valor pasado a un booleano. Sería el resultado de tenerlo como condición en un <code>if</code>. Muchas veces en vez de usar esto usamos la doble negación <code>!!</code> que da el mismo resultado. Ejemplos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">Boolean</span><span class="p">(</span><span class="s1">&#39;Hola&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">      </span><span class="c1">// Equivaldría a !!&#39;Hola&#39;. Imprime true</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">Boolean</span><span class="p">(</span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">           </span><span class="c1">// Equivaldría a !!0. Imprime false</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>isNaN(valor)</code>: devuelve <em>true</em> si lo pasado NO es un número o no puede convertirse en un número. Ejemplos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">isNaN</span><span class="p">(</span><span class="mf">3.84</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">            </span><span class="c1">// imprime false</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">isNaN</span><span class="p">(</span><span class="s1">&#39;3.84&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">          </span><span class="c1">// imprime false</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">isNaN</span><span class="p">(</span><span class="s1">&#39;3,84&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">          </span><span class="c1">// imprime true (la coma no es un carácter numérico)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">isNaN</span><span class="p">(</span><span class="s1">&#39;28manzanas&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">    </span><span class="c1">// imprime true</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">isNaN</span><span class="p">(</span><span class="s1">&#39;manzanas28&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">    </span><span class="c1">// imprime true</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>isFinite(valor)</code>: devuelve <em>false</em> si es número pasado es infinito (o demasiado grande)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">isFinite</span><span class="p">(</span><span class="mf">3.84</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">            </span><span class="c1">// imprime true</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">isFinite</span><span class="p">(</span><span class="mf">3.84</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">            </span><span class="c1">// imprime false</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>encodeURI(string)</code> / <code>decodeURI(string)</code>: transforma la cadena pasada a una URL codificada válida transformando los caracteres especiales que contenga, excepto <code>,</code> <code>/</code> <code>?</code> <code>:</code> <code>@</code> <code>&amp;</code> <code>=</code> <code>+</code> <code>$</code> <code>#</code>. Debemos usarla siempre que vayamos a pasar una URL.</p>
+<p><em>Ejemplo:</em></p>
+<ul>
+<li>Decoded: “<code>http://domain.com?val=1 2 3&amp;val2=r+y%6</code>"</li>
+<li>Encoded: “<code>http://domain.com?val=1%202%203&amp;val2=r+y%256</code>”</li>
+</ul>
+</li>
+<li>
+<p><code>encodeURIComponent(string)</code> / <code>decodeURIComponent(string)</code>: transforma también los caracteres que no transforma la anterior. Debemos usarla para codificar parámetros pero no una URL entera.</p>
+<p><em>Ejemplo:</em></p>
+<ul>
+<li>Decoded: “<code>http://domain.com?val=1 2 3&amp;val2=r+y%6</code>"</li>
+<li>Encoded: “<code>http%3A%2F%2Fdomain.com%3Fval%3D1%202%203%26val2%3Dr%2By%256</code>”</li>
+</ul>
+</li>
+</ul>
+<h2 id="objetos-nativos-del-lenguaje">Objetos nativos del lenguaje<a class="headerlink" href="#objetos-nativos-del-lenguaje" title="Permanent link">&para;</a></h2>
+<p>En <em>Javascript</em> casi todo son objetos. Ya hemos visto diferentes objetos:</p>
+<ul>
+<li>window</li>
+<li>screen</li>
+<li>navigator</li>
+<li>location</li>
+<li>history</li>
+<li>document</li>
+</ul>
+<p>Los cinco primeros se corresponden al modelo de objetos del navegador y <em>document</em> se corresponde al modelo de objetos del documento. Todos nos permiten interactuar con el navegador para realizar distintas acciones.</p>
+<p>Pero además tenemos los tipos de objetos nativos, que no dependen del navegador.</p>
+<ul>
+<li>Number</li>
+<li>String</li>
+<li>Boolean</li>
+<li>Array</li>
+<li>Function</li>
+<li>Object</li>
+<li>Math</li>
+<li>Date</li>
+<li>RegExp</li>
+</ul>
+<p>Además de los tipos primitivos de número, cadena, booleano, undefined y null, <em>Javascript</em> tiene todos los objetos indicados. Como vimos se puede crear un número usando su tipo primitivo (<code>let num = 5</code>) o su objeto (<code>let num = new Number(5)</code>) pero es mucho más eficiente usar los tipos primitivos. Pero aunque lo creemos usando el tipo de dato primitivo se considera un objeto y tenemos acceso a todas sus propiedades y métodos (<code>num.toFixed(2)</code>).</p>
+<p>Hemos visto las principales propiedades y métodos de <em>Number</em>, <em>String</em>, <em>Boolean</em> y <em>Array</em> y aquí vamos a ver las de <strong>Math</strong> y <strong>Date</strong> y en el apartado de validar formularios las de <strong>RegExp</strong>.</p>
+<h3 id="objeto-math">Objeto Math<a class="headerlink" href="#objeto-math" title="Permanent link">&para;</a></h3>
+<p>Proporciona constantes y métodos para trabajar con valores numéricos:</p>
+<ul>
+<li>
+<p>Constantes: <code>.PI</code> (número pi), <code>.E</code> (número de Euler), <code>.LN2</code> (algoritmo natural en base 2), <code>.LN10</code> (logaritmo natural en base 10), <code>.LOG2E</code> (logaritmo de E en base 2), <code>.LOG10E</code> (logaritmo de E en base 10), <code>.SQRT2</code> (raíz cuadrada de 2), <code>.SQRT1_2</code> (raíz cuadrada de 1⁄2). Ejemplos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="w"> </span><span class="p">)</span><span class="w">            </span><span class="c1">// imprime 3.141592653589793</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">SQRT2</span><span class="w"> </span><span class="p">)</span><span class="w">         </span><span class="c1">// imprime 1.4142135623730951</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>Math.round(x)</code>: redondea x al entero más cercano</p>
+</li>
+<li><code>Math.floor(x)</code>: redondea x hacia abajo (5.99 → 5. Quita la parte decimal)</li>
+<li><code>Math.ceil(x)</code>: redondea x hacia arriba (5.01 → 6)</li>
+<li><code>Math.min(x1,x2,...)</code>: devuelve el número más bajo de los argumentos que se le pasan.</li>
+<li><code>Math.max(x1,x2,...)</code>: devuelve el número más alto de los argumentos que se le pasan.</li>
+<li><code>Math.pow(x, y)</code>: devuelve x y (x elevado a y).</li>
+<li><code>Math.abs(x)</code>: devuelve el valor absoluto de x.</li>
+<li><code>Math.random()</code>: devuelve un número decimal aleatorio entre 0 (incluido) y 1 (no incluido). Si queremos un número entre otros rangos haremos <code>Math.random() * (max - min) + min</code> o si lo queremos sin decimales <code>Math.round(Math.random() * (max - min) + min)</code></li>
+<li><code>Math.cos(x)</code>: devuelve el coseno de x (en radianes).</li>
+<li><code>Math.sin(x)</code>: devuelve el seno de x.</li>
+<li><code>Math.tan(x)</code>: devuelve la tangente de x.</li>
+<li><code>Math.sqrt(x)</code>: devuelve la raíz cuadrada de x</li>
+</ul>
+<p>Ejemplos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">     </span><span class="c1">// imprime 3</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mf">3.84</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">     </span><span class="c1">// imprime 4</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="mf">3.84</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">     </span><span class="c1">// imprime 3</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">      </span><span class="c1">// imprime 4</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">         </span><span class="c1">// imprime 1.4142135623730951</span>
+</code></pre></div>
+<h3 id="objeto-date">Objeto Date<a class="headerlink" href="#objeto-date" title="Permanent link">&para;</a></h3>
+<p>Es la clase que permite trabajar con fechas. Al crear una instancia de la clase le pasamos la fecha que queremos crear o lo dejamos en blanco para que nos cree la fecha actual. Si le pasamos la fecha podemos pasarle:</p>
+<ul>
+<li>Milisegundos, desde la fecha EPOCH (desde 1/1/1970 00:00:00 GMT)</li>
+<li>Cadena de fecha</li>
+<li>Valor para año, mes (entre 0 y 11), día, hora, minutos, segundos, milisegundos</li>
+</ul>
+<p>Ejemplos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">date1</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">()</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1">// Mon Jul 30 2018 12:44:07 GMT+0200 (CEST) (es cuando he ejecutado la instrucción)</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">date7</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="mf">1532908800000</span><span class="p">)</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c1">// Mon Jul 30 2018 00:00:00 GMT+0200 (CEST) (miliseg. desde 1/1/1070)</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="kd">let</span><span class="w"> </span><span class="nx">date2</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s1">&#39;2018-07-30&#39;</span><span class="p">)</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c1">// Mon Jul 30 2018 02:00:00 GMT+0200 (CEST) (la fecha pasada a las 0h. GMT)</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="kd">let</span><span class="w"> </span><span class="nx">date3</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s1">&#39;2018-07-30 05:30&#39;</span><span class="p">)</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="c1">// Mon Jul 30 2018 05:30:00 GMT+0200 (CEST) (la fecha pasada a las 05:300h. local)</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="kd">let</span><span class="w"> </span><span class="nx">date6</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s1">&#39;07-30-2018&#39;</span><span class="p">)</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="c1">// Mon Jul 30 2018 00:00:00 GMT+0200 (CEST) (OJO: formato MM-DD-AAAA)</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="kd">let</span><span class="w"> </span><span class="nx">date7</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s1">&#39;30-Jul-2018&#39;</span><span class="p">)</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="c1">// Mon Jul 30 2018 00:00:00 GMT+0200 (CEST) (tb. podemos poner &#39;Julio&#39;)</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="kd">let</span><span class="w"> </span><span class="nx">date4</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="mf">2018</span><span class="p">,</span><span class="mf">7</span><span class="p">,</span><span class="mf">30</span><span class="p">)</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="c1">// Thu Ago 30 2018 00:00:00 GMT+0200 (CEST) (OJO: 0-&gt;Ene,1-&gt;Feb... y a las 0h. local)</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="kd">let</span><span class="w"> </span><span class="nx">date5</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="mf">2018</span><span class="p">,</span><span class="mf">7</span><span class="p">,</span><span class="mf">30</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="mf">30</span><span class="p">)</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="c1">// Thu Ago 30 2018 05:30:00 GMT+0200 (CEST) (OJO: 0-&gt;Ene,1-&gt;Feb,...)</span>
+</code></pre></div>
+<p>Cuando ponemos la fecha como texto, como separador de las fechas podemos usar <code>-</code>, <code>/</code> o <code>espacio</code>. Como separador de las horas debemos usar <code>:</code>. Cuando ponemos la fecha cono parámetros numéricos (separados por <code>,</code>) podemos poner valores fuera de rango que se sumarán al valor anterior. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">date</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="mf">2018</span><span class="p">,</span><span class="mf">7</span><span class="p">,</span><span class="mf">41</span><span class="p">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="c1">// Mon Sep 10 2018 00:00:00 GMT+0200 (CEST) -&gt; 41=31Ago+10</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">date</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="mf">2018</span><span class="p">,</span><span class="mf">7</span><span class="p">,</span><span class="mf">0</span><span class="p">)</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="c1">// Tue Jul 31 2018 00:00:00 GMT+0200 (CEST) -&gt; 0=0Ago=31Jul (el anterior)</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="kd">let</span><span class="w"> </span><span class="nx">date</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="mf">2018</span><span class="p">,</span><span class="mf">7</span><span class="p">,</span><span class="o">-</span><span class="mf">1</span><span class="p">)</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="c1">// Mon Jul 30 2018 00:00:00 GMT+0200 (CEST) -&gt; -1=0Ago-1=31Jul-1=30Jul</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Rango de meses</p>
+<p>Mucho cuidado con el rango de los meses que empieza en <strong><code>0</code></strong>-&gt;Ene, <strong><code>1</code></strong>-&gt;Feb,...,<strong><code>11</code></strong>-&gt;Dic</p>
+</div>
+<p>Tenemos métodos <strong><em>getter</em></strong> y <strong><em>setter</em></strong> para obtener o cambiar los valores de una fecha: </p>
+<ul>
+<li><strong>fullYear</strong>: permite ver (<em>get</em>) y cambiar (<em>set</em>) el año de la fecha:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">fecha</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s1">&#39;2018-07-30&#39;</span><span class="p">)</span><span class="w">    </span><span class="c1">// Mon Jul 30 2018 02:00:00 GMT+0200 (CEST)</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nx">fecha</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">()</span><span class="w"> </span><span class="p">)</span><span class="w">  </span><span class="c1">// imprime 2018</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nx">fecha</span><span class="p">.</span><span class="nx">setFullYear</span><span class="p">(</span><span class="mf">2019</span><span class="p">)</span><span class="w">             </span><span class="c1">// Tue Jul 30 2019 02:00:00 GMT+0200 (CEST)</span>
+</code></pre></div>
+<ul>
+<li><strong>month</strong>: devuelve/cambia el número de mes, pero recuerda que 0-&gt;Ene,...,11-&gt;Dic</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">fecha</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s1">&#39;2018-07-30&#39;</span><span class="p">)</span><span class="w">    </span><span class="c1">// Mon Jul 30 2018 02:00:00 GMT+0200 (CEST)</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nx">fecha</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span><span class="w"> </span><span class="p">)</span><span class="w">     </span><span class="c1">// imprime 6</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nx">fecha</span><span class="p">.</span><span class="nx">setMonth</span><span class="p">(</span><span class="mf">8</span><span class="p">)</span><span class="w">                   </span><span class="c1">// Mon Sep 30 2019 02:00:00 GMT+0200 (CEST)</span>
+</code></pre></div>
+<ul>
+<li><strong>date</strong>: devuelve/cambia el número de día:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">fecha</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s1">&#39;2018-07-30&#39;</span><span class="p">)</span><span class="w">    </span><span class="c1">// Mon Jul 30 2018 02:00:00 GMT+0200 (CEST)</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nx">fecha</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span><span class="w"> </span><span class="p">)</span><span class="w">      </span><span class="c1">// imprime 30</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nx">fecha</span><span class="p">.</span><span class="nx">setDate</span><span class="p">(</span><span class="o">-</span><span class="mf">2</span><span class="p">)</span><span class="w">                   </span><span class="c1">// Thu Jun 28 2018 02:00:00 GMT+0200 (CEST)</span>
+</code></pre></div>
+<ul>
+<li><strong>day</strong>: devuelve el número de día de la semana (0-&gt;Dom, 1-&gt;Lun, ..., 6-&gt;Sáb). Este método NO tiene <em>setter</em>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">fecha</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s1">&#39;2018-07-30&#39;</span><span class="p">)</span><span class="w">    </span><span class="c1">// Mon Jul 30 2018 02:00:00 GMT+0200 (CEST)</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nx">fecha</span><span class="p">.</span><span class="nx">getDay</span><span class="p">()</span><span class="w"> </span><span class="p">)</span><span class="w">       </span><span class="c1">// imprime 1</span>
+</code></pre></div>
+<ul>
+<li>
+<p><strong>hours</strong>, <strong>minutes</strong>, <strong>seconds</strong>, <strong>milliseconds</strong>: devuelve/cambia el número de la hora, minuto, segundo o milisegundo, respectivamente.</p>
+</li>
+<li>
+<p><strong>time</strong>: devuelve/cambia el número de milisegundos desde Epoch (1/1/1970 00:00:00 GMT):</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">fecha</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s1">&#39;2018-07-30&#39;</span><span class="p">)</span><span class="w">    </span><span class="c1">// Mon Jul 30 2018 02:00:00 GMT+0200 (CEST)</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nx">fecha</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span><span class="w"> </span><span class="p">)</span><span class="w">      </span><span class="c1">// imprime 1532908800000</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nx">fecha</span><span class="p">.</span><span class="nx">setTime</span><span class="p">(</span><span class="mf">1000</span><span class="o">*</span><span class="mf">60</span><span class="o">*</span><span class="mf">60</span><span class="o">*</span><span class="mf">24</span><span class="o">*</span><span class="mf">25</span><span class="p">)</span><span class="w">     </span><span class="c1">// Fri Jan 02 1970 01:00:00 GMT+0100 (CET) (le hemos añadido 25 días a Epoch)</span>
+</code></pre></div>
+<p>Para mostrar la fecha tenemos varios métodos diferentes:</p>
+<ul>
+<li><strong>.toString()</strong>: "Mon Jul 30 2018 02:00:00 GMT+0200 (CEST)"</li>
+<li><strong>.toUTCString()</strong>: "Mon, 30 Jul 2018 00:00:00 GMT"</li>
+<li><strong>.toDateString()</strong>: "Mon, 30 Jul 2018"</li>
+<li><strong>.toTimeString()</strong>: "02:00:00 GMT+0200 (hora de verano de Europa central)"</li>
+<li><strong>.toISOString()</strong>: "2018-07-30T00:00:00.000Z"</li>
+<li><strong>.toLocaleString()</strong>: "30/7/2018 2:00:00"</li>
+<li><strong>.toLocaleDateString()</strong>: "30/7/2018"</li>
+<li><strong>.toLocaleTimeString()</strong>: "2:00:00"</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">NOTA</p>
+<p>Recuerda que las fechas son objetos y que se copian y se pasan como parámetro por referencia:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">fecha</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s1">&#39;2018-07-30&#39;</span><span class="p">)</span><span class="w">    </span><span class="c1">// Mon Jul 30 2018 02:00:00 GMT+0200 (CEST)</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">otraFecha</span><span class="o">=</span><span class="nx">fecha</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="nx">otraFecha</span><span class="p">.</span><span class="nx">setDate</span><span class="p">(</span><span class="mf">28</span><span class="p">)</span><span class="w">               </span><span class="c1">// Thu Jun 28 2018 02:00:00 GMT+0200 (CEST)</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nx">fecha</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span><span class="w"> </span><span class="p">)</span><span class="w">      </span><span class="c1">// imprime 28 porque fecha y otraFecha son el mismo objeto</span>
+</code></pre></div>
+</div>
+<p>Una forma sencilla de copiar una fecha es crear una nueva pasándole la que queremos copiar:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">fecha</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s1">&#39;2018-07-30&#39;</span><span class="p">)</span><span class="w">    </span><span class="c1">// Mon Jul 30 2018 02:00:00 GMT+0200 (CEST)</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">otraFecha</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="nx">fecha</span><span class="p">)</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="nx">otraFecha</span><span class="p">.</span><span class="nx">setDate</span><span class="p">(</span><span class="mf">28</span><span class="p">)</span><span class="w">               </span><span class="c1">// Thu Jun 28 2018 02:00:00 GMT+0200 (CEST)</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="nx">fecha</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span><span class="w"> </span><span class="p">)</span><span class="w">      </span><span class="c1">// imprime 30</span>
+</code></pre></div>
+<p>En realidad lo que le estamos pasando es el tiempo Epoch de la fecha (es como hacer <code>otraFecha=new Date(fecha.getTime())</code>)</p>
+<div class="admonition note">
+<p class="admonition-title">NOTA</p>
+<p>La comparación entre fechas funciona correctamente con los operadores <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code> y <code>&lt;=</code> pero NO con <code>==</code>, <code>===</code>, <code>!=</code> y <code>!==</code> ya que compara los objetos y ve que son objetos diferentes. Si queremos saber si 2 fechas son iguales (siendo diferentes objetos) el código que pondremos NO es <code>fecha1 === fecha2</code> sino <code>fecha1.getTime() === fecha2.getTime()</code>.</p>
+</div>
+<p>Podemos probar los distintos métodos de las fechas en la página de <a href="http://www.w3schools.com/jsref/jsref_obj_date.asp">w3schools</a>.</p>
+<h3 id="objetos-json">Objetos JSON<a class="headerlink" href="#objetos-json" title="Permanent link">&para;</a></h3>
+<p>El objeto JSON contiene métodos para analizar <em>JavaScript Object Notation (JSON)</em> y convertir valores a JSON. No puede ser llamado o construído, y aparte de estas dos propiedades, no tiene funcionalidad interesante por sí mismo.</p>
+<p>JSON es una sintaxis para <strong>serializar</strong> objetos, arreglos, números, cadenas, booleanos y nulos. Está basado sobre sintaxis <em>JavaScript</em>.</p>
+<p>El formato JSON es muy utilizado para intercambiar datos entre aplicaciones escritas en distintos lenguajes de programación o comunicaciones entre cliente y servidor. <strong>Es el formato de intercambio de datos más utilizado en la actualidad</strong>.</p>
+<p>Tiene dos métodos principales:</p>
+<ul>
+<li><strong><code>JSON.parse()</code></strong>. Deserializa una cadena de texto JSON, convirtiéndola en un objeto o en un array.</li>
+<li><strong><code>JSON.stringify()</code></strong>. Serializa un objeto o array en una cadena de texto JSON.</li>
+</ul>
+<p>Ejemplos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">persona</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Marta&#39;</span><span class="p">,</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="mf">26</span><span class="p">,</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="nx">aficiones</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;leer&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;bailar&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;viajar&#39;</span><span class="p">],</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="nx">direccion</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">        </span><span class="nx">calle</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;C/ Mayor&#39;</span><span class="p">,</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">        </span><span class="nx">numero</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">        </span><span class="nx">ciudad</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Madrid&#39;</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="p">}</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="kd">let</span><span class="w"> </span><span class="nx">personaJSON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">persona</span><span class="p">)</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="c1">// personaJSON contendrá un string con el siguiente contenido:</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="c1">// &quot;{&quot;nombre&quot;:&quot;Marta&quot;,&quot;edad&quot;:26,&quot;aficiones&quot;:[&quot;leer&quot;,&quot;bailar&quot;,&quot;viajar&quot;],&quot;direccion&quot;:{&quot;calle&quot;:&quot;C/ Mayor&quot;,&quot;numero&quot;:1,&quot;ciudad&quot;:&quot;Madrid&quot;}}&quot;</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="kd">let</span><span class="w"> </span><span class="nx">persona2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">personaJSON</span><span class="p">)</span>
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="c1">// persona2 contendrá un objeto con el contenido de personaJSON</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/jsanvil/dwec2023" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+    
+  </body>
+</html>

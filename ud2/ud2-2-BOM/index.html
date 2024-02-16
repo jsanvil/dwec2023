@@ -1,0 +1,2124 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ud2-1-DOM/">
+      
+      
+        <link rel="next" href="../../ud3/ud3-1-eventos/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
+    
+    
+      
+        <title>UD2 - 2. Browser Object Model (BOM) - Desarrollo Web en Entorno Cliente</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/bs5_layout.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ud2-2-browser-object-model-bom" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Desarrollo Web en Entorno Cliente" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Cliente" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Cliente
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UD2 - 2. Browser Object Model (BOM)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  Inicio
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../proyectos/pr1-clave-secreta/" class="md-tabs__link">
+          
+  
+  Proyectos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud1/ud1-1-tecnologias/" class="md-tabs__link">
+          
+  
+  UD1 Sintaxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ud2-1-DOM/" class="md-tabs__link">
+          
+  
+  UD2 DOM
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud3/ud3-1-eventos/" class="md-tabs__link">
+          
+  
+  UD3 Eventos y formularios
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud4/ud4-1-oop/" class="md-tabs__link">
+          
+  
+  UD4 POO
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud5/ud5-1-native-libraries/" class="md-tabs__link">
+          
+  
+  UD5 Librerías
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud6/ud6-1-angular-intro/" class="md-tabs__link">
+          
+  
+  UD6 Angular
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Cliente" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Cliente" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Desarrollo Web en Entorno Cliente
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Inicio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Desarrollo Web en Entorno Cliente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../entorno/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entorno de trabajo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyectos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Proyectos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr1-clave-secreta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proyecto 1 - Clave Secreta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr2-todo-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proyecto 2 - To Do List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr3-restaurante/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD1 Sintaxis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD1 Sintaxis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-1-tecnologias/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 1. Arquitecturas y tecnologías de programación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-sintaxis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2. Manejo de la sintaxis del lenguaje
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-1-objetos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2.1. Objetos en Javascript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-2-arrays/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2.2. Arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-3-programacion-funcional/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2.3. Programación funcional
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../refuerzo/ud1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ejercicios de refuerzo UD1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    UD2 DOM
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            UD2 DOM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud2-1-DOM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD2 - 1. Objetos predefinidos del lenguaje (DOM)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    UD2 - 2. Browser Object Model (BOM)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    UD2 - 2. Browser Object Model (BOM)
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetos-del-bom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetos del BOM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objetos del BOM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objeto-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto window
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objeto-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto location
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objeto-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto history
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Otros objetos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD3 Eventos y formularios
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            UD3 Eventos y formularios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud3/ud3-1-eventos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD3 - 1. Eventos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud3/ud3-2-formularios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD3 - 2. Validación de formularios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud3/ud3-proyecto-clave-secreta.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD4 POO
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            UD4 POO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud4/ud4-1-oop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD4 - 1. Programación orientada a Objetos en Javascript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud4/ud4-2-estructura/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD4 - 2. Estructuración de proyectos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud4/ud4-3-mvc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD3 - 3. El patrón Modelo-Vista-Controlador (MVC)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD5 Librerías
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            UD5 Librerías
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud5/ud5-1-native-libraries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD5 - 1. Objetos predefinidos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud5/ud5-2-components/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD5 - 2. Componentes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud5/ud5-3-async/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD5 - 3. Comunicación asíncrona
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD6 Angular
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            UD6 Angular
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-1-angular-intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 1. Introducción a Angular
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-2-angular-databinding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 2. Data binding. Pipes.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-3-angular-services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 3. Componentes anidados. Servicios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-4-angular-rest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 4. HttpClient
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-5-angular-routing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 5. Routing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-6-angular-template-forms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 6. Formularios de plantilla
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-7-angular-i18n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 7. Internacionalización
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_8" id="__nav_8_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_8">
+            <span class="md-nav__icon md-icon"></span>
+            Actividades
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_9" id="__nav_8_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyecto
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_9">
+            <span class="md-nav__icon md-icon"></span>
+            Proyecto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr3-restaurante/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proyecto 2º EV - Gestión carta de un restaurante
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_10" id="__nav_8_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Repositorios de ejemplo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_10">
+            <span class="md-nav__icon md-icon"></span>
+            Repositorios de ejemplo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/jsanvil/angular-products" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    angular-products
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/jsanvil/angular-products-material" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    angular-products-material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetos-del-bom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetos del BOM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objetos del BOM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objeto-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto window
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objeto-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto location
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objeto-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto history
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Otros objetos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="ud2-2-browser-object-model-bom">UD2 - 2. Browser Object Model (BOM)<a class="headerlink" href="#ud2-2-browser-object-model-bom" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="#introducción">Introducción</a></li>
+<li><a href="#timers">Timers</a></li>
+<li><a href="#objetos-del-bom">Objetos del BOM</a><ul>
+<li><a href="#objeto-window">Objeto window</a><ul>
+<li><a href="#diálogos">Diálogos</a></li>
+</ul>
+</li>
+<li><a href="#objeto-location">Objeto location</a></li>
+<li><a href="#objeto-history">Objeto history</a></li>
+<li><a href="#otros-objetos">Otros objetos</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
+<p>Anteriormente hemos visto como manipular los elementos de una página mediante el DOM. Ahora vamos vamos a acceder a objetos que nos permitan interactuar con el navegador (<em>Browser Object Model</em>, BOM).</p>
+<p>Usando los objetos BOM podemos:</p>
+<ul>
+<li>Abrir, cambiar y cerrar ventanas</li>
+<li>Ejecutar código en cierto tiempo (<em>timers</em>)</li>
+<li>Obtener información del navegador</li>
+<li>Ver y modificar propiedades de la pantalla</li>
+<li>Gestionar <em>cookies</em></li>
+<li>etc.</li>
+</ul>
+<h2 id="timers">Timers<a class="headerlink" href="#timers" title="Permanent link">&para;</a></h2>
+<p>Permiten ejecutar código en el futuro (cuando transcurran los milisegundos indicados). Hay 2 tipos:</p>
+<ul>
+<li><code>setTimeout(función, milisegundos)</code>: ejecuta la función indicada una sóla vez, cuando transcurran los milisegundos</li>
+<li><code>setInterval(función, milisegundos)</code>: ejecuta la función indicada cada vez que transcurran los milisegundos, hasta que sea cancelado el <em>timer</em>. A ambas se le pueden pasar más parámetros tras los milisegundos y serán los parámetros que recibirá la función a ejecutar.</li>
+</ul>
+<p>Ambas funciones devuelven un identificador que nos permitirá cancelar la ejecución del código, con:</p>
+<ul>
+<li><code>clearTimeout(identificador)</code></li>
+<li><code>clearInterval(identificador)</code></li>
+</ul>
+<p>Ejemplo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">idTimeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Timeout que se ejecuta al cabo de 1 seg.&#39;</span><span class="p">),</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">idInterval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Interval cada 3 seg. Ejecución nº: &#39;</span><span class="o">+</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">);</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nx">clearInterval</span><span class="p">(</span><span class="nx">idInterval</span><span class="p">);</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Fin de la ejecución del Interval&#39;</span><span class="p">);</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">},</span><span class="w"> </span><span class="mf">3000</span><span class="p">);</span>
+</code></pre></div>
+<p>En lugar de definir la función a ejecutar podemos llamar a una función que ya exista:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">showMessage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Timeout que se ejecuta al cabo de 1 seg.&#39;</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">}</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">idTimeout</span><span class="o">=</span><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">showMessage</span><span class="p">,</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+</code></pre></div>
+<p>Pero en ese caso hay que poner sólo el nombre de la función, sin <code>()</code> ya que si los ponemos se ejecutaría la función en ese momento y no transcurrido el tiempo indicado.</p>
+<p>Si necesitamos pasarle algún parámetro a la función lo añadiremos como parámetros de <code>setTimeout</code> o <code>setInterval</code> después del intervalo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">showMessage</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">idTimeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">showMessage</span><span class="p">,</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Timeout que se ejecuta al cabo de 1 seg.&#39;</span><span class="p">);</span>
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">ACTIVIDAD 6: <code>📂 UD2/act06/</code></p>
+<p>Crea una página que tenga las siguientes funcionalidades:</p>
+<ul>
+<li>Se abra un dialogo de bienvenida (<code>alert</code>) al cabo de 2 segundos con el mensaje "Hola 👋".</li>
+<li>Añade un botón en el <code>html</code> con el texto 'Pulsa aquí' añade el atributo <code>onclick</code> para llamar a la función <code>boton()</code>.<ul>
+<li>La función <code>boton()</code> actualiza, al cabo de 3 segundos, el texto del botón con el mensaje <code>Pulsado ${n} veces</code> donde <code>n</code> es el número de veces que se ha pulsado el botón.</li>
+<li>Guarda el identificador para poder cancelar la ejecución del código si se vuelve a pulsar el botón.</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="objetos-del-bom">Objetos del BOM<a class="headerlink" href="#objetos-del-bom" title="Permanent link">&para;</a></h2>
+<p>Al contrario que para el DOM, no existe un estándar de BOM pero es bastante parecido en los diferentes navegadores. </p>
+<h3 id="objeto-window">Objeto <a href="http://www.w3schools.com/jsref/obj_window.asp">window</a><a class="headerlink" href="#objeto-window" title="Permanent link">&para;</a></h3>
+<p>Representa la ventana del navegador y es el objeto principal. De hecho puede omitirse al llamar a sus propiedades y métodos, por ejemplo, el método <code>setTimeout()</code> es en realidad <code>window.setTimeout()</code>.</p>
+<p>Sus principales propiedades y métodos son:</p>
+<ul>
+<li><code>.name</code>: nombre de la ventana actual</li>
+<li><code>.status</code>: valor de la barra de estado</li>
+<li><code>.screenX</code>/<code>.screenY</code>: distancia de la ventana a la esquina izquierda/superior de la pantalla</li>
+<li><code>.outerWidth</code>/<code>.outerHeight</code>: ancho/alto total de la ventana, incluyendo la toolbar y la scrollbar</li>
+<li><code>.innerWidth</code>/<code>.innerHeight</code>: ancho/alto útil del documento, sin la toolbar y la scrollbar</li>
+<li>
+<p><code>.open(url, nombre, opciones)</code>: abre una nueva ventana. Devuelve el nuevo objeto ventana. Dependen del navegador. Las principales opciones son:</p>
+<ul>
+<li><code>popup</code>: si es una ventana emergente. Si no se indica se abre en una nueva pestaña. (Las ventanas emergentes deben estar habilitadas en el navegador).</li>
+<li><code>fullscreen=yes|no|1|0</code>: si se abre a pantalla completa</li>
+<li><code>width=px</code>/<code>height=px</code>: ancho/alto de la ventana en pixels.</li>
+<li><code>left=px</code> o <code>screenX=px</code>: posición en pixels desde la izquierda.</li>
+<li><code>top=px</code> o <code>screenY=px</code>: posición en pixels desde arriba.</li>
+<li><code>menubar=yes|no|1|0</code>: si tendrá barra de herramientas.</li>
+<li><code>status=yes|no|1|0</code>: si tendrá barra de estado.</li>
+<li><code>titlebar=yes|no|1|0</code>: si tendrá barra de título.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">EJEMPLOS:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;http://www.google.es&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;google&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;width=500,height=300&#39;</span><span class="p">);</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;http://www.google.es&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;google&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;width=500,height=300,menubar=no,status=no,titlebar=no&#39;</span><span class="p">);</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;http://www.google.es&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;google&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;width=500,height=300,fullscreen=yes&#39;</span><span class="p">);</span>
+</code></pre></div>
+</div>
+</li>
+<li>
+<p><code>.opener</code>: referencia a la ventana desde la que se abrió esta ventana (para ventanas abiertas con <em>open</em>)</p>
+</li>
+<li><code>.close()</code>: la cierra (pide confirmación, a menos que la hayamos abierto con open)</li>
+<li><code>.moveTo(x,y)</code>: la mueve a las coord indicadas</li>
+<li><code>.moveBy(x,y)</code>: la desplaza los px indicados</li>
+<li><code>.resizeTo(x,y)</code>: la da el ancho y alto indicados</li>
+<li><code>.resizeBy(x,y)</code>: le añade ese ancho/alto</li>
+<li><code>.pageXoffset / pageYoffset</code>: scroll actual de la ventana horizontal / vertical</li>
+<li>
+<p>Otros métodos: <code>.back()</code>, <code>.forward()</code>, <code>.home()</code>, <code>.stop()</code>, <code>.focus()</code>, <code>.blur()</code>, <code>.find()</code>, <code>.print()</code>, etc.</p>
+<div class="admonition note">
+<p class="admonition-title">NOTA</p>
+<p>Por seguridad no se puede mover una ventana fuera de la pantalla ni darle un tamaño menor de 100x100 px ni tampoco se puede mover una ventana no abierta con .open() o si tiene varias pestañas</p>
+</div>
+</li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">ACTIVIDAD 7: <code>📂 UD2/act07/</code></p>
+<ul>
+<li>Abre una nueva ventana de dimensiones 500x200px en la posición (100,200)</li>
+<li>Escribe en ella (con <code>document.write()</code>) un título <code>h1</code> que diga <em>'Hola'</em></li>
+<li>Muévela 300 px hacia abajo y 100 a la izquierda.</li>
+<li>Cambia su tamaño para que sea de 300x300 px.</li>
+</ul>
+</div>
+<p>Puedes ver un ejemplo de cómo abrir ventanas en <a href="https://www.youtube.com/watch?v=jkTt6bs2tPo&amp;list=PLI7nHlOIIPOJtTDs1HVJABswW-xJcA7_o&amp;index=40">este vídeo</a>.</p>
+<h4 id="dialogos">Diálogos<a class="headerlink" href="#dialogos" title="Permanent link">&para;</a></h4>
+<p>Hay 3 métodos del objeto <em>window</em> que ya conocemos y que nos permiten abrir ventanas de diálogo con el usuario:</p>
+<ul>
+<li><code>window.alert(mensaje)</code>: muestra un diálogo con el mensaje indicado y un botón de 'Aceptar'</li>
+<li><code>window.confirm(mensaje)</code>: muestra un diálogo con el mensaje indicado y botones de 'Aceptar' y 'Cancelar'. Devuelve <em>true</em> si se ha pulsado el botón de aceptar del diálogo y <em>false</em> si no.</li>
+<li><code>window.prompt(mensaje [, valor predeterminado])</code>: muestra un diálogo con el mensaje indicado, un cuadro de texto (vacío o co el valor predeterminado indicado) y botones de 'Aceptar' y 'Cancelar'. Si se pulsa 'Aceptar' devolverá un <em>string</em> con el valor que haya en el cuadro de texto y si se pulsa 'Cancelar' o se cierra devolverá <em>null</em>.</li>
+</ul>
+<h3 id="objeto-location">Objeto <a href="http://www.w3schools.com/jsref/obj_location.asp">location</a><a class="headerlink" href="#objeto-location" title="Permanent link">&para;</a></h3>
+<p>Contiene información sobre la URL actual del navegador y podemos modificarla. Sus principales propiedades y métodos son:</p>
+<ul>
+<li><code>.href</code>: devuelve la URL actual completa</li>
+<li><code>.protocol</code>, <code>.host</code>, <code>.port</code>: devuelve el protocolo, host y puerto respectivamente de la URL actual</li>
+<li><code>.pathname</code>: devuelve la ruta al recurso actual</li>
+<li><code>.reload()</code>: recarga la página actual</li>
+<li><code>.assign(url)</code>: carga la página pasada como parámetro</li>
+<li><code>.replace(url)</code>: ídem pero sin guardar la actual en el historial</li>
+</ul>
+<!-- > EJERCICIO: Ejecuta en la consola
+> - muestra la ruta completa de la página actual
+> - muestra el servidor de esta página
+> - carga la página de Google usando el objeto _location_ -->
+
+<h3 id="objeto-history">Objeto <a href="http://www.w3schools.com/jsref/obj_history.asp">history</a><a class="headerlink" href="#objeto-history" title="Permanent link">&para;</a></h3>
+<p>Permite acceder al historial de páginas visitadas y navegar por él:
+* <code>.length</code>: muestra el número de páginas almacenadas en el historial
+* <code>.back()</code>: vuelve a la página anterior
+* <code>.forward()</code>: va a la siguiente página
+* <code>.go(num)</code>: se mueve <em>num</em> páginas hacia adelante o hacia atrás (si <em>num</em> es negativo) en el historial</p>
+<!-- > EJERCICIO: desde la consola vuelve a la página anterior -->
+
+<h3 id="otros-objetos">Otros objetos<a class="headerlink" href="#otros-objetos" title="Permanent link">&para;</a></h3>
+<p>Los otros objetos que incluye BOM son:</p>
+<ul>
+<li><a href="http://www.w3schools.com/jsref/dom_obj_document.asp">document</a>: el objeto <em>document</em> que hemos visto en el DOM</li>
+<li><a href="http://www.w3schools.com/jsref/obj_navigator.asp">navigator</a>: nos informa sobre el navegador y el sistema en que se ejecuta<ul>
+<li><code>.userAgent</code>: muestra información sobre el navegador que usamos</li>
+<li><code>.plataform</code>: muestra información sobre la plataforma sobre la que se ejecuta</li>
+<li>...</li>
+</ul>
+</li>
+<li><a href="http://www.w3schools.com/jsref/obj_screen.asp">screen</a>: nos da información sobre la pantalla<ul>
+<li><code>.width</code>/<code>.height</code>: ancho/alto total de la pantalla (resolución)</li>
+<li><code>.availWidth</code>/<code>.availHeight</code>: igual pero excluyendo la barra del S.O.</li>
+<li>...</li>
+</ul>
+</li>
+</ul>
+<!-- > EJERCICIO: obtén desde la consola todas las propiedades width/height y availWidth/availHeight del objeto _scrren_. Compáralas con las propiedades innerWidth/innerHeight y outerWidth/outerHeight de _window_. -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/jsanvil/dwec2023" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+    
+  </body>
+</html>

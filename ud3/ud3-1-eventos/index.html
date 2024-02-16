@@ -1,0 +1,2417 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../ud2/ud2-2-BOM/">
+      
+      
+        <link rel="next" href="../ud3-2-formularios/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
+    
+    
+      
+        <title>UD3 - 1. Eventos - Desarrollo Web en Entorno Cliente</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/bs5_layout.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ud3-1-eventos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Desarrollo Web en Entorno Cliente" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Cliente" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Cliente
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UD3 - 1. Eventos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  Inicio
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../proyectos/pr1-clave-secreta/" class="md-tabs__link">
+          
+  
+  Proyectos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud1/ud1-1-tecnologias/" class="md-tabs__link">
+          
+  
+  UD1 Sintaxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud2/ud2-1-DOM/" class="md-tabs__link">
+          
+  
+  UD2 DOM
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  UD3 Eventos y formularios
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud4/ud4-1-oop/" class="md-tabs__link">
+          
+  
+  UD4 POO
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud5/ud5-1-native-libraries/" class="md-tabs__link">
+          
+  
+  UD5 Librerías
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud6/ud6-1-angular-intro/" class="md-tabs__link">
+          
+  
+  UD6 Angular
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Cliente" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Cliente" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Desarrollo Web en Entorno Cliente
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Inicio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Desarrollo Web en Entorno Cliente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../entorno/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entorno de trabajo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyectos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Proyectos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr1-clave-secreta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proyecto 1 - Clave Secreta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr2-todo-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proyecto 2 - To Do List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr3-restaurante/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD1 Sintaxis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD1 Sintaxis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-1-tecnologias/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 1. Arquitecturas y tecnologías de programación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-sintaxis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2. Manejo de la sintaxis del lenguaje
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-1-objetos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2.1. Objetos en Javascript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-2-arrays/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2.2. Arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-3-programacion-funcional/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2.3. Programación funcional
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../refuerzo/ud1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ejercicios de refuerzo UD1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD2 DOM
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            UD2 DOM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud2/ud2-1-DOM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD2 - 1. Objetos predefinidos del lenguaje (DOM)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud2/ud2-2-BOM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD2 - 2. Browser Object Model (BOM)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    UD3 Eventos y formularios
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            UD3 Eventos y formularios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    UD3 - 1. Eventos
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    UD3 - 1. Eventos
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-escuchar-un-evento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cómo escuchar un evento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo escuchar un evento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-listeners" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event listeners
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-eventos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de eventos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de eventos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-pagina" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eventos de página
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-raton" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eventos de ratón
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-teclado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eventos de teclado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-toque" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eventos de toque
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-formulario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eventos de formulario
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#los-objetos-this-y-event" class="md-nav__link">
+    <span class="md-ellipsis">
+      Los objetos this y event
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Los objetos this y event">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bindeo-del-objeto-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bindeo del objeto this
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#propagacion-de-eventos-bubbling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Propagación de eventos (bubbling)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#innerhtml-y-listeners-de-eventos" class="md-nav__link">
+    <span class="md-ellipsis">
+      innerHTML y listeners de eventos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eventos-personalizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eventos personalizados
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud3-2-formularios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD3 - 2. Validación de formularios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud3-proyecto-clave-secreta.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD4 POO
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            UD4 POO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud4/ud4-1-oop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD4 - 1. Programación orientada a Objetos en Javascript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud4/ud4-2-estructura/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD4 - 2. Estructuración de proyectos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud4/ud4-3-mvc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD3 - 3. El patrón Modelo-Vista-Controlador (MVC)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD5 Librerías
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            UD5 Librerías
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud5/ud5-1-native-libraries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD5 - 1. Objetos predefinidos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud5/ud5-2-components/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD5 - 2. Componentes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud5/ud5-3-async/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD5 - 3. Comunicación asíncrona
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD6 Angular
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            UD6 Angular
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-1-angular-intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 1. Introducción a Angular
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-2-angular-databinding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 2. Data binding. Pipes.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-3-angular-services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 3. Componentes anidados. Servicios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-4-angular-rest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 4. HttpClient
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-5-angular-routing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 5. Routing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-6-angular-template-forms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 6. Formularios de plantilla
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-7-angular-i18n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 7. Internacionalización
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_8" id="__nav_8_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_8">
+            <span class="md-nav__icon md-icon"></span>
+            Actividades
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_9" id="__nav_8_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyecto
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_9">
+            <span class="md-nav__icon md-icon"></span>
+            Proyecto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr3-restaurante/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proyecto 2º EV - Gestión carta de un restaurante
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_10" id="__nav_8_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Repositorios de ejemplo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_10">
+            <span class="md-nav__icon md-icon"></span>
+            Repositorios de ejemplo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/jsanvil/angular-products" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    angular-products
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/jsanvil/angular-products-material" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    angular-products-material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-escuchar-un-evento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cómo escuchar un evento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo escuchar un evento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-listeners" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event listeners
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-eventos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de eventos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de eventos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-pagina" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eventos de página
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-raton" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eventos de ratón
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-teclado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eventos de teclado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-toque" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eventos de toque
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-formulario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eventos de formulario
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#los-objetos-this-y-event" class="md-nav__link">
+    <span class="md-ellipsis">
+      Los objetos this y event
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Los objetos this y event">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bindeo-del-objeto-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bindeo del objeto this
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#propagacion-de-eventos-bubbling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Propagación de eventos (bubbling)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#innerhtml-y-listeners-de-eventos" class="md-nav__link">
+    <span class="md-ellipsis">
+      innerHTML y listeners de eventos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eventos-personalizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eventos personalizados
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="ud3-1-eventos">UD3 - 1. Eventos<a class="headerlink" href="#ud3-1-eventos" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="#introducción">Introducción</a></li>
+<li><a href="#cómo-escuchar-un-evento">Cómo escuchar un evento</a><ul>
+<li><a href="#event-listeners">Event listeners</a></li>
+</ul>
+</li>
+<li><a href="#tipos-de-eventos">Tipos de eventos</a><ul>
+<li><a href="#eventos-de-página">Eventos de página</a></li>
+<li><a href="#eventos-de-ratón">Eventos de ratón</a></li>
+<li><a href="#eventos-de-teclado">Eventos de teclado</a></li>
+<li><a href="#eventos-de-toque">Eventos de toque</a></li>
+<li><a href="#eventos-de-formulario">Eventos de formulario</a></li>
+</ul>
+</li>
+<li><a href="#los-objetos-this-y-event">Los objetos <em>this</em> y <em>event</em></a><ul>
+<li><a href="#bindeo-del-objeto-this"><em>Bindeo</em> del objeto <em>this</em></a></li>
+</ul>
+</li>
+<li><a href="#propagación-de-eventos-bubbling">Propagación de eventos (bubbling)</a></li>
+<li><a href="#innerhtml-y-listeners-de-eventos">innerHTML y <em>listeners</em> de eventos</a></li>
+<li><a href="#eventos-personalizados">Eventos personalizados</a></li>
+</ul>
+<h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
+<p>Nos permiten detectar acciones que realiza el usuario o cambios que suceden en la página y reaccionar en respuesta a ellas. Existen muchos eventos diferentes (podéis ver la lista en <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">w3schools</a>) aunque nos centraremos en los más comunes.</p>
+<p>Javascript permite ejecutar código cuando se produce un evento (por ejemplo el evento <em>click</em> del ratón) asociando al mismo una función. Hay varias formas de hacerlo.</p>
+<h2 id="como-escuchar-un-evento">Cómo escuchar un evento<a class="headerlink" href="#como-escuchar-un-evento" title="Permanent link">&para;</a></h2>
+<p>La primera manera "estándar" de asociar código a un evento era añadiendo un atributo con el nombre del evento a escuchar (con '<em>on</em>' delante) en el elemento HTML. Por ejemplo, para ejecutar código al producirse el evento '<em>click</em>' sobre un botón se escribía:</p>
+<div class="highlight"><span class="filename">html</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;boton1&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;alert(&#39;Se ha pulsado&#39;);&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+<p>Una mejora era llamar a una función que contenía el código:</p>
+<div class="highlight"><span class="filename">html</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;boton1&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;clicked()&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">js</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">clicked</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Se ha pulsado&#39;</span><span class="p">);</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
+</code></pre></div>
+<p>Esto "ensucia" con código la página HTML por lo que se creó el modelo de registro de eventos tradicional que permitía asociar a un elemento HTML una propiedad con el nombre del evento a escuchar (con 'on' delante). En el caso anterior:</p>
+<div class="highlight"><span class="filename">js</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;boton1&#39;</span><span class="p">).</span><span class="nx">onclick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Se ha pulsado&#39;</span><span class="p">);</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">}</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">...</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">NOTA:</p>
+<p>Debemos tener cuidado porque si se ejecuta el código antes de que se haya creado el botón estaremos asociando la función al evento <em>click</em> de un elemento que aún no existe así que no hará nada.</p>
+<p>Para evitarlo siempre es conveniente poner el código que atiende a los eventos dentro de una función que se ejecute al producirse el evento <em>load</em> de la ventana. Este evento se produce cuando se han cargado todos los elementos HTML de la página y se ha creado el árbol DOM. Lo mismo habría que hacer con cualquier código que modifique el árbol DOM. </p>
+<p>Por ejemplo:</p>
+<div class="highlight"><span class="filename">html</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;boton1&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Pulsa&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">js</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="hll"><span class="nb">window</span><span class="p">.</span><span class="nx">onload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;boton1&#39;</span><span class="p">).</span><span class="nx">onclick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">        </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Se ha pulsado&#39;</span><span class="p">);</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">}</span>
+</code></pre></div>
+</div>
+<h3 id="event-listeners">Event listeners<a class="headerlink" href="#event-listeners" title="Permanent link">&para;</a></h3>
+<p>La forma recomendada de hacerlo es usando el <strong>modelo avanzado de registro de eventos del W3C</strong>. Se usa el método <strong><code>addEventListener</code></strong> que recibe como primer parámetro el nombre del evento a escuchar (sin '<em>on</em>') y como segundo parámetro la función a ejecutar, sin paréntesis:</p>
+<div class="highlight"><span class="filename">js</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="hll"><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;boton1&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">pulsado</span><span class="p">);</span>
+</span><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">pulsado</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Se ha pulsado&#39;</span><span class="p">);</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">}</span>
+</code></pre></div>
+<p>Habitualmente se usan <strong>funciones anónimas</strong> ya que no necesitan ser llamadas desde fuera del <em>listener</em>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;boton1&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Se ha pulsado&#39;</span><span class="p">);</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">});</span>
+</code></pre></div>
+<!-- <script async src="//jsfiddle.net/juansegura/L5pkg93w/1/embed/js,html,result/"></script> -->
+
+<iframe width="100%" height="300" src="//jsfiddle.net/juansegura/L5pkg93w/1/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
+<p>Si queremos pasarle algún parámetro a la función <em>listener</em> (cosa bastante poco usual) debemos usar funciones anónimas:</p>
+<div class="admonition note">
+<p class="admonition-title">NOTA:</p>
+<p>Igual que antes debemos asegurarnos que se ha creado el árbol DOM antes de poner un <em>listener</em> por lo que se recomienda ponerlos siempre dentro de la función asociada al evento <code>window.onload</code> (o mejor <code>window.addEventListener('load', ...)</code> como en el ejemplo anterior).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="hll"><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="p">})</span>
+</code></pre></div>
+</div>
+<p>Una ventaja de este método es que podemos poner varios <em>listeners</em> para el mismo evento y se ejecutarán todos ellos. Para eliminar un <em>listener</em> se usa el método <code>removeEventListener</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;acepto&#39;</span><span class="p">).</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">aceptado</span><span class="p">);</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">NOTA:</p>
+<p>No se puede quitar un <em>listener</em> si hemos usado una función anónima, para quitarlo debemos usar como <em>listener</em> una función con nombre.</p>
+</div>
+<h2 id="tipos-de-eventos">Tipos de eventos<a class="headerlink" href="#tipos-de-eventos" title="Permanent link">&para;</a></h2>
+<p>Según qué o dónde se produce un evento estos se clasifican en:</p>
+<h3 id="eventos-de-pagina">Eventos de página<a class="headerlink" href="#eventos-de-pagina" title="Permanent link">&para;</a></h3>
+<p>Se producen en el documento HTML, normalmente en el BODY:</p>
+<ul>
+<li><strong><code>load</code></strong>: se produce cuando termina de cargarse la página (cuando ya está construido el árbol DOM). Es útil para hacer acciones que requieran que el DOM esté cargado como modificar la página o poner <em>listeners</em> de eventos.</li>
+<li><strong><code>unload</code></strong>: al destruirse el documento (<em>ej. cerrar</em>).</li>
+<li><strong><code>beforeUnload</code></strong>: antes de destruirse (<em>podríamos mostrar un mensaje de confirmación</em>).</li>
+<li><strong><code>resize</code></strong>: si cambia el tamaño del documento (<em>porque se redimensiona la ventana</em>).</li>
+</ul>
+<h3 id="eventos-de-raton">Eventos de ratón<a class="headerlink" href="#eventos-de-raton" title="Permanent link">&para;</a></h3>
+<p>Los produce el usuario con el ratón:</p>
+<ul>
+<li><strong><code>click</code></strong> / <strong><code>dblclick</code></strong>: cuando se hace click/doble click sobre un elemento.</li>
+<li><strong><code>mousedown</code></strong> / <strong><code>mouseup</code></strong>: al pulsar/soltar cualquier botón del ratón.</li>
+<li><strong><code>mouseenter</code></strong> / <strong><code>mouseleave</code></strong>: cuando el puntero del ratón entra/sale del elemento.</li>
+<li><strong><code>mouseover</code></strong>/<strong><code>mouseout</code></strong>: cuando el puntero del ratón entra/sale del elemento o de cualquiera de sus descendientes (se produce en el elemento y en todos sus descendientes).</li>
+<li><strong><code>mousemove</code></strong>: se produce continuamente mientras el puntero se mueva dentro del elemento.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">NOTA</p>
+<p>Si hacemos <strong>doble click</strong> sobre un elemento la secuencia de eventos que se produciría es: <em><code>mousedown</code></em> -&gt; <em><code>mouseup</code></em> -&gt; <em><code>click</code></em> -&gt; <em><code>mousedown</code></em> -&gt; <em><code>mouseup</code></em> -&gt; <em><code>click</code></em> -&gt; <em><code>dblclick</code></em></p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">ACTIVIDAD 1: <code>📂 UD3/act01/</code></p>
+<p>Dada la siguiente página: <a href="../ejercicios/calculadora.html">calculadora</a> asocia los eventos necesarios para que funcione la calculadora.</p>
+<ul>
+<li>
+<p>El botón <em><code>=</code></em> debe ejecutar la función <em><code>calcular()</code></em> que recibe como parámetro el contenido de la caja de texto y muestra el resultado de la operación.</p>
+<ul>
+<li>Para realizar el cálculo puedes usar la función <code>eval</code> de JavaScript que recibe como parámetro una cadena de texto con una expresión matemática y devuelve el resultado de evaluarla. Por ejemplo: <code>eval('2+3')</code> devuelve <code>5</code>.</li>
+</ul>
+</li>
+<li>
+<p>El botón <em><code>C</code></em> debe borrar el contenido de la caja de texto.</p>
+</li>
+<li>Debes poner un <em>listener</em> al resto de botones para que al hacer click se ejecute la función <em><code>pulsado()</code></em> que recibe como parámetro el valor del botón pulsado. Esta función debe mostrar en la caja de texto el valor del botón pulsado.</li>
+</ul>
+</div>
+<h3 id="eventos-de-teclado">Eventos de teclado<a class="headerlink" href="#eventos-de-teclado" title="Permanent link">&para;</a></h3>
+<p>Los produce el usuario al usar el teclado:</p>
+<ul>
+<li><strong><code>keydown</code></strong>: se produce al presionar una tecla y se repite continuamente si la tecla se mantiene pulsada</li>
+<li><strong><code>keyup</code></strong>: cuando se deja de presionar la tecla</li>
+</ul>
+<h3 id="eventos-de-toque">Eventos de toque<a class="headerlink" href="#eventos-de-toque" title="Permanent link">&para;</a></h3>
+<p>Se producen al usar una pantalla táctil:</p>
+<ul>
+<li><strong><code>touchstart</code></strong>: se produce cuando se detecta un toque en la pantalla táctil</li>
+<li><strong><code>touchend</code></strong>: cuando se deja de pulsar la pantalla táctil</li>
+<li><strong><code>touchmove</code></strong>: cuando un dedo es desplazado a través de la pantalla</li>
+<li><strong><code>touchcancel</code></strong>: cuando se interrumpe un evento táctil.</li>
+</ul>
+<h3 id="eventos-de-formulario">Eventos de formulario<a class="headerlink" href="#eventos-de-formulario" title="Permanent link">&para;</a></h3>
+<p>Se producen en los formularios:</p>
+<ul>
+<li><strong><code>focus</code></strong> / <strong><code>blur</code></strong>: al obtener/perder el foco el elemento</li>
+<li><strong><code>change</code></strong>: al perder el foco un <code>&lt;input&gt;</code> o <code>&lt;textarea&gt;</code> si ha cambiado su contenido o al cambiar de valor un <code>&lt;select&gt;</code> o un <code>&lt;checkbox&gt;</code></li>
+<li><strong><code>input</code></strong>: al cambiar el valor de un <code>&lt;imput&gt;</code> o <code>&lt;textarea&gt;</code> (se produce cada vez que escribimos una letra es estos elementos)</li>
+<li><strong><code>select</code></strong>: al cambiar el valor de un <code>&lt;select&gt;</code> o al seleccionar texto de un <code>&lt;input&gt;</code> o <code>&lt;textarea&gt;</code></li>
+<li><strong><code>submit</code></strong> / <strong><code>reset</code></strong>: al enviar/recargar un formulario</li>
+</ul>
+<h2 id="los-objetos-this-y-event">Los objetos <em>this</em> y <em>event</em><a class="headerlink" href="#los-objetos-this-y-event" title="Permanent link">&para;</a></h2>
+<p>Al producirse un evento se generan automáticamente el <em>listener</em> <strong>2 objetos</strong>:</p>
+<ul>
+<li><strong><code>this</code></strong>: hace referencia al elemento que contiene el código en donde se encuentra la variable <em><code>this</code></em>. En el caso de una función <em>listener</em> será el elemento que tiene el <em>listener</em> que ha recibido el evento.</li>
+<li>
+<p><strong><code>event</code></strong>: es un objeto y la función <em>listener</em> lo recibe como parámetro. Tiene propiedades y métodos que nos dan información sobre el evento, como:</p>
+<ul>
+<li><strong><code>.type</code></strong>: qué evento se ha producido (<code>click</code>, <code>submit</code>, <code>keyDown</code>, etc.).</li>
+<li><strong><code>.target</code></strong>: el elemento donde se produjo el evento (puede ser <em><code>this</code></em> o un descendiente de <em><code>this</code></em>, como en el ejemplo siguiente). </li>
+<li>
+<p><strong><code>.currentTarget</code></strong>: el elemento que contiene el <em>listener</em> del evento lanzado (normalmente el mismo que <em><code>this</code></em>).</p>
+<div class="admonition note">
+<p class="admonition-title">Ejemplo</p>
+<p>Si tenemos un <em><code>&lt;p&gt;</code></em> al que le ponemos un <em>listener</em> de '<code>click</code>' que dentro tiene un elemento <em><code>&lt;span&gt;</code></em>, si hacemos <em><code>click</code></em> sobre el <em><code>&lt;span&gt;</code></em> <strong><code>event.target</code></strong> será el <em><code>&lt;span&gt;</code></em> que es donde hemos hecho click (está dentro de <em><code>&lt;p&gt;</code></em>) pero tanto <em><code>this</code></em> como <em><code>event.currentTarget</code></em> será <em><code>&lt;p&gt;</code></em> (que es quien tiene el <em>listener</em> que se está ejecutando).</p>
+</div>
+</li>
+<li>
+<p><strong><code>.relatedTarget</code></strong>: en un evento '<code>mouseover</code>' <strong><code>event.target</code></strong> es el elemento donde ha entrado el puntero del ratón y <strong><code>event.relatedTarget</code></strong> el elemento del que ha salido. En un evento '<code>mouseout</code>' sería al revés.</p>
+</li>
+<li><strong><code>cancelable</code></strong>: si el evento puede cancelarse. En caso afirmativo se puede llamar a <strong><code>event.preventDefault()</code></strong> para cancelarlo</li>
+<li><strong><code>.preventDefault()</code></strong>: si un evento tiene un <em>listener</em> asociado, se ejecuta el código de dicho <em>listener</em> y después el navegador realiza la acción que correspondería por defecto al evento si no tuviera <em>listener</em> (por ejemplo un <em>listener</em> del evento <em><code>click</code></em> sobre un hiperenlace hará que se ejecute su código y después saltará a la página indicada en el <em><code>href</code></em> del hiperenlace). Este método cancela la acción por defecto del navegador para el evento. Por ejemplo si el evento era el <em><code>submit</code></em> de un formulario éste no se enviará o si era un <em><code>click</code></em> sobre un hiperenlace no se irá a la página indicada en él.</li>
+<li><strong><code>.stopPropagation</code></strong>: un evento se produce sobre un elemento y todos su padres. Por ejemplo si hacemos click en un <code>&lt;span&gt;</code> que está en un <code>&lt;p&gt;</code> que está en un <code>&lt;div&gt;</code> que está en el BODY el evento se va propagando por todos estos elementos y saltarían los <em>listeners</em> asociados a todos ellos (si los hubiera). Si alguno llama a este método el evento no se propagará a los demás elementos padre.</li>
+<li><strong>Eventos de ratón:</strong><ul>
+<li><strong><code>.button</code></strong>: qué botón del ratón se ha pulsado (<code>0</code>: izquierdo, <code>1</code>: central (rueda); <code>2</code>: derecho).</li>
+<li><strong><code>.screenX</code></strong> / <strong><code>.screenY</code></strong>: las coordenadas del ratón respecto a la pantalla.</li>
+<li><strong><code>.clientX</code></strong> / <strong><code>.clientY</code></strong>: las coordenadas del ratón respecto a la ventana cuando se produjo el evento.</li>
+<li><strong><code>.pageX</code></strong> / <strong><code>.pageY</code></strong>: las coordenadas del ratón respecto al documento (si se ha hecho un scroll será el clientX/Y más el scroll).</li>
+<li><strong><code>.offsetX</code></strong> / <strong><code>.offsetY</code></strong>: las coordenadas del ratón respecto al elemento sobre el que se produce el evento.</li>
+<li><strong><code>.detail</code></strong>: si se ha hecho click, doble click o triple click.</li>
+</ul>
+</li>
+<li><strong>Eventos de teclado:</strong> son los más incompatibles entre diferentes navegadores. En el teclado hay teclas normales y especiales (<code>Alt</code>, <code>Ctrl</code>, <code>Shift</code>, <code>Enter</code>, <code>Tab</code>, flechas, <code>Supr</code>, ...). En la información del teclado hay que distinguir entre el código del carácter pulsado (<code>e=101</code>, <code>E=69</code>, <code>€=8364</code>) y el código de la tecla pulsada (para los 3 caracteres es el 69 ya que se pulsa la misma tecla). Las principales propiedades de <em><code>event</code></em> son:<ul>
+<li><strong><code>.key</code></strong>: devuelve el nombre de la tecla pulsada.</li>
+<li><strong><code>.which</code></strong>: devuelve el código de la tecla pulsada.</li>
+<li><strong><code>.keyCode</code></strong> / <strong><code>.charCode</code></strong>: código de la tecla pulsada y del carácter pulsado (según navegadores).</li>
+<li><strong><code>.shiftKey</code></strong> / <strong><code>.ctrlKey</code></strong> / <strong><code>.altKey</code></strong> / <strong><code>.metaKey</code></strong>: si está o no pulsada la tecla SHIFT / CTRL / ALT / META. Esta propiedad también la tienen los eventos de ratón.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">NOTA:</p>
+<p>A la hora de saber qué tecla ha pulsado el usuario es conveniente tener en cuenta:</p>
+<ul>
+<li>para saber qué carácter se ha pulsado lo mejor usar la propiedad <em><code>key</code></em> o <em><code>charCode</code></em> de <em><code>keyPress</code></em>, pero varía entre navegadores.</li>
+<li>para saber la tecla especial pulsada mejor usar el <em><code>key</code></em> o el <em><code>keyCode</code></em> de <em><code>keyUp</code></em></li>
+<li>captura sólo lo que sea necesario, se producen muchos eventos de teclado.</li>
+<li>para obtener el carácter a partir del código: <code>String fromCharCode(código);</code></li>
+</ul>
+</div>
+<p>Lo mejor para familiarizarse con los diferentes eventos es consultar los <a href="https://www.w3schools.com/js/js_events_examples.asp">ejemplos de w3schools</a>.</p>
+<div class="admonition question">
+<p class="admonition-title">ACTIVIDAD 2: <code>📂 UD3/act02/</code></p>
+<p>Añade a la calculadora del ejercicio anterior los siguientes eventos:</p>
+<ul>
+<li>Al pulsar una tecla numérica se debe mostrar en la caja de texto el número pulsado.</li>
+<li>Al pulsar una tecla de operación se debe mostrar en la caja de texto el símbolo de la operación pulsada.</li>
+<li>Al pulsar la tecla <em><code>Enter</code></em> se debe ejecutar la función <em><code>calcular()</code></em> que recibe como parámetro el contenido de la caja de texto y muestra el resultado de la operación.</li>
+<li>Al pulsar la tecla <em><code>Backspace</code></em> se debe borrar el último carácter de la caja de texto.</li>
+<li>Al pulsar la tecla <em><code>Escape</code></em> o <em><code>Supr</code></em> se debe borrar el contenido de la caja de texto.</li>
+</ul>
+</div>
+<h3 id="bindeo-del-objeto-this"><em>Bindeo</em> del objeto <em>this</em><a class="headerlink" href="#bindeo-del-objeto-this" title="Permanent link">&para;</a></h3>
+<p>En ocasiones no queremos que <em><code>this</code></em> sea el elemento sobre quien se produce el evento sino que queremos conservar el valor que tenía antes de entrar a la función. Por ejemplo, la función <em>listener</em> es un método de una clase, en <em><code>this</code></em> tenemos el objeto de la clase sobre el que estamos actuando pero al entrar en la función perdemos esa referencia.</p>
+<p>El método <em><code>.bind()</code></em> nos permite pasarle a una función el valor que queremos darle a la variable <em><code>this</code></em> dentro de dicha función. Por defecto a un <code>listener</code> de eventos se le <em>bindea</em> le valor de <strong>event.currentTarget</strong>. Si queremos que tenga otro valor se lo indicamos con <strong>.bind()</strong>: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;acepto&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">aceptado</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">variable</span><span class="p">));</span>
+</code></pre></div>
+<p>En este ejemplo el valor de <em><code>this</code></em> dentro de la función <em><code>aceptado</code></em> será <em><code>variable</code></em>. En el ejemplo que habíamos comentado de un <em>listener</em> dentro de una clase, para mantener el valor de <em><code>this</code></em> y que haga referencia al objeto sobre el que estamos actuando haríamos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;acepto&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">aceptado</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+</code></pre></div>
+<p>por lo que el valor de <em><code>this</code></em> dentro de la función <em><code>aceptado</code></em> será el mismo que tenía fuera, es decir, el objeto.</p>
+<p>Podemos <em>bindear</em>, es decir, pasarle al <em>listener</em> más variables declarándolas como parámetros de <em><code>bind</code></em>. El primer parámetro será el valor de <em>this</em> y los demás serán parámetros que recibirá la función antes de recibir el parámetro <em><code>event</code></em> que será el último. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;acepto&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">aceptado</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">var1</span><span class="p">,</span><span class="w"> </span><span class="nx">var2</span><span class="p">,</span><span class="w"> </span><span class="nx">var3</span><span class="p">));</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="p">...</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">aceptado</span><span class="p">(</span><span class="nx">param1</span><span class="p">,</span><span class="w"> </span><span class="nx">param2</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span><span class="c1">// Aquí dentro tendremos los valores</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span><span class="c1">// this = var1</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span><span class="c1">// param1 = var2</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">  </span><span class="c1">// param2 = var3</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">  </span><span class="c1">// event es el objeto con la información del evento producido</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="propagacion-de-eventos-bubbling">Propagación de eventos (bubbling)<a class="headerlink" href="#propagacion-de-eventos-bubbling" title="Permanent link">&para;</a></h2>
+<p>Normalmente en una página web los elementos HTML se solapan unos con otros, por ejemplo, un <code>&lt;span&gt;</code> está en un <code>&lt;p&gt;</code> que está en un <code>&lt;div&gt;</code> que está en el <code>&lt;body&gt;</code>. Si ponemos un <em>listener</em> del evento <em>click</em> a todos ellos se ejecutarán todos ellos, pero ¿en qué orden?.</p>
+<p>Pues el W3C establecíó un modelo en el que primero se disparan los eventos de fuera hacia dentro (primero el <code>&lt;body&gt;</code>) y al llegar al más interno (el <code>&lt;span&gt;</code>) se vuelven a disparar de nuevo pero de dentro hacia afuera. La primera fase se conoce como <strong>fase de captura</strong> y la segunda como <strong>fase de burbujeo</strong>. Cuando ponemos un <em>listener</em> con <code>addEventListener</code> el tercer parámetro indica en qué fase debe dispararse:</p>
+<ul>
+<li><strong><code>true</code></strong>: en fase de captura</li>
+<li><strong><code>false</code></strong> (valor por defecto): en fase de burbujeo</li>
+</ul>
+<p>Podéis ver un ejemplo en:</p>
+<script async src="//jsfiddle.net/juansegura/n3b6fph0/embed/js,html,result/"></script>
+
+<p>Sin embargo si al método <code>.addEventListener</code> le pasamos un tercer parámetro con el valor <em><code>true</code></em> el comportamiento será el contrario, lo que se conoce como <em>captura</em> y el primer <em>listener</em> que se ejecutará es el del <code>&lt;body&gt;</code> y el último el del <code>&lt;span&gt;</code> (podéis probarlo añadiendo ese parámetro al ejemplo anterior).</p>
+<p>En cualquier momento podemos evitar que se siga propagando el evento ejecutando el método <code>.stopPropagation()</code> en el código de cualquiera de los <em>listeners</em>.</p>
+<p>Podéis ver las distintas fases de un evento en la página <a href="https://domevents.dev/">domevents.dev</a>.</p>
+<h2 id="innerhtml-y-listeners-de-eventos">innerHTML y <em>listeners</em> de eventos<a class="headerlink" href="#innerhtml-y-listeners-de-eventos" title="Permanent link">&para;</a></h2>
+<p>Si cambiamos la propiedad <em><code>innerHTML</code></em> de un elemento del árbol DOM todos sus <code>listeners</code> de eventos desaparecen ya que es como si se volviera a crear ese elemento.</p>
+<p>Por ejemplo, tenemos una tabla de datos y queremos que al hacer doble click en cada fila se muestre su id. La función que añade una nueva fila podría ser:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span>
+<span class="normal"><a href="#__codelineno-13-4">4</a></span>
+<span class="normal"><a href="#__codelineno-13-5">5</a></span>
+<span class="normal"><a href="#__codelineno-13-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">renderNewRow</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">miTabla</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;tabla-datos&#39;</span><span class="p">);</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">nuevaFila</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`&lt;tr id=&quot;</span><span class="si">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">&quot;&gt;&lt;td&gt;</span><span class="si">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">dato1</span><span class="si">}</span><span class="sb">&lt;/td&gt;&lt;td&gt;</span><span class="si">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">dato2</span><span class="si">}</span><span class="sb">...&lt;/td&gt;&lt;/tr&gt;`</span><span class="p">;</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="hll"><span class="w">  </span><span class="nx">miTabla</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">nuevaFila</span><span class="p">;</span>
+</span><a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="hll"><span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">id</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;dblclick&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Id: &#39;</span><span class="o">+</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">id</span><span class="p">));</span>
+</span><a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Sin embargo esto sólo funcionaría para la última fila añadida ya que la línea <code>miTabla.innerHTML += nuevaFila</code> equivale a <code>miTabla.innerHTML = miTabla.innerHTML + nuevaFila</code>. Por tanto estamos asignando a <em>miTabla</em> un código HTML que ya no contiene <code>listeners</code>, excepto el de <em>nuevaFila</em> que lo ponemos después de hacer la asignación.</p>
+<p>La forma correcta de hacerlo sería:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span>
+<span class="normal"><a href="#__codelineno-14-3">3</a></span>
+<span class="normal"><a href="#__codelineno-14-4">4</a></span>
+<span class="normal"><a href="#__codelineno-14-5">5</a></span>
+<span class="normal"><a href="#__codelineno-14-6">6</a></span>
+<span class="normal"><a href="#__codelineno-14-7">7</a></span>
+<span class="normal"><a href="#__codelineno-14-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">renderNewRow</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">miTabla</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;tabla-datos&#39;</span><span class="p">);</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">nuevaFila</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">);</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="hll"><span class="w">  </span><span class="nx">nuevaFila</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+</span><a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="hll"><span class="w">  </span><span class="nx">nuevaFila</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`&lt;td&gt;</span><span class="si">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">dato1</span><span class="si">}</span><span class="sb">&lt;/td&gt;&lt;td&gt;</span><span class="si">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">dato2</span><span class="si">}</span><span class="sb">...&lt;/td&gt;`</span><span class="p">;</span>
+</span><a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="hll"><span class="w">  </span><span class="nx">nuevaFila</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;dblclick&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Id: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+</span><a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="w">  </span><span class="nx">miTabla</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">nuevaFila</span><span class="p">);</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>De esta forma además mejoramos el rendimiento ya que el navegador sólo tiene que renderizar el nodo correspondiente a la nuevaFila. Si lo hacemos como estaba al principio se deben volver a crear y a renderizar todas las filas de la tabla (todo lo que hay dentro de miTabla).</p>
+<h2 id="eventos-personalizados">Eventos personalizados<a class="headerlink" href="#eventos-personalizados" title="Permanent link">&para;</a></h2>
+<p>También podemos mediante código lanzar manualmente cualquier evento sobre un elemento con el método <code>dispatchEvent()</code> e incluso crear eventos personalizados, por ejemplo:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span>
+<span class="normal"><a href="#__codelineno-15-5">5</a></span>
+<span class="normal"><a href="#__codelineno-15-6">6</a></span>
+<span class="normal"><a href="#__codelineno-15-7">7</a></span>
+<span class="normal"><a href="#__codelineno-15-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="c1">// crear el evento</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Event</span><span class="p">(</span><span class="s1">&#39;build&#39;</span><span class="p">);</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="c1">// escuchar el evento</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="nx">elem</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="w"> </span><span class="s1">&#39;build&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">);</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a>
+<a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="c1">// enviar el evento</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="nx">elem</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>Incluso podemos añadir datos al objeto <em><code>event</code></em> si creamos el evento con <code>new CustomEvent()</code>. Podéis obtener más información en la <a href="https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events">página de MDN</a>.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-16-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-16-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-16-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-16-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-16-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-16-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-16-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-16-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="c1">// crear el evento personalizado</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="hll"><span class="kd">const</span><span class="w"> </span><span class="nx">customEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">CustomEvent</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">detail</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Prueba de evento personalizado&#39;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">});</span>
+</span><a id="__codelineno-16-3" name="__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="c1">// escuchar el evento</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="nx">elem</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="w"> </span><span class="s1">&#39;log&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="hll"><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+</span><a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="p">},</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">);</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8"></a>
+<a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="c1">// enviar el evento</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="nx">elem</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span><span class="nx">customEvent</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition abstract">
+<p class="admonition-title">PROYECTO:</p>
+<p>Para comprobar tus conocimientos hasta el momento, puedes realizar el proyecto <a href="./ud3-proyecto-clave-secreta.md"><strong>Clave secreta</strong></a>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/jsanvil/dwec2023" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+    
+  </body>
+</html>

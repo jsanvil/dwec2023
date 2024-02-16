@@ -1,0 +1,3135 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ud5-1-native-libraries/">
+      
+      
+        <link rel="next" href="../ud5-3-async/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
+    
+    
+      
+        <title>UD5 - 2. Componentes - Desarrollo Web en Entorno Cliente</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/bs5_layout.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ud5-2-componentes" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Desarrollo Web en Entorno Cliente" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Cliente" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Cliente
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UD5 - 2. Componentes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  Inicio
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../proyectos/pr1-clave-secreta/" class="md-tabs__link">
+          
+  
+  Proyectos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud1/ud1-1-tecnologias/" class="md-tabs__link">
+          
+  
+  UD1 Sintaxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud2/ud2-1-DOM/" class="md-tabs__link">
+          
+  
+  UD2 DOM
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud3/ud3-1-eventos/" class="md-tabs__link">
+          
+  
+  UD3 Eventos y formularios
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud4/ud4-1-oop/" class="md-tabs__link">
+          
+  
+  UD4 POO
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ud5-1-native-libraries/" class="md-tabs__link">
+          
+  
+  UD5 Librerías
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud6/ud6-1-angular-intro/" class="md-tabs__link">
+          
+  
+  UD6 Angular
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Cliente" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Cliente" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Desarrollo Web en Entorno Cliente
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Inicio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Desarrollo Web en Entorno Cliente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../entorno/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entorno de trabajo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyectos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Proyectos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr1-clave-secreta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proyecto 1 - Clave Secreta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr2-todo-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proyecto 2 - To Do List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr3-restaurante/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD1 Sintaxis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD1 Sintaxis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-1-tecnologias/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 1. Arquitecturas y tecnologías de programación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-sintaxis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2. Manejo de la sintaxis del lenguaje
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-1-objetos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2.1. Objetos en Javascript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-2-arrays/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2.2. Arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-3-programacion-funcional/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2.3. Programación funcional
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../refuerzo/ud1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ejercicios de refuerzo UD1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD2 DOM
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            UD2 DOM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud2/ud2-1-DOM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD2 - 1. Objetos predefinidos del lenguaje (DOM)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud2/ud2-2-BOM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD2 - 2. Browser Object Model (BOM)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD3 Eventos y formularios
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            UD3 Eventos y formularios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud3/ud3-1-eventos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD3 - 1. Eventos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud3/ud3-2-formularios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD3 - 2. Validación de formularios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud3/ud3-proyecto-clave-secreta.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD4 POO
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            UD4 POO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud4/ud4-1-oop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD4 - 1. Programación orientada a Objetos en Javascript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud4/ud4-2-estructura/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD4 - 2. Estructuración de proyectos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud4/ud4-3-mvc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD3 - 3. El patrón Modelo-Vista-Controlador (MVC)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    UD5 Librerías
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            UD5 Librerías
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud5-1-native-libraries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD5 - 1. Objetos predefinidos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    UD5 - 2. Componentes
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    UD5 - 2. Componentes
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uso-de-librerias-de-componentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso de librerías de componentes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Uso de librerías de componentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo de uso
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentes-personalizados-webcomponents-nativos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Componentes personalizados (WebComponents nativos)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Componentes personalizados (WebComponents nativos)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pasar-atributos-al-componente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pasar atributos al componente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shadow-dom-controlando-el-contenido-del-componente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shadow DOM, controlando el contenido del componente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadir-mas-de-un-slot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Añadir más de un slot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadir-eventos-y-estilos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Añadir eventos y estilos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comunicacion-entre-componentes-eventos-personalizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comunicación entre componentes, eventos personalizados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-completo-componentes-para-un-chat-con-eventos-personalizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo completo: Componentes para un chat con eventos personalizados
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#libreria-de-creacion-de-componentes-lit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Librería de creación de componentes Lit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Librería de creación de componentes Lit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud5-3-async/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD5 - 3. Comunicación asíncrona
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD6 Angular
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            UD6 Angular
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-1-angular-intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 1. Introducción a Angular
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-2-angular-databinding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 2. Data binding. Pipes.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-3-angular-services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 3. Componentes anidados. Servicios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-4-angular-rest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 4. HttpClient
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-5-angular-routing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 5. Routing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-6-angular-template-forms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 6. Formularios de plantilla
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/ud6-7-angular-i18n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 7. Internacionalización
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_8" id="__nav_8_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_8">
+            <span class="md-nav__icon md-icon"></span>
+            Actividades
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/actividades/ud6-act5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_9" id="__nav_8_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyecto
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_9">
+            <span class="md-nav__icon md-icon"></span>
+            Proyecto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr3-restaurante/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proyecto 2º EV - Gestión carta de un restaurante
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_10" id="__nav_8_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Repositorios de ejemplo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_10">
+            <span class="md-nav__icon md-icon"></span>
+            Repositorios de ejemplo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/jsanvil/angular-products" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    angular-products
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/jsanvil/angular-products-material" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    angular-products-material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uso-de-librerias-de-componentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso de librerías de componentes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Uso de librerías de componentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo de uso
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentes-personalizados-webcomponents-nativos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Componentes personalizados (WebComponents nativos)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Componentes personalizados (WebComponents nativos)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pasar-atributos-al-componente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pasar atributos al componente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shadow-dom-controlando-el-contenido-del-componente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shadow DOM, controlando el contenido del componente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadir-mas-de-un-slot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Añadir más de un slot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadir-eventos-y-estilos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Añadir eventos y estilos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comunicacion-entre-componentes-eventos-personalizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comunicación entre componentes, eventos personalizados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-completo-componentes-para-un-chat-con-eventos-personalizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo completo: Componentes para un chat con eventos personalizados
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#libreria-de-creacion-de-componentes-lit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Librería de creación de componentes Lit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Librería de creación de componentes Lit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="ud5-2-componentes">UD5 - 2. Componentes<a class="headerlink" href="#ud5-2-componentes" title="Permanent link">&para;</a></h1>
+<h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
+<p>Los componentes web (<em>WebComponents</em>) se pueden usar y replicar en cualquier parte de la aplicación. Si creamos nuestra propia librería de componentes, podemos reutilizarlos en cualquier proyecto.</p>
+<p>Incorporan <strong>lógica</strong> (<code>js</code>), <strong>estructura</strong> (<code>html</code>) y <strong>estilos</strong> (<code>css</code>) en un único paquete.</p>
+<p>Los componentes se representan en HTML con <strong>etiquetas personalizadas</strong>, que se pueden usar en cualquier parte de la aplicación.</p>
+<blockquote>
+<p>Referencia MDN: <a href="https://developer.mozilla.org/es/docs/Web/API/Web_components">Web Components</a></p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="hll">    <span class="p">&lt;</span><span class="nt">mi-componente</span><span class="p">&gt;&lt;/</span><span class="nt">mi-componente</span><span class="p">&gt;</span>
+</span><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>El nombre de los componentes debe ser único, para evitar conflictos y deben contener al menos un guion (<strong><code>-</code></strong>).</p>
+<p>Principales <strong>ventajas</strong>:</p>
+<ul>
+<li>Reutilización de código.</li>
+<li>Facilita el mantenimiento.</li>
+<li>Facilita la colaboración entre desarrolladores.</li>
+<li>Diseño consistente.</li>
+</ul>
+<p>Veremos cómo <strong>usar</strong> componentes de terceros y cómo <strong>crear</strong> nuestros propios componentes.</p>
+<h2 id="uso-de-librerias-de-componentes">Uso de librerías de componentes<a class="headerlink" href="#uso-de-librerias-de-componentes" title="Permanent link">&para;</a></h2>
+<p>Vamos a ver cómo usar componentes de terceros en nuestra aplicación. En este caso, vamos a usar la librería <a href="https://m3.material.io/develop/web">material-web</a> que implementa <em>WebComponents</em>  basados en <a href="https://m3.material.io/">Material Design</a>. <em>Material Design</em> es un sistema de diseño creado por <em>Google</em> ampliamente utilizado en todo tipo de aplicaciones.</p>
+<p>Este apartado servirá como introducción y profundizaremos en detalle cuando veamos <a href="https://material.angular.io/"><em>Angular Material</em></a> en la siguiente unidad.</p>
+<h3 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h3>
+<p>Para utilizar la librería necesitaremos es muy recomendable el uso de un <em>bundler</em>, como <em>webpack</em> o <em>vite</em>, que facilitará la importación y uso de los módulos de la librería.</p>
+<div class="admonition note">
+<p class="admonition-title">Recuerda</p>
+<p>Para crear una estructura base para un proyecto con <em>vite</em> utilizamos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>npm create vite@latest
+</code></pre></div>
+<p>Crea un directorio con el nombre del proyecto, por lo que si quieres que se cree en el directorio actual, debes ejecutar el comando desde el directorio padre.</p>
+<p>Una vez creado el proyecto, debemos instalar las dependencias con <code>npm install</code> (o <code>npm i</code>).</p>
+</div>
+<p>Para instalar la librería, ejecutamos el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npm<span class="w"> </span>install<span class="w"> </span>@material/web
+</code></pre></div>
+<p>Es necesario consultar la documentación oficial, disponible en <a href="https://material-web.dev/about/intro/">https://material-web.dev/about/intro/</a>, para ver cómo se usan los componentes.</p>
+<h3 id="ejemplo-de-uso">Ejemplo de uso<a class="headerlink" href="#ejemplo-de-uso" title="Permanent link">&para;</a></h3>
+<p>Siguiendo los ejemplos de la documentación, podemos crear un componente de prueba:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">index.html</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span>
+<span class="normal"><a href="#__codelineno-3-27">27</a></span>
+<span class="normal"><a href="#__codelineno-3-28">28</a></span>
+<span class="normal"><a href="#__codelineno-3-29">29</a></span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span>
+<span class="normal"><a href="#__codelineno-3-31">31</a></span>
+<span class="normal"><a href="#__codelineno-3-32">32</a></span>
+<span class="normal"><a href="#__codelineno-3-33">33</a></span>
+<span class="normal"><a href="#__codelineno-3-34">34</a></span>
+<span class="normal"><a href="#__codelineno-3-35">35</a></span>
+<span class="normal"><a href="#__codelineno-3-36">36</a></span>
+<span class="normal"><a href="#__codelineno-3-37">37</a></span>
+<span class="normal"><a href="#__codelineno-3-38">38</a></span>
+<span class="normal"><a href="#__codelineno-3-39">39</a></span>
+<span class="normal"><a href="#__codelineno-3-40">40</a></span>
+<span class="normal"><a href="#__codelineno-3-41">41</a></span>
+<span class="normal"><a href="#__codelineno-3-42">42</a></span>
+<span class="normal"><a href="#__codelineno-3-43">43</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a>  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;style.css&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="hll">  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;src/main.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><a id="__codelineno-3-10" name="__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a>    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Botones<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a>    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="hll">        <span class="p">&lt;</span><span class="nt">md-elevated-button</span><span class="p">&gt;</span>md-elevated-button<span class="p">&lt;/</span><span class="nt">md-elevated-button</span><span class="p">&gt;</span>
+</span><a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="hll">        <span class="p">&lt;</span><span class="nt">md-filled-button</span><span class="p">&gt;</span>md-filled-button<span class="p">&lt;/</span><span class="nt">md-filled-button</span><span class="p">&gt;</span>
+</span><a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="hll">        <span class="p">&lt;</span><span class="nt">md-filled-tonal-button</span><span class="p">&gt;</span>md-filled-tonal-button<span class="p">&lt;/</span><span class="nt">md-filled-tonal-button</span><span class="p">&gt;</span>
+</span><a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="hll">        <span class="p">&lt;</span><span class="nt">md-outlined-button</span><span class="p">&gt;</span>md-outlined-button<span class="p">&lt;/</span><span class="nt">md-outlined-button</span><span class="p">&gt;</span>
+</span><a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="hll">        <span class="p">&lt;</span><span class="nt">md-text-button</span><span class="p">&gt;</span>md-text-button<span class="p">&lt;/</span><span class="nt">md-text-button</span><span class="p">&gt;</span>
+</span><a id="__codelineno-3-21" name="__codelineno-3-21"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a>    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Diálogo<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a>    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="hll">        <span class="p">&lt;</span><span class="nt">md-elevated-button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;open-dialog&quot;</span><span class="p">&gt;</span>Mostrar diálogo<span class="p">&lt;/</span><span class="nt">md-elevated-button</span><span class="p">&gt;</span>
+</span><a id="__codelineno-3-26" name="__codelineno-3-26"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a>
+<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="hll">    <span class="p">&lt;</span><span class="nt">md-dialog</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;dialog&quot;</span><span class="p">&gt;</span>
+</span><a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="hll">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">slot</span><span class="o">=</span><span class="s">&quot;headline&quot;</span><span class="p">&gt;</span>
+</span><a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="hll">            Mi primer md-dialog
+</span><a id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="hll">            <span class="p">&lt;</span><span class="nt">md-circular-progress</span> <span class="na">indeterminate</span><span class="p">&gt;&lt;/</span><span class="nt">md-circular-progress</span><span class="p">&gt;</span>
+</span><a id="__codelineno-3-32" name="__codelineno-3-32"></a><span class="hll">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><a id="__codelineno-3-33" name="__codelineno-3-33"></a><span class="hll">        <span class="p">&lt;</span><span class="nt">form</span> <span class="na">slot</span><span class="o">=</span><span class="s">&quot;content&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;form-id&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;dialog&quot;</span><span class="p">&gt;</span>
+</span><a id="__codelineno-3-34" name="__codelineno-3-34"></a><span class="hll">            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Quisquam, voluptatum. Quisquam,
+</span><a id="__codelineno-3-35" name="__codelineno-3-35"></a><span class="hll">        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span><a id="__codelineno-3-36" name="__codelineno-3-36"></a><span class="hll">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">slot</span><span class="o">=</span><span class="s">&quot;actions&quot;</span><span class="p">&gt;</span>
+</span><a id="__codelineno-3-37" name="__codelineno-3-37"></a><span class="hll">            <span class="p">&lt;</span><span class="nt">md-text-button</span> <span class="na">form</span><span class="o">=</span><span class="s">&quot;form-id&quot;</span><span class="p">&gt;</span>Cerrar<span class="p">&lt;/</span><span class="nt">md-text-button</span><span class="p">&gt;</span>
+</span><a id="__codelineno-3-38" name="__codelineno-3-38"></a><span class="hll">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><a id="__codelineno-3-39" name="__codelineno-3-39"></a><span class="hll">    <span class="p">&lt;/</span><span class="nt">md-dialog</span><span class="p">&gt;</span>
+</span><a id="__codelineno-3-40" name="__codelineno-3-40"></a>
+<a id="__codelineno-3-41" name="__codelineno-3-41"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-3-42" name="__codelineno-3-42"></a>
+<a id="__codelineno-3-43" name="__codelineno-3-43"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Se definen las etiquetas <code>&lt;md-&gt;</code> que se pueden usar en cualquier parte de la aplicación.</p>
+<p>Pero es importante que se carguen los ficheros <code>js</code> de la librería, para que se puedan interpretar las etiquetas personalizadas. Para ello, añadiremos el siguiente código a <code>src/main.js</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/main.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">import</span><span class="w"> </span><span class="s1">&#39;@material/web/dialog/dialog.js&#39;</span><span class="p">;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">import</span><span class="w"> </span><span class="s1">&#39;@material/web/button/text-button.js&#39;</span><span class="p">;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="k">import</span><span class="w"> </span><span class="s1">&#39;@material/web/button/elevated-button.js&#39;</span><span class="p">;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="k">import</span><span class="w"> </span><span class="s1">&#39;@material/web/button/filled-button.js&#39;</span><span class="p">;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="k">import</span><span class="w"> </span><span class="s1">&#39;@material/web/button/filled-tonal-button.js&#39;</span><span class="p">;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="k">import</span><span class="w"> </span><span class="s1">&#39;@material/web/button/outlined-button.js&#39;</span><span class="p">;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="k">import</span><span class="w"> </span><span class="s1">&#39;@material/web/button/text-button.js&#39;</span><span class="p">;</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="k">import</span><span class="w"> </span><span class="s1">&#39;@material/web/progress/circular-progress.js&#39;</span><span class="p">;</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="hll"><span class="c1">// NOTA:</span>
+</span><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="hll"><span class="c1">//   Si no queremos importar cada componente por separado,</span>
+</span><a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="hll"><span class="c1">//   podemos importarlos todos con:</span>
+</span><a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="hll"><span class="c1">//</span>
+</span><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="hll"><span class="c1">// import &#39;@material/web/all.js&#39;;</span>
+</span><a id="__codelineno-4-15" name="__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="kd">const</span><span class="w"> </span><span class="nx">dialog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;dialog&#39;</span><span class="p">);</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="kd">const</span><span class="w"> </span><span class="nx">btnOpenDialog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;open-dialog&#39;</span><span class="p">);</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="nx">btnOpenDialog</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">showDialog</span><span class="p">);</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="kd">function</span><span class="w"> </span><span class="nx">showDialog</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="w">    </span><span class="nx">dialog</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Si hacemos un uso intensivo de la librería podemos importar directamente todos los componentes:</p>
+<div class="highlight"><span class="filename">src/main.js</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">import</span><span class="w"> </span><span class="s1">&#39;@material/web/all.js&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>Cómo habitualmente el comportamiento de los diálogos es que se muestren bajo demanda, por ejemplo, cuando ocurre un evento, se añade un evento <code>click</code> al botón, que llama al método <code>show()</code> del diálogo. También existe el método <code>close()</code> si necesitamos cerrarlo desde el código.</p>
+<div class="admonition question">
+<p class="admonition-title">ACTIVIDAD 1: <code>📂 UD5/act01/</code></p>
+<p>Sigue la documentación de <em>material-web</em> y construye una pequeña aplicación que dado un <em>input</em> de tipo texto y un botón, al pulsar el botón mostrará un diálogo con el texto escrito en el input.</p>
+<p>Por ejemplo, puedes usar los siguiente componentes:</p>
+<ul>
+<li><code>md-filled-text-field</code> para el input.</li>
+<li><code>elevated-button</code> para el botón.</li>
+<li><code>md-dialog</code> para el diálogo.</li>
+</ul>
+<p>Haz que el diálogo se cierre a los 3 segundos de mostrarse.</p>
+<p>Recordatorio de cómo se define un <em>timeout</em>:</p>
+<div class="highlight"><span class="filename">src/main.js</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">  </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="c1">// código a ejecutar al terminar el timeout</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="nx">milisegundos</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<p>Con esto hemos visto una pequeña introducción a <em>material-web</em>, y siguiendo la documentación no deberíamos tener problemas para usarlo en nuestros proyectos. Cómo ya se ha comentado, profundizaremos en detalle cuando veamos <a href="https://material.angular.io/"><em>Angular Material</em></a> en la siguiente unidad.</p>
+<h2 id="componentes-personalizados-webcomponents-nativos">Componentes personalizados (<em>WebComponents</em> nativos)<a class="headerlink" href="#componentes-personalizados-webcomponents-nativos" title="Permanent link">&para;</a></h2>
+<p>Por otra parte, también podemos crear nuestros propios componentes con el aspecto y comportamiento que necesitemos.</p>
+<p>Veamos un ejemplo de creación de un componente simple mediante <em>javascript</em>.</p>
+<p>Como la principal ventaja que buscamos es la encapsulación, lo primero que debemos hacer es crear un nuevo archivo, por ejemplo, <code>src/HelloWorld.js</code>, que contendrá toda la estructura, lógica y estilo del componente:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/HelloWorld.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="hll"><span class="kd">class</span><span class="w"> </span><span class="nx">HelloWorld</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">HTMLElement</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-7-2" name="__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="hll"><span class="w">    </span><span class="nx">connectedCallback</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cm">/*html*/</span><span class="sb">`</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="sb">            &lt;h1&gt;Hola Mundo&lt;/h1&gt;</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="sb">        `</span><span class="p">;</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="p">}</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="hll"><span class="nx">customElements</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="s1">&#39;hello-world&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">HelloWorld</span><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li>En la primera línea, se define una clase que hereda de <code>HTMLElement</code>, que es la clase base de todos los elementos HTML.</li>
+<li>En la función <code>connectedCallback</code> se define el contenido del componente. Esta función se ejecuta cuando el componente se añade al DOM.</li>
+<li>Se recomienda el uso de <em>template literals</em> para definir el contenido, dado que no suele ser estático, pueden utilizar variables, eventos, comportamiento, estilos, etc.</li>
+<li>En la última línea, se registra el componente con el nombre <code>&lt;hello-world&gt;</code> y se asocia con la clase <code>HelloWorld</code> para que el navegador sepa interpretarlo.</li>
+</ul>
+<p>Para poder usarlo en nuestra aplicación, debemos importarlo en el fichero <code>index.html</code> y luego escribir la etiqueta:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">index.html</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span>
+<span class="normal"><a href="#__codelineno-8-14">14</a></span>
+<span class="normal"><a href="#__codelineno-8-15">15</a></span>
+<span class="normal"><a href="#__codelineno-8-16">16</a></span>
+<span class="normal"><a href="#__codelineno-8-17">17</a></span>
+<span class="normal"><a href="#__codelineno-8-18">18</a></span>
+<span class="normal"><a href="#__codelineno-8-19">19</a></span>
+<span class="normal"><a href="#__codelineno-8-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a>  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a>  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a>  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a>  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;style.css&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="hll">  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;src/HelloWorld.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13"></a>
+<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="hll">  <span class="p">&lt;</span><span class="nt">hello-world</span><span class="p">&gt;&lt;/</span><span class="nt">hello-world</span><span class="p">&gt;</span>
+</span><a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="hll">  <span class="p">&lt;</span><span class="nt">hello-world</span><span class="p">&gt;&lt;/</span><span class="nt">hello-world</span><span class="p">&gt;</span>
+</span><a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="hll">  <span class="p">&lt;</span><span class="nt">hello-world</span><span class="p">&gt;&lt;/</span><span class="nt">hello-world</span><span class="p">&gt;</span>
+</span><a id="__codelineno-8-17" name="__codelineno-8-17"></a>
+<a id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19"></a>
+<a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>De esta forma podemos llamar a esta pieza de código en cualquier parte de nuestra aplicación y tantas veces como haga falta.</p>
+<h3 id="pasar-atributos-al-componente">Pasar atributos al componente<a class="headerlink" href="#pasar-atributos-al-componente" title="Permanent link">&para;</a></h3>
+<p>Pero por lo general, los componentes suelen tener un comportamiento algo más complejo. Vamos a pasarle un atributo para que se muestre un saludo personalizado:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/HelloWorld.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span>
+<span class="normal"><a href="#__codelineno-9-12">12</a></span>
+<span class="normal"><a href="#__codelineno-9-13">13</a></span>
+<span class="normal"><a href="#__codelineno-9-14">14</a></span>
+<span class="normal"><a href="#__codelineno-9-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="hll"><span class="kd">class</span><span class="w"> </span><span class="nx">HelloWorld</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">HTMLElement</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-9-2" name="__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="hll"><span class="w">    </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">        </span><span class="k">super</span><span class="p">();</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">    </span><span class="nx">connectedCallback</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cm">/*html*/</span><span class="sb">`</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="hll"><span class="sb">            &lt;h1&gt;Hola </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">&lt;/h1&gt;</span>
+</span><a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="sb">        `</span><span class="p">;</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="p">}</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="nx">customElements</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="s1">&#39;hello-world&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">HelloWorld</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>En el constructor, se obtiene el valor del atributo <code>name</code> y se guarda en una propiedad del componente.</li>
+<li>En la función <code>connectedCallback</code> se usa la propiedad <code>name</code> para mostrar el saludo.</li>
+</ul>
+<p>Ahora en nuestro html podemos usar el componente de la siguiente forma:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">index.html</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span>
+<span class="normal"><a href="#__codelineno-10-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>  <span class="p">&lt;</span><span class="nt">hello-world</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;Ana&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">hello-world</span><span class="p">&gt;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a>  <span class="p">&lt;</span><span class="nt">hello-world</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;Pepe&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">hello-world</span><span class="p">&gt;</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a>  <span class="p">&lt;</span><span class="nt">hello-world</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;Rosa&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">hello-world</span><span class="p">&gt;</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="shadow-dom-controlando-el-contenido-del-componente"><em>Shadow DOM</em>, controlando el contenido del componente<a class="headerlink" href="#shadow-dom-controlando-el-contenido-del-componente" title="Permanent link">&para;</a></h3>
+<p>Puede que hayas notado que el componente define una etiqueta de apertura y otra de cierre, pero no hay contenido entre ellas, de hecho, si añadimos contenido, no se mostrará. Esto es porque el contenido que se añade en el <em>html</em> se sustituye por el contenido que se define en la función <code>connectedCallback</code>.</p>
+<p>Para controlar poder controlar el contenido un componente debemos utilizar <strong><em>Shadow DOM</em></strong>, que es una característica de los componentes que permite encapsular el contenido, definiendo un <strong>nuevo árbol DOM independiente</strong> del DOM principal.</p>
+<p>Para poder añadir contenido al componente, declarar  debemos usar la etiqueta <code>&lt;slot&gt;</code></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/HelloWorld.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span>
+<span class="normal"><a href="#__codelineno-11-12">12</a></span>
+<span class="normal"><a href="#__codelineno-11-13">13</a></span>
+<span class="normal"><a href="#__codelineno-11-14">14</a></span>
+<span class="normal"><a href="#__codelineno-11-15">15</a></span>
+<span class="normal"><a href="#__codelineno-11-16">16</a></span>
+<span class="normal"><a href="#__codelineno-11-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">HelloWorld</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">HTMLElement</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">    </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">        </span><span class="k">super</span><span class="p">();</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="hll"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">attachShadow</span><span class="p">({</span><span class="w"> </span><span class="nx">mode</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;open&quot;</span><span class="w"> </span><span class="p">});</span>
+</span><a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="w">    </span><span class="nx">connectedCallback</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="hll"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">shadowRoot</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cm">/*html*/</span><span class="sb">`</span>
+</span><a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="sb">            &lt;h1&gt;Hola </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">&lt;/h1&gt;</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="hll"><span class="sb">            &lt;slot&gt;&lt;/slot&gt;</span>
+</span><a id="__codelineno-11-13" name="__codelineno-11-13"></a><span class="sb">        `</span><span class="p">;</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15"></a><span class="p">}</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16"></a>
+<a id="__codelineno-11-17" name="__codelineno-11-17"></a><span class="nx">customElements</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="s1">&#39;hello-world&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">HelloWorld</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>Ahora, si añadimos contenido entre las etiquetas <code>&lt;hello-world&gt;</code> y <code>&lt;/hello-world&gt;</code> se mostrará en el componente:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">index.html</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span>
+<span class="normal"><a href="#__codelineno-12-11">11</a></span>
+<span class="normal"><a href="#__codelineno-12-12">12</a></span>
+<span class="normal"><a href="#__codelineno-12-13">13</a></span>
+<span class="normal"><a href="#__codelineno-12-14">14</a></span>
+<span class="normal"><a href="#__codelineno-12-15">15</a></span>
+<span class="normal"><a href="#__codelineno-12-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a>  <span class="p">&lt;</span><span class="nt">hello-world</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;Ana&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="hll">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Buenos días<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="hll">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="hll">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Quisquam, voluptatum. Quisquam,<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="hll">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><a id="__codelineno-12-8" name="__codelineno-12-8"></a>  <span class="p">&lt;/</span><span class="nt">hello-world</span><span class="p">&gt;</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a>  <span class="p">&lt;</span><span class="nt">hello-world</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;Pepe&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="hll">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Esto es otro párrafo<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><a id="__codelineno-12-11" name="__codelineno-12-11"></a>  <span class="p">&lt;/</span><span class="nt">hello-world</span><span class="p">&gt;</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12"></a>  <span class="p">&lt;</span><span class="nt">hello-world</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;Rosa&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13"></a><span class="hll">    <span class="p">&lt;</span><span class="nt">id-card</span><span class="p">&gt;</span>Esto podría ser otro componente<span class="p">&lt;/</span><span class="nt">id-card</span><span class="p">&gt;</span>
+</span><a id="__codelineno-12-14" name="__codelineno-12-14"></a>  <span class="p">&lt;/</span><span class="nt">hello-world</span><span class="p">&gt;</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15"></a>
+<a id="__codelineno-12-16" name="__codelineno-12-16"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Se puede añadir cualquier contenido, incluso otros componentes.</p>
+<h3 id="anadir-mas-de-un-slot">Añadir más de un slot<a class="headerlink" href="#anadir-mas-de-un-slot" title="Permanent link">&para;</a></h3>
+<p>Si necesitamos crear componentes más complejos, podemos usar varios <em>slot</em>, para ello deberemos darle un nombre que los identifique en el componente con la etiqueta <code>name</code>, por ejemplo <code>&lt;slot name="saludo"&gt;&lt;/slot&gt;</code>. Y en el archivo <em>html</em>, añadir el atributo <code>slot</code> con el mismo nombre que hemos definido en el componente, por ejemplo <code>&lt;div slot="saludo"&gt;Buenos días&lt;/div&gt;</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/HelloWorld.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span>
+<span class="normal"><a href="#__codelineno-13-11">11</a></span>
+<span class="normal"><a href="#__codelineno-13-12">12</a></span>
+<span class="normal"><a href="#__codelineno-13-13">13</a></span>
+<span class="normal"><a href="#__codelineno-13-14">14</a></span>
+<span class="normal"><a href="#__codelineno-13-15">15</a></span>
+<span class="normal"><a href="#__codelineno-13-16">16</a></span>
+<span class="normal"><a href="#__codelineno-13-17">17</a></span>
+<span class="normal"><a href="#__codelineno-13-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">HelloWorld</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">HTMLElement</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">    </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">        </span><span class="k">super</span><span class="p">();</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">attachShadow</span><span class="p">({</span><span class="w"> </span><span class="nx">mode</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;open&quot;</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8"></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="w">    </span><span class="nx">connectedCallback</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">shadowRoot</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cm">/*html*/</span><span class="sb">`</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="hll"><span class="sb">            &lt;slot name=&quot;title&quot;&gt;&lt;/slot&gt;</span>
+</span><a id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="sb">            &lt;h1&gt;Hola </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">&lt;/h1&gt;</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="hll"><span class="sb">            &lt;slot name=&quot;content&quot;&gt;&lt;/slot&gt;</span>
+</span><a id="__codelineno-13-14" name="__codelineno-13-14"></a><span class="sb">        `</span><span class="p">;</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16"></a><span class="p">}</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17"></a>
+<a id="__codelineno-13-18" name="__codelineno-13-18"></a><span class="nx">customElements</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="s1">&#39;hello-world&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">HelloWorld</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>Y desde el <em>html</em> podemos usarlos de la siguiente forma, añadiendo el atributo <code>slot</code> a las etiquetas que queremos que se muestren en ese <em>slot</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">index.html</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span>
+<span class="normal"><a href="#__codelineno-14-13">13</a></span>
+<span class="normal"><a href="#__codelineno-14-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a>  <span class="p">&lt;</span><span class="nt">hello-world</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;Ana&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="hll">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">slot</span><span class="o">=</span><span class="s">&quot;title&quot;</span><span class="p">&gt;</span>Buenos días<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="hll">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">slot</span><span class="o">=</span><span class="s">&quot;content&quot;</span><span class="p">&gt;</span>
+</span><a id="__codelineno-14-6" name="__codelineno-14-6"></a>      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Lorem ipsum dolor<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>sit amet consectetur<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>adipisicing elit<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10"></a>      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12"></a>  <span class="p">&lt;/</span><span class="nt">hello-world</span><span class="p">&gt;</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13"></a>
+<a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Si comprobamos el código anterior, podremos observar que el orden de los <code>&lt;slot&gt;</code> se define en el componente, y es independiente del orden en el que se escriban en el <em>html</em>.</p>
+<h3 id="anadir-eventos-y-estilos">Añadir eventos y estilos<a class="headerlink" href="#anadir-eventos-y-estilos" title="Permanent link">&para;</a></h3>
+<p>Para añadir eventos a los componentes, podemos usar el método <code>addEventListener</code>, igual que lo haríamos con cualquier otro elemento del DOM.</p>
+<p>Además, podemos añadir estilos al componente, que se aplicarán al componente y a su contenido, pero no afectarán al resto de la aplicación.</p>
+<p>Es interesante utilizar el selector <strong><code>:host</code></strong> que hace referencia al estilo del componente que envuelve al <em>shadow DOM</em>. Es recomendable usarlo para definir propiedades que definan la maquetación global del componente, con propiedades como: <code>display</code>, <code>width</code>, <code>height</code>, <code>margin</code>, <code>padding</code>, <code>border</code>, <code>background</code>, etc.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/HelloWorld.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-15-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-15-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-15-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-15-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-15-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-15-10">10</a></span>
+<span class="normal"><a href="#__codelineno-15-11">11</a></span>
+<span class="normal"><a href="#__codelineno-15-12">12</a></span>
+<span class="normal"><a href="#__codelineno-15-13">13</a></span>
+<span class="normal"><a href="#__codelineno-15-14">14</a></span>
+<span class="normal"><a href="#__codelineno-15-15">15</a></span>
+<span class="normal"><a href="#__codelineno-15-16">16</a></span>
+<span class="normal"><a href="#__codelineno-15-17">17</a></span>
+<span class="normal"><a href="#__codelineno-15-18">18</a></span>
+<span class="normal"><a href="#__codelineno-15-19">19</a></span>
+<span class="normal"><a href="#__codelineno-15-20">20</a></span>
+<span class="normal"><a href="#__codelineno-15-21">21</a></span>
+<span class="normal"><a href="#__codelineno-15-22">22</a></span>
+<span class="normal"><a href="#__codelineno-15-23">23</a></span>
+<span class="normal"><a href="#__codelineno-15-24">24</a></span>
+<span class="normal"><a href="#__codelineno-15-25">25</a></span>
+<span class="normal"><a href="#__codelineno-15-26">26</a></span>
+<span class="normal"><a href="#__codelineno-15-27">27</a></span>
+<span class="normal"><a href="#__codelineno-15-28">28</a></span>
+<span class="normal"><a href="#__codelineno-15-29">29</a></span>
+<span class="normal"><a href="#__codelineno-15-30">30</a></span>
+<span class="normal"><a href="#__codelineno-15-31">31</a></span>
+<span class="normal"><a href="#__codelineno-15-32">32</a></span>
+<span class="normal"><a href="#__codelineno-15-33">33</a></span>
+<span class="normal"><a href="#__codelineno-15-34">34</a></span>
+<span class="normal"><a href="#__codelineno-15-35">35</a></span>
+<span class="normal"><a href="#__codelineno-15-36">36</a></span>
+<span class="normal"><a href="#__codelineno-15-37">37</a></span>
+<span class="normal"><a href="#__codelineno-15-38">38</a></span>
+<span class="normal"><a href="#__codelineno-15-39">39</a></span>
+<span class="normal"><a href="#__codelineno-15-40">40</a></span>
+<span class="normal"><a href="#__codelineno-15-41">41</a></span>
+<span class="normal"><a href="#__codelineno-15-42">42</a></span>
+<span class="normal"><a href="#__codelineno-15-43">43</a></span>
+<span class="normal"><a href="#__codelineno-15-44">44</a></span>
+<span class="normal"><a href="#__codelineno-15-45">45</a></span>
+<span class="normal"><a href="#__codelineno-15-46">46</a></span>
+<span class="normal"><a href="#__codelineno-15-47">47</a></span>
+<span class="normal"><a href="#__codelineno-15-48">48</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">HelloWorld</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">HTMLElement</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">  </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">      </span><span class="k">super</span><span class="p">();</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">attachShadow</span><span class="p">({</span><span class="w"> </span><span class="nx">mode</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;open&quot;</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8"></a>
+<a id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="w">  </span><span class="nx">connectedCallback</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10"></a><span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">shadowRoot</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cm">/*html*/</span><span class="sb">`</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="hll"><span class="sb">          &lt;style&gt;</span>
+</span><a id="__codelineno-15-12" name="__codelineno-15-12"></a><span class="sb">            :host {</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13"></a><span class="sb">                display: inline-block;</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14"></a><span class="sb">                padding: 1rem;</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15"></a><span class="sb">                margin: 1rem;</span>
+<a id="__codelineno-15-16" name="__codelineno-15-16"></a><span class="sb">                background-color: #eee;</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17"></a><span class="sb">                border: 1px solid #333;</span>
+<a id="__codelineno-15-18" name="__codelineno-15-18"></a><span class="sb">                border-radius: 6px;</span>
+<a id="__codelineno-15-19" name="__codelineno-15-19"></a><span class="sb">                box-shadow: 0 2px 4px #0004;</span>
+<a id="__codelineno-15-20" name="__codelineno-15-20"></a><span class="sb">                overflow: hidden;</span>
+<a id="__codelineno-15-21" name="__codelineno-15-21"></a><span class="sb">                box-sizing: border-box;</span>
+<a id="__codelineno-15-22" name="__codelineno-15-22"></a><span class="sb">            }</span>
+<a id="__codelineno-15-23" name="__codelineno-15-23"></a><span class="sb">            h1 {</span>
+<a id="__codelineno-15-24" name="__codelineno-15-24"></a><span class="sb">                cursor: pointer;</span>
+<a id="__codelineno-15-25" name="__codelineno-15-25"></a><span class="sb">                user-select: none;</span>
+<a id="__codelineno-15-26" name="__codelineno-15-26"></a><span class="sb">                transition: color 0.3s;</span>
+<a id="__codelineno-15-27" name="__codelineno-15-27"></a><span class="sb">            }</span>
+<a id="__codelineno-15-28" name="__codelineno-15-28"></a><span class="sb">            h1:hover {</span>
+<a id="__codelineno-15-29" name="__codelineno-15-29"></a><span class="sb">                font-style: italic;</span>
+<a id="__codelineno-15-30" name="__codelineno-15-30"></a><span class="sb">                text-shadow: 2px 2px #0004;</span>
+<a id="__codelineno-15-31" name="__codelineno-15-31"></a><span class="sb">            }</span>
+<a id="__codelineno-15-32" name="__codelineno-15-32"></a><span class="hll"><span class="sb">          &lt;/style&gt;</span>
+</span><a id="__codelineno-15-33" name="__codelineno-15-33"></a>
+<a id="__codelineno-15-34" name="__codelineno-15-34"></a><span class="sb">          &lt;slot name=&quot;title&quot;&gt;&lt;/slot&gt;</span>
+<a id="__codelineno-15-35" name="__codelineno-15-35"></a><span class="sb">          &lt;h1&gt;Hola </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">&lt;/h1&gt;</span>
+<a id="__codelineno-15-36" name="__codelineno-15-36"></a><span class="sb">          &lt;slot name=&quot;content&quot;&gt;&lt;/slot&gt;</span>
+<a id="__codelineno-15-37" name="__codelineno-15-37"></a><span class="sb">      `</span><span class="p">;</span>
+<a id="__codelineno-15-38" name="__codelineno-15-38"></a>
+<a id="__codelineno-15-39" name="__codelineno-15-39"></a><span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">headerContainer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">shadowRoot</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;h1&#39;</span><span class="p">)</span>
+<a id="__codelineno-15-40" name="__codelineno-15-40"></a><span class="hll"><span class="w">      </span><span class="nx">headerContainer</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">changeColorEvent</span><span class="p">());</span>
+</span><a id="__codelineno-15-41" name="__codelineno-15-41"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-15-42" name="__codelineno-15-42"></a>
+<a id="__codelineno-15-43" name="__codelineno-15-43"></a><span class="hll"><span class="w">  </span><span class="nx">changeColorEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-15-44" name="__codelineno-15-44"></a><span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`#</span><span class="si">${</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mf">16777215</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="mf">16</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<a id="__codelineno-15-45" name="__codelineno-15-45"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-15-46" name="__codelineno-15-46"></a><span class="p">}</span>
+<a id="__codelineno-15-47" name="__codelineno-15-47"></a>
+<a id="__codelineno-15-48" name="__codelineno-15-48"></a><span class="nx">customElements</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="s1">&#39;hello-world&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">HelloWorld</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition question">
+<p class="admonition-title">ACTIVIDAD 2: <code>📂 UD5/act02/</code></p>
+<p>Crea los siguientes componentes personalizados:</p>
+<ul>
+<li>
+<p><code>mi-card</code>: que muestre un título, un contenido y un pie.</p>
+<ul>
+<li>Se le pasará el atributo <code>title</code> para el título.</li>
+<li>Tendrá dos <em>slots</em>: <code>content</code> y <code>footer</code>.</li>
+</ul>
+<p><em>Ejemplo:</em>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">&lt;</span><span class="nt">mi-card</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;Título&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">slot</span><span class="o">=</span><span class="s">&quot;content&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Contenido<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">slot</span><span class="o">=</span><span class="s">&quot;footer&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Pie<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="p">&lt;/</span><span class="nt">mi-card</span><span class="p">&gt;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><code>mi-counter</code>: que muestre que muestre un número y dos botones para incrementar y decrementar el número, tendrá los siguientes atributos:</p>
+<ul>
+<li><code>init</code> que indicará el valor inicial del contador. Por defecto será 0.</li>
+<li><code>min</code> que indicará el valor mínimo del contador. Por defecto será 0.</li>
+<li><code>max</code> que indicará el valor máximo del contador. Por defecto será 10.</li>
+<li><code>step</code> que indicará el incremento/decremento del contador. Por defecto será 1.</li>
+<li>Los atributos pueden omitirse, y en ese caso se usarán los valores por defecto.</li>
+</ul>
+<p><em>Ejemplo:</em>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">&lt;</span><span class="nt">mi-counter</span><span class="p">&gt;&lt;/</span><span class="nt">mi-counter</span><span class="p">&gt;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="p">&lt;</span><span class="nt">mi-counter</span> <span class="na">init</span><span class="o">=</span><span class="s">&quot;-1&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;-10&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">mi-counter</span><span class="p">&gt;</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="p">&lt;</span><span class="nt">mi-counter</span> <span class="na">init</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">step</span><span class="o">=</span><span class="s">&quot;2&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">mi-counter</span><span class="p">&gt;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Crea <strong>dos componentes</strong> tipo <strong><em>loader</em></strong> (animación de carga), escoge los que quieras de <a href="https://cssloaders.github.io/">https://cssloaders.github.io/</a> y crea un componente para cada uno de ellos.</p>
+<p>Cada componente tendrá un atributo <code>color</code> que defina el color que por defecto será <code>#fff</code></p>
+<p>Y otro atributo <code>speed</code> para la velocidad de la animación que por defecto será <code>1s</code>.</p>
+<p>Ponles el nombre que creas más apropiado.</p>
+<p><em>Ejemplo:</em>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="p">&lt;</span><span class="nt">mi-loader1</span><span class="p">&gt;&lt;/</span><span class="nt">mi-loader1</span><span class="p">&gt;</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="p">&lt;</span><span class="nt">mi-loader2</span> <span class="na">color</span><span class="o">=</span><span class="s">&quot;#000&quot;</span> <span class="na">speed</span><span class="o">=</span><span class="s">&quot;0.5s&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">mi-loader2</span><span class="p">&gt;</span>
+</code></pre></div></p>
+</li>
+</ul>
+<p>En un archivo <em>html</em>, añade los componentes creados con diferentes configuraciones, uno de ellos debe incluir <code>&lt;mi-counter&gt;</code> y un <em>loader</em> dentro de <code>&lt;mi-card&gt;</code>.</p>
+</div>
+<h3 id="comunicacion-entre-componentes-eventos-personalizados">Comunicación entre componentes, eventos personalizados<a class="headerlink" href="#comunicacion-entre-componentes-eventos-personalizados" title="Permanent link">&para;</a></h3>
+<p>En los ejemplos anteriores, hemos creado componentes personalizados, pero pero aún no pueden <strong>comunicarse con el exterior</strong>.</p>
+<p>Para ello, podemos usar <strong>eventos personalizados</strong>, (<a href="../../ud3/ud3-1-eventos#eventos-personalizados"><em>unidad 3.1</em></a>). Vamos a hacer un pequeño repaso.</p>
+<h4 id="customevents"><em>CustomEvents</em><a class="headerlink" href="#customevents" title="Permanent link">&para;</a></h4>
+<p>Para crear un evento personalizado, debemos crear una instancia de la clase <code>CustomEvent</code> y pasarle como parámetro el nombre del evento. <em>Por ejemplo:</em></p>
+<div class="highlight"><span class="filename">CustomEvent</span><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">messageEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">CustomEvent</span><span class="p">(</span><span class="s2">&quot;mi-evento-personalizado&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span>
+</code></pre></div>
+<h4 id="nombre-del-evento">Nombre del evento<a class="headerlink" href="#nombre-del-evento" title="Permanent link">&para;</a></h4>
+<p>Es una buena práctica es elegir una buena <strong>convención de nombres</strong> para los eventos, que sea "<strong>autoexplicativo</strong>" en cuanto la acción que vamos a realizar y a la vez sea <strong>coherente</strong> y <strong>fácil</strong> de recordar.</p>
+<p>Aunque no hay una forma universal de hacerlo, algunos <strong>consejos</strong>:</p>
+<ul>
+<li>Los eventos son <em><strong>case sensitive</strong></em>, por lo que es preferible usar todo en minúsculas.</li>
+<li>Evita <em>camelCase</em>, que suele inducir a dudas. Si hemos elegido minúsculas, mejor optar por <em><strong>kebab-case</strong></em>.</li>
+<li>Usar <em><strong>namespaces</strong></em> y elegir un separador: <em>Por ejemplo</em>, <code>user:data-message</code> o <code>user.data-message</code>.</li>
+</ul>
+<h4 id="opciones-del-evento">Opciones del evento<a class="headerlink" href="#opciones-del-evento" title="Permanent link">&para;</a></h4>
+<p>El segundo parámetro, <strong><em><code>options</code></em></strong>, del <em>CustomEvent</em> es un <strong>objeto</strong> donde podremos especificar varios detalles en relación al comportamiento o contenido del evento.</p>
+<p>A continuación, se muestra una lista de las propiedades que pueden contener estas opciones:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Default</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>detail</code></strong></td>
+<td>null</td>
+<td>Objeto que contiene la información que queremos transmitir.</td>
+</tr>
+<tr>
+<td><strong><code>bubbles</code></strong></td>
+<td>false</td>
+<td>Indica si el evento debe burbujear en el DOM "hacia la superficie"</td>
+</tr>
+<tr>
+<td><strong><code>composed</code></strong></td>
+<td>false</td>
+<td>Indica si la propagación puede atravesar <em><strong>Shadow DOM</strong></em></td>
+</tr>
+<tr>
+<td><strong><code>cancelable</code></strong></td>
+<td>false</td>
+<td>Indica si el comportamiento se puede cancelar con <code>.preventDefault()</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="ejemplo-de-uso-de-eventos-personalizados">Ejemplo de uso de eventos personalizados<a class="headerlink" href="#ejemplo-de-uso-de-eventos-personalizados" title="Permanent link">&para;</a></h4>
+<p>Para enviar un evento personalizado, debemos crear una instancia de la clase <code>CustomEvent</code> y pasarle como parámetro el nombre del evento junto con las opciones, y después enviarlo con <code>dispatchEvent</code>.</p>
+<div class="highlight"><span class="filename">Enviar un evento personalizado</span><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">customEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">CustomEvent</span><span class="p">(</span><span class="s2">&quot;user:data-message&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">  </span><span class="nx">detail</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="kr">from</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Paco&quot;</span><span class="p">,</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Hola, ¿qué tal?&quot;</span><span class="p">,</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">  </span><span class="nx">bubbles</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">  </span><span class="nx">composed</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="p">});</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="nx">dispatchEvent</span><span class="p">(</span><span class="nx">customEvent</span><span class="p">);</span>
+</code></pre></div>
+<p>Para escuchar un evento personalizado, registra <code>addEventListener</code> directamente sobre el elemento que lo va a recibir, o sobre el documento, para capturar todos los eventos personalizados.</p>
+<div class="highlight"><span class="filename">Recibir un evento personalizado</span><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;user:data-message&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Nuevo mensaje de &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="kr">from</span><span class="p">);</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Mensaje: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="p">});</span>
+</code></pre></div>
+<h4 id="el-metodo-magico-handleevent">El método "mágico" <code>handleEvent</code><a class="headerlink" href="#el-metodo-magico-handleevent" title="Permanent link">&para;</a></h4>
+<p>Al registrar eventos, ya sean personalizados o no, dentro de una clase, tendremos problemas para acceder al objeto <code>this</code> de la clase, pues el <code>this</code> dentro de la función <code>addEventListener</code> hace referencia al elemento que recibe el evento.</p>
+<p>Para solucionar este problema, podemos usar el método <code>handleEvent</code>, que nos permite registrar todos los eventos en un único lugar, y que se encargará de llamar al método correspondiente.</p>
+<div class="highlight"><span class="filename">handleEvent dentro de una clase</span><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;form&quot;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;submit&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">);</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;user:data-message&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">);</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="p">}</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="nx">handleEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;user:data-message&quot;</span><span class="o">:</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Nuevo mensaje de &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="kr">from</span><span class="p">);</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Mensaje: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="w">      </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;submit&quot;</span><span class="o">:</span>
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="w">      </span><span class="c1">// código para el evento submit</span>
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a><span class="w">      </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>
+<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="w">    </span><span class="k">default</span><span class="o">:</span>
+<a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a><span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="s2">&quot;evento no manejado&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">);</span>
+<a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a><span class="p">};</span>
+</code></pre></div>
+<h3 id="ejemplo-completo-componentes-para-un-chat-con-eventos-personalizados"><em>Ejemplo completo</em>: Componentes para un chat con eventos personalizados<a class="headerlink" href="#ejemplo-completo-componentes-para-un-chat-con-eventos-personalizados" title="Permanent link">&para;</a></h3>
+<p>Vamos a ilustrar todo lo aprendido hasta el momento con un ejemplo, un chat que tendrá dos componentes:</p>
+<ul>
+<li><strong><code>&lt;chat-input&gt;</code></strong>: Componente que permitirá escribir y enviar un mensaje.<ul>
+<li>Atributo <code>user</code>: indicará el nombre del usuario que envía el mensaje.</li>
+<li>Atributo <code>position</code> que indicará la posición del mensaje, que puede ser <code>left</code> o <code>right</code>.</li>
+<li>Enviará un evento personalizado <code>chat:send-message</code> con la información del mensaje.</li>
+</ul>
+</li>
+<li><strong><code>&lt;chat-messages&gt;</code></strong>: Componente encargado de mostrar los mensajes.<ul>
+<li>Tendrá un listener para escuchar el evento <code>chat:send-message</code>, que tomará la información del mensaje y lo guardará en un array.</li>
+<li>Cuando se renderice el componente, recorrerá el array de mensajes y mostrará todos los mensajes.</li>
+</ul>
+</li>
+</ul>
+<p>Empecemos por la creación del componente <code>&lt;chat-input&gt;</code></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ChatInput.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-23-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-23-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-23-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-23-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-23-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-23-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-23-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-23-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-23-10">10</a></span>
+<span class="normal"><a href="#__codelineno-23-11">11</a></span>
+<span class="normal"><a href="#__codelineno-23-12">12</a></span>
+<span class="normal"><a href="#__codelineno-23-13">13</a></span>
+<span class="normal"><a href="#__codelineno-23-14">14</a></span>
+<span class="normal"><a href="#__codelineno-23-15">15</a></span>
+<span class="normal"><a href="#__codelineno-23-16">16</a></span>
+<span class="normal"><a href="#__codelineno-23-17">17</a></span>
+<span class="normal"><a href="#__codelineno-23-18">18</a></span>
+<span class="normal"><a href="#__codelineno-23-19">19</a></span>
+<span class="normal"><a href="#__codelineno-23-20">20</a></span>
+<span class="normal"><a href="#__codelineno-23-21">21</a></span>
+<span class="normal"><a href="#__codelineno-23-22">22</a></span>
+<span class="normal"><a href="#__codelineno-23-23">23</a></span>
+<span class="normal"><a href="#__codelineno-23-24">24</a></span>
+<span class="normal"><a href="#__codelineno-23-25">25</a></span>
+<span class="normal"><a href="#__codelineno-23-26">26</a></span>
+<span class="normal"><a href="#__codelineno-23-27">27</a></span>
+<span class="normal"><a href="#__codelineno-23-28">28</a></span>
+<span class="normal"><a href="#__codelineno-23-29">29</a></span>
+<span class="normal"><a href="#__codelineno-23-30">30</a></span>
+<span class="normal"><a href="#__codelineno-23-31">31</a></span>
+<span class="normal"><a href="#__codelineno-23-32">32</a></span>
+<span class="normal"><a href="#__codelineno-23-33">33</a></span>
+<span class="normal"><a href="#__codelineno-23-34">34</a></span>
+<span class="normal"><a href="#__codelineno-23-35">35</a></span>
+<span class="normal"><a href="#__codelineno-23-36">36</a></span>
+<span class="normal"><a href="#__codelineno-23-37">37</a></span>
+<span class="normal"><a href="#__codelineno-23-38">38</a></span>
+<span class="normal"><a href="#__codelineno-23-39">39</a></span>
+<span class="normal"><a href="#__codelineno-23-40">40</a></span>
+<span class="normal"><a href="#__codelineno-23-41">41</a></span>
+<span class="normal"><a href="#__codelineno-23-42">42</a></span>
+<span class="normal"><a href="#__codelineno-23-43">43</a></span>
+<span class="normal"><a href="#__codelineno-23-44">44</a></span>
+<span class="normal"><a href="#__codelineno-23-45">45</a></span>
+<span class="normal"><a href="#__codelineno-23-46">46</a></span>
+<span class="normal"><a href="#__codelineno-23-47">47</a></span>
+<span class="normal"><a href="#__codelineno-23-48">48</a></span>
+<span class="normal"><a href="#__codelineno-23-49">49</a></span>
+<span class="normal"><a href="#__codelineno-23-50">50</a></span>
+<span class="normal"><a href="#__codelineno-23-51">51</a></span>
+<span class="normal"><a href="#__codelineno-23-52">52</a></span>
+<span class="normal"><a href="#__codelineno-23-53">53</a></span>
+<span class="normal"><a href="#__codelineno-23-54">54</a></span>
+<span class="normal"><a href="#__codelineno-23-55">55</a></span>
+<span class="normal"><a href="#__codelineno-23-56">56</a></span>
+<span class="normal"><a href="#__codelineno-23-57">57</a></span>
+<span class="normal"><a href="#__codelineno-23-58">58</a></span>
+<span class="normal"><a href="#__codelineno-23-59">59</a></span>
+<span class="normal"><a href="#__codelineno-23-60">60</a></span>
+<span class="normal"><a href="#__codelineno-23-61">61</a></span>
+<span class="normal"><a href="#__codelineno-23-62">62</a></span>
+<span class="normal"><a href="#__codelineno-23-63">63</a></span>
+<span class="normal"><a href="#__codelineno-23-64">64</a></span>
+<span class="normal"><a href="#__codelineno-23-65">65</a></span>
+<span class="normal"><a href="#__codelineno-23-66">66</a></span>
+<span class="normal"><a href="#__codelineno-23-67">67</a></span>
+<span class="normal"><a href="#__codelineno-23-68">68</a></span>
+<span class="normal"><a href="#__codelineno-23-69">69</a></span>
+<span class="normal"><a href="#__codelineno-23-70">70</a></span>
+<span class="normal"><a href="#__codelineno-23-71">71</a></span>
+<span class="normal"><a href="#__codelineno-23-72">72</a></span>
+<span class="normal"><a href="#__codelineno-23-73">73</a></span>
+<span class="normal"><a href="#__codelineno-23-74">74</a></span>
+<span class="normal"><a href="#__codelineno-23-75">75</a></span>
+<span class="normal"><a href="#__codelineno-23-76">76</a></span>
+<span class="normal"><a href="#__codelineno-23-77">77</a></span>
+<span class="normal"><a href="#__codelineno-23-78">78</a></span>
+<span class="normal"><a href="#__codelineno-23-79">79</a></span>
+<span class="normal"><a href="#__codelineno-23-80">80</a></span>
+<span class="normal"><a href="#__codelineno-23-81">81</a></span>
+<span class="normal"><a href="#__codelineno-23-82">82</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">ChatInput</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">HTMLElement</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="w">  </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="w">    </span><span class="k">super</span><span class="p">();</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">attachShadow</span><span class="p">({</span><span class="w"> </span><span class="nx">mode</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;open&quot;</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5"></a>
+<a id="__codelineno-23-6" name="__codelineno-23-6"></a><span class="w">    </span><span class="c1">// almacena el nombre de usuario, por defecto es &#39;desconocido&#39;</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;user&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">&quot;desconocido&quot;</span><span class="p">;</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8"></a><span class="w">    </span><span class="c1">// genera un id único para el usuario</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">userId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">crypto</span><span class="p">.</span><span class="nx">randomUUID</span><span class="p">();</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;position&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">&quot;right&quot;</span><span class="p">;</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-23-12" name="__codelineno-23-12"></a>
+<a id="__codelineno-23-13" name="__codelineno-23-13"></a><span class="w">  </span><span class="nx">connectedCallback</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-14" name="__codelineno-23-14"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+<a id="__codelineno-23-15" name="__codelineno-23-15"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-23-16" name="__codelineno-23-16"></a>
+<a id="__codelineno-23-17" name="__codelineno-23-17"></a><span class="w">  </span><span class="nx">render</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-18" name="__codelineno-23-18"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">shadowRoot</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cm">/*html*/</span><span class="w"> </span><span class="sb">`</span>
+<a id="__codelineno-23-19" name="__codelineno-23-19"></a><span class="sb">      &lt;form class=&quot;chat-form&quot;&gt;</span>
+<a id="__codelineno-23-20" name="__codelineno-23-20"></a><span class="sb">        &lt;label for=&quot;chatInput&quot;&gt;</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">user</span><span class="si">}</span><span class="sb">&lt;/label&gt;</span>
+<a id="__codelineno-23-21" name="__codelineno-23-21"></a><span class="sb">        &lt;div class=&quot;chat-input-container&quot;&gt;</span>
+<a id="__codelineno-23-22" name="__codelineno-23-22"></a><span class="sb">          &lt;input id=&quot;chatInput&quot;</span>
+<a id="__codelineno-23-23" name="__codelineno-23-23"></a><span class="sb">                 type=&quot;text&quot;</span>
+<a id="__codelineno-23-24" name="__codelineno-23-24"></a><span class="sb">                 class=&quot;chat-input&quot;</span>
+<a id="__codelineno-23-25" name="__codelineno-23-25"></a><span class="sb">                 placeholder=&quot;mensaje...&quot;</span>
+<a id="__codelineno-23-26" name="__codelineno-23-26"></a><span class="sb">                 maxlength=&quot;100&quot; /&gt;</span>
+<a id="__codelineno-23-27" name="__codelineno-23-27"></a><span class="sb">          &lt;button type=&quot;submit&quot;&gt;Enviar&lt;/button&gt;</span>
+<a id="__codelineno-23-28" name="__codelineno-23-28"></a><span class="sb">        &lt;/div&gt;</span>
+<a id="__codelineno-23-29" name="__codelineno-23-29"></a><span class="sb">      &lt;/form&gt;</span>
+<a id="__codelineno-23-30" name="__codelineno-23-30"></a><span class="sb">    `</span><span class="p">;</span>
+<a id="__codelineno-23-31" name="__codelineno-23-31"></a>
+<a id="__codelineno-23-32" name="__codelineno-23-32"></a><span class="w">    </span><span class="c1">// añade un listener al evento &#39;submit&#39; del formulario</span>
+<a id="__codelineno-23-33" name="__codelineno-23-33"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">shadowRoot</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;.chat-form&quot;</span><span class="p">)</span>
+<a id="__codelineno-23-34" name="__codelineno-23-34"></a><span class="hll"><span class="w">      </span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;submit&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">);</span><span class="w"> </span>
+</span><a id="__codelineno-23-35" name="__codelineno-23-35"></a><span class="w">      </span><span class="c1">// Registra el evento submit en &#39;this&#39;</span>
+<a id="__codelineno-23-36" name="__codelineno-23-36"></a><span class="w">      </span><span class="c1">// esto se hace en las clases para que</span>
+<a id="__codelineno-23-37" name="__codelineno-23-37"></a><span class="w">      </span><span class="c1">// el método &#39;handleEvent&#39;</span>
+<a id="__codelineno-23-38" name="__codelineno-23-38"></a><span class="w">      </span><span class="c1">// pueda acceder a las propiedades de la clase</span>
+<a id="__codelineno-23-39" name="__codelineno-23-39"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-23-40" name="__codelineno-23-40"></a>
+<a id="__codelineno-23-41" name="__codelineno-23-41"></a><span class="hll"><span class="w">  </span><span class="nx">handleEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-23-42" name="__codelineno-23-42"></a><span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-43" name="__codelineno-23-43"></a><span class="hll"><span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;submit&quot;</span><span class="o">:</span>
+</span><a id="__codelineno-23-44" name="__codelineno-23-44"></a><span class="w">        </span><span class="c1">// evita que se envíe el formulario y se recargue la página</span>
+<a id="__codelineno-23-45" name="__codelineno-23-45"></a><span class="w">        </span><span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+<a id="__codelineno-23-46" name="__codelineno-23-46"></a>
+<a id="__codelineno-23-47" name="__codelineno-23-47"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">chatInput</span><span class="p">;</span>
+<a id="__codelineno-23-48" name="__codelineno-23-48"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">input</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+<a id="__codelineno-23-49" name="__codelineno-23-49"></a><span class="w">        </span><span class="nx">input</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<a id="__codelineno-23-50" name="__codelineno-23-50"></a><span class="w">        </span><span class="nx">input</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+<a id="__codelineno-23-51" name="__codelineno-23-51"></a>
+<a id="__codelineno-23-52" name="__codelineno-23-52"></a><span class="w">        </span><span class="c1">// crea un objeto con los datos a enviar</span>
+<a id="__codelineno-23-53" name="__codelineno-23-53"></a><span class="hll"><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">messageData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-23-54" name="__codelineno-23-54"></a><span class="hll"><span class="w">          </span><span class="nx">userId</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">userId</span><span class="p">,</span>
+</span><a id="__codelineno-23-55" name="__codelineno-23-55"></a><span class="hll"><span class="w">          </span><span class="nx">user</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">user</span><span class="p">,</span>
+</span><a id="__codelineno-23-56" name="__codelineno-23-56"></a><span class="hll"><span class="w">          </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="nx">message</span><span class="p">,</span>
+</span><a id="__codelineno-23-57" name="__codelineno-23-57"></a><span class="hll"><span class="w">          </span><span class="nx">timestamp</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span>
+</span><a id="__codelineno-23-58" name="__codelineno-23-58"></a><span class="hll"><span class="w">          </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">,</span>
+</span><a id="__codelineno-23-59" name="__codelineno-23-59"></a><span class="hll"><span class="w">        </span><span class="p">};</span>
+</span><a id="__codelineno-23-60" name="__codelineno-23-60"></a>
+<a id="__codelineno-23-61" name="__codelineno-23-61"></a><span class="w">        </span><span class="c1">// crea un nuevo evento personalizado</span>
+<a id="__codelineno-23-62" name="__codelineno-23-62"></a><span class="hll"><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">customEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">CustomEvent</span><span class="p">(</span><span class="s2">&quot;chat:send-message&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-23-63" name="__codelineno-23-63"></a><span class="hll"><span class="w">          </span><span class="c1">// en &#39;detail&#39; se almacenan los datos a enviar</span>
+</span><a id="__codelineno-23-64" name="__codelineno-23-64"></a><span class="hll"><span class="w">          </span><span class="nx">detail</span><span class="o">:</span><span class="w"> </span><span class="nx">messageData</span><span class="p">,</span>
+</span><a id="__codelineno-23-65" name="__codelineno-23-65"></a><span class="hll"><span class="w">          </span><span class="c1">// Los siguientes atributos son necesarios para que</span>
+</span><a id="__codelineno-23-66" name="__codelineno-23-66"></a><span class="hll"><span class="w">          </span><span class="c1">// el evento pueda atravesar el shadow DOM</span>
+</span><a id="__codelineno-23-67" name="__codelineno-23-67"></a><span class="hll"><span class="w">          </span><span class="nx">bubbles</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><a id="__codelineno-23-68" name="__codelineno-23-68"></a><span class="hll"><span class="w">          </span><span class="nx">composed</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><a id="__codelineno-23-69" name="__codelineno-23-69"></a><span class="hll"><span class="w">        </span><span class="p">});</span>
+</span><a id="__codelineno-23-70" name="__codelineno-23-70"></a>
+<a id="__codelineno-23-71" name="__codelineno-23-71"></a><span class="w">        </span><span class="c1">// envía el evento personalizado</span>
+<a id="__codelineno-23-72" name="__codelineno-23-72"></a><span class="hll"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span><span class="nx">customEvent</span><span class="p">);</span>
+</span><a id="__codelineno-23-73" name="__codelineno-23-73"></a>
+<a id="__codelineno-23-74" name="__codelineno-23-74"></a><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-23-75" name="__codelineno-23-75"></a>
+<a id="__codelineno-23-76" name="__codelineno-23-76"></a><span class="w">      </span><span class="k">default</span><span class="o">:</span>
+<a id="__codelineno-23-77" name="__codelineno-23-77"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="s2">&quot;evento no manejado&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">);</span>
+<a id="__codelineno-23-78" name="__codelineno-23-78"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-23-79" name="__codelineno-23-79"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-23-80" name="__codelineno-23-80"></a><span class="p">}</span>
+<a id="__codelineno-23-81" name="__codelineno-23-81"></a>
+<a id="__codelineno-23-82" name="__codelineno-23-82"></a><span class="nx">customElements</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="s2">&quot;chat-input&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">ChatInput</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>Ahora vamos a definir el componente que recogerá y mostrará los mensajes:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ChatMessages.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-24-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-24-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-24-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-24-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-24-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-24-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-24-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-24-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-24-10">10</a></span>
+<span class="normal"><a href="#__codelineno-24-11">11</a></span>
+<span class="normal"><a href="#__codelineno-24-12">12</a></span>
+<span class="normal"><a href="#__codelineno-24-13">13</a></span>
+<span class="normal"><a href="#__codelineno-24-14">14</a></span>
+<span class="normal"><a href="#__codelineno-24-15">15</a></span>
+<span class="normal"><a href="#__codelineno-24-16">16</a></span>
+<span class="normal"><a href="#__codelineno-24-17">17</a></span>
+<span class="normal"><a href="#__codelineno-24-18">18</a></span>
+<span class="normal"><a href="#__codelineno-24-19">19</a></span>
+<span class="normal"><a href="#__codelineno-24-20">20</a></span>
+<span class="normal"><a href="#__codelineno-24-21">21</a></span>
+<span class="normal"><a href="#__codelineno-24-22">22</a></span>
+<span class="normal"><a href="#__codelineno-24-23">23</a></span>
+<span class="normal"><a href="#__codelineno-24-24">24</a></span>
+<span class="normal"><a href="#__codelineno-24-25">25</a></span>
+<span class="normal"><a href="#__codelineno-24-26">26</a></span>
+<span class="normal"><a href="#__codelineno-24-27">27</a></span>
+<span class="normal"><a href="#__codelineno-24-28">28</a></span>
+<span class="normal"><a href="#__codelineno-24-29">29</a></span>
+<span class="normal"><a href="#__codelineno-24-30">30</a></span>
+<span class="normal"><a href="#__codelineno-24-31">31</a></span>
+<span class="normal"><a href="#__codelineno-24-32">32</a></span>
+<span class="normal"><a href="#__codelineno-24-33">33</a></span>
+<span class="normal"><a href="#__codelineno-24-34">34</a></span>
+<span class="normal"><a href="#__codelineno-24-35">35</a></span>
+<span class="normal"><a href="#__codelineno-24-36">36</a></span>
+<span class="normal"><a href="#__codelineno-24-37">37</a></span>
+<span class="normal"><a href="#__codelineno-24-38">38</a></span>
+<span class="normal"><a href="#__codelineno-24-39">39</a></span>
+<span class="normal"><a href="#__codelineno-24-40">40</a></span>
+<span class="normal"><a href="#__codelineno-24-41">41</a></span>
+<span class="normal"><a href="#__codelineno-24-42">42</a></span>
+<span class="normal"><a href="#__codelineno-24-43">43</a></span>
+<span class="normal"><a href="#__codelineno-24-44">44</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">ChatMessages</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">HTMLElement</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="w">  </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="w">    </span><span class="k">super</span><span class="p">();</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">attachShadow</span><span class="p">({</span><span class="w"> </span><span class="nx">mode</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;open&quot;</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">messages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7"></a>
+<a id="__codelineno-24-8" name="__codelineno-24-8"></a><span class="w">  </span><span class="nx">connectedCallback</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9"></a><span class="w">    </span><span class="c1">// Registra un listener en el documento</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10"></a><span class="w">    </span><span class="c1">// para capturar el evento &#39;chat:send-message&#39;</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11"></a><span class="hll"><span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;chat:send-message&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-24-12" name="__codelineno-24-12"></a><span class="hll"><span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">messages</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">);</span>
+</span><a id="__codelineno-24-13" name="__codelineno-24-13"></a><span class="hll"><span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">messages</span><span class="p">);</span>
+</span><a id="__codelineno-24-14" name="__codelineno-24-14"></a><span class="hll"><span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+</span><a id="__codelineno-24-15" name="__codelineno-24-15"></a><span class="hll"><span class="w">    </span><span class="p">});</span>
+</span><a id="__codelineno-24-16" name="__codelineno-24-16"></a>
+<a id="__codelineno-24-17" name="__codelineno-24-17"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+<a id="__codelineno-24-18" name="__codelineno-24-18"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-24-19" name="__codelineno-24-19"></a>
+<a id="__codelineno-24-20" name="__codelineno-24-20"></a><span class="w">  </span><span class="nx">render</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-21" name="__codelineno-24-21"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">shadowRoot</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cm">/*html*/</span><span class="w"> </span><span class="sb">`</span>
+<a id="__codelineno-24-22" name="__codelineno-24-22"></a><span class="sb">      &lt;div class=&quot;chat-messages-container&quot;&gt;</span>
+<a id="__codelineno-24-23" name="__codelineno-24-23"></a><span class="sb">        </span><span class="si">${</span>
+<a id="__codelineno-24-24" name="__codelineno-24-24"></a><span class="w">          </span><span class="c1">// Utiliza Array.map() para recorrer el array de mensajes</span>
+<a id="__codelineno-24-25" name="__codelineno-24-25"></a><span class="w">          </span><span class="c1">// generando un nuevo Array que contiene strings</span>
+<a id="__codelineno-24-26" name="__codelineno-24-26"></a><span class="w">          </span><span class="c1">// con el html que se mostrará para cada mensaje.</span>
+<a id="__codelineno-24-27" name="__codelineno-24-27"></a><span class="w">          </span><span class="c1">// Al terminar, utiliza Array.join() para unir todos los strings</span>
+<a id="__codelineno-24-28" name="__codelineno-24-28"></a><span class="hll"><span class="w">          </span><span class="k">this</span><span class="p">.</span><span class="nx">messages</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">message</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="sb">`</span>
+</span><a id="__codelineno-24-29" name="__codelineno-24-29"></a><span class="hll"><span class="sb">                &lt;div class=&quot;chat-message </span><span class="si">${</span><span class="nx">message</span><span class="p">.</span><span class="nx">position</span><span class="si">}</span><span class="sb">&quot;&gt;</span>
+</span><a id="__codelineno-24-30" name="__codelineno-24-30"></a><span class="hll"><span class="sb">                    &lt;p class=&quot;chat-message-user&quot;&gt;</span><span class="si">${</span><span class="nx">message</span><span class="p">.</span><span class="nx">user</span><span class="si">}</span><span class="sb">&lt;/p&gt;</span>
+</span><a id="__codelineno-24-31" name="__codelineno-24-31"></a><span class="hll"><span class="sb">                    &lt;p class=&quot;chat-message-text&quot;&gt;</span><span class="si">${</span><span class="nx">message</span><span class="p">.</span><span class="nx">message</span><span class="si">}</span><span class="sb">&lt;/p&gt;</span>
+</span><a id="__codelineno-24-32" name="__codelineno-24-32"></a><span class="hll"><span class="sb">                    &lt;p class=&quot;chat-message-timestamp&quot;&gt;</span>
+</span><a id="__codelineno-24-33" name="__codelineno-24-33"></a><span class="hll"><span class="sb">                        </span><span class="si">${</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="nx">message</span><span class="p">.</span><span class="nx">timestamp</span><span class="p">).</span><span class="nx">toLocaleString</span><span class="p">()</span><span class="si">}</span>
+</span><a id="__codelineno-24-34" name="__codelineno-24-34"></a><span class="hll"><span class="sb">                    &lt;/p&gt;</span>
+</span><a id="__codelineno-24-35" name="__codelineno-24-35"></a><span class="hll"><span class="sb">                &lt;/div&gt;</span>
+</span><a id="__codelineno-24-36" name="__codelineno-24-36"></a><span class="hll"><span class="sb">                `</span>
+</span><a id="__codelineno-24-37" name="__codelineno-24-37"></a><span class="hll"><span class="w">            </span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><a id="__codelineno-24-38" name="__codelineno-24-38"></a><span class="w">        </span><span class="si">}</span>
+<a id="__codelineno-24-39" name="__codelineno-24-39"></a><span class="sb">      &lt;/div&gt;</span>
+<a id="__codelineno-24-40" name="__codelineno-24-40"></a><span class="sb">    `</span><span class="p">;</span>
+<a id="__codelineno-24-41" name="__codelineno-24-41"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-24-42" name="__codelineno-24-42"></a><span class="p">}</span>
+<a id="__codelineno-24-43" name="__codelineno-24-43"></a>
+<a id="__codelineno-24-44" name="__codelineno-24-44"></a><span class="nx">customElements</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="s2">&quot;chat-messages&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">ChatMessages</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>Y por último, en el archivo <em>html</em> podemos usar los componentes de la siguiente forma:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">index.html</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-25-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-25-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-25-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-25-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-25-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-25-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-25-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-25-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-25-10">10</a></span>
+<span class="normal"><a href="#__codelineno-25-11">11</a></span>
+<span class="normal"><a href="#__codelineno-25-12">12</a></span>
+<span class="normal"><a href="#__codelineno-25-13">13</a></span>
+<span class="normal"><a href="#__codelineno-25-14">14</a></span>
+<span class="normal"><a href="#__codelineno-25-15">15</a></span>
+<span class="normal"><a href="#__codelineno-25-16">16</a></span>
+<span class="normal"><a href="#__codelineno-25-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;es&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4"></a>  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5"></a>  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6"></a>  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Component chat<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7"></a><span class="hll">  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;ChatMessages.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><a id="__codelineno-25-8" name="__codelineno-25-8"></a><span class="hll">  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;ChatInput.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><a id="__codelineno-25-9" name="__codelineno-25-9"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-25-11" name="__codelineno-25-11"></a>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;chat-app&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-25-12" name="__codelineno-25-12"></a><span class="hll">    <span class="p">&lt;</span><span class="nt">chat-input</span> <span class="na">user</span><span class="o">=</span><span class="s">&quot;user1&quot;</span> <span class="na">position</span><span class="o">=</span><span class="s">&quot;left&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">chat-input</span><span class="p">&gt;</span>
+</span><a id="__codelineno-25-13" name="__codelineno-25-13"></a><span class="hll">    <span class="p">&lt;</span><span class="nt">chat-input</span> <span class="na">user</span><span class="o">=</span><span class="s">&quot;user2&quot;</span> <span class="na">position</span><span class="o">=</span><span class="s">&quot;right&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">chat-input</span><span class="p">&gt;</span>
+</span><a id="__codelineno-25-14" name="__codelineno-25-14"></a><span class="hll">    <span class="p">&lt;</span><span class="nt">chat-messages</span><span class="p">&gt;&lt;/</span><span class="nt">chat-messages</span><span class="p">&gt;</span>
+</span><a id="__codelineno-25-15" name="__codelineno-25-15"></a>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-25-16" name="__codelineno-25-16"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-25-17" name="__codelineno-25-17"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition question">
+<p class="admonition-title">ACTIVIDAD 3: <code>📂 UD5/act03/</code></p>
+<p>A partir de los componentes creados en la actividad 2; <code>&lt;mi-card&gt;</code>, <code>&lt;mi-counter&gt;</code> y dos <code>&lt;mi-loader&gt;</code>.</p>
+<ul>
+<li>
+<p>Partiendo de <code>&lt;mi-counter&gt;</code> crea un nuevo componente <strong><code>&lt;mi-counter-emitter&gt;</code></strong> que enviará un evento personalizado <code>counter:change</code> cada vez que se modifique el valor del contador.</p>
+<p>Dentro del evento, se enviará el valor actualizado del contador.</p>
+</li>
+<li>
+<p>Partiendo de uno de los <em>loaders</em>, crea un nuevo componente <strong><code>&lt;mi-loader-handled&gt;</code></strong> que escuchará el evento <code>counter:change</code> y dependiendo del valor recibido, ajustará la velocidad de la animación.</p>
+<p>Recuerda que creamos los <em>loaders</em> a partir de <a href="https://cssloaders.github.io/">https://cssloaders.github.io/</a>, y la velocidad de la animación se define con la propiedad <em>css</em> <code>animation</code> o <code>animation-duration</code>, y el valor debe ser un número decimal seguido de la unidad <code>s</code> (segundos) o <code>ms</code> (milisegundos).</p>
+<p><em>Por ejemplo, si el contador es <code>0</code>, la velocidad será <code>0</code>, si el contador es <code>1</code>, la velocidad será <code>0.1s</code>, si el contador es <code>20</code>, la velocidad será <code>2s</code>, etc. (no se pueden usar valores negativos)</em></p>
+</li>
+<li>
+<p>Muestra un componente <strong><code>&lt;mi-card&gt;</code></strong> que contenga un <strong><code>&lt;mi-counter-emitter&gt;</code></strong> y un <strong><code>&lt;mi-loader-handled&gt;</code></strong>.</p>
+</li>
+</ul>
+<p><strong>Haz pruebas</strong>. Ya sea dentro o fuera de <code>&lt;mi-card&gt;</code>:</p>
+<ul>
+<li>¿Qué ocurre si añades dos <code>&lt;mi-loader-handled&gt;</code>?</li>
+<li>¿Y si añades dos <code>&lt;mi-counter-emitter&gt;</code>? </li>
+</ul>
+</div>
+<h2 id="libreria-de-creacion-de-componentes-lit">Librería de creación de componentes <em>Lit</em><a class="headerlink" href="#libreria-de-creacion-de-componentes-lit" title="Permanent link">&para;</a></h2>
+<p><a href="https://lit.dev/"><strong>Lit</strong></a> es una librería de <em>Google</em> que facilita la creación de <em>WebComponents</em> nativos, reduciendo y simplificando la cantidad de código que hay que escribir, sin sacrificar rendimiento y con una sintaxis muy cercana a a la que acabamos de ver.</p>
+<p>No tiene dependencias de terceros y el objetivo es mejorar la experiencia de desarrollador simplificando la creación de <em>WebComponents</em>, lo que permite acelerar la productividad de forma parecida a como lo hacen los frameworks de <em>Javascript</em>, pero enfocándose en el estándar.</p>
+<div class="admonition info">
+<p class="admonition-title">AVISO</p>
+<p><strong>No vamos a profundizar</strong> en el uso esta librería, pero <strong>es necesario conocerla</strong>, ya que se ha convertido en una de las librerías más populares para crear <em>WebComponents</em> y seguramente la encuentres en algún proyecto.</p>
+<p>Con la base que hemos visto en esta unidad, no resultará difícil entender la documentación oficial y empezar a usar <em>Lit</em>.</p>
+<p>Si te resulta interesante y quieres saber más, puedes:</p>
+<ul>
+<li>consultar la web <a href="https://lit.dev/">lit.dev</a></li>
+<li><a href="https://lit.dev/docs/">documentación oficial</a></li>
+<li>realizar el <a href="https://lit.dev/tutorials/intro-to-lit/">tutorial de introducción</a>.</li>
+</ul>
+</div>
+<h3 id="caracteristicas">Características<a class="headerlink" href="#caracteristicas" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Elementos</strong> personalizados</p>
+<p>Los componentes <em>Lit</em> utilizan la clase <strong><code>LitElement</code></strong> que extiende la funcionalidad de la clase <code>HTMLElement</code>, por lo que el navegador los trata como elementos nativos.</p>
+</li>
+<li>
+<p><strong>Estilos</strong></p>
+<p>Aplica sus estilos de forma predeterminada, utilizando <em>Shadow DOM</em>. Esto mantiene los selectores de CSS simples y garantiza que los estilos del componente no afecten (ni se vean afectados por) ningún otro estilo de la página.</p>
+</li>
+<li>
+<p>Propiedades <strong>reactivas</strong></p>
+<p>Las propiedades reactivas permiten modelar la <em>API</em> y el estado interno de su componente. Un componente <em>Lit</em> se vuelve a renderizar de manera eficiente cada vez que cambia una propiedad reactiva (o el atributo <em>HTML</em> correspondiente).</p>
+</li>
+<li>
+<p><strong>Plantillas</strong> declarativas</p>
+<p>Utiliza plantillas basadas en <em>template strings</em>, son simples, expresivas y rápidas, y permiten marcado <em>HTML</em> junto expresiones <em>Javascript</em> nativas. No es necesario aprender ninguna sintaxis ni se requiere compilación.</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/jsanvil/dwec2023" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD1 Refuerzo programación funcional</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <p>
+        <button onclick="cleanResults()">Borrar</button>
+        <button onclick="btnShowAll()">Todos</button>
+        <button onclick="btnSortByName()">Ordena por nombre</button>
+        <button onclick="btnFilterCheaperThan5()">Menos de 5€/kg</button>
+        <button onclick="btnSortByPriceDescending()">Ordena por precio (más caros primero)</button>
+        <button onclick="btnSortByCategory()">Ordena por categoría</button>
+    </p>
+    <p>
+        Filtra categoría: <select id="category" onchange="changeCategory()">
+            <option value="">---</option>
+        </select>
+    </p>
+    <p>Media de precios: <span id="avgPrice"></span></p>
+    <div id="resultado">
+
+    </div>
+
+</body>
+
+</html>

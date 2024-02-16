@@ -1,0 +1,2773 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../ud5/ud5-3-async/">
+      
+      
+        <link rel="next" href="../ud6-2-angular-databinding/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
+    
+    
+      
+        <title>UD6 - 1. Introducción a Angular - Desarrollo Web en Entorno Cliente</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/bs5_layout.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ud6-1-introduccion-a-angular" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Desarrollo Web en Entorno Cliente" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Cliente" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Cliente
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UD6 - 1. Introducción a Angular
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  Inicio
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../proyectos/pr1-clave-secreta/" class="md-tabs__link">
+          
+  
+  Proyectos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud1/ud1-1-tecnologias/" class="md-tabs__link">
+          
+  
+  UD1 Sintaxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud2/ud2-1-DOM/" class="md-tabs__link">
+          
+  
+  UD2 DOM
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud3/ud3-1-eventos/" class="md-tabs__link">
+          
+  
+  UD3 Eventos y formularios
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud4/ud4-1-oop/" class="md-tabs__link">
+          
+  
+  UD4 POO
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ud5/ud5-1-native-libraries/" class="md-tabs__link">
+          
+  
+  UD5 Librerías
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  UD6 Angular
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Cliente" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Cliente" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Desarrollo Web en Entorno Cliente
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Inicio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Desarrollo Web en Entorno Cliente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../entorno/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entorno de trabajo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyectos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Proyectos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr1-clave-secreta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proyecto 1 - Clave Secreta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr2-todo-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proyecto 2 - To Do List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr3-restaurante/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD1 Sintaxis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD1 Sintaxis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-1-tecnologias/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 1. Arquitecturas y tecnologías de programación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-sintaxis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2. Manejo de la sintaxis del lenguaje
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-1-objetos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2.1. Objetos en Javascript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-2-arrays/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2.2. Arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/ud1-2-3-programacion-funcional/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1 - 2.3. Programación funcional
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../refuerzo/ud1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ejercicios de refuerzo UD1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD2 DOM
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            UD2 DOM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud2/ud2-1-DOM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD2 - 1. Objetos predefinidos del lenguaje (DOM)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud2/ud2-2-BOM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD2 - 2. Browser Object Model (BOM)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD3 Eventos y formularios
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            UD3 Eventos y formularios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud3/ud3-1-eventos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD3 - 1. Eventos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud3/ud3-2-formularios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD3 - 2. Validación de formularios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud3/ud3-proyecto-clave-secreta.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD4 POO
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            UD4 POO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud4/ud4-1-oop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD4 - 1. Programación orientada a Objetos en Javascript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud4/ud4-2-estructura/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD4 - 2. Estructuración de proyectos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud4/ud4-3-mvc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD3 - 3. El patrón Modelo-Vista-Controlador (MVC)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD5 Librerías
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            UD5 Librerías
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud5/ud5-1-native-libraries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD5 - 1. Objetos predefinidos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud5/ud5-2-components/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD5 - 2. Componentes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud5/ud5-3-async/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD5 - 3. Comunicación asíncrona
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    UD6 Angular
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            UD6 Angular
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    UD6 - 1. Introducción a Angular
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 1. Introducción a Angular
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparar-el-entorno-de-desarrollo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparar el entorno de desarrollo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Preparar el entorno de desarrollo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalar-nodejs-lts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar Node.js (lts)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalar-angular-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar Angular CLI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalar-angular-devtools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar Angular DevTools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalar-angular-essentials-para-visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar Angular Essentials para Visual Studio Code
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creando-un-nuevo-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creando un nuevo proyecto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-de-un-proyecto-angular" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura de un proyecto Angular
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Componentes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Componentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modificar-el-componente-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificar el componente principal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bootstrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bootstrap
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-un-nuevo-componente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear un nuevo componente
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Crear un nuevo componente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modificar-el-componente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificar el componente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insertar-el-componente-en-la-plantilla-del-componente-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Insertar el componente en la plantilla del componente principal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directivas-for-y-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directivas @for y @if
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividad-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividad 1
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud6-2-angular-databinding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 2. Data binding. Pipes.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud6-3-angular-services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 3. Componentes anidados. Servicios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud6-4-angular-rest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 4. HttpClient
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud6-5-angular-routing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 5. Routing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud6-6-angular-template-forms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 6. Formularios de plantilla
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud6-7-angular-i18n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD6 - 7. Internacionalización
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_8" id="__nav_8_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_8">
+            <span class="md-nav__icon md-icon"></span>
+            Actividades
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividades/ud6-act1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividades/ud6-act2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividades/ud6-act3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividades/ud6-act4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividades/ud6-act5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 - Actividad 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_9" id="__nav_8_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Proyecto
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_9">
+            <span class="md-nav__icon md-icon"></span>
+            Proyecto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proyectos/pr3-restaurante/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proyecto 2º EV - Gestión carta de un restaurante
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_10" id="__nav_8_10_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Repositorios de ejemplo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_10">
+            <span class="md-nav__icon md-icon"></span>
+            Repositorios de ejemplo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/jsanvil/angular-products" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    angular-products
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/jsanvil/angular-products-material" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    angular-products-material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparar-el-entorno-de-desarrollo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparar el entorno de desarrollo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Preparar el entorno de desarrollo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalar-nodejs-lts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar Node.js (lts)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalar-angular-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar Angular CLI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalar-angular-devtools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar Angular DevTools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalar-angular-essentials-para-visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar Angular Essentials para Visual Studio Code
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creando-un-nuevo-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creando un nuevo proyecto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-de-un-proyecto-angular" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura de un proyecto Angular
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Componentes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Componentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modificar-el-componente-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificar el componente principal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bootstrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bootstrap
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-un-nuevo-componente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear un nuevo componente
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Crear un nuevo componente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modificar-el-componente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificar el componente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insertar-el-componente-en-la-plantilla-del-componente-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Insertar el componente en la plantilla del componente principal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directivas-for-y-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directivas @for y @if
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividad-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividad 1
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="ud6-1-introduccion-a-angular">UD6 - 1. Introducción a Angular<a class="headerlink" href="#ud6-1-introduccion-a-angular" title="Permanent link">&para;</a></h1>
+<h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
+<p>Angular es un <strong>framework para el desarrollo de aplicaciones web</strong> en el lado del cliente (<em>frontend</em>). Es decir, es un conjunto de herramientas que nos facilitan el desarrollo de aplicaciones web, y que se ejecutan en el navegador del cliente.</p>
+<p>Está <strong>desarrollado en <em>TypeScript</em></strong>. Este lenguaje es básicamente <em>JavaScript</em> con características adicionales, las más destacables son el <strong>tipado</strong> de variables y funciones. Esto <strong>mejora la depuración</strong> de aplicaciones en tiempo de desarrollo, el <strong>autocompletado</strong> por parte del editor (<em>intellisense</em>), etc. Al pasar por un proceso de transpilado a <em>JavaScript</em>, el resultado será <strong>código compatible</strong> con todos los navegadores actuales.</p>
+<p>Algunas de las <strong>principales características</strong> de <em>Angular</em> son:</p>
+<ul>
+<li>Introduce <strong>expresividad en el código HTML</strong> a través de la interpolación de variables, <em>data-binding</em>, directivas, etc.</li>
+<li>Tiene un <strong>diseño modular</strong>. Sólo se importan las características que necesitamos en la aplicación (mejora de tamaño y rendimiento). Además permite separar nuestra aplicación en módulos de forma que el navegador vaya cargando en cada momento lo que necesita (lazy loading) → Mejora de tiempos de carga.</li>
+<li>Es fácil crear <strong>componentes reutilizables</strong> para la aplicación actual u otras.</li>
+<li>La <strong>integración con un servidor</strong> de <em>backend</em> basado en servicios web es muy sencilla.</li>
+<li>Permite ejecutar <strong><em>Angular</em> en el lado del servidor</strong> para generar contenido estático que puedan indexar los motores de búsqueda (incapaces de ejecutar ellos <em>Angular</em> en el cliente). Esta característica se llama <em>Angular Universal</em> o <strong><em>Server Side Rendering</em></strong>.</li>
+<li>Potentes <strong>herramientas de desarrollo y depuración</strong>: <em>TypeScript</em>, <em>Angular DevTools</em> (plugin de Chrome), frameworks de pruebas como <em>Karma</em> o <em>Jasmine</em>, etc.</li>
+<li><strong>Integración con frameworks de diseño</strong> como <em>Bootstrap</em>, <em>Angular Material</em>, <em>Ionic</em>, etc.</li>
+<li>Crea <strong>aplicaciones de una página</strong> (<strong>SPA</strong> - <em>Single Page Applications</em>), donde la página principal se carga entera sólo una vez → Mejor rendimiento.</li>
+<li>Debido a su naturaleza de <strong>framework completo y modular</strong>, es la solución más efectiva para desarrollar <strong>grandes aplicaciones</strong>.</li>
+</ul>
+<p>En resumen, vamos a aprender un framework completo y muy popular, desarrollado y usado por <em>Google</em>, y con herramientas orientadas a facilitar el desarrollo de grandes aplicaciones.</p>
+<h2 id="preparar-el-entorno-de-desarrollo">Preparar el entorno de desarrollo<a class="headerlink" href="#preparar-el-entorno-de-desarrollo" title="Permanent link">&para;</a></h2>
+<p>Para desarrollar aplicaciones con <em>Angular</em> necesitaremos instalar:</p>
+<ul>
+<li><a href="#instalar-nodejs-lts"><strong><em>Node.js (lts)</em></strong></a>: Es un entorno de ejecución de <em>JavaScript</em> en el lado del servidor. Nos permite ejecutar <em>JavaScript</em> fuera del navegador, y nos proporciona un gestor de paquetes (<em>npm</em>) para instalar librerías de terceros.</li>
+<li><a href="#instalar-angular-cli"><strong><em>Angular CLI</em></strong></a>: Es una herramienta de línea de comandos que nos permite crear y gestionar proyectos de <em>Angular</em>. Se instala a través de <em>npm</em>.</li>
+<li><a href="https://code.visualstudio.com/"><strong><em>Visual Studio Code</em></strong></a>: Es un editor de código gratuito y multiplataforma, desarrollado por <em>Microsoft</em>. Es uno de los editores más populares para desarrollar aplicaciones con <em>Angular</em>.</li>
+<li><a href="https://git-scm.com/downloads"><strong><em>Git</em></strong></a>: Es un sistema de control de versiones distribuido, que nos permite trabajar en equipo de forma eficiente.</li>
+<li><a href="#instalar-angular-devtools"><strong><em>Angular DevTools</em></strong></a>: Es un plugin para el navegador <em>Chrome</em> que nos permite depurar aplicaciones <em>Angular</em>.</li>
+<li>Extensión <strong><a href="#instalar-angular-essentials-para-visual-studio-code"><em>Angular Essentials (Version 16)</em></a></strong> para <strong><em>Visual Studio Code</em></strong>: Es una extensión para <em>Visual Studio Code</em> que nos proporciona herramientas para desarrollar aplicaciones <em>Angular</em>.</li>
+</ul>
+<h3 id="instalar-nodejs-lts">Instalar <em>Node.js (lts)</em><a class="headerlink" href="#instalar-nodejs-lts" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Instalación de <em>Node.js</em> con permisos de administrador</p>
+<p>Para instalar <em>Node.js</em>, en <em>Windows</em> podemos descargar el instalador desde la <a href="https://nodejs.org/en">página oficial</a>. En <em>Linux</em> podemos instalarlo a través del gestor de paquetes de la distribución.</p>
+</div>
+<p><strong>En los ordenadores del aula</strong> tendremos que instalar <em>Node.js</em> en nuestro perfil de usuario, ya que no tenemos permisos de administrador. Para ello, utilizaremos la herramienta <a href="https://github.com/nvm-sh/nvm#installing-and-updating"><strong><em>nvm</em></strong> (<em>Node Version Manager</em>)</a> que nos permite instalar y gestionar varias versiones de <em>Node.js</em> en nuestro perfil de usuario:</p>
+<ul>
+<li>Abrimos una terminal.</li>
+<li>
+<p>Ejecutamos el siguiente comando para instalar <em><code>nvm</code></em>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-o-<span class="w"> </span>https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</code></pre></div>
+</li>
+<li>
+<p>Cerramos la terminal y la volvemos a abrir. Esto permite que recargue las variables de entorno y reconozca el comando <em><code>nvm</code></em>.</p>
+</li>
+<li>
+<p>Ejecutamos el siguiente comando para instalar la versión <em>lts</em> de <em>Node.js</em>:</p>
+<div class="highlight"><span class="filename">Comando:</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nvm<span class="w"> </span>install<span class="w"> </span>--lts
+</code></pre></div>
+<div class="highlight"><span class="filename">Salida:</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Downloading<span class="w"> </span>and<span class="w"> </span>installing<span class="w"> </span>node<span class="w"> </span>v20.9.0...
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Local<span class="w"> </span>cache<span class="w"> </span>found:<span class="w"> </span><span class="si">${</span><span class="nv">NVM_DIR</span><span class="si">}</span>/.cache/bin/node-v20.9.0-linux-x64/node-v20.9.0-linux-x64.tar.xz
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Checksums<span class="w"> </span>match!<span class="w"> </span>Using<span class="w"> </span>existing<span class="w"> </span>downloaded<span class="w"> </span>archive<span class="w"> </span><span class="si">${</span><span class="nv">NVM_DIR</span><span class="si">}</span>/.cache/bin/node-v20.9.0-linux-x64/node-v20.9.0-linux-x64.tar.xz
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Now<span class="w"> </span>using<span class="w"> </span>node<span class="w"> </span>v20.9.0<span class="w"> </span><span class="o">(</span>npm<span class="w"> </span>v10.1.0<span class="o">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>Ejecutamos el siguiente comando para comprobar que se ha instalado correctamente:</p>
+<div class="highlight"><span class="filename">Comando:</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>node<span class="w"> </span>-v<span class="p">;</span><span class="w"> </span>npm<span class="w"> </span>-v
+</code></pre></div>
+<div class="highlight"><span class="filename">Salida:</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>v20.9.0
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>10.1.0
+</code></pre></div>
+</li>
+</ul>
+<h3 id="instalar-angular-cli">Instalar <em>Angular CLI</em><a class="headerlink" href="#instalar-angular-cli" title="Permanent link">&para;</a></h3>
+<p><em>Angular CLI</em> es una herramienta de línea de comandos que nos permite crear y gestionar proyectos <em>Angular</em>. Para instalarla, ejecutamos el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>@angular/cli
+</code></pre></div>
+<p>Para comprobar que se ha instalado correctamente, ejecutamos el siguiente comando:</p>
+<div class="highlight"><span class="filename">Comando:</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ng<span class="w"> </span>version
+</code></pre></div>
+<div class="highlight"><span class="filename">Salida:</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>     _                      _                 ____ _     ___
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>   / . \ | &#39;_ \ / _` | | | | |/ _` | &#39;__|   | |   | |    | |
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a> /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>                |___/
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>Angular CLI: 17.0.1
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>Node: 20.9.0
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>Package Manager: npm 10.1.0
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>OS: linux x64
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>Angular: 
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>... 
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>Package                      Version
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>------------------------------------------------------
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>@angular-devkit/architect    0.1700.1 (cli-only)
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>@angular-devkit/core         17.0.1 (cli-only)
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>@angular-devkit/schematics   17.0.1 (cli-only)
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>@schematics/angular          17.0.1 (cli-only)
+</code></pre></div>
+<h3 id="instalar-angular-devtools">Instalar <em>Angular DevTools</em><a class="headerlink" href="#instalar-angular-devtools" title="Permanent link">&para;</a></h3>
+<p><em>Angular DevTools</em> es un plugin para el navegador <em>Chrome</em> que nos permite depurar aplicaciones <em>Angular</em>. Para instalarlo, abrimos <em>Chrome</em> y accedemos a la <a href="https://chromewebstore.google.com/detail/angular-devtools/ienfalfjdbdpebioblfackkekamfmbnh">página de la extensión</a>. Pulsamos el botón <strong>Añadir a Chrome</strong> y confirmamos la instalación.</p>
+<h3 id="instalar-angular-essentials-para-visual-studio-code">Instalar <em>Angular Essentials</em> para <em>Visual Studio Code</em><a class="headerlink" href="#instalar-angular-essentials-para-visual-studio-code" title="Permanent link">&para;</a></h3>
+<p>Para instalar la extensión <em>Angular Essentials (Version 16)</em> para <em>Visual Studio Code</em>, abrimos <em>Visual Studio Code</em> y pulsamos el botón <strong>Extensiones</strong> en la barra lateral izquierda. En el cuadro de búsqueda escribimos el nombre de la extensión (<em>"Angular Essentials"</em>) y pulsamos el botón <strong>Instalar</strong>.</p>
+<p><img alt="Instalar extensión Angular Essentials" src="../img/angular_essentials.png" /></p>
+<h2 id="creando-un-nuevo-proyecto">Creando un nuevo proyecto<a class="headerlink" href="#creando-un-nuevo-proyecto" title="Permanent link">&para;</a></h2>
+<p><em>Angular CLI</em> es una herramienta de línea de comandos que nos permite crear y gestionar proyectos <em>Angular</em>. Para crear un proyecto, ejecutamos el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ng<span class="w"> </span>new<span class="w"> </span>angular-products
+</code></pre></div>
+<p>Mostrará un asistente para configurar el proyecto:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>? Which stylesheet format would you like to use? (Use arrow keys)
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>❯ CSS 
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>  SCSS   [ https://sass-lang.com/documentation/syntax#scss                ] 
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  Sass   [ https://sass-lang.com/documentation/syntax#the-indented-syntax ] 
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>  Less   [ http://lesscss.org                                             ] 
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>? Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? (y/N) 
+</code></pre></div>
+<p>Una vez creado, debemos acceder a la carpeta del proyecto:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">cd</span><span class="w"> </span>angular-products
+</code></pre></div>
+<p>Una vez creado el proyecto, podemos ejecutarlo con el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>ng<span class="w"> </span>serve
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Initial Chunk Files | Names         |  Raw Size
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>polyfills.js        | polyfills     |  82.71 kB | 
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>main.js             | main          |  23.23 kB | 
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>styles.css          | styles        |  95 bytes | 
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>                    | Initial Total | 106.04 kB
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>Application bundle generation complete. [1.404 seconds]
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>Watch mode enabled. Watching for file changes...
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>  ➜  Local:   http://localhost:4200/
+</code></pre></div>
+<p>Se pueden instalar librerías con el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>ng<span class="w"> </span>add<span class="w"> </span>@angular/material
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>npm<span class="w"> </span>i<span class="w"> </span>bootstrap<span class="w"> </span>bootstrap-icons
+</code></pre></div>
+<p>En este caso estamos instalando la librería <em>Angular Material</em> y <em>Bootstrap</em>.</p>
+<h2 id="estructura-de-un-proyecto-angular">Estructura de un proyecto <em>Angular</em><a class="headerlink" href="#estructura-de-un-proyecto-angular" title="Permanent link">&para;</a></h2>
+<p>Un proyecto <em>Angular</em> tiene una estructura similar a la siguiente:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>angular-products
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>├── node_modules
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>├── src
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>│   ├── app
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>│   │   ├── app.component.css
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>│   │   ├── app.component.html
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>│   │   ├── app.component.spec.ts
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>│   │   ├── app.component.ts
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>│   │   ├── app.module.ts
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>│   │   └── app.routers.ts
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>│   ├── assets
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>│   │   └── ...
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>│   ├── favicon.ico
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>│   ├── index.html
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>│   ├── main.ts
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>│   └── styles.css
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>├── .editorconfig
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>├── .gitignore
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>├── angular.json
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>├── package.json
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>├── README.md
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>├── tsconfig.app.json
+<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>├── tsconfig.json
+<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>├── tsconfig.spec.json
+<a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>└── tslint.json
+</code></pre></div>
+<ul>
+<li><strong><code>node_modules</code></strong>: Carpeta donde se instalan las librerías de terceros.</li>
+<li><strong><code>src</code></strong>: Carpeta que contiene la aplicación</li>
+<li><strong><code>src/app</code></strong>: Carpeta que contiene los componentes, servicios, etc. de la aplicación.</li>
+<li><strong><code>src/assets</code></strong>: Carpeta que contiene los recursos estáticos de la aplicación (imágenes, etc.).</li>
+<li><strong><code>src/index.html</code></strong>: Página HTML principal de la aplicación.</li>
+<li><strong><code>src/main.ts</code></strong>: Punto de entrada de la aplicación.</li>
+<li><strong><code>src/styles.css</code></strong>: Hoja de estilos global de la aplicación.</li>
+<li><strong><code>angular.json</code></strong>: Archivo de configuración de <em>Angular</em>.</li>
+<li><strong><code>package.json</code></strong>: Archivo de configuración de <em>npm</em>.</li>
+<li><strong><code>tsconfig.json</code></strong>: Archivo de configuración de <em>TypeScript</em>.</li>
+<li><strong><code>tslint.json</code></strong>: Archivo de configuración de <em>TSLint</em>.</li>
+</ul>
+<h2 id="componentes">Componentes<a class="headerlink" href="#componentes" title="Permanent link">&para;</a></h2>
+<p>Un componente es una pieza de código que encapsula la lógica y la vista de una parte de la aplicación. Un componente puede contener otros componentes, formando una estructura de árbol.</p>
+<p>Un componente tiene una <strong>plantilla HTML</strong> que define la vista del componente. Esta plantilla puede contener código HTML, directivas, interpolación de variables, etc.</p>
+<p>Un componente tiene una <strong>clase <em>TypeScript</em></strong> que define la lógica del componente. Esta clase puede contener propiedades, métodos, etc.</p>
+<p>Un componente tiene un <strong>estilo CSS</strong> que define el aspecto del componente. Este estilo puede ser global para toda la aplicación, o local para el componente.</p>
+<h3 id="modificar-el-componente-principal">Modificar el componente principal<a class="headerlink" href="#modificar-el-componente-principal" title="Permanent link">&para;</a></h3>
+<p>El componente principal de la aplicación es el componente <code>AppComponent</code>. Este componente se crea automáticamente al crear el proyecto. Podemos modificar su plantilla HTML para que muestre un mensaje de bienvenida:</p>
+<div class="highlight"><span class="filename">src/app/app.component.html</span><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hola desde {{title}}!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Se utiliza la interpolación de variables para mostrar el valor de la propiedad <code>title</code> de la clase <code>AppComponent</code>. Esta propiedad se inicializa en el constructor de la clase:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/app/app.component.ts</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-16-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-16-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-16-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-16-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-16-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-16-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-16-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-16-10">10</a></span>
+<span class="normal"><a href="#__codelineno-16-11">11</a></span>
+<span class="normal"><a href="#__codelineno-16-12">12</a></span>
+<span class="normal"><a href="#__codelineno-16-13">13</a></span>
+<span class="normal"><a href="#__codelineno-16-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CommonModule</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@angular/common&#39;</span><span class="p">;</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">RouterOutlet</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="kd">@Component</span><span class="p">({</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="w">  </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="w">  </span><span class="nx">standalone</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="w">  </span><span class="nx">imports</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">CommonModule</span><span class="p">,</span><span class="w"> </span><span class="nx">RouterOutlet</span><span class="p">],</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="w">  </span><span class="nx">templateUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="w">  </span><span class="nx">styleUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;./app.component.css&#39;</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11"></a><span class="p">})</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12"></a><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">AppComponent</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13"></a><span class="hll"><span class="w">  </span><span class="nx">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Mi primera aplicación en Angular&#39;</span><span class="p">;</span>
+</span><a id="__codelineno-16-14" name="__codelineno-16-14"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Una alternativa al uso de plantillas es el uso de <em><strong>template strings</strong></em>, por ejemplo:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/app/app.component.ts</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-17-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-17-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-17-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-17-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-17-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-17-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-17-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-17-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-17-10">10</a></span>
+<span class="normal"><a href="#__codelineno-17-11">11</a></span>
+<span class="normal"><a href="#__codelineno-17-12">12</a></span>
+<span class="normal"><a href="#__codelineno-17-13">13</a></span>
+<span class="normal"><a href="#__codelineno-17-14">14</a></span>
+<span class="normal"><a href="#__codelineno-17-15">15</a></span>
+<span class="normal"><a href="#__codelineno-17-16">16</a></span>
+<span class="normal"><a href="#__codelineno-17-17">17</a></span>
+<span class="normal"><a href="#__codelineno-17-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CommonModule</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@angular/common&#39;</span><span class="p">;</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">RouterOutlet</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="kd">@Component</span><span class="p">({</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="w">  </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="w">  </span><span class="nx">standalone</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8"></a><span class="w">  </span><span class="nx">imports</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">CommonModule</span><span class="p">,</span><span class="w"> </span><span class="nx">RouterOutlet</span><span class="p">],</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9"></a><span class="hll"><span class="w">  </span><span class="nx">template</span><span class="o">:</span><span class="w"> </span><span class="sb">`</span>
+</span><a id="__codelineno-17-10" name="__codelineno-17-10"></a><span class="hll"><span class="sb">    &lt;h1&gt;</span>
+</span><a id="__codelineno-17-11" name="__codelineno-17-11"></a><span class="hll"><span class="sb">      {{title}}</span>
+</span><a id="__codelineno-17-12" name="__codelineno-17-12"></a><span class="hll"><span class="sb">    &lt;/h1&gt;</span>
+</span><a id="__codelineno-17-13" name="__codelineno-17-13"></a><span class="hll"><span class="sb">  `</span><span class="p">,</span>
+</span><a id="__codelineno-17-14" name="__codelineno-17-14"></a><span class="w">  </span><span class="nx">styleUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;./app.component.css&#39;</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15"></a><span class="p">})</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16"></a><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">AppComponent</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17"></a><span class="w">  </span><span class="nx">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Mi primera aplicación en Angular&#39;</span><span class="p">;</span>
+<a id="__codelineno-17-18" name="__codelineno-17-18"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Aunque durante el curso utilizaremos plantillas HTML, es importante conocer esta alternativa.</p>
+<h3 id="bootstrap">Bootstrap<a class="headerlink" href="#bootstrap" title="Permanent link">&para;</a></h3>
+<p>Vamos a utilizar el framework <em>Bootstrap</em> para maquetar la aplicación. Para ello, debemos instalarlo con <em>npm</em>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>npm<span class="w"> </span>install<span class="w"> </span>bootstrap
+</code></pre></div>
+<p>Ahora, en el archivo <code>src/styles.css</code> importamos el archivo CSS de <em>Bootstrap</em>:</p>
+<div class="highlight"><span class="filename">src/styles.css</span><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c">/* You can add global styles to this file, and also import other style files */</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="hll"><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="s2">&quot;../node_modules/bootstrap/dist/css/bootstrap.css&quot;</span><span class="p">;</span>
+</span><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="nt">html</span><span class="o">,</span><span class="w"> </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">Roboto</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Helvetica Neue&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<h2 id="crear-un-nuevo-componente">Crear un nuevo componente<a class="headerlink" href="#crear-un-nuevo-componente" title="Permanent link">&para;</a></h2>
+<p>Vamos a crear un nuevo componente llamado <code>products-list</code>. Para ello, ejecutamos el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>ng<span class="w"> </span>generate<span class="w"> </span>component<span class="w"> </span>products-list
+</code></pre></div>
+<p>Creará una carpeta con el nombre del componente <code>src/app/products-list</code>. Esta carpeta contendrá los archivos del componente.</p>
+<h3 id="modificar-el-componente">Modificar el componente<a class="headerlink" href="#modificar-el-componente" title="Permanent link">&para;</a></h3>
+<p>El componente <code>ProductsListComponent</code> se crea automáticamente al crear el componente. Podemos modificar su plantilla HTML para que muestre una lista de productos:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/app/products-list/products-list.component.html</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-21-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-21-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-21-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-21-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-21-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-21-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-21-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-21-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-21-10">10</a></span>
+<span class="normal"><a href="#__codelineno-21-11">11</a></span>
+<span class="normal"><a href="#__codelineno-21-12">12</a></span>
+<span class="normal"><a href="#__codelineno-21-13">13</a></span>
+<span class="normal"><a href="#__codelineno-21-14">14</a></span>
+<span class="normal"><a href="#__codelineno-21-15">15</a></span>
+<span class="normal"><a href="#__codelineno-21-16">16</a></span>
+<span class="normal"><a href="#__codelineno-21-17">17</a></span>
+<span class="normal"><a href="#__codelineno-21-18">18</a></span>
+<span class="normal"><a href="#__codelineno-21-19">19</a></span>
+<span class="normal"><a href="#__codelineno-21-20">20</a></span>
+<span class="normal"><a href="#__codelineno-21-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-header bg-primary text-white&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3"></a>    {{title}}
+<a id="__codelineno-21-4" name="__codelineno-21-4"></a>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5"></a>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-block&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table-responsive&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7"></a>      <span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-striped&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8"></a>        <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9"></a>          <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-21-10" name="__codelineno-21-10"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>{{headers.description}}<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>{{headers.price}}<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-21-12" name="__codelineno-21-12"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>{{headers.available}}<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-21-13" name="__codelineno-21-13"></a>          <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-21-14" name="__codelineno-21-14"></a>        <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+<a id="__codelineno-21-15" name="__codelineno-21-15"></a>        <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<a id="__codelineno-21-16" name="__codelineno-21-16"></a>          <span class="cm">&lt;!-- Aquí van los productos. Por ahora se queda vacío --&gt;</span>
+<a id="__codelineno-21-17" name="__codelineno-21-17"></a>        <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<a id="__codelineno-21-18" name="__codelineno-21-18"></a>      <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<a id="__codelineno-21-19" name="__codelineno-21-19"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-21-20" name="__codelineno-21-20"></a>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-21-21" name="__codelineno-21-21"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Ahora, en la clase <code>ProductsListComponent</code> inicializamos las propiedades <code>title</code> y <code>headers</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/app/products-list/products-list.component.ts</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-22-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-22-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-22-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-22-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-22-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-22-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-22-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-22-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-22-10">10</a></span>
+<span class="normal"><a href="#__codelineno-22-11">11</a></span>
+<span class="normal"><a href="#__codelineno-22-12">12</a></span>
+<span class="normal"><a href="#__codelineno-22-13">13</a></span>
+<span class="normal"><a href="#__codelineno-22-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="kd">@Component</span><span class="p">({</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="hll"><span class="w">  </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;app-products-list&#39;</span><span class="p">,</span>
+</span><a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="w">  </span><span class="nx">standalone</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="w">  </span><span class="nx">imports</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7"></a><span class="w">  </span><span class="nx">templateUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;./products-list.component.html&#39;</span><span class="p">,</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8"></a><span class="w">  </span><span class="nx">styleUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;./products-list.component.css&#39;</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9"></a><span class="p">})</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10"></a><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">ProductsListComponent</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11"></a><span class="hll"><span class="w">  </span><span class="nx">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Mi lista de productos&#39;</span><span class="p">;</span>
+</span><a id="__codelineno-22-12" name="__codelineno-22-12"></a><span class="hll"><span class="w">  </span><span class="nx">headers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Producto&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Precio&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">available</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Disponible&#39;</span><span class="w"> </span><span class="p">};</span>
+</span><a id="__codelineno-22-13" name="__codelineno-22-13"></a><span class="hll"><span class="w">  </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+</span><a id="__codelineno-22-14" name="__codelineno-22-14"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">prefijos de componentes</p>
+<p>Debemos fijarnos en el nombre que se le ha dado al selector del componente (<code>app-products-list</code>). Este nombre lo utilizaremos para insertar el componente en la plantilla del componente principal. Le ha añadido el prefijo <code>app-</code>, esto se puede modificar en el archivo <code>angular.json</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">angular.json</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-23-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-23-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-23-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-23-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-23-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-23-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-23-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-23-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-23-10">10</a></span>
+<span class="normal"><a href="#__codelineno-23-11">11</a></span>
+<span class="normal"><a href="#__codelineno-23-12">12</a></span>
+<span class="normal"><a href="#__codelineno-23-13">13</a></span>
+<span class="normal"><a href="#__codelineno-23-14">14</a></span>
+<span class="normal"><a href="#__codelineno-23-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="p">{</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./node_modules/@angular/cli/lib/config/schema.json&quot;</span><span class="p">,</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="nt">&quot;newProjectRoot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;projects&quot;</span><span class="p">,</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="nt">&quot;projects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6"></a><span class="w">    </span><span class="nt">&quot;angular-products&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7"></a><span class="w">    </span><span class="nt">&quot;projectType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application&quot;</span><span class="p">,</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8"></a><span class="w">    </span><span class="nt">&quot;schematics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9"></a><span class="w">    </span><span class="nt">&quot;root&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10"></a><span class="w">    </span><span class="nt">&quot;sourceRoot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;src&quot;</span><span class="p">,</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11"></a><span class="hll"><span class="w">    </span><span class="nt">&quot;prefix&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;app&quot;</span><span class="p">,</span>
+</span><a id="__codelineno-23-12" name="__codelineno-23-12"></a><span class="w">    </span><span class="nt">&quot;architect&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-13" name="__codelineno-23-13"></a><span class="w">        </span><span class="nt">&quot;build&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-14" name="__codelineno-23-14"></a><span class="w">        </span><span class="nt">&quot;builder&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@angular-devkit/build-angular:application&quot;</span><span class="p">,</span>
+<a id="__codelineno-23-15" name="__codelineno-23-15"></a><span class="w">        </span><span class="err">...</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<h3 id="insertar-el-componente-en-la-plantilla-del-componente-principal">Insertar el componente en la plantilla del componente principal<a class="headerlink" href="#insertar-el-componente-en-la-plantilla-del-componente-principal" title="Permanent link">&para;</a></h3>
+<p>Para insertar el componente <code>ProductsListComponent</code> en la plantilla del componente principal, debemos importar el componente en el archivo <code>src/app/app.component.ts</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/app/app.component.ts</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-24-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-24-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-24-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-24-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-24-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-24-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-24-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-24-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-24-10">10</a></span>
+<span class="normal"><a href="#__codelineno-24-11">11</a></span>
+<span class="normal"><a href="#__codelineno-24-12">12</a></span>
+<span class="normal"><a href="#__codelineno-24-13">13</a></span>
+<span class="normal"><a href="#__codelineno-24-14">14</a></span>
+<span class="normal"><a href="#__codelineno-24-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CommonModule</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@angular/common&#39;</span><span class="p">;</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">RouterOutlet</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="hll"><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ProductsListComponent</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./products-list/products-list.component&#39;</span><span class="p">;</span>
+</span><a id="__codelineno-24-5" name="__codelineno-24-5"></a>
+<a id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="kd">@Component</span><span class="p">({</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7"></a><span class="w">  </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8"></a><span class="w">  </span><span class="nx">standalone</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9"></a><span class="hll"><span class="w">  </span><span class="nx">imports</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">CommonModule</span><span class="p">,</span><span class="w"> </span><span class="nx">RouterOutlet</span><span class="p">,</span><span class="w"> </span><span class="nx">ProductsListComponent</span><span class="p">],</span>
+</span><a id="__codelineno-24-10" name="__codelineno-24-10"></a><span class="w">  </span><span class="nx">templateUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11"></a><span class="w">  </span><span class="nx">styleUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;./app.component.css&#39;</span>
+<a id="__codelineno-24-12" name="__codelineno-24-12"></a><span class="p">})</span>
+<a id="__codelineno-24-13" name="__codelineno-24-13"></a><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">AppComponent</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-14" name="__codelineno-24-14"></a><span class="w">  </span><span class="nx">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Angular Products&#39;</span><span class="p">;</span>
+<a id="__codelineno-24-15" name="__codelineno-24-15"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Ahora, en la plantilla del componente principal <code>src/app/app.component.html</code> insertamos el componente <code>ProductsListComponent</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/app/app.component.html</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
+<span class="normal"><a href="#__codelineno-25-2">2</a></span>
+<span class="normal"><a href="#__codelineno-25-3">3</a></span>
+<span class="normal"><a href="#__codelineno-25-4">4</a></span>
+<span class="normal"><a href="#__codelineno-25-5">5</a></span>
+<span class="normal"><a href="#__codelineno-25-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a>  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3"></a>    {{title}}
+<a id="__codelineno-25-4" name="__codelineno-25-4"></a>  <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5"></a><span class="hll">  <span class="p">&lt;</span><span class="nt">app-products-list</span><span class="p">&gt;&lt;/</span><span class="nt">app-products-list</span><span class="p">&gt;</span>
+</span><a id="__codelineno-25-6" name="__codelineno-25-6"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="directivas-for-y-if">Directivas <code>@for</code> y <code>@if</code><a class="headerlink" href="#directivas-for-y-if" title="Permanent link">&para;</a></h2>
+<p>Vamos a añadir algunos productos, para ello, antes debemos especificar la estructura que tendrán los datos mediante una interfaz <code>Product</code>. Para crearla, ejecutamos el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>ng<span class="w"> </span>generate<span class="w"> </span>interface<span class="w"> </span>interfaces/product
+</code></pre></div>
+<p>Esto creará un archivo <code>src/app/interfaces/product.ts</code>, agregamos la siguiente interfaz:</p>
+<div class="highlight"><span class="filename">src/app/interfaces/product.ts</span><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">export</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">Product</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">  </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">  </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">  </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">  </span><span class="nx">available</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">  </span><span class="nx">imageUrl</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">  </span><span class="nx">rating</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="p">}</span>
+</code></pre></div>
+<p>Ahora, si la tabla no contiene productos, directamente, no se mostrará, esto lo controlamos con la directiva <code>@if</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/app/products-list/products-list.component.html</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-28-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-28-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-28-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-28-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-28-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-28-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-28-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-28-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-28-10">10</a></span>
+<span class="normal"><a href="#__codelineno-28-11">11</a></span>
+<span class="normal"><a href="#__codelineno-28-12">12</a></span>
+<span class="normal"><a href="#__codelineno-28-13">13</a></span>
+<span class="normal"><a href="#__codelineno-28-14">14</a></span>
+<span class="normal"><a href="#__codelineno-28-15">15</a></span>
+<span class="normal"><a href="#__codelineno-28-16">16</a></span>
+<span class="normal"><a href="#__codelineno-28-17">17</a></span>
+<span class="normal"><a href="#__codelineno-28-18">18</a></span>
+<span class="normal"><a href="#__codelineno-28-19">19</a></span>
+<span class="normal"><a href="#__codelineno-28-20">20</a></span>
+<span class="normal"><a href="#__codelineno-28-21">21</a></span>
+<span class="normal"><a href="#__codelineno-28-22">22</a></span>
+<span class="normal"><a href="#__codelineno-28-23">23</a></span>
+<span class="normal"><a href="#__codelineno-28-24">24</a></span>
+<span class="normal"><a href="#__codelineno-28-25">25</a></span>
+<span class="normal"><a href="#__codelineno-28-26">26</a></span>
+<span class="normal"><a href="#__codelineno-28-27">27</a></span>
+<span class="normal"><a href="#__codelineno-28-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2"></a>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-header bg-primary text-white&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3"></a>    {{title}}
+<a id="__codelineno-28-4" name="__codelineno-28-4"></a>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5"></a>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-block&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6"></a><span class="hll">    @if(products <span class="err">&amp;&amp;</span> products.length) {
+</span><a id="__codelineno-28-7" name="__codelineno-28-7"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table-responsive&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-28-8" name="__codelineno-28-8"></a>      <span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-striped&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-28-9" name="__codelineno-28-9"></a>        <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+<a id="__codelineno-28-10" name="__codelineno-28-10"></a>          <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-28-11" name="__codelineno-28-11"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>{{headers.description}}<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-28-12" name="__codelineno-28-12"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>{{headers.price}}<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-28-13" name="__codelineno-28-13"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>{{headers.available}}<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-28-14" name="__codelineno-28-14"></a>          <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-28-15" name="__codelineno-28-15"></a>        <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+<a id="__codelineno-28-16" name="__codelineno-28-16"></a>        <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<a id="__codelineno-28-17" name="__codelineno-28-17"></a>          <span class="cm">&lt;!-- Aquí van los productos. Por ahora se queda vacío --&gt;</span>
+<a id="__codelineno-28-18" name="__codelineno-28-18"></a>        <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<a id="__codelineno-28-19" name="__codelineno-28-19"></a>      <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<a id="__codelineno-28-20" name="__codelineno-28-20"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-28-21" name="__codelineno-28-21"></a><span class="hll">    }
+</span><a id="__codelineno-28-22" name="__codelineno-28-22"></a>    @else {
+<a id="__codelineno-28-23" name="__codelineno-28-23"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-info&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-28-24" name="__codelineno-28-24"></a>      No hay productos
+<a id="__codelineno-28-25" name="__codelineno-28-25"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-28-26" name="__codelineno-28-26"></a>    }
+<a id="__codelineno-28-27" name="__codelineno-28-27"></a>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-28-28" name="__codelineno-28-28"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Se agrega la directiva <code>@else</code>, opcional, para mostrar un mensaje cuando no hay productos.</p>
+<p>Ahora, en la clase <code>ProductsListComponent</code> inicializamos la propiedad <code>products</code>, que es un array de objetos <code>Product</code>, que, de momento, lo inicializamos desde código:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/app/products-list/products-list.component.ts</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-29-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-29-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-29-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-29-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-29-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-29-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-29-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-29-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-29-10">10</a></span>
+<span class="normal"><a href="#__codelineno-29-11">11</a></span>
+<span class="normal"><a href="#__codelineno-29-12">12</a></span>
+<span class="normal"><a href="#__codelineno-29-13">13</a></span>
+<span class="normal"><a href="#__codelineno-29-14">14</a></span>
+<span class="normal"><a href="#__codelineno-29-15">15</a></span>
+<span class="normal"><a href="#__codelineno-29-16">16</a></span>
+<span class="normal"><a href="#__codelineno-29-17">17</a></span>
+<span class="normal"><a href="#__codelineno-29-18">18</a></span>
+<span class="normal"><a href="#__codelineno-29-19">19</a></span>
+<span class="normal"><a href="#__codelineno-29-20">20</a></span>
+<span class="normal"><a href="#__codelineno-29-21">21</a></span>
+<span class="normal"><a href="#__codelineno-29-22">22</a></span>
+<span class="normal"><a href="#__codelineno-29-23">23</a></span>
+<span class="normal"><a href="#__codelineno-29-24">24</a></span>
+<span class="normal"><a href="#__codelineno-29-25">25</a></span>
+<span class="normal"><a href="#__codelineno-29-26">26</a></span>
+<span class="normal"><a href="#__codelineno-29-27">27</a></span>
+<span class="normal"><a href="#__codelineno-29-28">28</a></span>
+<span class="normal"><a href="#__codelineno-29-29">29</a></span>
+<span class="normal"><a href="#__codelineno-29-30">30</a></span>
+<span class="normal"><a href="#__codelineno-29-31">31</a></span>
+<span class="normal"><a href="#__codelineno-29-32">32</a></span>
+<span class="normal"><a href="#__codelineno-29-33">33</a></span>
+<span class="normal"><a href="#__codelineno-29-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="hll"><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Product</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../interfaces/product&#39;</span><span class="p">;</span>
+</span><a id="__codelineno-29-3" name="__codelineno-29-3"></a>
+<a id="__codelineno-29-4" name="__codelineno-29-4"></a><span class="kd">@Component</span><span class="p">({</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5"></a><span class="w">  </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;app-products-list&#39;</span><span class="p">,</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6"></a><span class="w">  </span><span class="nx">standalone</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7"></a><span class="w">  </span><span class="nx">imports</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<a id="__codelineno-29-8" name="__codelineno-29-8"></a><span class="w">  </span><span class="nx">templateUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;./products-list.component.html&#39;</span><span class="p">,</span>
+<a id="__codelineno-29-9" name="__codelineno-29-9"></a><span class="w">  </span><span class="nx">styleUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;./products-list.component.css&#39;</span>
+<a id="__codelineno-29-10" name="__codelineno-29-10"></a><span class="p">})</span>
+<a id="__codelineno-29-11" name="__codelineno-29-11"></a><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">ProductsListComponent</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-29-12" name="__codelineno-29-12"></a><span class="w">  </span><span class="nx">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Mi lista de productos&#39;</span><span class="p">;</span>
+<a id="__codelineno-29-13" name="__codelineno-29-13"></a><span class="w">  </span><span class="nx">headers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Producto&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Precio&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">available</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Disponible&#39;</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-29-14" name="__codelineno-29-14"></a>
+<a id="__codelineno-29-15" name="__codelineno-29-15"></a><span class="hll"><span class="w">  </span><span class="nx">products</span><span class="o">:</span><span class="w"> </span><span class="kt">Product</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><a id="__codelineno-29-16" name="__codelineno-29-16"></a><span class="hll"><span class="w">    </span><span class="p">{</span>
+</span><a id="__codelineno-29-17" name="__codelineno-29-17"></a><span class="hll"><span class="w">      </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">1</span><span class="p">,</span>
+</span><a id="__codelineno-29-18" name="__codelineno-29-18"></a><span class="hll"><span class="w">      </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;SSD hard drive&#39;</span><span class="p">,</span>
+</span><a id="__codelineno-29-19" name="__codelineno-29-19"></a><span class="hll"><span class="w">      </span><span class="nx">available</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;2016-10-03&#39;</span><span class="p">,</span>
+</span><a id="__codelineno-29-20" name="__codelineno-29-20"></a><span class="hll"><span class="w">      </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="kt">75</span><span class="p">,</span>
+</span><a id="__codelineno-29-21" name="__codelineno-29-21"></a><span class="hll"><span class="w">      </span><span class="nx">imageUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;assets/ssd.jpg&#39;</span><span class="p">,</span>
+</span><a id="__codelineno-29-22" name="__codelineno-29-22"></a><span class="hll"><span class="w">      </span><span class="nx">rating</span><span class="o">:</span><span class="w"> </span><span class="kt">5</span>
+</span><a id="__codelineno-29-23" name="__codelineno-29-23"></a><span class="hll"><span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-29-24" name="__codelineno-29-24"></a><span class="hll"><span class="w">      </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">2</span><span class="p">,</span>
+</span><a id="__codelineno-29-25" name="__codelineno-29-25"></a><span class="hll"><span class="w">      </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;LGA1151 Motherboard&#39;</span><span class="p">,</span>
+</span><a id="__codelineno-29-26" name="__codelineno-29-26"></a><span class="hll"><span class="w">      </span><span class="nx">available</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;2016-09-15&#39;</span><span class="p">,</span>
+</span><a id="__codelineno-29-27" name="__codelineno-29-27"></a><span class="hll"><span class="w">      </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="kt">96.95</span><span class="p">,</span>
+</span><a id="__codelineno-29-28" name="__codelineno-29-28"></a><span class="hll"><span class="w">      </span><span class="nx">imageUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;assets/motherboard.jpg&#39;</span><span class="p">,</span>
+</span><a id="__codelineno-29-29" name="__codelineno-29-29"></a><span class="hll"><span class="w">      </span><span class="nx">rating</span><span class="o">:</span><span class="w"> </span><span class="kt">4</span>
+</span><a id="__codelineno-29-30" name="__codelineno-29-30"></a><span class="hll"><span class="w">    </span><span class="p">}</span>
+</span><a id="__codelineno-29-31" name="__codelineno-29-31"></a><span class="hll"><span class="w">  </span><span class="p">];</span>
+</span><a id="__codelineno-29-32" name="__codelineno-29-32"></a>
+<a id="__codelineno-29-33" name="__codelineno-29-33"></a><span class="w">  </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-29-34" name="__codelineno-29-34"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Por último, debemos mostrar los productos en la tabla, para ello, utilizamos la directiva <code>@for</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/app/products-list/products-list.component.html</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-30-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-30-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-30-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-30-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-30-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-30-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-30-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-30-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-30-10">10</a></span>
+<span class="normal"><a href="#__codelineno-30-11">11</a></span>
+<span class="normal"><a href="#__codelineno-30-12">12</a></span>
+<span class="normal"><a href="#__codelineno-30-13">13</a></span>
+<span class="normal"><a href="#__codelineno-30-14">14</a></span>
+<span class="normal"><a href="#__codelineno-30-15">15</a></span>
+<span class="normal"><a href="#__codelineno-30-16">16</a></span>
+<span class="normal"><a href="#__codelineno-30-17">17</a></span>
+<span class="normal"><a href="#__codelineno-30-18">18</a></span>
+<span class="normal"><a href="#__codelineno-30-19">19</a></span>
+<span class="normal"><a href="#__codelineno-30-20">20</a></span>
+<span class="normal"><a href="#__codelineno-30-21">21</a></span>
+<span class="normal"><a href="#__codelineno-30-22">22</a></span>
+<span class="normal"><a href="#__codelineno-30-23">23</a></span>
+<span class="normal"><a href="#__codelineno-30-24">24</a></span>
+<span class="normal"><a href="#__codelineno-30-25">25</a></span>
+<span class="normal"><a href="#__codelineno-30-26">26</a></span>
+<span class="normal"><a href="#__codelineno-30-27">27</a></span>
+<span class="normal"><a href="#__codelineno-30-28">28</a></span>
+<span class="normal"><a href="#__codelineno-30-29">29</a></span>
+<span class="normal"><a href="#__codelineno-30-30">30</a></span>
+<span class="normal"><a href="#__codelineno-30-31">31</a></span>
+<span class="normal"><a href="#__codelineno-30-32">32</a></span>
+<span class="normal"><a href="#__codelineno-30-33">33</a></span>
+<span class="normal"><a href="#__codelineno-30-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2"></a>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-header bg-primary text-white&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3"></a>    {{title}}
+<a id="__codelineno-30-4" name="__codelineno-30-4"></a>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5"></a>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-block&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-30-6" name="__codelineno-30-6"></a>    @if(products <span class="err">&amp;&amp;</span> products.length) {
+<a id="__codelineno-30-7" name="__codelineno-30-7"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table-responsive&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-30-8" name="__codelineno-30-8"></a>      <span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-striped&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-30-9" name="__codelineno-30-9"></a>        <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+<a id="__codelineno-30-10" name="__codelineno-30-10"></a>          <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-30-11" name="__codelineno-30-11"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>{{headers.description}}<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-30-12" name="__codelineno-30-12"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>{{headers.price}}<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-30-13" name="__codelineno-30-13"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>{{headers.available}}<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-30-14" name="__codelineno-30-14"></a>          <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-30-15" name="__codelineno-30-15"></a>        <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+<a id="__codelineno-30-16" name="__codelineno-30-16"></a>        <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<a id="__codelineno-30-17" name="__codelineno-30-17"></a><span class="hll">          @for(product of products; track product.id) {
+</span><a id="__codelineno-30-18" name="__codelineno-30-18"></a><span class="hll">          <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><a id="__codelineno-30-19" name="__codelineno-30-19"></a><span class="hll">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{product.description}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><a id="__codelineno-30-20" name="__codelineno-30-20"></a><span class="hll">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{product.price}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><a id="__codelineno-30-21" name="__codelineno-30-21"></a><span class="hll">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{product.available}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><a id="__codelineno-30-22" name="__codelineno-30-22"></a><span class="hll">          <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><a id="__codelineno-30-23" name="__codelineno-30-23"></a><span class="hll">          }
+</span><a id="__codelineno-30-24" name="__codelineno-30-24"></a>        <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<a id="__codelineno-30-25" name="__codelineno-30-25"></a>      <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<a id="__codelineno-30-26" name="__codelineno-30-26"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-30-27" name="__codelineno-30-27"></a>    }
+<a id="__codelineno-30-28" name="__codelineno-30-28"></a>    @else {
+<a id="__codelineno-30-29" name="__codelineno-30-29"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-info&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-30-30" name="__codelineno-30-30"></a>      No hay productos
+<a id="__codelineno-30-31" name="__codelineno-30-31"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-30-32" name="__codelineno-30-32"></a>    }
+<a id="__codelineno-30-33" name="__codelineno-30-33"></a>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-30-34" name="__codelineno-30-34"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>La directiva <code>@for</code> tiene una propiedad <code>track</code> obligatoria, que permite especificar una propiedad del objeto que se utiliza para identificar cada elemento de la lista. Esto permite que <em>Angular</em> pueda identificar los elementos de la lista y actualizarlos de forma eficiente.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>La directiva <code>@for</code> es equivalente a la directiva <code>*ngFor</code>, y la directiva <code>@if</code> es equivalente a la directiva <code>*ngIf</code>. Las nuevas directivas son más expresivas y fáciles de leer, además incluyen mejoras de rendimiento.</p>
+</div>
+<h2 id="actividad-1">Actividad 1<a class="headerlink" href="#actividad-1" title="Permanent link">&para;</a></h2>
+<p>Vamos a ir implementando poco a poco un proyecto de gestión de eventos (deportivos, conciertos, etc.).</p>
+<p><a href="../actividades/ud6-act1/">Actividad 1</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/jsanvil/dwec2023" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+    
+  </body>
+</html>
