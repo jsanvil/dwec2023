@@ -187,7 +187,7 @@ Se utilizará la API de _JSON Server_ para simular el servidor. Tendrá la sigui
 
 ## Entrega
 
-- Fecha límite de entrega **20/02/2024** a las **23:59**.
+- Fecha límite de entrega **23/02/2024** a las **23:59**.
 - Repositorio _GitHub Classroom_: [https://classroom.github.com/a/FpPrX4OO](https://classroom.github.com/a/FpPrX4OO)
 - Incluir fichero **`README.md`** en la raíz del proyecto con la siguiente información:
     - Nombre del proyecto.
